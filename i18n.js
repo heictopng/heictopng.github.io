@@ -45,6 +45,9 @@ const DICTS = {
         "alert.zipFailed": "Failed to create ZIP. Check console.",
 
         "thumb.failed": "Preview unavailable (thumbnail failed).",
+
+        "progress.aria": "Conversion progress",
+        "progress.label": "{done}/{total} processed • {converted} converted • {errors} errors"
     },
 
     es: {
@@ -92,6 +95,9 @@ const DICTS = {
         "alert.zipFailed": "No se pudo crear el ZIP. Revisa la consola.",
 
         "thumb.failed": "Vista previa no disponible (falló la miniatura).",
+
+        "progress.aria": "Progreso de conversión",
+        "progress.label": "{done}/{total} procesadas • {converted} convertidas • {errors} errores"
     },
 
     pt: {
@@ -140,6 +146,9 @@ const DICTS = {
         "alert.zipFailed": "Falha ao criar o ZIP. Verifique o console.",
 
         "thumb.failed": "Pré-visualização indisponível.",
+
+        "progress.aria": "Progresso de conversão",
+        "progress.label": "{done}/{total} processadas • {converted} convertidas • {errors} erros"
     },
 
     ja: {
@@ -188,6 +197,9 @@ const DICTS = {
         "alert.zipFailed": "ZIP の作成に失敗しました。コンソールを確認してください。",
 
         "thumb.failed": "サムネイルを表示できません。",
+
+        "progress.aria": "変換の進捗",
+        "progress.label": "{done}/{total} 処理済み • {converted} 変換済み • {errors} エラー"
     },
 
     zh: {
@@ -236,6 +248,9 @@ const DICTS = {
         "alert.zipFailed": "创建 ZIP 失败。请查看控制台。",
 
         "thumb.failed": "无法生成预览。",
+
+        "progress.aria": "转换进度",
+        "progress.label": "已处理 {done}/{total} • 已转换 {converted} • 错误 {errors}"
     },
 
     ar: {
@@ -283,7 +298,10 @@ const DICTS = {
         "alert.noConverted": "لا توجد صور محوّلة بعد لإنشاء ملف ZIP.",
         "alert.zipFailed": "تعذر إنشاء ملف ZIP. تحقق من وحدة التحكم.",
 
-        "thumb.failed": "تعذر إنشاء المعاينة.",
+        "thumb.failed": "تعذر إنشاء المعاينة。",
+
+        "progress.aria": "تقدم التحويل",
+        "progress.label": "تمت المعالجة {done}/{total} • تم التحويل {converted} • أخطاء {errors}"
     },
 
     hi: {
@@ -332,6 +350,9 @@ const DICTS = {
         "alert.zipFailed": "ZIP बनाने में विफल। कंसोल देखें।",
 
         "thumb.failed": "प्रीव्यू उपलब्ध नहीं है।",
+
+        "progress.aria": "कन्वर्ज़न प्रगति",
+        "progress.label": "{done}/{total} प्रोसेस्ड • {converted} कन्वर्टेड • {errors} त्रुटियाँ"
     },
 
     de: {
@@ -380,6 +401,9 @@ const DICTS = {
         "alert.zipFailed": "ZIP konnte nicht erstellt werden. Konsole prüfen.",
 
         "thumb.failed": "Vorschau nicht verfügbar.",
+
+        "progress.aria": "Konvertierungsfortschritt",
+        "progress.label": "{done}/{total} verarbeitet • {converted} konvertiert • {errors} Fehler"
     },
 
     fr: {
@@ -428,6 +452,9 @@ const DICTS = {
         "alert.zipFailed": "Échec de la création du ZIP. Vérifiez la console.",
 
         "thumb.failed": "Aperçu indisponible.",
+
+        "progress.aria": "Progression de conversion",
+        "progress.label": "{done}/{total} traitées • {converted} converties • {errors} erreurs"
     },
 
     ru: {
@@ -476,6 +503,9 @@ const DICTS = {
         "alert.zipFailed": "Не удалось создать ZIP. Проверьте консоль.",
 
         "thumb.failed": "Предпросмотр недоступен.",
+
+        "progress.aria": "Прогресс конвертации",
+        "progress.label": "Обработано {done}/{total} • Конвертировано {converted} • Ошибок {errors}"
     },
 
     it: {
@@ -524,6 +554,9 @@ const DICTS = {
         "alert.zipFailed": "Impossibile creare lo ZIP. Controlla la console.",
 
         "thumb.failed": "Anteprima non disponibile.",
+
+        "progress.aria": "Avanzamento conversione",
+        "progress.label": "{done}/{total} elaborati • {converted} convertiti • {errors} errori"
     },
 
     nl: {
@@ -572,6 +605,9 @@ const DICTS = {
         "alert.zipFailed": "ZIP maken mislukt. Controleer de console.",
 
         "thumb.failed": "Voorbeeld niet beschikbaar.",
+
+        "progress.aria": "Conversievoortgang",
+        "progress.label": "{done}/{total} verwerkt • {converted} geconverteerd • {errors} fouten"
     },
 
     pl: {
@@ -620,6 +656,9 @@ const DICTS = {
         "alert.zipFailed": "Nie udało się utworzyć ZIP. Sprawdź konsolę.",
 
         "thumb.failed": "Podgląd niedostępny.",
+
+        "progress.aria": "Postęp konwersji",
+        "progress.label": "{done}/{total} przetworzone • {converted} przekonwertowane • {errors} błędy"
     },
 
     tr: {
@@ -668,6 +707,9 @@ const DICTS = {
         "alert.zipFailed": "ZIP oluşturulamadı. Konsolu kontrol edin.",
 
         "thumb.failed": "Önizleme oluşturulamadı.",
+
+        "progress.aria": "Dönüştürme ilerlemesi",
+        "progress.label": "{done}/{total} işlendi • {converted} dönüştürüldü • {errors} hata"
     }
 };
 

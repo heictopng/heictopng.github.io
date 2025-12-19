@@ -14,6 +14,8 @@ export function initUI() {
         convertAll: document.getElementById('convertAll'),
         clearAll: document.getElementById('clearAll'),
         downloadZip: document.getElementById('downloadZip'),
+        progressBar: document.getElementById('progressBar'),
+        progressLabel: document.getElementById('progressLabel'),
     };
 
     function updateQualityUI() {
@@ -34,6 +36,7 @@ export function render({ els, state, convertItem, downloadAllZip }) {
         els.list.appendChild(renderCard({ item, convertItem, state }));
     }
     setButtonsEnabled(els, state, convertItem, downloadAllZip);
+    updateProgressUI(els, state);
 }
 
 function setButtonsEnabled(els, state, convertItem, downloadAllZip) {
@@ -146,4 +149,25 @@ function downloadBlob(blob, filename) {
     a.click();
     a.remove();
     URL.revokeObjectURL(url);
+}
+
+function updateProgressUI(els, state) {
+    const total = state.items.length;
+    const converted = state.items.filter(x => x.outBlob).length;
+    const errors = state.items.filter(x => x.error).length;
+    const done = state.items.filter(x => x.outBlob || x.error).length;
+
+    const ratio = total > 0 ? done / total : 0;
+
+    if (els.progressBar) {
+        els.progressBar.max = 1;
+        els.progressBar.value = ratio;
+        els.progressBar.setAttribute('aria-label', t('progress.aria'));
+    }
+
+    if (els.progressLabel) {
+        els.progressLabel.textContent = total === 0
+            ? ''
+            : t('progress.label', { done, total, converted, errors });
+    }
 }
