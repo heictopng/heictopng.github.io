@@ -34,10 +34,17 @@ export function createDnD({ els, state, render }) {
         render();
     });
 
-    dz.addEventListener('click', () => els.fileInput.click());
+    dz.addEventListener('click', (e) => {
+        if (e.target.closest('label') || e.target.closest('input') || e.target.closest('button') || e.target.closest('.btn')) {
+            return;
+        }
+        els.fileInput.click();
+    });
 
     dz.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') els.fileInput.click();
+        if (e.key === 'Enter' || e.key === ' ') {
+            els.fileInput.click();
+        }
     });
 
     window.addEventListener('app:rerender', render);
