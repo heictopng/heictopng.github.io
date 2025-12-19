@@ -1,45 +1,79 @@
-//worker.mjs
+// worker.mjs
 import libheif from 'https://cdn.jsdelivr.net/npm/libheif-js@1.19.8/libheif-wasm/libheif-bundle.mjs';
 
 let modulePromise = null;
 
-// Create the wasm module once
 function ensureModule() {
-  if (!modulePromise) {
-    modulePromise = libheif({
-      // The .mjs bundle will fetch its matching wasm from the same folder on jsDelivr
-      // so we usually don't need locateFile here.
-    });
-  }
-  return modulePromise;
+    if (!modulePromise) {
+        modulePromise = libheif({});
+    }
+    return modulePromise;
 }
 
 self.onmessage = async (e) => {
-  const { id, arrayBuffer, fileName } = e.data;
+    const { id, arrayBuffer, fileName } = e.data;
 
-  try {
-    const mod = await ensureModule();
+    let decoder = null;
+    let images = null;
+    let img = null;
+    let rgba = null;
 
-    const decoder = new mod.HeifDecoder();
-    const images = decoder.decode(arrayBuffer);
-    if (!images?.length) throw new Error('No images found in HEIF file');
+    try {
+        const mod = await ensureModule();
 
-    const img = images[0];
-    const width = img.get_width();
-    const height = img.get_height();
+        decoder = new mod.HeifDecoder();
+        images = decoder.decode(arrayBuffer);
 
-    const rgba = new Uint8ClampedArray(width * height * 4);
+        if (!images || images.length === 0) {
+            throw new Error('No images found in HEIF file');
+        }
 
-    // IMPORTANT: this build’s display() is callback-based (async)
-    await new Promise((resolve, reject) => {
-      img.display({ data: rgba, width, height }, (result) => {
-        if (!result || !result.data) return reject(new Error('Display/decode failed'));
-        resolve();
-      });
-    });
+        img = images[0];
 
-    self.postMessage({ id, ok: true, fileName, width, height, rgba }, [rgba.buffer]);
-  } catch (err) {
-    self.postMessage({ id, ok: false, fileName, error: String(err?.message || err) });
-  }
+        const width = img.get_width();
+        const height = img.get_height();
+
+        rgba = new Uint8ClampedArray(width * height * 4);
+
+        await new Promise((resolve, reject) => {
+            img.display({ data: rgba, width, height }, (result) => {
+                if (!result || !result.data) {
+                    reject(new Error('Display/decode failed'));
+                    return;
+                }
+                resolve();
+            });
+        });
+
+        // Drop references to libheif objects ASAP (helps GC / wasm heap pressure)
+        images = null;
+        img?.free?.();
+        img = null;
+        decoder?.free?.();
+        decoder = null;
+
+        // Transfer the underlying buffer to avoid copying
+        self.postMessage({ id, ok: true, fileName, width, height, rgba }, [rgba.buffer]);
+
+        // After transfer, rgba.buffer is detached on the worker side.
+        rgba = null;
+    } catch (err) {
+        // Best-effort cleanup
+        try { img?.free?.(); } catch {}
+        try { decoder?.free?.(); } catch {}
+
+        self.postMessage({
+            id,
+            ok: false,
+            fileName,
+            error: String(err?.message || err),
+        });
+    } finally {
+        // Ensure references are dropped even on error
+        decoder = null;
+        images = null;
+        img = null;
+        rgba = null;
+        // arrayBuffer will be released when no longer referenced by main thread either
+    }
 };

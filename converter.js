@@ -38,22 +38,22 @@ export function createConverter({ els, state, render }) {
             const blob = await encodeRgbaToBlob(msg.rgba, msg.width, msg.height, mime, quality);
             try {
                 const thumbBlob = await makeThumbFromRgba(msg.rgba, msg.width, msg.height);
+                msg.rgba = null;
                 item.thumbError = false;
                 if (item.thumbUrl) URL.revokeObjectURL(item.thumbUrl);
                 item.thumbUrl = URL.createObjectURL(thumbBlob);
             } catch {
+                msg.rgba = null;
                 item.thumbError = true;
                 if (item.thumbUrl) URL.revokeObjectURL(item.thumbUrl);
                 item.thumbUrl = null;
             }
-             item.outName = replaceExt((item.file?.name || item.originalName || ''), ext);
+            const ext = mime === 'image/png' ? 'png' : 'jpg';
+            item.outName = replaceExt((item.file?.name || item.originalName || ''), ext);
             if (item.file) {
                 item.originalName = (item.file?.name || item.originalName || '');
                 item.file = null;
             }
-
-            msg.rgba = null;
-            const ext = mime === 'image/png' ? 'png' : 'jpg';
             item.outBlob = blob;
             item.status = t('status.ready', { fmt: ext.toUpperCase() });
         } catch (err) {
