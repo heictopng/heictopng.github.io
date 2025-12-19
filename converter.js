@@ -36,16 +36,6 @@ export function createConverter({ els, state, render }) {
             const quality = Number(els.quality.value);
 
             const blob = await encodeRgbaToBlob(msg.rgba, msg.width, msg.height, mime, quality);
-            const ext = mime === 'image/png' ? 'png' : 'jpg';
-            item.outBlob = blob;
-            item.outName = replaceExt((item.file?.name || item.originalName || ''), ext);
-            item.status = t('status.ready', { fmt: ext.toUpperCase() });
-
-            if (item.file) {
-                item.originalName = (item.file?.name || item.originalName || '');
-                item.file = null;
-            }
-
             try {
                 const thumbBlob = await makeThumbFromRgba(msg.rgba, msg.width, msg.height);
                 item.thumbError = false;
@@ -56,6 +46,16 @@ export function createConverter({ els, state, render }) {
                 if (item.thumbUrl) URL.revokeObjectURL(item.thumbUrl);
                 item.thumbUrl = null;
             }
+             item.outName = replaceExt((item.file?.name || item.originalName || ''), ext);
+            if (item.file) {
+                item.originalName = (item.file?.name || item.originalName || '');
+                item.file = null;
+            }
+
+            msg.rgba = null;
+            const ext = mime === 'image/png' ? 'png' : 'jpg';
+            item.outBlob = blob;
+            item.status = t('status.ready', { fmt: ext.toUpperCase() });
         } catch (err) {
             item.status = t('status.error', { msg: String(err?.message || err) });
             item.error = String(err?.message || err);
