@@ -16,6 +16,9 @@ export function initUI() {
         downloadZip: document.getElementById('downloadZip'),
         progressBar: document.getElementById('progressBar'),
         progressLabel: document.getElementById('progressLabel'),
+        zipOverlay: document.getElementById('zipOverlay'),
+        zipOverlayBar: document.getElementById('zipOverlayBar'),
+        zipOverlayLabel: document.getElementById('zipOverlayLabel'),
     };
 
     function updateQualityUI() {
@@ -169,5 +172,56 @@ function updateProgressUI(els, state) {
         els.progressLabel.textContent = total === 0
             ? ''
             : t('progress.label', { done, total, converted, errors });
+    }
+}
+
+export function showZipOverlay(els) {
+    if (!els.zipOverlay) return;
+
+    els.zipOverlay.hidden = false;
+
+    if (els.zipOverlayBar) {
+        els.zipOverlayBar.max = 1;
+        els.zipOverlayBar.value = 0;
+    }
+
+    if (els.zipOverlayLabel) {
+        els.zipOverlayLabel.textContent = '0%';
+    }
+}
+
+export function updateZipOverlayProgress(els, current, total) {
+    if (!els.zipOverlay || els.zipOverlay.hidden) return;
+
+    const safeTotal = Math.max(1, Number(total || 1));
+    const safeCurrent = Math.min(safeTotal, Math.max(0, Number(current || 0)));
+    const ratio = safeCurrent / safeTotal;
+
+    const pct = Math.round(ratio * 100);
+
+    if (els.zipOverlayBar) {
+        els.zipOverlayBar.value = ratio;
+    }
+
+    if (els.zipOverlayLabel) {
+        els.zipOverlayLabel.textContent = t('zip.overlay.progress', {
+            pct,
+            current: safeCurrent,
+            total: safeTotal
+        });
+    }
+}
+
+export function hideZipOverlay(els) {
+    if (!els.zipOverlay) return;
+
+    els.zipOverlay.hidden = true;
+
+    if (els.zipOverlayBar) {
+        els.zipOverlayBar.value = 0;
+    }
+
+    if (els.zipOverlayLabel) {
+        els.zipOverlayLabel.textContent = '';
     }
 }

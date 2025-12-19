@@ -69,6 +69,17 @@
     <small data-i18n="footer.tip">Tip: Large batches decode faster if you keep the tab focused.</small>
   </footer>
 
+  <div id="zipOverlay" class="overlay" hidden aria-live="polite" aria-busy="true">
+        <div class="overlay-card" role="dialog" aria-modal="true">
+            <div class="spinner" aria-hidden="true"></div>
+
+            <div class="overlay-title" data-i18n="zip.overlay.title">Creating ZIP…</div>
+            <div id="zipOverlayLabel" class="overlay-sub">0%</div>
+
+            <progress id="zipOverlayBar" class="overlay-bar" value="0" max="1"></progress>
+        </div>
+    </div>
+
   <script type="module" src="./app.js"></script>
 </body>
 </html>

@@ -24,7 +24,7 @@ function fallbackName(item, index) {
     return `converted_${String(index + 1).padStart(3, '0')}.${ext}`;
 }
 
-export async function downloadAllAsZip({ state, render }) {
+export async function downloadAllAsZip({ state, render, els }) {
     const converted = state.items.filter(x => x.outBlob);
 
     if (converted.length === 0) {
@@ -49,11 +49,18 @@ export async function downloadAllAsZip({ state, render }) {
             zip.file(name, buf);
         }
 
-        const zipBlob = await zip.generateAsync({
-            type: 'blob',
-            compression: 'DEFLATE',
-            compressionOptions: { level: 6 },
-        });
+        const zipBlob = await zip.generateAsync(
+            { 
+                type: 'blob',
+                compression: 'DEFLATE',
+            }, (meta) => {
+                const pct = Math.round(meta.percent || 0);
+                if (els.zipOverlayBar) els.zipOverlayBar.value = pct / 100;
+                if (els.zipOverlayLabel) {
+                    els.zipOverlayLabel.textContent = `${pct}%`;
+                }
+            }
+        );
 
         downloadBlob(zipBlob, 'converted_images.zip');
     } catch (err) {

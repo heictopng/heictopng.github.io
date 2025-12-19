@@ -47,7 +47,10 @@ const DICTS = {
         "thumb.failed": "Preview unavailable (thumbnail failed).",
 
         "progress.aria": "Conversion progress",
-        "progress.label": "{done}/{total} processed • {converted} converted • {errors} errors"
+        "progress.label": "{done}/{total} processed • {converted} converted • {errors} errors",
+
+        "zip.overlay.title": "Creating ZIP…",
+        "zip.overlay.progress": "{pct}% ({current}/{total})"
     },
 
     es: {
@@ -97,7 +100,10 @@ const DICTS = {
         "thumb.failed": "Vista previa no disponible (falló la miniatura).",
 
         "progress.aria": "Progreso de conversión",
-        "progress.label": "{done}/{total} procesadas • {converted} convertidas • {errors} errores"
+        "progress.label": "{done}/{total} procesadas • {converted} convertidas • {errors} errores",
+
+        "zip.overlay.title": "Creando ZIP…",
+        "zip.overlay.progress": "{pct}% ({current}/{total})"
     },
 
     pt: {
@@ -148,7 +154,10 @@ const DICTS = {
         "thumb.failed": "Pré-visualização indisponível.",
 
         "progress.aria": "Progresso de conversão",
-        "progress.label": "{done}/{total} processadas • {converted} convertidas • {errors} erros"
+        "progress.label": "{done}/{total} processadas • {converted} convertidas • {errors} erros",
+
+        "zip.overlay.title": "Criando ZIP…",
+        "zip.overlay.progress": "{pct}% ({current}/{total})"
     },
 
     ja: {
@@ -199,7 +208,10 @@ const DICTS = {
         "thumb.failed": "サムネイルを表示できません。",
 
         "progress.aria": "変換の進捗",
-        "progress.label": "{done}/{total} 処理済み • {converted} 変換済み • {errors} エラー"
+        "progress.label": "{done}/{total} 処理済み • {converted} 変換済み • {errors} エラー",
+
+        "zip.overlay.title": "ZIP を作成中…",
+        "zip.overlay.progress": "{pct}%（{current}/{total}）"
     },
 
     zh: {
@@ -250,7 +262,10 @@ const DICTS = {
         "thumb.failed": "无法生成预览。",
 
         "progress.aria": "转换进度",
-        "progress.label": "已处理 {done}/{total} • 已转换 {converted} • 错误 {errors}"
+        "progress.label": "已处理 {done}/{total} • 已转换 {converted} • 错误 {errors}",
+
+        "zip.overlay.title": "正在创建 ZIP…",
+        "zip.overlay.progress": "{pct}%（{current}/{total}）"
     },
 
     ar: {
@@ -301,7 +316,10 @@ const DICTS = {
         "thumb.failed": "تعذر إنشاء المعاينة。",
 
         "progress.aria": "تقدم التحويل",
-        "progress.label": "تمت المعالجة {done}/{total} • تم التحويل {converted} • أخطاء {errors}"
+        "progress.label": "تمت المعالجة {done}/{total} • تم التحويل {converted} • أخطاء {errors}",
+
+        "zip.overlay.title": "جارٍ إنشاء ZIP…",
+        "zip.overlay.progress": "{pct}% ({current}/{total})"
     },
 
     hi: {
@@ -352,7 +370,10 @@ const DICTS = {
         "thumb.failed": "प्रीव्यू उपलब्ध नहीं है।",
 
         "progress.aria": "कन्वर्ज़न प्रगति",
-        "progress.label": "{done}/{total} प्रोसेस्ड • {converted} कन्वर्टेड • {errors} त्रुटियाँ"
+        "progress.label": "{done}/{total} प्रोसेस्ड • {converted} कन्वर्टेड • {errors} त्रुटियाँ",
+
+        "zip.overlay.title": "ZIP बनाया जा रहा है…",
+        "zip.overlay.progress": "{pct}% ({current}/{total})"
     },
 
     de: {
@@ -403,7 +424,10 @@ const DICTS = {
         "thumb.failed": "Vorschau nicht verfügbar.",
 
         "progress.aria": "Konvertierungsfortschritt",
-        "progress.label": "{done}/{total} verarbeitet • {converted} konvertiert • {errors} Fehler"
+        "progress.label": "{done}/{total} verarbeitet • {converted} konvertiert • {errors} Fehler",
+
+        "zip.overlay.title": "ZIP wird erstellt…",
+        "zip.overlay.progress": "{pct}% ({current}/{total})"
     },
 
     fr: {
@@ -454,7 +478,10 @@ const DICTS = {
         "thumb.failed": "Aperçu indisponible.",
 
         "progress.aria": "Progression de conversion",
-        "progress.label": "{done}/{total} traitées • {converted} converties • {errors} erreurs"
+        "progress.label": "{done}/{total} traitées • {converted} converties • {errors} erreurs",
+
+        "zip.overlay.title": "Création du ZIP…",
+        "zip.overlay.progress": "{pct}% ({current}/{total})"
     },
 
     ru: {
@@ -505,7 +532,10 @@ const DICTS = {
         "thumb.failed": "Предпросмотр недоступен.",
 
         "progress.aria": "Прогресс конвертации",
-        "progress.label": "Обработано {done}/{total} • Конвертировано {converted} • Ошибок {errors}"
+        "progress.label": "Обработано {done}/{total} • Конвертировано {converted} • Ошибок {errors}",
+
+        "zip.overlay.title": "Создание ZIP…",
+        "zip.overlay.progress": "{pct}% ({current}/{total})"
     },
 
     it: {
@@ -556,7 +586,10 @@ const DICTS = {
         "thumb.failed": "Anteprima non disponibile.",
 
         "progress.aria": "Avanzamento conversione",
-        "progress.label": "{done}/{total} elaborati • {converted} convertiti • {errors} errori"
+        "progress.label": "{done}/{total} elaborati • {converted} convertiti • {errors} errori",
+
+        "zip.overlay.title": "Creazione ZIP…",
+        "zip.overlay.progress": "{pct}% ({current}/{total})"
     },
 
     nl: {
@@ -607,7 +640,10 @@ const DICTS = {
         "thumb.failed": "Voorbeeld niet beschikbaar.",
 
         "progress.aria": "Conversievoortgang",
-        "progress.label": "{done}/{total} verwerkt • {converted} geconverteerd • {errors} fouten"
+        "progress.label": "{done}/{total} verwerkt • {converted} geconverteerd • {errors} fouten",
+
+        "zip.overlay.title": "ZIP maken…",
+        "zip.overlay.progress": "{pct}% ({current}/{total})"
     },
 
     pl: {
@@ -658,7 +694,10 @@ const DICTS = {
         "thumb.failed": "Podgląd niedostępny.",
 
         "progress.aria": "Postęp konwersji",
-        "progress.label": "{done}/{total} przetworzone • {converted} przekonwertowane • {errors} błędy"
+        "progress.label": "{done}/{total} przetworzone • {converted} przekonwertowane • {errors} błędy",
+
+        "zip.overlay.title": "Tworzenie ZIP…",
+        "zip.overlay.progress": "{pct}% ({current}/{total})"
     },
 
     tr: {
@@ -709,7 +748,10 @@ const DICTS = {
         "thumb.failed": "Önizleme oluşturulamadı.",
 
         "progress.aria": "Dönüştürme ilerlemesi",
-        "progress.label": "{done}/{total} işlendi • {converted} dönüştürüldü • {errors} hata"
+        "progress.label": "{done}/{total} işlendi • {converted} dönüştürüldü • {errors} hata",
+
+        "zip.overlay.title": "ZIP oluşturuluyor…",
+        "zip.overlay.progress": "{pct}% ({current}/{total})"
     }
 };
 

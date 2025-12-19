@@ -5,6 +5,7 @@ import { initUI, render } from './ui.js';
 import { createConverter } from './converter.js';
 import { createDnD } from './dnd.js';
 import { downloadAllAsZip } from './zip.js';
+import { showZipOverlay, hideZipOverlay } from './ui.js';
 
 const els = initUI();
 const state = createState();
@@ -29,7 +30,9 @@ async function convertItem(item) {
 }
 
 async function downloadAllZip() {
-    await downloadAllAsZip({ state, render: rerender });
+    showZipOverlay(els);
+    await downloadAllAsZip({ state, render: rerender, els });
+    hideZipOverlay(els);
 }
 
 createDnD({
