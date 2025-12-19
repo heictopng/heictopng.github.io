@@ -303,7 +303,314 @@ hi: {
   "alert.wasmWorkerFailed": "WASM वर्कर लोड/चलाने में विफल।",
 
   "thumb.failed": "प्रीव्यू उपलब्ध नहीं है।"
-  }
+  },
+  de: {
+  "app.title": "HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG Konverter",
+  "header.title": "HEIC / HEIF / HIF → JPG / PNG",
+  "header.sub": "Lokal im Browser. Keine Uploads. Nach dem Laden offline nutzbar.",
+
+  "dropzone.ariaLabel": "HEIC / HEIF / HIF Dateien hier ablegen",
+  "dropzone.strong": ".hif / .heic / .heif Dateien ablegen",
+  "dropzone.or": "oder",
+  "dropzone.choose": "Dateien auswählen",
+
+  "options.output": "Ausgabe",
+  "options.jpg": "JPG",
+  "options.png": "PNG",
+  "options.jpgQuality": "JPG-Qualität",
+
+  "buttons.convertAll": "Alle konvertieren",
+  "buttons.clear": "Leeren",
+
+  "queue.title": "Warteschlange",
+
+  "footer.tip": "Tipp: Große Stapel sind schneller, wenn der Tab aktiv bleibt.",
+
+  "card.noPreview": "Keine Vorschau",
+  "card.convert": "Konvertieren",
+  "card.reconvert": "Erneut konvertieren",
+  "card.download": "Herunterladen",
+  "card.remove": "Entfernen",
+
+  "status.queued": "In Warteschlange",
+  "status.preparing": "Vorbereitung…",
+  "status.checkingSupport": "Browser-Unterstützung wird geprüft…",
+  "status.nativeDecodingEncoding": "Native Dekodierung. Kodierung…",
+  "status.nativeFailedSwitching": "Native Methode fehlgeschlagen. Wechsel zu WASM…",
+  "status.wasmDecoding": "Dekodierung mit WASM…",
+  "status.decodedEncoding": "{width}×{height} dekodiert. Kodierung…",
+  "status.ready": "Fertig ({fmt})",
+  "status.error": "Fehler: {msg}",
+
+  "alert.decodeModeSelected": "Ausgewählter Dekodiermodus: {mode}\n\n{reason}",
+  "alert.wasmWorkerFailed": "WASM-Worker konnte nicht geladen/ausgeführt werden.",
+
+  "thumb.failed": "Vorschau nicht verfügbar."
+},
+
+fr: {
+  "app.title": "Convertisseur HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG",
+  "header.title": "HEIC / HEIF / HIF → JPG / PNG",
+  "header.sub": "Traitement local. Aucun envoi. Fonctionne hors ligne après chargement.",
+
+  "dropzone.ariaLabel": "Déposez des fichiers HEIC / HEIF / HIF ici",
+  "dropzone.strong": "Déposez des fichiers .hif / .heic / .heif",
+  "dropzone.or": "ou",
+  "dropzone.choose": "Choisir des fichiers",
+
+  "options.output": "Sortie",
+  "options.jpg": "JPG",
+  "options.png": "PNG",
+  "options.jpgQuality": "Qualité JPG",
+
+  "buttons.convertAll": "Tout convertir",
+  "buttons.clear": "Effacer",
+
+  "queue.title": "File d’attente",
+
+  "footer.tip": "Astuce : les gros lots sont plus rapides si l’onglet reste actif.",
+
+  "card.noPreview": "Aucun aperçu",
+  "card.convert": "Convertir",
+  "card.reconvert": "Reconvertir",
+  "card.download": "Télécharger",
+  "card.remove": "Supprimer",
+
+  "status.queued": "En attente",
+  "status.preparing": "Préparation…",
+  "status.checkingSupport": "Vérification de la compatibilité du navigateur…",
+  "status.nativeDecodingEncoding": "Décodage natif. Encodage…",
+  "status.nativeFailedSwitching": "Échec natif. Passage à WASM…",
+  "status.wasmDecoding": "Décodage avec WASM…",
+  "status.decodedEncoding": "{width}×{height} décodé. Encodage…",
+  "status.ready": "Prêt ({fmt})",
+  "status.error": "Erreur : {msg}",
+
+  "alert.decodeModeSelected": "Mode de décodage sélectionné : {mode}\n\n{reason}",
+  "alert.wasmWorkerFailed": "Impossible de charger/exécuter le worker WASM.",
+
+  "thumb.failed": "Aperçu indisponible."
+},
+
+ru: {
+  "app.title": "Конвертер HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG",
+  "header.title": "HEIC / HEIF / HIF → JPG / PNG",
+  "header.sub": "Локальная обработка. Без загрузок. Работает офлайн после загрузки.",
+
+  "dropzone.ariaLabel": "Перетащите файлы HEIC / HEIF / HIF сюда",
+  "dropzone.strong": "Перетащите файлы .hif / .heic / .heif",
+  "dropzone.or": "или",
+  "dropzone.choose": "Выбрать файлы",
+
+  "options.output": "Формат",
+  "options.jpg": "JPG",
+  "options.png": "PNG",
+  "options.jpgQuality": "Качество JPG",
+
+  "buttons.convertAll": "Конвертировать все",
+  "buttons.clear": "Очистить",
+
+  "queue.title": "Очередь",
+
+  "footer.tip": "Совет: большие пакеты обрабатываются быстрее при активной вкладке.",
+
+  "card.noPreview": "Нет предпросмотра",
+  "card.convert": "Конвертировать",
+  "card.reconvert": "Повторно конвертировать",
+  "card.download": "Скачать",
+  "card.remove": "Удалить",
+
+  "status.queued": "В очереди",
+  "status.preparing": "Подготовка…",
+  "status.checkingSupport": "Проверка поддержки браузера…",
+  "status.nativeDecodingEncoding": "Нативное декодирование. Кодирование…",
+  "status.nativeFailedSwitching": "Нативный режим не сработал. Переход на WASM…",
+  "status.wasmDecoding": "Декодирование с WASM…",
+  "status.decodedEncoding": "Декодировано {width}×{height}. Кодирование…",
+  "status.ready": "Готово ({fmt})",
+  "status.error": "Ошибка: {msg}",
+
+  "alert.decodeModeSelected": "Выбран режим декодирования: {mode}\n\n{reason}",
+  "alert.wasmWorkerFailed": "Не удалось загрузить или запустить WASM worker.",
+
+  "thumb.failed": "Предпросмотр недоступен."
+},
+
+it: {
+  "app.title": "Convertitore HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG",
+  "header.title": "HEIC / HEIF / HIF → JPG / PNG",
+  "header.sub": "Elaborazione locale. Nessun upload. Funziona offline dopo il caricamento.",
+
+  "dropzone.ariaLabel": "Trascina qui i file HEIC / HEIF / HIF",
+  "dropzone.strong": "Trascina file .hif / .heic / .heif",
+  "dropzone.or": "o",
+  "dropzone.choose": "Scegli file",
+
+  "options.output": "Output",
+  "options.jpg": "JPG",
+  "options.png": "PNG",
+  "options.jpgQuality": "Qualità JPG",
+
+  "buttons.convertAll": "Converti tutto",
+  "buttons.clear": "Pulisci",
+
+  "queue.title": "Coda",
+
+  "footer.tip": "Suggerimento: i batch grandi sono più veloci se la scheda resta attiva.",
+
+  "card.noPreview": "Nessuna anteprima",
+  "card.convert": "Converti",
+  "card.reconvert": "Riconverti",
+  "card.download": "Scarica",
+  "card.remove": "Rimuovi",
+
+  "status.queued": "In coda",
+  "status.preparing": "Preparazione…",
+  "status.checkingSupport": "Verifica supporto del browser…",
+  "status.nativeDecodingEncoding": "Decodifica nativa. Codifica…",
+  "status.nativeFailedSwitching": "Metodo nativo fallito. Passaggio a WASM…",
+  "status.wasmDecoding": "Decodifica con WASM…",
+  "status.decodedEncoding": "Decodificato {width}×{height}. Codifica…",
+  "status.ready": "Pronto ({fmt})",
+  "status.error": "Errore: {msg}",
+
+  "alert.decodeModeSelected": "Modalità di decodifica selezionata: {mode}\n\n{reason}",
+  "alert.wasmWorkerFailed": "Impossibile caricare/eseguire il worker WASM.",
+
+  "thumb.failed": "Anteprima non disponibile."
+},
+
+nl: {
+  "app.title": "HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG Converter",
+  "header.title": "HEIC / HEIF / HIF → JPG / PNG",
+  "header.sub": "Lokaal verwerkt. Geen uploads. Offline beschikbaar na laden.",
+
+  "dropzone.ariaLabel": "Sleep HEIC / HEIF / HIF bestanden hierheen",
+  "dropzone.strong": "Sleep .hif / .heic / .heif bestanden",
+  "dropzone.or": "of",
+  "dropzone.choose": "Bestanden kiezen",
+
+  "options.output": "Uitvoer",
+  "options.jpg": "JPG",
+  "options.png": "PNG",
+  "options.jpgQuality": "JPG-kwaliteit",
+
+  "buttons.convertAll": "Alles converteren",
+  "buttons.clear": "Wissen",
+
+  "queue.title": "Wachtrij",
+
+  "footer.tip": "Tip: grote batches zijn sneller als het tabblad actief blijft.",
+
+  "card.noPreview": "Geen voorbeeld",
+  "card.convert": "Converteren",
+  "card.reconvert": "Opnieuw converteren",
+  "card.download": "Downloaden",
+  "card.remove": "Verwijderen",
+
+  "status.queued": "In wachtrij",
+  "status.preparing": "Voorbereiden…",
+  "status.checkingSupport": "Browserondersteuning controleren…",
+  "status.nativeDecodingEncoding": "Native decodering. Encoderen…",
+  "status.nativeFailedSwitching": "Native methode mislukt. Overschakelen naar WASM…",
+  "status.wasmDecoding": "Decoderen met WASM…",
+  "status.decodedEncoding": "{width}×{height} gedecodeerd. Encoderen…",
+  "status.ready": "Gereed ({fmt})",
+  "status.error": "Fout: {msg}",
+
+  "alert.decodeModeSelected": "Geselecteerde decodeermodus: {mode}\n\n{reason}",
+  "alert.wasmWorkerFailed": "WASM-worker kon niet worden geladen/uitgevoerd.",
+
+  "thumb.failed": "Voorbeeld niet beschikbaar."
+},
+
+pl: {
+  "app.title": "Konwerter HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG",
+  "header.title": "HEIC / HEIF / HIF → JPG / PNG",
+  "header.sub": "Przetwarzanie lokalne. Bez wysyłania plików. Działa offline po załadowaniu.",
+
+  "dropzone.ariaLabel": "Upuść pliki HEIC / HEIF / HIF tutaj",
+  "dropzone.strong": "Upuść pliki .hif / .heic / .heif",
+  "dropzone.or": "lub",
+  "dropzone.choose": "Wybierz pliki",
+
+  "options.output": "Wyjście",
+  "options.jpg": "JPG",
+  "options.png": "PNG",
+  "options.jpgQuality": "Jakość JPG",
+
+  "buttons.convertAll": "Konwertuj wszystko",
+  "buttons.clear": "Wyczyść",
+
+  "queue.title": "Kolejka",
+
+  "footer.tip": "Wskazówka: duże partie działają szybciej przy aktywnej karcie.",
+
+  "card.noPreview": "Brak podglądu",
+  "card.convert": "Konwertuj",
+  "card.reconvert": "Konwertuj ponownie",
+  "card.download": "Pobierz",
+  "card.remove": "Usuń",
+
+  "status.queued": "W kolejce",
+  "status.preparing": "Przygotowywanie…",
+  "status.checkingSupport": "Sprawdzanie obsługi przeglądarki…",
+  "status.nativeDecodingEncoding": "Dekodowanie natywne. Kodowanie…",
+  "status.nativeFailedSwitching": "Tryb natywny nie powiódł się. Przełączanie na WASM…",
+  "status.wasmDecoding": "Dekodowanie z WASM…",
+  "status.decodedEncoding": "Zdekodowano {width}×{height}. Kodowanie…",
+  "status.ready": "Gotowe ({fmt})",
+  "status.error": "Błąd: {msg}",
+
+  "alert.decodeModeSelected": "Wybrany tryb dekodowania: {mode}\n\n{reason}",
+  "alert.wasmWorkerFailed": "Nie udało się załadować/uruchomić workera WASM.",
+
+  "thumb.failed": "Podgląd niedostępny."
+},
+
+tr: {
+  "app.title": "HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG Dönüştürücü",
+  "header.title": "HEIC / HEIF / HIF → JPG / PNG",
+  "header.sub": "Yerel işlem. Yükleme yok. Yüklendikten sonra çevrimdışı çalışır.",
+
+  "dropzone.ariaLabel": "HEIC / HEIF / HIF dosyalarını buraya bırakın",
+  "dropzone.strong": ".hif / .heic / .heif dosyalarını bırakın",
+  "dropzone.or": "veya",
+  "dropzone.choose": "Dosya seç",
+
+  "options.output": "Çıktı",
+  "options.jpg": "JPG",
+  "options.png": "PNG",
+  "options.jpgQuality": "JPG kalitesi",
+
+  "buttons.convertAll": "Hepsini dönüştür",
+  "buttons.clear": "Temizle",
+
+  "queue.title": "Kuyruk",
+
+  "footer.tip": "İpucu: sekme aktifken büyük gruplar daha hızlı işlenir.",
+
+  "card.noPreview": "Önizleme yok",
+  "card.convert": "Dönüştür",
+  "card.reconvert": "Yeniden dönüştür",
+  "card.download": "İndir",
+  "card.remove": "Kaldır",
+
+  "status.queued": "Kuyrukta",
+  "status.preparing": "Hazırlanıyor…",
+  "status.checkingSupport": "Tarayıcı desteği kontrol ediliyor…",
+  "status.nativeDecodingEncoding": "Yerel çözme. Kodlama…",
+  "status.nativeFailedSwitching": "Yerel yöntem başarısız. WASM’e geçiliyor…",
+  "status.wasmDecoding": "WASM ile çözülüyor…",
+  "status.decodedEncoding": "{width}×{height} çözüldü. Kodlama…",
+  "status.ready": "Hazır ({fmt})",
+  "status.error": "Hata: {msg}",
+
+  "alert.decodeModeSelected": "Seçilen çözme modu: {mode}\n\n{reason}",
+  "alert.wasmWorkerFailed": "WASM worker yüklenemedi veya çalıştırılamadı.",
+
+  "thumb.failed": "Önizleme oluşturulamadı."
+}
 };
 
 function getInitialLocale() {
