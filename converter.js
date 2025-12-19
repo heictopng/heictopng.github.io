@@ -63,16 +63,60 @@ export function createConverter({ els, state, render }) {
         const arrayBuffer = await item.file.arrayBuffer();
 
         try {
+            const mime = els.format.value;
+            const quality = Number(els.quality.value);
+
             const msg = await pool.run({
                 id: item.id,
                 payload: {
                     id: item.id,
                     fileName: (item.file?.name || item.originalName || ''),
-                    arrayBuffer
+                    arrayBuffer,
+                    mime,
+                    quality,
+                    thumbMax: 300
                 },
                 transfer: [arrayBuffer]
             });
 
+            // Error
+            if (!msg.ok) {
+                item.status = t('status.error', { msg: msg.error });
+                item.error = msg.error;
+                render();
+                return;
+            }
+
+            // --- NEW: worker already encoded + thumb ---
+            if (msg.encoded && msg.thumb) {
+                const outBlob = new Blob([msg.encoded], { type: msg.encodedMime || mime });
+                const thumbBlob = new Blob([msg.thumb], { type: msg.thumbMime || 'image/jpeg' });
+
+                // Release large buffers ASAP
+                msg.encoded = null;
+                msg.thumb = null;
+
+                const ext = mime === 'image/png' ? 'png' : 'jpg';
+                item.outName = replaceExt((item.file?.name || item.originalName || ''), ext);
+
+                if (item.thumbUrl) URL.revokeObjectURL(item.thumbUrl);
+                item.thumbUrl = URL.createObjectURL(thumbBlob);
+                item.thumbError = false;
+
+                item.outBlob = outBlob;
+                item.status = t('status.ready', { fmt: ext.toUpperCase() });
+
+                // Drop original file to reduce RAM
+                if (item.file) {
+                    item.originalName = item.file.name || item.originalName || '';
+                    item.file = null;
+                }
+
+                render();
+                return;
+            }
+
+            // --- Fallback: old rgba path (main-thread encode) ---
             await handleDecodedMessage({ msg, item });
         } catch (err) {
             console.error('Worker error:', err);
