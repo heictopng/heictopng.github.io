@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HEIF (.hif/.heic) → JPG/PNG Converter</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>HEIF → JPG/PNG</h1>
+    <p class="sub">Client-side. No uploads. Works offline once loaded.</p>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <div id="dropzone" class="dropzone" tabindex="0" role="button" aria-label="Drop HEIF files here">
+        <div class="dropzone-inner">
+          <strong>Drop .hif/.heic/.heif files</strong>
+          <span>or</span>
+          <label class="btn">
+            Choose files
+            <input id="fileInput" type="file" accept=".heic,.heif,.hif,image/heic,image/heif" multiple hidden />
+          </label>
+        </div>
+      </div>
+
+      <div class="options">
+        <label>
+          Output
+          <select id="format">
+            <option value="image/jpeg">JPG</option>
+            <option value="image/png">PNG</option>
+          </select>
+        </label>
+
+        <label id="qualityWrap">
+          JPG quality
+          <input id="quality" type="range" min="0.1" max="1" step="0.05" value="0.9" />
+          <span id="qualityVal">0.90</span>
+        </label>
+
+        <button id="convertAll" class="btn primary" disabled>Convert all</button>
+        <button id="clearAll" class="btn" disabled>Clear</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Queue</h2>
+      <div id="list" class="grid"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Tip: Large batches decode faster if you keep the tab focused.</small>
+  </footer>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
