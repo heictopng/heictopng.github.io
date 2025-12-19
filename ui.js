@@ -13,6 +13,7 @@ export function initUI() {
         qualityWrap: document.getElementById('qualityWrap'),
         convertAll: document.getElementById('convertAll'),
         clearAll: document.getElementById('clearAll'),
+        downloadZip: document.getElementById('downloadZip'),
     };
 
     function updateQualityUI() {
@@ -27,19 +28,21 @@ export function initUI() {
     return els;
 }
 
-export function render({ els, state, convertItem }) {
+export function render({ els, state, convertItem, downloadAllZip }) {
     els.list.innerHTML = '';
     for (const item of state.items) {
         els.list.appendChild(renderCard({ item, convertItem, state }));
     }
-    setButtonsEnabled(els, state, convertItem);
+    setButtonsEnabled(els, state, convertItem, downloadAllZip);
 }
 
-function setButtonsEnabled(els, state, convertItem) {
+function setButtonsEnabled(els, state, convertItem, downloadAllZip) {
     const hasItems = state.items.length > 0;
     const canConvert = state.items.some(x => !x.outBlob && !x.error);
+    const hasConverted = state.items.some(x => x.outBlob);
     els.convertAll.disabled = !(hasItems && canConvert);
     els.clearAll.disabled = !hasItems;
+    els.downloadZip.disabled = !hasConverted;
 
     if (!els._wired) {
         els._wired = true;
@@ -67,6 +70,10 @@ function setButtonsEnabled(els, state, convertItem) {
         els.clearAll.addEventListener('click', () => {
             clearAll(state);
             render({ els, state, convertItem });
+        });
+
+        els.downloadZip.addEventListener('click', async () => {
+            await downloadAllZip();
         });
     }
 }
