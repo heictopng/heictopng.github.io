@@ -1,6 +1,7 @@
 // ui.js
 import { t } from './i18n.js';
 import { removeItem, clearAll } from './state.js';
+import { DEFAULT_CONCURRENCY, runWithLimit } from './workers/pool.js';
 
 export function initUI() {
     const els = {
@@ -66,11 +67,9 @@ function setButtonsEnabled(els, state, convertItem, downloadAllZip) {
         els.quality.addEventListener('input', () => els.updateQualityUI());
 
         els.convertAll.addEventListener('click', async () => {
-            for (const item of state.items) {
-                if (!item.outBlob && !item.error) {
-                    await convertItem(item);
-                }
-            }
+            const todo = state.items.filter(x => !x.outBlob && !x.error);
+            const limit = DEFAULT_CONCURRENCY;
+            await runWithLimit(todo, limit, convertItem);
         });
 
         els.clearAll.addEventListener('click', () => {

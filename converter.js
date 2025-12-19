@@ -2,25 +2,13 @@
 import { t } from './i18n.js';
 import { encodeRgbaToBlob, imageToBlob, replaceExt, detectDecodeMode } from './convert-utils.js';
 import { makeThumbFromRgba, makeThumbFromImage } from './thumbs.js';
+import { createWorkerPool } from './workers/pool.js';
 
-let worker = null;
-
-function ensureWorker() {
-    if (worker) return worker;
-
-    worker = new Worker('./worker.mjs', { type: 'module' });
-
-    return worker;
-}
 
 export function createConverter({ els, state, render }) {
-    const w = ensureWorker();
+    const pool = createWorkerPool('./workers/worker.mjs');
 
-    w.onmessage = async (e) => {
-        const msg = e.data;
-        const item = state.items.find(x => x.id === msg.id);
-        if (!item) return;
-
+    async function handleDecodedMessage({ msg, item }) {
         if (!msg.ok) {
             item.status = t('status.error', { msg: msg.error });
             item.error = msg.error;
@@ -36,24 +24,31 @@ export function createConverter({ els, state, render }) {
             const quality = Number(els.quality.value);
 
             const blob = await encodeRgbaToBlob(msg.rgba, msg.width, msg.height, mime, quality);
+
             try {
                 const thumbBlob = await makeThumbFromRgba(msg.rgba, msg.width, msg.height);
                 msg.rgba = null;
                 item.thumbError = false;
+
                 if (item.thumbUrl) URL.revokeObjectURL(item.thumbUrl);
                 item.thumbUrl = URL.createObjectURL(thumbBlob);
             } catch {
                 msg.rgba = null;
                 item.thumbError = true;
+
                 if (item.thumbUrl) URL.revokeObjectURL(item.thumbUrl);
                 item.thumbUrl = null;
             }
+
             const ext = mime === 'image/png' ? 'png' : 'jpg';
+
             item.outName = replaceExt((item.file?.name || item.originalName || ''), ext);
+
             if (item.file) {
-                item.originalName = (item.file?.name || item.originalName || '');
+                item.originalName = item.file.name || item.originalName || '';
                 item.file = null;
             }
+
             item.outBlob = blob;
             item.status = t('status.ready', { fmt: ext.toUpperCase() });
         } catch (err) {
@@ -62,12 +57,31 @@ export function createConverter({ els, state, render }) {
         }
 
         render();
-    };
+    }
 
-    w.onerror = (e) => {
-        console.error('Worker error:', e);
-        alert(t('alert.wasmWorkerFailed'));
-    };
+    async function decodeWithWasm(item) {
+        const arrayBuffer = await item.file.arrayBuffer();
+
+        try {
+            const msg = await pool.run({
+                id: item.id,
+                payload: {
+                    id: item.id,
+                    fileName: (item.file?.name || item.originalName || ''),
+                    arrayBuffer
+                },
+                transfer: [arrayBuffer]
+            });
+
+            await handleDecodedMessage({ msg, item });
+        } catch (err) {
+            console.error('Worker error:', err);
+            item.status = t('status.error', { msg: String(err?.message || err) });
+            item.error = String(err?.message || err);
+            render();
+            alert(t('alert.wasmWorkerFailed'));
+        }
+    }
 
     async function convertItem(item) {
         item.status = t('status.preparing');
@@ -83,6 +97,7 @@ export function createConverter({ els, state, render }) {
         if (state.decodeMode === 'unknown') {
             item.status = t('status.checkingSupport');
             render();
+
             const result = await detectDecodeMode(item.file);
             state.decodeMode = result.mode;
         }
@@ -92,6 +107,7 @@ export function createConverter({ els, state, render }) {
             render();
 
             const url = URL.createObjectURL(item.file);
+
             try {
                 const img = new Image();
                 img.src = url;
@@ -107,20 +123,29 @@ export function createConverter({ els, state, render }) {
                 try {
                     const thumbBlob = await makeThumbFromImage(img);
                     item.thumbError = false;
+
                     if (item.thumbUrl) URL.revokeObjectURL(item.thumbUrl);
                     item.thumbUrl = URL.createObjectURL(thumbBlob);
                 } catch {
                     item.thumbError = true;
+
                     if (item.thumbUrl) URL.revokeObjectURL(item.thumbUrl);
                     item.thumbUrl = null;
                 }
+
+                // Reduce retained RAM
+                if (item.file) {
+                    item.originalName = item.file.name || item.originalName || '';
+                    item.file = null;
+                }
             } catch (err) {
+                // If native fails, permanently switch to WASM
                 state.decodeMode = 'wasm';
                 item.status = t('status.nativeFailedSwitching');
                 render();
 
-                const arrayBuffer = await item.file.arrayBuffer();
-                ensureWorker().postMessage({ id: item.id, fileName: (item.file?.name || item.originalName || ''), arrayBuffer }, [arrayBuffer]);
+                URL.revokeObjectURL(url);
+                await decodeWithWasm(item);
                 return;
             } finally {
                 URL.revokeObjectURL(url);
@@ -133,8 +158,7 @@ export function createConverter({ els, state, render }) {
         item.status = t('status.wasmDecoding');
         render();
 
-        const arrayBuffer = await item.file.arrayBuffer();
-        ensureWorker().postMessage({ id: item.id, fileName: (item.file?.name || item.originalName || ''), arrayBuffer }, [arrayBuffer]);
+        await decodeWithWasm(item);
     }
 
     return { convertItem };
