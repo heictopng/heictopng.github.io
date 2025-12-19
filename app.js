@@ -1,4 +1,6 @@
 // app.js
+import { t, setLocale, getLocale, translateDocument } from './i18n.js';
+
 const els = {
   dropzone: document.getElementById('dropzone'),
   fileInput: document.getElementById('fileInput'),
@@ -30,13 +32,13 @@ function ensureWorker() {
     if (!item) return;
 
     if (!msg.ok) {
-      item.status = `Error: ${msg.error}`;
+      item.status = t('status.error', { msg: msg.error });
       item.error = msg.error;
       render();
       return;
     }
 
-    item.status = `Decoded ${msg.width}×${msg.height}. Encoding…`;
+    item.status = t('status.decodedEncoding', { width: msg.width, height: msg.height });
     render();
 
     try {
@@ -47,12 +49,12 @@ function ensureWorker() {
       const ext = mime === 'image/png' ? 'png' : 'jpg';
       item.outBlob = blob;
       item.outName = replaceExt(item.file.name, ext);
-      item.status = `Ready (${ext.toUpperCase()})`;
+      item.status = t('status.ready', { fmt: ext.toUpperCase() });
 
       if (item.thumbUrl) URL.revokeObjectURL(item.thumbUrl);
       item.thumbUrl = URL.createObjectURL(blob);
     } catch (err) {
-      item.status = `Error: ${String(err?.message || err)}`;
+      item.status = t('status.error', { msg: String(err?.message || err) });
       item.error = String(err?.message || err);
     }
 
@@ -61,7 +63,7 @@ function ensureWorker() {
 
   worker.onerror = (e) => {
     console.error('Worker error:', e);
-    alert('WASM worker failed to load/run. Check console.');
+    alert(t('alert.wasmWorkerFailed'));
   };
 
   return worker;
@@ -114,7 +116,7 @@ function renderCard(item) {
     img.alt = item.file.name;
     thumb.appendChild(img);
   } else {
-    thumb.textContent = 'No preview yet';
+    thumb.textContent = t('card.noPreview');
   }
 
   const meta = document.createElement('div');
@@ -133,19 +135,19 @@ function renderCard(item) {
 
   const btnConvert = document.createElement('button');
   btnConvert.className = 'btn primary';
-  btnConvert.textContent = item.outBlob ? 'Re-convert' : 'Convert';
+  btnConvert.textContent = item.outBlob ? t('card.reconvert') : t('card.convert');
   btnConvert.disabled = item.status.startsWith('Decoding') || item.status.startsWith('Encoding');
   btnConvert.onclick = () => convertItem(item);
 
   const btnDownload = document.createElement('button');
   btnDownload.className = 'btn';
-  btnDownload.textContent = 'Download';
+  btnDownload.textContent = t('card.download');
   btnDownload.disabled = !item.outBlob;
   btnDownload.onclick = () => downloadBlob(item.outBlob, item.outName);
 
   const btnRemove = document.createElement('button');
   btnRemove.className = 'btn danger';
-  btnRemove.textContent = 'Remove';
+  btnRemove.textContent = t('card.remove');
   btnRemove.onclick = () => removeItem(item.id);
 
   actions.append(btnConvert, btnDownload, btnRemove);
@@ -208,7 +210,7 @@ async function detectDecodeMode(file) {
 }
 
 async function convertItem(item) {
-  item.status = 'Preparing…';
+  item.status = t('status.preparing');
   item.error = null;
   item.outBlob = null;
   item.outName = null;
@@ -219,18 +221,20 @@ async function convertItem(item) {
 
   // Decide once
   if (state.decodeMode === 'unknown') {
-    item.status = 'Checking browser support (one-time)…';
+    item.status = t('status.checkingSupport');
     render();
 
     const result = await detectDecodeMode(item.file);
     state.decodeMode = result.mode;
 
-    alert(`Decode mode selected: ${state.decodeMode.toUpperCase()}\n\n${result.reason}`);
+    alert(t('alert.decodeModeSelected', {
+      mode: state.decodeMode.toUpperCase(),
+      reason: result.reason
+    }));
   }
 
-
   if (state.decodeMode === 'native') {
-    item.status = 'Decoding natively. Encoding…';
+    item.status = t('status.nativeDecodingEncoding');
     render();
 
     const url = URL.createObjectURL(item.file);
@@ -244,14 +248,14 @@ async function convertItem(item) {
 
       item.outBlob = blob;
       item.outName = replaceExt(item.file.name, ext);
-      item.status = `Ready (${ext.toUpperCase()})`;
+      item.status = t('status.ready', { fmt: ext.toUpperCase() });
 
       if (item.thumbUrl) URL.revokeObjectURL(item.thumbUrl);
       item.thumbUrl = URL.createObjectURL(blob);
     } catch (err) {
       // If native unexpectedly fails later, fallback permanently to WASM
       state.decodeMode = 'wasm';
-      item.status = 'Native failed. Switching to WASM…';
+      item.status = t('status.nativeFailedSwitching');
       render();
 
       const arrayBuffer = await item.file.arrayBuffer();
@@ -266,7 +270,7 @@ async function convertItem(item) {
   }
 
   // WASM path
-  item.status = 'Decoding with WASM…';
+  item.status = t('status.wasmDecoding');
   render();
 
   const arrayBuffer = await item.file.arrayBuffer();
@@ -295,7 +299,7 @@ function addFiles(fileList) {
     state.items.push({
       id,
       file,
-      status: 'Queued',
+      status: t('status.queued'),
       thumbUrl: null,
       outBlob: null,
       outName: null,
@@ -360,6 +364,9 @@ async function imageToBlob(img, mime, quality) {
   return blob;
 }
 
+// Optional: allow changing locale via URL query (?lang=es) already supported by i18n.js.
+// If you later add a language picker, call setLocale('es') and re-render:
+translateDocument();
 updateQualityUI();
 setupDnD();
 render();
