@@ -87,5 +87,7 @@ export async function runWithLimit(items, limit, fn) {
 }
 
 export const DEFAULT_CONCURRENCY = navigator.hardwareConcurrency
-    ? Math.max(1, Math.min(4, Math.floor(navigator.hardwareConcurrency / 2)))
+    ? Math.max(1, Math.min(30, Math.floor(navigator.hardwareConcurrency/1.5)))
     : 2;
+
+console.log(`Using concurrency limit: ${DEFAULT_CONCURRENCY}`);
