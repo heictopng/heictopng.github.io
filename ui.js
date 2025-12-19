@@ -94,7 +94,7 @@ function renderCard({ item, convertItem, state }) {
     if (item.thumbUrl) {
         const img = document.createElement('img');
         img.src = item.thumbUrl;
-        img.alt = item.file.name;
+        img.alt = (item.file?.name || item.originalName || '');
         thumb.appendChild(img);
     } else {
         thumb.textContent = item.thumbError ? t('thumb.failed') : t('card.noPreview');
@@ -105,7 +105,7 @@ function renderCard({ item, convertItem, state }) {
 
     const filename = document.createElement('div');
     filename.className = 'filename';
-    filename.textContent = item.file.name;
+    filename.textContent = (item.file?.name || item.originalName || '');
 
     const status = document.createElement('div');
     status.className = 'status';
@@ -117,7 +117,7 @@ function renderCard({ item, convertItem, state }) {
     const btnConvert = document.createElement('button');
     btnConvert.className = 'btn primary';
     btnConvert.textContent = item.outBlob ? t('card.reconvert') : t('card.convert');
-    btnConvert.disabled = item.status.startsWith('Decoding') || item.status.startsWith('Encoding');
+    btnConvert.disabled = item.status.startsWith('Decoding') || item.status.startsWith('Encoding') || !item.file || item.file === null;
     btnConvert.onclick = () => convertItem(item);
 
     const btnDownload = document.createElement('button');

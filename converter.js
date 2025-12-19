@@ -38,8 +38,13 @@ export function createConverter({ els, state, render }) {
             const blob = await encodeRgbaToBlob(msg.rgba, msg.width, msg.height, mime, quality);
             const ext = mime === 'image/png' ? 'png' : 'jpg';
             item.outBlob = blob;
-            item.outName = replaceExt(item.file.name, ext);
+            item.outName = replaceExt((item.file?.name || item.originalName || ''), ext);
             item.status = t('status.ready', { fmt: ext.toUpperCase() });
+
+            if (item.file) {
+                item.originalName = (item.file?.name || item.originalName || '');
+                item.file = null;
+            }
 
             try {
                 const thumbBlob = await makeThumbFromRgba(msg.rgba, msg.width, msg.height);
@@ -96,7 +101,7 @@ export function createConverter({ els, state, render }) {
                 const ext = mime === 'image/png' ? 'png' : 'jpg';
 
                 item.outBlob = blob;
-                item.outName = replaceExt(item.file.name, ext);
+                item.outName = replaceExt((item.file?.name || item.originalName || ''), ext);
                 item.status = t('status.ready', { fmt: ext.toUpperCase() });
 
                 try {
@@ -115,7 +120,7 @@ export function createConverter({ els, state, render }) {
                 render();
 
                 const arrayBuffer = await item.file.arrayBuffer();
-                ensureWorker().postMessage({ id: item.id, fileName: item.file.name, arrayBuffer }, [arrayBuffer]);
+                ensureWorker().postMessage({ id: item.id, fileName: (item.file?.name || item.originalName || ''), arrayBuffer }, [arrayBuffer]);
                 return;
             } finally {
                 URL.revokeObjectURL(url);
@@ -129,7 +134,7 @@ export function createConverter({ els, state, render }) {
         render();
 
         const arrayBuffer = await item.file.arrayBuffer();
-        ensureWorker().postMessage({ id: item.id, fileName: item.file.name, arrayBuffer }, [arrayBuffer]);
+        ensureWorker().postMessage({ id: item.id, fileName: (item.file?.name || item.originalName || ''), arrayBuffer }, [arrayBuffer]);
     }
 
     return { convertItem };

@@ -169,7 +169,7 @@ select, input[type="range"] {
 .overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.7);
     z-index: 9999;
     display: grid;
     place-items: center;
@@ -240,4 +240,26 @@ select, input[type="range"] {
     to {
         transform: rotate(360deg);
     }
+}
+
+/* Disabled buttons */
+.btn:disabled,
+.btn[disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  border-color: var(--border);
+}
+
+/* Don’t “accent” disabled buttons on hover */
+.btn:disabled:hover,
+.btn[disabled]:hover {
+  border-color: var(--border);
+}
+
+/* Keep primary/danger from looking “active” when disabled */
+.btn.primary:disabled,
+.btn.primary[disabled],
+.btn.danger:disabled,
+.btn.danger[disabled] {
+  border-color: var(--border);
 }
