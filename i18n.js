@@ -38,7 +38,9 @@ const DICTS = {
     "status.ready": "Ready ({fmt})",
     "status.error": "Error: {msg}",
     "alert.decodeModeSelected": "Decode mode selected: {mode}\n\n{reason}",
-    "alert.wasmWorkerFailed": "WASM worker failed to load/run. Check console."
+    "alert.wasmWorkerFailed": "WASM worker failed to load/run. Check console.",
+
+    "thumb.failed": "Preview unavailable (thumbnail failed).",
   },
 
   es: {
@@ -79,7 +81,9 @@ const DICTS = {
     "status.ready": "Listo ({fmt})",
     "status.error": "Error: {msg}",
     "alert.decodeModeSelected": "Modo de decodificación seleccionado: {mode}\n\n{reason}",
-    "alert.wasmWorkerFailed": "El worker WASM no pudo cargarse/ejecutarse. Revisa la consola."
+    "alert.wasmWorkerFailed": "El worker WASM no pudo cargarse/ejecutarse. Revisa la consola.",
+
+    "thumb.failed": "Vista previa no disponible (falló la miniatura).",
   }
 };
 

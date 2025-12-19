@@ -51,8 +51,16 @@ function ensureWorker() {
       item.outName = replaceExt(item.file.name, ext);
       item.status = t('status.ready', { fmt: ext.toUpperCase() });
 
-      if (item.thumbUrl) URL.revokeObjectURL(item.thumbUrl);
-      item.thumbUrl = URL.createObjectURL(blob);
+      try {
+        const thumbBlob = await makeThumbFromRgba(msg.rgba, msg.width, msg.height);
+        item.thumbError = false;
+        if (item.thumbUrl) URL.revokeObjectURL(item.thumbUrl);
+        item.thumbUrl = URL.createObjectURL(thumbBlob);
+      } catch {
+        item.thumbError = true;
+        if (item.thumbUrl) URL.revokeObjectURL(item.thumbUrl);
+        item.thumbUrl = null;
+      }
     } catch (err) {
       item.status = t('status.error', { msg: String(err?.message || err) });
       item.error = String(err?.message || err);
@@ -116,7 +124,7 @@ function renderCard(item) {
     img.alt = item.file.name;
     thumb.appendChild(img);
   } else {
-    thumb.textContent = t('card.noPreview');
+    thumb.textContent = item.thumbError ? t('thumb.failed') : t('card.noPreview');
   }
 
   const meta = document.createElement('div');
@@ -214,6 +222,8 @@ async function convertItem(item) {
   item.error = null;
   item.outBlob = null;
   item.outName = null;
+  item.thumbError = false;
+
   render();
 
   const mime = els.format.value;
@@ -226,11 +236,6 @@ async function convertItem(item) {
 
     const result = await detectDecodeMode(item.file);
     state.decodeMode = result.mode;
-
-    alert(t('alert.decodeModeSelected', {
-      mode: state.decodeMode.toUpperCase(),
-      reason: result.reason
-    }));
   }
 
   if (state.decodeMode === 'native') {
@@ -250,7 +255,16 @@ async function convertItem(item) {
       item.outName = replaceExt(item.file.name, ext);
       item.status = t('status.ready', { fmt: ext.toUpperCase() });
 
-      if (item.thumbUrl) URL.revokeObjectURL(item.thumbUrl);
+      try {
+        const thumbBlob = await makeThumbFromImage(img);
+        item.thumbError = false;
+        if (item.thumbUrl) URL.revokeObjectURL(item.thumbUrl);
+        item.thumbUrl = URL.createObjectURL(thumbBlob);
+      } catch {
+        item.thumbError = true;
+        if (item.thumbUrl) URL.revokeObjectURL(item.thumbUrl);
+        item.thumbUrl = null;
+      }
       item.thumbUrl = URL.createObjectURL(blob);
     } catch (err) {
       // If native unexpectedly fails later, fallback permanently to WASM
@@ -303,7 +317,8 @@ function addFiles(fileList) {
       thumbUrl: null,
       outBlob: null,
       outName: null,
-      error: null
+      error: null,
+      thumbError: false
     });
   }
   render();
@@ -359,6 +374,59 @@ async function imageToBlob(img, mime, quality) {
   const blob = await new Promise((resolve, reject) => {
     const q = mime === 'image/jpeg' ? quality : undefined;
     canvas.toBlob(b => (b ? resolve(b) : reject(new Error('Canvas encoding failed'))), mime, q);
+  });
+
+  return blob;
+}
+
+const THUMB_MAX = 300;
+
+// For WASM path where you already have RGBA
+async function makeThumbFromRgba(rgbaUint8, width, height, maxSize = THUMB_MAX) {
+  const maxDim = Math.max(width, height);
+  const scale = Math.min(1, maxSize / maxDim);
+  const tw = Math.max(1, Math.round(width * scale));
+  const th = Math.max(1, Math.round(height * scale));
+
+  // Create an ImageBitmap from ImageData (lets us scale via drawImage)
+  const imageData = new ImageData(new Uint8ClampedArray(rgbaUint8), width, height);
+  const bmp = await createImageBitmap(imageData);
+
+  const canvas = document.createElement('canvas');
+  canvas.width = tw;
+  canvas.height = th;
+
+  const ctx = canvas.getContext('2d');
+  ctx.drawImage(bmp, 0, 0, tw, th);
+  bmp.close?.();
+
+  const blob = await new Promise((resolve, reject) => {
+    // preview-only: small + fast decode; JPEG is usually best here
+    canvas.toBlob(b => (b ? resolve(b) : reject(new Error('Thumbnail encoding failed'))), 'image/jpeg', 0.8);
+  });
+
+  return blob;
+}
+
+// For native path where you already have an <img> decoded
+async function makeThumbFromImage(img, maxSize = THUMB_MAX) {
+  const w = img.naturalWidth || img.width;
+  const h = img.naturalHeight || img.height;
+
+  const maxDim = Math.max(w, h);
+  const scale = Math.min(1, maxSize / maxDim);
+  const tw = Math.max(1, Math.round(w * scale));
+  const th = Math.max(1, Math.round(h * scale));
+
+  const canvas = document.createElement('canvas');
+  canvas.width = tw;
+  canvas.height = th;
+
+  const ctx = canvas.getContext('2d');
+  ctx.drawImage(img, 0, 0, tw, th);
+
+  const blob = await new Promise((resolve, reject) => {
+    canvas.toBlob(b => (b ? resolve(b) : reject(new Error('Thumbnail encoding failed'))), 'image/jpeg', 0.8);
   });
 
   return blob;

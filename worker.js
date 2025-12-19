@@ -1,3 +1,4 @@
+// worker.js
 let libheifModule = null;
 let ready = false;
 

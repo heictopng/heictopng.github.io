@@ -1,3 +1,4 @@
+//worker.mjs
 import libheif from 'https://cdn.jsdelivr.net/npm/libheif-js@1.19.8/libheif-wasm/libheif-bundle.mjs';
 
 let modulePromise = null;
