@@ -1,0 +1,254 @@
+1. Rewrite the page title and meta description (highest priority)
+
+What to do
+
+Replace the current technical-only title with a benefit-driven one.
+
+Keep the primary keyword at the beginning.
+
+Why
+
+The title and meta description directly affect rankings and click-through rate.
+
+Users searching “heic to jpg” respond to benefits, not implementation details.
+
+Best practice
+
+Title should include:
+HEIC to JPG + Free + No Uploads or Offline
+
+Meta description should clearly state:
+
+Formats supported
+
+Privacy (no uploads)
+
+Browser-based / offline capability
+
+2. Add static, crawlable HTML content outside the JS app
+
+What to do
+
+Add a visible HTML section above or below the app UI containing:
+
+One <h1>
+
+1–2 descriptive paragraphs
+
+A short feature list
+
+Why
+
+Search engines must understand the page without executing JavaScript.
+
+Prevents the page from being classified as a “thin JS-only tool”.
+
+Key points to mention
+
+Converts HEIC, HEIF, HIF
+
+Outputs JPG, PNG, WEBP
+
+Runs entirely on the client
+
+No file uploads
+
+Works offline after loading
+
+3. Explicitly target “no upload”, “offline”, and “private” keywords
+
+What to do
+
+Repeat these phrases naturally throughout the static content:
+
+“No uploads”
+
+“Your files never leave your device”
+
+“Runs locally in your browser”
+
+“Works offline”
+
+Why
+
+These are high-intent differentiators with strong search demand.
+
+Most competing tools cannot legitimately claim this.
+
+Where to place
+
+Headings
+
+First paragraph
+
+Feature bullets
+
+FAQ answers
+
+4. Add an SEO-optimized FAQ section with real user questions
+
+What to do
+
+Add 4–6 FAQs in plain HTML.
+
+Use exact wording users search for.
+
+Why
+
+Captures long-tail, problem-based queries.
+
+Improves topical authority and SERP visibility.
+
+Recommended questions
+
+How do I convert HEIC to JPG without uploading?
+
+Does this HEIC converter work offline?
+
+Is it safe to convert HEIC files in the browser?
+
+Why can’t Windows open HEIC photos?
+
+Does this work with iPhone photos?
+
+5. Add FAQ structured data (schema.org)
+
+What to do
+
+Implement FAQPage JSON-LD for the FAQ section.
+
+Why
+
+Enables rich results in Google.
+
+Increases click-through rate without ranking changes.
+
+Important
+
+Only mark up FAQs that are visible on the page.
+
+Answers must match the on-page text exactly.
+
+6. Optimize content for “iPhone HEIC on Windows” intent
+
+What to do
+
+Explicitly mention:
+
+iPhone photos
+
+Windows users
+
+HEIC not opening on Windows
+
+Why
+
+This is the most common real-world reason users search for HEIC converters.
+
+High intent, low ambiguity keywords.
+
+Example phrasing
+
+“Convert iPhone HEIC photos to JPG on Windows without installing software.”
+
+7. Ensure clean and logical heading hierarchy
+
+What to do
+
+Use:
+
+One <h1> for the main topic
+
+<h2> for major sections (features, FAQ, privacy)
+
+<h3> for subpoints if needed
+
+Why
+
+Helps search engines understand page structure and relevance.
+
+Improves accessibility and UX.
+
+8. Add trust and transparency signals
+
+What to do
+
+Clearly state:
+
+Client-side processing
+
+No server involvement
+
+No tracking (if true)
+
+Open-source (if applicable)
+
+Why
+
+Improves E-E-A-T signals.
+
+Reduces bounce rate and increases user confidence.
+
+9. Optimize Core Web Vitals and loading behavior
+
+What to do
+
+Keep initial JS bundle minimal.
+
+Lazy-load WASM and workers.
+
+Ensure fast first contentful paint (FCP).
+
+Why
+
+Google favors fast utility tools.
+
+Performance directly impacts rankings for tool-based searches.
+
+10. Consider a dedicated SEO landing page (advanced but powerful)
+
+What to do
+
+Create a content-first page such as:
+
+/heic-to-jpg
+
+Load the app after scroll or user interaction.
+
+Why
+
+Separates SEO content from heavy app logic.
+
+Common strategy used by top-ranking online converters.
+
+Priority order summary
+
+Title and meta description rewrite
+
+Static HTML explanatory content
+
+Privacy / no-upload keyword targeting
+
+FAQ section + FAQ schema
+
+iPhone → Windows use-case optimization
+
+Heading structure cleanup
+
+Trust signals
+
+Performance optimization
+
+Dedicated SEO landing page
+
+If you want, I can turn this list into:
+
+A ready-to-paste SEO checklist
+
+Fully written page copy
+
+FAQ schema JSON-LD
+
+A competitor gap analysis
+
+Just say the word.

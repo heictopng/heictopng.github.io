@@ -1,6 +1,12 @@
 // i18n.js
 const DICTS = {
     en: {
+        // SEO
+        "meta.title": "HEIC & HEIF to JPG Converter – Free, Offline & Private (No Uploads)",
+        "meta.description":
+            "Convert HEIC, HEIF & HIF images to JPG, PNG or WEBP directly in your browser. No uploads, works offline, and keeps your photos private with fast, local processing on desktop and mobile devices.",
+
+        // Existing UI
         "app.title": "HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG / WEBP Converter",
         "header.title": "HEIC / HEIF / HIF → JPG / PNG / WEBP",
         "header.sub": "Client-side. No uploads. Works offline once loaded.",
@@ -16,7 +22,8 @@ const DICTS = {
         "options.webp": "WEBP",
         "options.jpgQuality": "JPG quality",
         "options.cpuUsage": "CPU usage",
-        "options.cpuWarn": "⚠️ High CPU usage (75%+) may slow down your PC depending on hardware capabilities.",
+        "options.cpuWarn":
+            "⚠️ High CPU usage (75%+) may slow down your PC depending on hardware capabilities.",
 
         "buttons.convertAll": "Convert all",
         "buttons.downloadZip": "Download ZIP",
@@ -57,6 +64,12 @@ const DICTS = {
     },
 
     es: {
+        // SEO
+        "meta.title": "Convertidor de HEIC y HEIF a JPG – Gratis, offline y privado (sin subidas)",
+        "meta.description":
+            "Convierte imágenes HEIC, HEIF y HIF a JPG, PNG o WEBP directamente en tu navegador. Sin subidas, funciona offline y mantiene tus fotos privadas con procesamiento local rápido en ordenador y móvil.",
+
+        // Existing UI
         "app.title": "Convertidor HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG / WEBP",
         "header.title": "HEIC / HEIF / HIF → JPG / PNG / WEBP",
         "header.sub": "En tu dispositivo. Sin subidas. Funciona sin conexión una vez cargado.",
@@ -72,7 +85,8 @@ const DICTS = {
         "options.webp": "WEBP",
         "options.jpgQuality": "Calidad JPG",
         "options.cpuUsage": "Uso de CPU",
-        "options.cpuWarn": "⚠️ Un uso alto de CPU (75%+) puede ralentizar tu PC según las capacidades del hardware.",
+        "options.cpuWarn":
+            "⚠️ Un uso alto de CPU (75%+) puede ralentizar tu PC según las capacidades del hardware.",
 
         "buttons.convertAll": "Convertir todo",
         "buttons.downloadZip": "Descargar ZIP",
@@ -113,6 +127,12 @@ const DICTS = {
     },
 
     pt: {
+        // SEO
+        "meta.title": "Conversor de HEIC e HEIF para JPG – Grátis, offline e privado (sem uploads)",
+        "meta.description":
+            "Converta imagens HEIC, HEIF e HIF para JPG, PNG ou WEBP diretamente no seu navegador. Sem uploads, funciona offline e mantém suas fotos privadas com processamento local rápido em desktop e celular.",
+
+        // Existing UI
         "app.title": "Conversor HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG / WEBP",
         "header.title": "HEIC / HEIF / HIF → JPG / PNG / WEBP",
         "header.sub": "No seu dispositivo. Sem uploads. Funciona offline após carregar.",
@@ -170,6 +190,12 @@ const DICTS = {
     },
 
     ja: {
+        // SEO
+        "meta.title": "HEIC/HEIF→JPG 変換 – 無料・オフライン・プライベート（アップロード不要）",
+        "meta.description":
+            "HEIC/HEIF/HIF を JPG・PNG・WEBP にブラウザで直接変換。アップロード不要、読み込み後はオフライン対応。PC/スマホで高速なローカル処理で写真を安全に変換できます。",
+
+        // Existing UI
         "app.title": "HEIC / HEIF / HIF（.hif/.heic）→ JPG / PNG / WEBP 変換",
         "header.title": "HEIC / HEIF / HIF → JPG / PNG / WEBP",
         "header.sub": "端末内で処理。アップロード不要。読み込み後はオフライン対応。",
@@ -185,7 +211,8 @@ const DICTS = {
         "options.webp": "WEBP",
         "options.jpgQuality": "JPG 画質",
         "options.cpuUsage": "CPU 使用率",
-        "options.cpuWarn": "⚠️ CPU 使用率が高い（75% 以上）と、ハードウェアによっては PC が遅くなる可能性があります。",
+        "options.cpuWarn":
+            "⚠️ CPU 使用率が高い（75% 以上）と、ハードウェアによっては PC が遅くなる可能性があります。",
 
         "buttons.convertAll": "すべて変換",
         "buttons.downloadZip": "ZIPをダウンロード",
@@ -227,6 +254,12 @@ const DICTS = {
     },
 
     zh: {
+        // SEO
+        "meta.title": "HEIC/HEIF 转 JPG – 免费、离线、隐私（无需上传）",
+        "meta.description":
+            "在浏览器中将 HEIC、HEIF、HIF 转换为 JPG、PNG 或 WEBP。无需上传，加载后可离线使用，并通过快速本地处理保护你的照片隐私，支持电脑和手机。",
+
+        // Existing UI
         "app.title": "HEIC / HEIF / HIF（.hif/.heic）转 JPG / PNG / WEBP",
         "header.title": "HEIC / HEIF / HIF → JPG / PNG / WEBP",
         "header.sub": "本地处理，无需上传。加载后可离线使用。",
@@ -242,7 +275,8 @@ const DICTS = {
         "options.webp": "WEBP",
         "options.jpgQuality": "JPG 质量",
         "options.cpuUsage": "CPU 使用率",
-        "options.cpuWarn": "⚠️ CPU 使用率较高（75% 以上）可能会因硬件性能不同而导致电脑变慢。",
+        "options.cpuWarn":
+            "⚠️ CPU 使用率较高（75% 以上）可能会因硬件性能不同而导致电脑变慢。",
 
         "buttons.convertAll": "全部转换",
         "buttons.downloadZip": "下载 ZIP",
@@ -284,6 +318,12 @@ const DICTS = {
     },
 
     ar: {
+        // SEO
+        "meta.title": "محول HEIC/HEIF إلى JPG – مجاني، أوفلاين وخاص (بدون رفع)",
+        "meta.description":
+            "حوّل صور HEIC وHEIF وHIF إلى JPG أو PNG أو WEBP مباشرةً في المتصفح. بدون رفع ملفات، يعمل دون اتصال بعد التحميل، ويحافظ على خصوصية صورك عبر معالجة محلية سريعة على الكمبيوتر والجوال.",
+
+        // Existing UI
         "app.title": "محول HEIC / HEIF / HIF ‏(.hif/.heic) → JPG / PNG / WEBP",
         "header.title": "HEIC / HEIF / HIF → JPG / PNG / WEBP",
         "header.sub": "يعمل محليًا. بدون رفع ملفات. يعمل دون اتصال بعد التحميل.",
@@ -299,7 +339,8 @@ const DICTS = {
         "options.webp": "WEBP",
         "options.jpgQuality": "جودة JPG",
         "options.cpuUsage": "استخدام المعالج",
-        "options.cpuWarn": "⚠️ قد يؤدي الاستخدام المرتفع للمعالج (75%+) إلى إبطاء جهازك حسب قدرات العتاد.",
+        "options.cpuWarn":
+            "⚠️ قد يؤدي الاستخدام المرتفع للمعالج (75%+) إلى إبطاء جهازك حسب قدرات العتاد.",
 
         "buttons.convertAll": "تحويل الكل",
         "buttons.downloadZip": "تحميل ZIP",
@@ -341,6 +382,12 @@ const DICTS = {
     },
 
     hi: {
+        // SEO
+        "meta.title": "HEIC/HEIF से JPG कनवर्टर – फ्री, ऑफ़लाइन और प्राइवेट (नो अपलोड्स)",
+        "meta.description":
+            "HEIC, HEIF और HIF इमेज को JPG, PNG या WEBP में सीधे ब्राउज़र में कनवर्ट करें। कोई अपलोड नहीं, लोड होने के बाद ऑफ़लाइन काम करता है और तेज़ लोकल प्रोसेसिंग से आपकी फ़ोटो प्राइवेट रहती हैं — डेस्कटॉप और मोबाइल पर।",
+
+        // Existing UI
         "app.title": "HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG / WEBP कनवर्टर",
         "header.title": "HEIC / HEIF / HIF → JPG / PNG / WEBP",
         "header.sub": "डिवाइस पर ही प्रोसेसिंग। कोई अपलोड नहीं। लोड होने के बाद ऑफ़लाइन काम करता है।",
@@ -356,7 +403,8 @@ const DICTS = {
         "options.webp": "WEBP",
         "options.jpgQuality": "JPG गुणवत्ता",
         "options.cpuUsage": "CPU उपयोग",
-        "options.cpuWarn": "⚠️ CPU का अधिक उपयोग (75%+) आपके हार्डवेयर के अनुसार PC को धीमा कर सकता है।",
+        "options.cpuWarn":
+            "⚠️ CPU का अधिक उपयोग (75%+) आपके हार्डवेयर के अनुसार PC को धीमा कर सकता है।",
 
         "buttons.convertAll": "सभी कनवर्ट करें",
         "buttons.downloadZip": "ZIP डाउनलोड करें",
@@ -364,7 +412,8 @@ const DICTS = {
 
         "queue.title": "कतार",
 
-        "footer.tip": "सुझाव: टैब को सक्रिय रखने से बड़े बैच तेज़ी से प्रोसेस होते हैं।",
+        "footer.tip":
+            "सुझाव: टैब को सक्रिय रखने से बड़े बैच तेज़ी से प्रोसेस होते हैं।",
 
         "card.noPreview": "कोई प्रीव्यू नहीं",
         "card.convert": "कनवर्ट करें",
@@ -398,6 +447,12 @@ const DICTS = {
     },
 
     de: {
+        // SEO
+        "meta.title": "HEIC & HEIF zu JPG Konverter – Kostenlos, offline & privat (ohne Uploads)",
+        "meta.description":
+            "Konvertiere HEIC-, HEIF- und HIF-Bilder zu JPG, PNG oder WEBP direkt im Browser. Keine Uploads, offline nutzbar und privat dank schneller, lokaler Verarbeitung auf Desktop und Mobilgeräten.",
+
+        // Existing UI
         "app.title": "HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG / WEBP Konverter",
         "header.title": "HEIC / HEIF / HIF → JPG / PNG / WEBP",
         "header.sub": "Lokal im Browser. Keine Uploads. Nach dem Laden offline nutzbar.",
@@ -413,7 +468,8 @@ const DICTS = {
         "options.webp": "WEBP",
         "options.jpgQuality": "JPG-Qualität",
         "options.cpuUsage": "CPU-Auslastung",
-        "options.cpuWarn": "⚠️ Eine hohe CPU-Auslastung (75%+) kann deinen PC je nach Hardware verlangsamen.",
+        "options.cpuWarn":
+            "⚠️ Eine hohe CPU-Auslastung (75%+) kann deinen PC je nach Hardware verlangsamen.",
 
         "buttons.convertAll": "Alle konvertieren",
         "buttons.downloadZip": "ZIP herunterladen",
@@ -455,6 +511,12 @@ const DICTS = {
     },
 
     fr: {
+        // SEO
+        "meta.title": "Convertisseur HEIC & HEIF en JPG – Gratuit, hors ligne & privé (sans envoi)",
+        "meta.description":
+            "Convertissez des images HEIC, HEIF et HIF en JPG, PNG ou WEBP directement dans votre navigateur. Aucun envoi, fonctionne hors ligne et protège vos photos grâce à un traitement local rapide sur ordinateur et mobile.",
+
+        // Existing UI
         "app.title": "Convertisseur HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG / WEBP",
         "header.title": "HEIC / HEIF / HIF → JPG / PNG / WEBP",
         "header.sub": "Traitement local. Aucun envoi. Fonctionne hors ligne après chargement.",
@@ -470,7 +532,8 @@ const DICTS = {
         "options.webp": "WEBP",
         "options.jpgQuality": "Qualité JPG",
         "options.cpuUsage": "Utilisation CPU",
-        "options.cpuWarn": "⚠️ Une utilisation CPU élevée (75%+) peut ralentir votre PC selon les capacités matérielles.",
+        "options.cpuWarn":
+            "⚠️ Une utilisation CPU élevée (75%+) peut ralentir votre PC selon les capacités matérielles.",
 
         "buttons.convertAll": "Tout convertir",
         "buttons.downloadZip": "Télécharger le ZIP",
@@ -512,6 +575,12 @@ const DICTS = {
     },
 
     ru: {
+        // SEO
+        "meta.title": "Конвертер HEIC и HEIF в JPG – Бесплатно, офлайн и приватно (без загрузок)",
+        "meta.description":
+            "Конвертируйте изображения HEIC, HEIF и HIF в JPG, PNG или WEBP прямо в браузере. Без загрузки файлов, работает офлайн и сохраняет приватность благодаря быстрой локальной обработке на компьютере и телефоне.",
+
+        // Existing UI
         "app.title": "Конвертер HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG / WEBP",
         "header.title": "HEIC / HEIF / HIF → JPG / PNG / WEBP",
         "header.sub": "Локальная обработка. Без загрузок. Работает офлайн после загрузки.",
@@ -527,7 +596,8 @@ const DICTS = {
         "options.webp": "WEBP",
         "options.jpgQuality": "Качество JPG",
         "options.cpuUsage": "Загрузка CPU",
-        "options.cpuWarn": "⚠️ Высокая загрузка CPU (75%+) может замедлить ПК в зависимости от характеристик оборудования.",
+        "options.cpuWarn":
+            "⚠️ Высокая загрузка CPU (75%+) может замедлить ПК в зависимости от характеристик оборудования.",
 
         "buttons.convertAll": "Конвертировать все",
         "buttons.downloadZip": "Скачать ZIP",
@@ -569,6 +639,12 @@ const DICTS = {
     },
 
     it: {
+        // SEO
+        "meta.title": "Convertitore HEIC e HEIF in JPG – Gratis, offline e privato (senza upload)",
+        "meta.description":
+            "Converti immagini HEIC, HEIF e HIF in JPG, PNG o WEBP direttamente nel browser. Nessun upload, funziona offline e protegge le tue foto con elaborazione locale rapida su desktop e dispositivi mobili.",
+
+        // Existing UI
         "app.title": "Convertitore HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG / WEBP",
         "header.title": "HEIC / HEIF / HIF → JPG / PNG / WEBP",
         "header.sub": "Elaborazione locale. Nessun upload. Funziona offline dopo il caricamento.",
@@ -584,7 +660,8 @@ const DICTS = {
         "options.webp": "WEBP",
         "options.jpgQuality": "Qualità JPG",
         "options.cpuUsage": "Uso CPU",
-        "options.cpuWarn": "⚠️ Un uso elevato della CPU (75%+) potrebbe rallentare il PC a seconda dell’hardware.",
+        "options.cpuWarn":
+            "⚠️ Un uso elevato della CPU (75%+) potrebbe rallentare il PC a seconda dell’hardware.",
 
         "buttons.convertAll": "Converti tutto",
         "buttons.downloadZip": "Scarica ZIP",
@@ -626,6 +703,12 @@ const DICTS = {
     },
 
     nl: {
+        // SEO
+        "meta.title": "HEIC & HEIF naar JPG Converter – Gratis, offline & privé (geen uploads)",
+        "meta.description":
+            "Converteer HEIC-, HEIF- en HIF-afbeeldingen naar JPG, PNG of WEBP rechtstreeks in je browser. Geen uploads, werkt offline en houdt je foto’s privé met snelle lokale verwerking op desktop en mobiel.",
+
+        // Existing UI
         "app.title": "HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG / WEBP Converter",
         "header.title": "HEIC / HEIF / HIF → JPG / PNG / WEBP",
         "header.sub": "Lokaal verwerkt. Geen uploads. Offline beschikbaar na laden.",
@@ -641,7 +724,8 @@ const DICTS = {
         "options.webp": "WEBP",
         "options.jpgQuality": "JPG-kwaliteit",
         "options.cpuUsage": "CPU-gebruik",
-        "options.cpuWarn": "⚠️ Hoog CPU-gebruik (75%+) kan je pc vertragen, afhankelijk van de hardware.",
+        "options.cpuWarn":
+            "⚠️ Hoog CPU-gebruik (75%+) kan je pc vertragen, afhankelijk van de hardware.",
 
         "buttons.convertAll": "Alles converteren",
         "buttons.downloadZip": "ZIP downloaden",
@@ -683,6 +767,12 @@ const DICTS = {
     },
 
     pl: {
+        // SEO
+        "meta.title": "Konwerter HEIC i HEIF do JPG – Darmowy, offline i prywatny (bez uploadów)",
+        "meta.description":
+            "Konwertuj obrazy HEIC, HEIF i HIF do JPG, PNG lub WEBP bezpośrednio w przeglądarce. Bez wysyłania plików, działa offline i chroni prywatność dzięki szybkiej lokalnej obróbce na komputerze i telefonie.",
+
+        // Existing UI
         "app.title": "Konwerter HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG / WEBP",
         "header.title": "HEIC / HEIF / HIF → JPG / PNG / WEBP",
         "header.sub": "Przetwarzanie lokalne. Bez wysyłania plików. Działa offline po załadowaniu.",
@@ -698,7 +788,8 @@ const DICTS = {
         "options.webp": "WEBP",
         "options.jpgQuality": "Jakość JPG",
         "options.cpuUsage": "Użycie CPU",
-        "options.cpuWarn": "⚠️ Wysokie użycie CPU (75%+) może spowolnić komputer w zależności od sprzętu.",
+        "options.cpuWarn":
+            "⚠️ Wysokie użycie CPU (75%+) może spowolnić komputer w zależności od sprzętu.",
 
         "buttons.convertAll": "Konwertuj wszystko",
         "buttons.downloadZip": "Pobierz ZIP",
@@ -740,6 +831,12 @@ const DICTS = {
     },
 
     tr: {
+        // SEO
+        "meta.title": "HEIC & HEIF’ten JPG’ye Dönüştürücü – Ücretsiz, çevrimdışı ve gizli (yükleme yok)",
+        "meta.description":
+            "HEIC, HEIF ve HIF görsellerini tarayıcıda doğrudan JPG, PNG veya WEBP’ye dönüştürün. Yükleme yok, yüklendikten sonra çevrimdışı çalışır ve masaüstü ile мобил cihazlarda hızlı yerel işlemle fotoğraflarınızı gizli tutar.",
+
+        // Existing UI
         "app.title": "HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG / WEBP Dönüştürücü",
         "header.title": "HEIC / HEIF / HIF → JPG / PNG / WEBP",
         "header.sub": "Yerel işlem. Yükleme yok. Yüklendikten sonra çevrimdışı çalışır.",
@@ -755,7 +852,8 @@ const DICTS = {
         "options.webp": "WEBP",
         "options.jpgQuality": "JPG kalitesi",
         "options.cpuUsage": "CPU kullanımı",
-        "options.cpuWarn": "⚠️ Yüksek CPU kullanımı (%75+) donanım özelliklerine bağlı olarak bilgisayarınızı yavaşlatabilir.",
+        "options.cpuWarn":
+            "⚠️ Yüksek CPU kullanımı (%75+) donanım özelliklerine bağlı olarak bilgisayarınızı yavaşlatabilir.",
 
         "buttons.convertAll": "Hepsini dönüştür",
         "buttons.downloadZip": "ZIP indir",
