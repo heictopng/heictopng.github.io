@@ -40,7 +40,7 @@ export function createConverter({ els, state, render }) {
                 item.thumbUrl = null;
             }
 
-            const ext = mime === 'image/png' ? 'png' : 'jpg';
+            const ext = mime === 'image/png' ? 'png' : (mime === 'image/webp' ? 'webp' : 'jpg');
 
             item.outName = replaceExt((item.file?.name || item.originalName || ''), ext);
 
@@ -96,7 +96,7 @@ export function createConverter({ els, state, render }) {
                 msg.encoded = null;
                 msg.thumb = null;
 
-                const ext = mime === 'image/png' ? 'png' : 'jpg';
+                const ext = mime === 'image/png' ? 'png' : (mime === 'image/webp' ? 'webp' : 'jpg');
                 item.outName = replaceExt((item.file?.name || item.originalName || ''), ext);
 
                 if (item.thumbUrl) URL.revokeObjectURL(item.thumbUrl);
@@ -158,7 +158,7 @@ export function createConverter({ els, state, render }) {
                 await img.decode();
 
                 const blob = await imageToBlob(img, mime, quality);
-                const ext = mime === 'image/png' ? 'png' : 'jpg';
+                const ext = mime === 'image/png' ? 'png' : (mime === 'image/webp' ? 'webp' : 'jpg');
 
                 item.outBlob = blob;
                 item.outName = replaceExt((item.file?.name || item.originalName || ''), ext);

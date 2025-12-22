@@ -20,7 +20,7 @@ function downloadBlob(blob, filename) {
 
 function fallbackName(item, index) {
     const type = item.outBlob?.type || '';
-    const ext = type === 'image/png' ? 'png' : (type === 'image/jpeg' ? 'jpg' : 'bin');
+    const ext = type === 'image/png' ? 'png' : (type === 'image/jpeg' ? 'jpg' : (type === 'image/webp' ? 'webp' : 'bin'));
     return `converted_${String(index + 1).padStart(3, '0')}.${ext}`;
 }
 

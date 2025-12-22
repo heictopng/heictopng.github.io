@@ -1,8 +1,8 @@
 // i18n.js
 const DICTS = {
     en: {
-        "app.title": "HEIC / HEIF /HIF (.hif/.heic) → JPG / PNG Converter",
-        "header.title": "HEIC / HEIF /HIF → JPG / PNG",
+        "app.title": "HEIC / HEIF /HIF (.hif/.heic) → JPG / PNG / WEBP Converter",
+        "header.title": "HEIC / HEIF /HIF → JPG / PNG / WEBP",
         "header.sub": "Client-side. No uploads. Works offline once loaded.",
 
         "dropzone.ariaLabel": "Drop HEIC / HEIF /HIF files here",
@@ -13,6 +13,7 @@ const DICTS = {
         "options.output": "Output",
         "options.jpg": "JPG",
         "options.png": "PNG",
+        "options.webp": "WEBP",
         "options.jpgQuality": "JPG quality",
 
         "buttons.convertAll": "Convert all",
@@ -54,8 +55,8 @@ const DICTS = {
     },
 
     es: {
-        "app.title": "Convertidor HEIC / HEIF /HIF (.hif/.heic) → JPG / PNG",
-        "header.title": "HEIC / HEIF /HIF → JPG / PNG",
+        "app.title": "Convertidor HEIC / HEIF /HIF (.hif/.heic) → JPG / PNG / WEBP",
+        "header.title": "HEIC / HEIF /HIF → JPG / PNG / WEBP",
         "header.sub": "En tu dispositivo. Sin subidas. Funciona sin conexión una vez cargado.",
 
         "dropzone.ariaLabel": "Suelta archivos HEIC / HEIF /HIF aquí",
@@ -66,6 +67,7 @@ const DICTS = {
         "options.output": "Salida",
         "options.jpg": "JPG",
         "options.png": "PNG",
+        "options.webp": "WEBP",
         "options.jpgQuality": "Calidad JPG",
 
         "buttons.convertAll": "Convertir todo",
@@ -107,8 +109,8 @@ const DICTS = {
     },
 
     pt: {
-        "app.title": "Conversor HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG",
-        "header.title": "HEIC / HEIF / HIF → JPG / PNG",
+        "app.title": "Conversor HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG / WEBP",
+        "header.title": "HEIC / HEIF / HIF → JPG / PNG / WEBP",
         "header.sub": "No seu dispositivo. Sem uploads. Funciona offline após carregar.",
 
         "dropzone.ariaLabel": "Solte arquivos HEIC / HEIF / HIF aqui",
@@ -119,6 +121,7 @@ const DICTS = {
         "options.output": "Formato",
         "options.jpg": "JPG",
         "options.png": "PNG",
+        "options.webp": "WEBP",
         "options.jpgQuality": "Qualidade JPG",
 
         "buttons.convertAll": "Converter tudo",
@@ -161,8 +164,8 @@ const DICTS = {
     },
 
     ja: {
-        "app.title": "HEIC / HEIF / HIF（.hif/.heic）→ JPG / PNG 変換",
-        "header.title": "HEIC / HEIF / HIF → JPG / PNG",
+        "app.title": "HEIC / HEIF / HIF（.hif/.heic）→ JPG / PNG / WEBP 変換",
+        "header.title": "HEIC / HEIF / HIF → JPG / PNG / WEBP",
         "header.sub": "端末内で処理。アップロード不要。読み込み後はオフライン対応。",
 
         "dropzone.ariaLabel": "ここに HEIC / HEIF / HIF ファイルをドロップ",
@@ -173,6 +176,7 @@ const DICTS = {
         "options.output": "出力形式",
         "options.jpg": "JPG",
         "options.png": "PNG",
+        "options.webp": "WEBP",
         "options.jpgQuality": "JPG 画質",
 
         "buttons.convertAll": "すべて変換",
@@ -215,8 +219,8 @@ const DICTS = {
     },
 
     zh: {
-        "app.title": "HEIC / HEIF / HIF（.hif/.heic）转 JPG / PNG",
-        "header.title": "HEIC / HEIF / HIF → JPG / PNG",
+        "app.title": "HEIC / HEIF / HIF（.hif/.heic）转 JPG / PNG / WEBP",
+        "header.title": "HEIC / HEIF / HIF → JPG / PNG / WEBP",
         "header.sub": "本地处理，无需上传。加载后可离线使用。",
 
         "dropzone.ariaLabel": "将 HEIC / HEIF / HIF 文件拖到这里",
@@ -227,6 +231,7 @@ const DICTS = {
         "options.output": "输出格式",
         "options.jpg": "JPG",
         "options.png": "PNG",
+        "options.webp": "WEBP",
         "options.jpgQuality": "JPG 质量",
 
         "buttons.convertAll": "全部转换",
@@ -269,8 +274,8 @@ const DICTS = {
     },
 
     ar: {
-        "app.title": "محول HEIC / HEIF / HIF ‏(.hif/.heic) → JPG / PNG",
-        "header.title": "HEIC / HEIF / HIF → JPG / PNG",
+        "app.title": "محول HEIC / HEIF / HIF ‏(.hif/.heic) → JPG / PNG / WEBP",
+        "header.title": "HEIC / HEIF / HIF → JPG / PNG / WEBP",
         "header.sub": "يعمل محليًا. بدون رفع ملفات. يعمل دون اتصال بعد التحميل.",
 
         "dropzone.ariaLabel": "اسحب ملفات HEIC / HEIF / HIF هنا",
@@ -281,6 +286,7 @@ const DICTS = {
         "options.output": "الصيغة",
         "options.jpg": "JPG",
         "options.png": "PNG",
+        "options.webp": "WEBP",
         "options.jpgQuality": "جودة JPG",
 
         "buttons.convertAll": "تحويل الكل",
@@ -323,8 +329,8 @@ const DICTS = {
     },
 
     hi: {
-        "app.title": "HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG कनवर्टर",
-        "header.title": "HEIC / HEIF / HIF → JPG / PNG",
+        "app.title": "HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG / WEBP कनवर्टर",
+        "header.title": "HEIC / HEIF / HIF → JPG / PNG / WEBP",
         "header.sub": "डिवाइस पर ही प्रोसेसिंग। कोई अपलोड नहीं। लोड होने के बाद ऑफ़लाइन काम करता है।",
 
         "dropzone.ariaLabel": "HEIC / HEIF / HIF फ़ाइलें यहाँ छोड़ें",
@@ -335,6 +341,7 @@ const DICTS = {
         "options.output": "आउटपुट",
         "options.jpg": "JPG",
         "options.png": "PNG",
+        "options.webp": "WEBP",
         "options.jpgQuality": "JPG गुणवत्ता",
 
         "buttons.convertAll": "सभी कनवर्ट करें",
@@ -377,8 +384,8 @@ const DICTS = {
     },
 
     de: {
-        "app.title": "HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG Konverter",
-        "header.title": "HEIC / HEIF / HIF → JPG / PNG",
+        "app.title": "HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG / WEBP Konverter",
+        "header.title": "HEIC / HEIF / HIF → JPG / PNG / WEBP",
         "header.sub": "Lokal im Browser. Keine Uploads. Nach dem Laden offline nutzbar.",
 
         "dropzone.ariaLabel": "HEIC / HEIF / HIF Dateien hier ablegen",
@@ -389,6 +396,7 @@ const DICTS = {
         "options.output": "Ausgabe",
         "options.jpg": "JPG",
         "options.png": "PNG",
+        "options.webp": "WEBP",
         "options.jpgQuality": "JPG-Qualität",
 
         "buttons.convertAll": "Alle konvertieren",
@@ -431,8 +439,8 @@ const DICTS = {
     },
 
     fr: {
-        "app.title": "Convertisseur HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG",
-        "header.title": "HEIC / HEIF / HIF → JPG / PNG",
+        "app.title": "Convertisseur HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG / WEBP",
+        "header.title": "HEIC / HEIF / HIF → JPG / PNG / WEBP",
         "header.sub": "Traitement local. Aucun envoi. Fonctionne hors ligne après chargement.",
 
         "dropzone.ariaLabel": "Déposez des fichiers HEIC / HEIF / HIF ici",
@@ -443,6 +451,7 @@ const DICTS = {
         "options.output": "Sortie",
         "options.jpg": "JPG",
         "options.png": "PNG",
+        "options.webp": "WEBP",
         "options.jpgQuality": "Qualité JPG",
 
         "buttons.convertAll": "Tout convertir",
@@ -485,8 +494,8 @@ const DICTS = {
     },
 
     ru: {
-        "app.title": "Конвертер HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG",
-        "header.title": "HEIC / HEIF / HIF → JPG / PNG",
+        "app.title": "Конвертер HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG / WEBP",
+        "header.title": "HEIC / HEIF / HIF → JPG / PNG / WEBP",
         "header.sub": "Локальная обработка. Без загрузок. Работает офлайн после загрузки.",
 
         "dropzone.ariaLabel": "Перетащите файлы HEIC / HEIF / HIF сюда",
@@ -497,6 +506,7 @@ const DICTS = {
         "options.output": "Формат",
         "options.jpg": "JPG",
         "options.png": "PNG",
+        "options.webp": "WEBP",
         "options.jpgQuality": "Качество JPG",
 
         "buttons.convertAll": "Конвертировать все",
@@ -539,8 +549,8 @@ const DICTS = {
     },
 
     it: {
-        "app.title": "Convertitore HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG",
-        "header.title": "HEIC / HEIF / HIF → JPG / PNG",
+        "app.title": "Convertitore HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG / WEBP",
+        "header.title": "HEIC / HEIF / HIF → JPG / PNG / WEBP",
         "header.sub": "Elaborazione locale. Nessun upload. Funziona offline dopo il caricamento.",
 
         "dropzone.ariaLabel": "Trascina qui i file HEIC / HEIF / HIF",
@@ -551,6 +561,7 @@ const DICTS = {
         "options.output": "Output",
         "options.jpg": "JPG",
         "options.png": "PNG",
+        "options.webp": "WEBP",
         "options.jpgQuality": "Qualità JPG",
 
         "buttons.convertAll": "Converti tutto",
@@ -593,8 +604,8 @@ const DICTS = {
     },
 
     nl: {
-        "app.title": "HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG Converter",
-        "header.title": "HEIC / HEIF / HIF → JPG / PNG",
+        "app.title": "HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG / WEBP Converter",
+        "header.title": "HEIC / HEIF / HIF → JPG / PNG / WEBP",
         "header.sub": "Lokaal verwerkt. Geen uploads. Offline beschikbaar na laden.",
 
         "dropzone.ariaLabel": "Sleep HEIC / HEIF / HIF bestanden hierheen",
@@ -605,6 +616,7 @@ const DICTS = {
         "options.output": "Uitvoer",
         "options.jpg": "JPG",
         "options.png": "PNG",
+        "options.webp": "WEBP",
         "options.jpgQuality": "JPG-kwaliteit",
 
         "buttons.convertAll": "Alles converteren",
@@ -647,8 +659,8 @@ const DICTS = {
     },
 
     pl: {
-        "app.title": "Konwerter HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG",
-        "header.title": "HEIC / HEIF / HIF → JPG / PNG",
+        "app.title": "Konwerter HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG / WEBP",
+        "header.title": "HEIC / HEIF / HIF → JPG / PNG / WEBP",
         "header.sub": "Przetwarzanie lokalne. Bez wysyłania plików. Działa offline po załadowaniu.",
 
         "dropzone.ariaLabel": "Upuść pliki HEIC / HEIF / HIF tutaj",
@@ -659,6 +671,7 @@ const DICTS = {
         "options.output": "Wyjście",
         "options.jpg": "JPG",
         "options.png": "PNG",
+        "options.webp": "WEBP",
         "options.jpgQuality": "Jakość JPG",
 
         "buttons.convertAll": "Konwertuj wszystko",
@@ -701,8 +714,8 @@ const DICTS = {
     },
 
     tr: {
-        "app.title": "HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG Dönüştürücü",
-        "header.title": "HEIC / HEIF / HIF → JPG / PNG",
+        "app.title": "HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG / WEBP Dönüştürücü",
+        "header.title": "HEIC / HEIF / HIF → JPG / PNG / WEBP",
         "header.sub": "Yerel işlem. Yükleme yok. Yüklendikten sonra çevrimdışı çalışır.",
 
         "dropzone.ariaLabel": "HEIC / HEIF / HIF dosyalarını buraya bırakın",
@@ -713,6 +726,7 @@ const DICTS = {
         "options.output": "Çıktı",
         "options.jpg": "JPG",
         "options.png": "PNG",
+        "options.webp": "WEBP",
         "options.jpgQuality": "JPG kalitesi",
 
         "buttons.convertAll": "Hepsini dönüştür",
