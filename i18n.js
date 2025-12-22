@@ -1,12 +1,12 @@
 // i18n.js
 const DICTS = {
     en: {
-        "app.title": "HEIC / HEIF /HIF (.hif/.heic) → JPG / PNG / WEBP Converter",
-        "header.title": "HEIC / HEIF /HIF → JPG / PNG / WEBP",
+        "app.title": "HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG / WEBP Converter",
+        "header.title": "HEIC / HEIF / HIF → JPG / PNG / WEBP",
         "header.sub": "Client-side. No uploads. Works offline once loaded.",
 
-        "dropzone.ariaLabel": "Drop HEIC / HEIF /HIF files here",
-        "dropzone.strong": "Drop .hif/.heic/.heif files",
+        "dropzone.ariaLabel": "Drop HEIC / HEIF / HIF files here",
+        "dropzone.strong": "Drop .heic/.heif/.hif files",
         "dropzone.or": "or",
         "dropzone.choose": "Choose files",
 
@@ -57,12 +57,12 @@ const DICTS = {
     },
 
     es: {
-        "app.title": "Convertidor HEIC / HEIF /HIF (.hif/.heic) → JPG / PNG / WEBP",
-        "header.title": "HEIC / HEIF /HIF → JPG / PNG / WEBP",
+        "app.title": "Convertidor HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG / WEBP",
+        "header.title": "HEIC / HEIF / HIF → JPG / PNG / WEBP",
         "header.sub": "En tu dispositivo. Sin subidas. Funciona sin conexión una vez cargado.",
 
-        "dropzone.ariaLabel": "Suelta archivos HEIC / HEIF /HIF aquí",
-        "dropzone.strong": "Suelta archivos .hif/.heic/.heif",
+        "dropzone.ariaLabel": "Suelta archivos HEIC / HEIF / HIF aquí",
+        "dropzone.strong": "Suelta archivos .heic/.heif/.hif",
         "dropzone.or": "o",
         "dropzone.choose": "Elegir archivos",
 
@@ -118,7 +118,7 @@ const DICTS = {
         "header.sub": "No seu dispositivo. Sem uploads. Funciona offline após carregar.",
 
         "dropzone.ariaLabel": "Solte arquivos HEIC / HEIF / HIF aqui",
-        "dropzone.strong": "Solte arquivos .hif/.heic/.heif",
+        "dropzone.strong": "Solte arquivos .heic/.heif/.hif",
         "dropzone.or": "ou",
         "dropzone.choose": "Escolher arquivos",
 
@@ -175,7 +175,7 @@ const DICTS = {
         "header.sub": "端末内で処理。アップロード不要。読み込み後はオフライン対応。",
 
         "dropzone.ariaLabel": "ここに HEIC / HEIF / HIF ファイルをドロップ",
-        "dropzone.strong": ".hif / .heic / .heif ファイルをドロップ",
+        "dropzone.strong": ".heic / .heif / .hif ファイルをドロップ",
         "dropzone.or": "または",
         "dropzone.choose": "ファイルを選択",
 
@@ -232,7 +232,7 @@ const DICTS = {
         "header.sub": "本地处理，无需上传。加载后可离线使用。",
 
         "dropzone.ariaLabel": "将 HEIC / HEIF / HIF 文件拖到这里",
-        "dropzone.strong": "拖放 .hif / .heic / .heif 文件",
+        "dropzone.strong": "拖放 .heic / .heif / .hif 文件",
         "dropzone.or": "或",
         "dropzone.choose": "选择文件",
 
@@ -289,7 +289,7 @@ const DICTS = {
         "header.sub": "يعمل محليًا. بدون رفع ملفات. يعمل دون اتصال بعد التحميل.",
 
         "dropzone.ariaLabel": "اسحب ملفات HEIC / HEIF / HIF هنا",
-        "dropzone.strong": "اسحب ملفات ‎.hif / .heic / .heif",
+        "dropzone.strong": "اسحب ملفات ‎.heic / .heif / .hif",
         "dropzone.or": "أو",
         "dropzone.choose": "اختر الملفات",
 
@@ -346,7 +346,7 @@ const DICTS = {
         "header.sub": "डिवाइस पर ही प्रोसेसिंग। कोई अपलोड नहीं। लोड होने के बाद ऑफ़लाइन काम करता है।",
 
         "dropzone.ariaLabel": "HEIC / HEIF / HIF फ़ाइलें यहाँ छोड़ें",
-        "dropzone.strong": ".hif / .heic / .heif फ़ाइलें छोड़ें",
+        "dropzone.strong": ".heic / .heif / .hif फ़ाइलें छोड़ें",
         "dropzone.or": "या",
         "dropzone.choose": "फ़ाइलें चुनें",
 
@@ -403,7 +403,7 @@ const DICTS = {
         "header.sub": "Lokal im Browser. Keine Uploads. Nach dem Laden offline nutzbar.",
 
         "dropzone.ariaLabel": "HEIC / HEIF / HIF Dateien hier ablegen",
-        "dropzone.strong": ".hif / .heic / .heif Dateien ablegen",
+        "dropzone.strong": ".heic / .heif / .hif Dateien ablegen",
         "dropzone.or": "oder",
         "dropzone.choose": "Dateien auswählen",
 
@@ -460,7 +460,7 @@ const DICTS = {
         "header.sub": "Traitement local. Aucun envoi. Fonctionne hors ligne après chargement.",
 
         "dropzone.ariaLabel": "Déposez des fichiers HEIC / HEIF / HIF ici",
-        "dropzone.strong": "Déposez des fichiers .hif / .heic / .heif",
+        "dropzone.strong": "Déposez des fichiers .heic / .heif / .hif",
         "dropzone.or": "ou",
         "dropzone.choose": "Choisir des fichiers",
 
@@ -517,7 +517,7 @@ const DICTS = {
         "header.sub": "Локальная обработка. Без загрузок. Работает офлайн после загрузки.",
 
         "dropzone.ariaLabel": "Перетащите файлы HEIC / HEIF / HIF сюда",
-        "dropzone.strong": "Перетащите файлы .hif / .heic / .heif",
+        "dropzone.strong": "Перетащите файлы .heic / .heif / .hif",
         "dropzone.or": "или",
         "dropzone.choose": "Выбрать файлы",
 
@@ -574,7 +574,7 @@ const DICTS = {
         "header.sub": "Elaborazione locale. Nessun upload. Funziona offline dopo il caricamento.",
 
         "dropzone.ariaLabel": "Trascina qui i file HEIC / HEIF / HIF",
-        "dropzone.strong": "Trascina file .hif / .heic / .heif",
+        "dropzone.strong": "Trascina file .heic / .heif / .hif",
         "dropzone.or": "o",
         "dropzone.choose": "Scegli file",
 
@@ -631,7 +631,7 @@ const DICTS = {
         "header.sub": "Lokaal verwerkt. Geen uploads. Offline beschikbaar na laden.",
 
         "dropzone.ariaLabel": "Sleep HEIC / HEIF / HIF bestanden hierheen",
-        "dropzone.strong": "Sleep .hif / .heic / .heif bestanden",
+        "dropzone.strong": "Sleep .heic / .heif / .hif bestanden",
         "dropzone.or": "of",
         "dropzone.choose": "Bestanden kiezen",
 
@@ -688,7 +688,7 @@ const DICTS = {
         "header.sub": "Przetwarzanie lokalne. Bez wysyłania plików. Działa offline po załadowaniu.",
 
         "dropzone.ariaLabel": "Upuść pliki HEIC / HEIF / HIF tutaj",
-        "dropzone.strong": "Upuść pliki .hif / .heic / .heif",
+        "dropzone.strong": "Upuść pliki .heic / .heif / .hif",
         "dropzone.or": "lub",
         "dropzone.choose": "Wybierz pliki",
 
@@ -745,7 +745,7 @@ const DICTS = {
         "header.sub": "Yerel işlem. Yükleme yok. Yüklendikten sonra çevrimdışı çalışır.",
 
         "dropzone.ariaLabel": "HEIC / HEIF / HIF dosyalarını buraya bırakın",
-        "dropzone.strong": ".hif / .heic / .heif dosyalarını bırakın",
+        "dropzone.strong": ".heic / .heif / .hif dosyalarını bırakın",
         "dropzone.or": "veya",
         "dropzone.choose": "Dosya seç",
 
