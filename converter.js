@@ -6,7 +6,7 @@ import { createWorkerPool } from './workers/pool.js';
 
 
 export function createConverter({ els, state, render }) {
-    const pool = createWorkerPool('./workers/worker.mjs');
+    const pool = createWorkerPool('./workers/worker.mjs', { concurrencyPct: Number(els.concurrencyPct?.value ?? 100) });
 
     async function handleDecodedMessage({ msg, item }) {
         if (!msg.ok) {

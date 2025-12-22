@@ -263,3 +263,24 @@ select, input[type="range"] {
 .btn.danger[disabled] {
   border-color: var(--border);
 }
+
+/* CPU usage slider: put % right next to the range input */
+.options label:has(#concurrencyPct) {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  column-gap: 12px;
+}
+
+/* keep the slider nicely sized */
+#concurrencyPct {
+  width: 100%;
+  min-width: 180px;
+}
+
+/* % label aligned and consistent width */
+#concurrencyPctVal {
+  white-space: nowrap;
+  min-width: 3.5ch;
+  text-align: right;
+}

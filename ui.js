@@ -1,7 +1,7 @@
 // ui.js
 import { t } from './i18n.js';
 import { removeItem, clearAll } from './state.js';
-import { DEFAULT_CONCURRENCY, runWithLimit } from './workers/pool.js';
+import { runWithLimit, computeConcurrencyFromPct } from './workers/pool.js';
 
 export function initUI() {
     const els = {
@@ -20,6 +20,9 @@ export function initUI() {
         zipOverlay: document.getElementById('zipOverlay'),
         zipOverlayBar: document.getElementById('zipOverlayBar'),
         zipOverlayLabel: document.getElementById('zipOverlayLabel'),
+        concurrencyPct: document.getElementById('concurrencyPct'),
+        concurrencyPctVal: document.getElementById('concurrencyPctVal'),
+        concurrencyWarn: document.getElementById('concurrencyWarn'),
     };
 
     function updateQualityUI() {
@@ -29,7 +32,22 @@ export function initUI() {
         els.qualityVal.textContent = Number(els.quality.value).toFixed(2);
     }
 
+    function updateConcurrencyUI() {
+        if (!els.concurrencyPct) return;
+
+        const pct = Number(els.concurrencyPct.value || 50);
+        if (els.concurrencyPctVal) els.concurrencyPctVal.textContent = `${pct}%`;
+        if (els.concurrencyWarn) els.concurrencyWarn.hidden = pct < 75;
+    }
+
     els.updateQualityUI = updateQualityUI;
+    els.updateConcurrencyUI = updateConcurrencyUI;
+    els.updateQualityUI();
+    els.updateConcurrencyUI();
+    if (els.concurrencyPct) {
+        els.concurrencyPct.addEventListener('input', els.updateConcurrencyUI);
+        els.concurrencyPct.addEventListener('change', els.updateConcurrencyUI);
+    }
 
     return els;
 }
@@ -61,20 +79,21 @@ function setButtonsEnabled(els, state, convertItem, downloadAllZip) {
                 x.outName = null;
                 x.error = null;
             });
-            render({ els, state, convertItem });
+            render({ els, state, convertItem, downloadAllZip });
         });
 
         els.quality.addEventListener('input', () => els.updateQualityUI());
 
         els.convertAll.addEventListener('click', async () => {
             const todo = state.items.filter(x => !x.outBlob && !x.error);
-            const limit = DEFAULT_CONCURRENCY;
+            const pct = Number(els.concurrencyPct?.value ?? 100);
+            const limit = computeConcurrencyFromPct(pct);
             await runWithLimit(todo, limit, convertItem);
         });
 
         els.clearAll.addEventListener('click', () => {
             clearAll(state);
-            render({ els, state, convertItem });
+            render({ els, state, convertItem, downloadAllZip });
         });
 
         els.downloadZip.addEventListener('click', async () => {
@@ -130,7 +149,6 @@ function renderCard({ item, convertItem, state }) {
     btnRemove.textContent = t('card.remove');
     btnRemove.onclick = () => {
         removeItem(state, item.id);
-        // Caller will re-render
         const ev = new CustomEvent('app:rerender');
         window.dispatchEvent(ev);
     };

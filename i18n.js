@@ -15,6 +15,8 @@ const DICTS = {
         "options.png": "PNG",
         "options.webp": "WEBP",
         "options.jpgQuality": "JPG quality",
+        "options.cpuUsage": "CPU usage",
+        "options.cpuWarn": "⚠️ High CPU usage (75%+) may slow down your PC depending on hardware capabilities.",
 
         "buttons.convertAll": "Convert all",
         "buttons.downloadZip": "Download ZIP",
@@ -69,6 +71,8 @@ const DICTS = {
         "options.png": "PNG",
         "options.webp": "WEBP",
         "options.jpgQuality": "Calidad JPG",
+        "options.cpuUsage": "Uso de CPU",
+        "options.cpuWarn": "⚠️ Un uso alto de CPU (75%+) puede ralentizar tu PC según las capacidades del hardware.",
 
         "buttons.convertAll": "Convertir todo",
         "buttons.downloadZip": "Descargar ZIP",
@@ -123,6 +127,8 @@ const DICTS = {
         "options.png": "PNG",
         "options.webp": "WEBP",
         "options.jpgQuality": "Qualidade JPG",
+        "options.cpuUsage": "Uso de CPU",
+        "options.cpuWarn": "⚠️ Um uso alto de CPU (75%+) pode deixar o PC mais lento, dependendo do hardware.",
 
         "buttons.convertAll": "Converter tudo",
         "buttons.downloadZip": "Baixar ZIP",
@@ -178,6 +184,8 @@ const DICTS = {
         "options.png": "PNG",
         "options.webp": "WEBP",
         "options.jpgQuality": "JPG 画質",
+        "options.cpuUsage": "CPU 使用率",
+        "options.cpuWarn": "⚠️ CPU 使用率が高い（75% 以上）と、ハードウェアによっては PC が遅くなる可能性があります。",
 
         "buttons.convertAll": "すべて変換",
         "buttons.downloadZip": "ZIPをダウンロード",
@@ -233,6 +241,8 @@ const DICTS = {
         "options.png": "PNG",
         "options.webp": "WEBP",
         "options.jpgQuality": "JPG 质量",
+        "options.cpuUsage": "CPU 使用率",
+        "options.cpuWarn": "⚠️ CPU 使用率较高（75% 以上）可能会因硬件性能不同而导致电脑变慢。",
 
         "buttons.convertAll": "全部转换",
         "buttons.downloadZip": "下载 ZIP",
@@ -288,6 +298,8 @@ const DICTS = {
         "options.png": "PNG",
         "options.webp": "WEBP",
         "options.jpgQuality": "جودة JPG",
+        "options.cpuUsage": "استخدام المعالج",
+        "options.cpuWarn": "⚠️ قد يؤدي الاستخدام المرتفع للمعالج (75%+) إلى إبطاء جهازك حسب قدرات العتاد.",
 
         "buttons.convertAll": "تحويل الكل",
         "buttons.downloadZip": "تحميل ZIP",
@@ -315,9 +327,9 @@ const DICTS = {
         "status.error": "خطأ: {msg}",
 
         "alert.decodeModeSelected": "تم اختيار وضع فك الترميز: {mode}\n\n{reason}",
-        "alert.wasmWorkerFailed": "فشل تحميل أو تشغيل عامل WASM.",
-        "alert.noConverted": "لا توجد صور محوّلة بعد لإنشاء ملف ZIP.",
-        "alert.zipFailed": "تعذر إنشاء ملف ZIP. تحقق من وحدة التحكم.",
+        "alert.wasmWorkerFailed": "فشل تحميل أو تشغيل عامل WASM。",
+        "alert.noConverted": "لا توجد صور محوّلة بعد لإنشاء ملف ZIP。",
+        "alert.zipFailed": "تعذر إنشاء ملف ZIP. تحقق من وحدة التحكم。",
 
         "thumb.failed": "تعذر إنشاء المعاينة。",
 
@@ -343,6 +355,8 @@ const DICTS = {
         "options.png": "PNG",
         "options.webp": "WEBP",
         "options.jpgQuality": "JPG गुणवत्ता",
+        "options.cpuUsage": "CPU उपयोग",
+        "options.cpuWarn": "⚠️ CPU का अधिक उपयोग (75%+) आपके हार्डवेयर के अनुसार PC को धीमा कर सकता है।",
 
         "buttons.convertAll": "सभी कनवर्ट करें",
         "buttons.downloadZip": "ZIP डाउनलोड करें",
@@ -398,6 +412,8 @@ const DICTS = {
         "options.png": "PNG",
         "options.webp": "WEBP",
         "options.jpgQuality": "JPG-Qualität",
+        "options.cpuUsage": "CPU-Auslastung",
+        "options.cpuWarn": "⚠️ Eine hohe CPU-Auslastung (75%+) kann deinen PC je nach Hardware verlangsamen.",
 
         "buttons.convertAll": "Alle konvertieren",
         "buttons.downloadZip": "ZIP herunterladen",
@@ -453,6 +469,8 @@ const DICTS = {
         "options.png": "PNG",
         "options.webp": "WEBP",
         "options.jpgQuality": "Qualité JPG",
+        "options.cpuUsage": "Utilisation CPU",
+        "options.cpuWarn": "⚠️ Une utilisation CPU élevée (75%+) peut ralentir votre PC selon les capacités matérielles.",
 
         "buttons.convertAll": "Tout convertir",
         "buttons.downloadZip": "Télécharger le ZIP",
@@ -508,6 +526,8 @@ const DICTS = {
         "options.png": "PNG",
         "options.webp": "WEBP",
         "options.jpgQuality": "Качество JPG",
+        "options.cpuUsage": "Загрузка CPU",
+        "options.cpuWarn": "⚠️ Высокая загрузка CPU (75%+) может замедлить ПК в зависимости от характеристик оборудования.",
 
         "buttons.convertAll": "Конвертировать все",
         "buttons.downloadZip": "Скачать ZIP",
@@ -536,10 +556,10 @@ const DICTS = {
 
         "alert.decodeModeSelected": "Выбран режим декодирования: {mode}\n\n{reason}",
         "alert.wasmWorkerFailed": "Не удалось загрузить или запустить WASM worker.",
-        "alert.noConverted": "Пока нет конвертированных изображений для ZIP.",
-        "alert.zipFailed": "Не удалось создать ZIP. Проверьте консоль.",
+        "alert.noConverted": "Пока нет конвертированных изображений для ZIP。",
+        "alert.zipFailed": "Не удалось создать ZIP. Проверьте консоль。",
 
-        "thumb.failed": "Предпросмотр недоступен.",
+        "thumb.failed": "Предпросмотр недоступен。",
 
         "progress.aria": "Прогресс конвертации",
         "progress.label": "Обработано {done}/{total} • Конвертировано {converted} • Ошибок {errors}",
@@ -563,6 +583,8 @@ const DICTS = {
         "options.png": "PNG",
         "options.webp": "WEBP",
         "options.jpgQuality": "Qualità JPG",
+        "options.cpuUsage": "Uso CPU",
+        "options.cpuWarn": "⚠️ Un uso elevato della CPU (75%+) potrebbe rallentare il PC a seconda dell’hardware.",
 
         "buttons.convertAll": "Converti tutto",
         "buttons.downloadZip": "Scarica ZIP",
@@ -618,6 +640,8 @@ const DICTS = {
         "options.png": "PNG",
         "options.webp": "WEBP",
         "options.jpgQuality": "JPG-kwaliteit",
+        "options.cpuUsage": "CPU-gebruik",
+        "options.cpuWarn": "⚠️ Hoog CPU-gebruik (75%+) kan je pc vertragen, afhankelijk van de hardware.",
 
         "buttons.convertAll": "Alles converteren",
         "buttons.downloadZip": "ZIP downloaden",
@@ -673,6 +697,8 @@ const DICTS = {
         "options.png": "PNG",
         "options.webp": "WEBP",
         "options.jpgQuality": "Jakość JPG",
+        "options.cpuUsage": "Użycie CPU",
+        "options.cpuWarn": "⚠️ Wysokie użycie CPU (75%+) może spowolnić komputer w zależności od sprzętu.",
 
         "buttons.convertAll": "Konwertuj wszystko",
         "buttons.downloadZip": "Pobierz ZIP",
@@ -728,6 +754,8 @@ const DICTS = {
         "options.png": "PNG",
         "options.webp": "WEBP",
         "options.jpgQuality": "JPG kalitesi",
+        "options.cpuUsage": "CPU kullanımı",
+        "options.cpuWarn": "⚠️ Yüksek CPU kullanımı (%75+) donanım özelliklerine bağlı olarak bilgisayarınızı yavaşlatabilir.",
 
         "buttons.convertAll": "Hepsini dönüştür",
         "buttons.downloadZip": "ZIP indir",

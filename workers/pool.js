@@ -1,6 +1,7 @@
 // ./workers/pool.js
-export function createWorkerPool(workerUrl) {
-    const workers = Array.from({ length: DEFAULT_CONCURRENCY }, () => new Worker(workerUrl, { type: 'module' }));
+export function createWorkerPool(workerUrl, opts = {}) {
+    const pct = Number.isFinite(opts.concurrencyPct) ? opts.concurrencyPct : 100;
+    const workers = Array.from({ length: computeConcurrencyFromPct(pct) }, () => new Worker(workerUrl, { type: 'module' }));
     const idle = [...workers];
     const queue = [];
     const inflight = new Map(); // id -> { resolve, reject, worker }
@@ -68,6 +69,14 @@ export function createWorkerPool(workerUrl) {
     return { run, terminate };
 }
 
+export function computeConcurrencyFromPct(concurrencyPct) {
+    const base = MAX_CONCURRENCY;
+    const p = Math.max(1, Math.min(100, Math.round(concurrencyPct)));
+    const computed = Math.max(1, Math.min(base, Math.round((base * p) / 100)));
+    console.log(`Computed concurrency from pct ${concurrencyPct}%: ${computed} (base: ${base})`);
+    return computed;
+}
+
 export async function runWithLimit(items, limit, fn) {
     const executing = new Set();
 
@@ -86,8 +95,7 @@ export async function runWithLimit(items, limit, fn) {
     await Promise.allSettled(Array.from(executing));
 }
 
-export const DEFAULT_CONCURRENCY = navigator.hardwareConcurrency
-    ? Math.max(1, Math.min(30, Math.floor(navigator.hardwareConcurrency/1.5)))
-    : 2;
+export const MAX_CONCURRENCY = navigator.hardwareConcurrency
+    ? Math.max(1, navigator.hardwareConcurrency) : 2;
 
-console.log(`Using concurrency limit: ${DEFAULT_CONCURRENCY}`);
+console.log(`Using concurrency limit: ${MAX_CONCURRENCY}`);
