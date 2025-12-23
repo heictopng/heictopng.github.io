@@ -284,3 +284,115 @@ select, input[type="range"] {
   min-width: 3.5ch;
   text-align: right;
 }
+
+/* ---------------------------
+   SEO / FAQ section styling
+---------------------------- */
+
+/* Wrap your SEO content in a container like <section class="seo"> ... */
+.seo {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+
+.seo h2,
+.seo h3 {
+  margin: 0 0 10px;
+  font-size: 16px;
+  color: var(--text);
+}
+
+.seo p {
+  margin: 0 0 12px;
+  color: var(--muted);
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+/* FAQ list container */
+.faq {
+  margin-top: 12px;
+  display: grid;
+  gap: 10px;
+}
+
+/* Best UX: <details class="faq-item"><summary>Question</summary><div class="faq-body">Answer</div></details> */
+.faq-item {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #0f1318;
+  overflow: hidden;
+}
+
+/* Summary header */
+.faq-item > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 12px 14px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+  user-select: none;
+  color: var(--text);
+  font-size: 14px;
+}
+
+/* Remove default triangle in Chromium */
+.faq-item > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Custom chevron */
+.faq-item > summary::after {
+  content: "›";
+  color: var(--muted);
+  font-size: 20px;
+  line-height: 1;
+  transform: rotate(0deg);
+  transition: transform 160ms ease, color 160ms ease;
+}
+
+/* Open state */
+.faq-item[open] > summary {
+  border-bottom: 1px solid var(--border);
+}
+
+.faq-item[open] > summary::after {
+  transform: rotate(90deg);
+  color: var(--accent);
+}
+
+/* Hover/focus polish */
+.faq-item > summary:hover {
+  background: rgba(77,163,255,0.06);
+}
+
+.faq-item > summary:focus {
+  outline: none;
+}
+
+.faq-item > summary:focus-visible {
+  outline: 2px solid rgba(77,163,255,0.35);
+  outline-offset: 2px;
+  border-radius: 12px;
+}
+
+/* Answer body */
+.faq-body {
+  padding: 12px 14px 14px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+/* Optional: "synonyms/keywords" line */
+.seo-synonyms {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border);
+  color: var(--muted);
+  font-size: 12px;
+}
