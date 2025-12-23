@@ -87,7 +87,6 @@ export function createConverter({ els, state, render }) {
                 return;
             }
 
-            // --- NEW: worker already encoded + thumb ---
             if (msg.encoded && msg.thumb) {
                 const outBlob = new Blob([msg.encoded], { type: msg.encodedMime || mime });
                 const thumbBlob = new Blob([msg.thumb], { type: msg.thumbMime || 'image/jpeg' });
