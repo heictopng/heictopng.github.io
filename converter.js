@@ -1,5 +1,5 @@
 // converter.js
-import { t } from './i18n.js';
+import { t } from './internationalization/i18n.js';
 import { encodeRgbaToBlob, imageToBlob, replaceExt, detectDecodeMode } from './convert-utils.js';
 import { makeThumbFromRgba, makeThumbFromImage } from './thumbs.js';
 import { createWorkerPool } from './workers/pool.js';

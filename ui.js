@@ -1,5 +1,5 @@
 // ui.js
-import { t } from './i18n.js';
+import { t } from './internationalization/i18n.js';
 import { removeItem, clearAll } from './state.js';
 import { runWithLimit, computeConcurrencyFromPct } from './workers/pool.js';
 

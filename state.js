@@ -1,5 +1,5 @@
 // state.js
-import { t } from './i18n.js';
+import { t } from './internationalization/i18n.js';
 
 export function createState() {
     return {

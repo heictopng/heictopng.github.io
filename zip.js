@@ -1,5 +1,5 @@
 // zip.js
-import { t } from './i18n.js';
+import { t } from './internationalization/i18n.js';
 
 async function loadJSZip() {
     // ESM build via jsDelivr. For true offline, vendor this file locally and import that instead.

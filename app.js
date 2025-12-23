@@ -1,5 +1,5 @@
 // app.js
-import { translateDocument } from './i18n.js';
+import { translateDocument } from './internationalization/i18n.js';
 import { createState } from './state.js';
 import { initUI, render } from './ui.js';
 import { createConverter } from './converter.js';

@@ -4,12 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title data-i18n="meta.title">HEIC &amp; HEIF & HIF to JPG Converter – Free, Offline &amp; Private (No Uploads)</title>
-
-  <meta name="description"
-        data-i18n="meta.description"
-        data-i18n-attr="content"
-        content="Convert HEIC, HEIF &amp; HIF images to JPG, PNG or WEBP directly in your browser. No uploads, works offline, and keeps your photos private with fast, local processing on desktop and mobile devices." />
+  <title data-i18n="meta.title">HEIC &amp; HEIF &amp; HIF to JPG Converter – Free, Offline &amp; Private (No Uploads)</title>
+  <meta
+    name="description"
+    data-i18n="meta.description"
+    data-i18n-attr="content"
+    content="Convert HEIC, HEIF &amp; HIF images to JPG, PNG or WEBP directly in your browser. No uploads, works offline, and keeps your photos private with fast, local processing on desktop and mobile devices."
+  />
 
   <link rel="icon" type="image/png" href="./assets/favicon_flat.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon.png" />
@@ -20,7 +21,7 @@
 </head>
 <body>
   <header class="header">
-    <h1 data-i18n="header.title">HEIF → JPG/PNG</h1>
+    <h1 data-i18n="header.title">HEIC / HEIF / HIF → JPG / PNG / WEBP</h1>
     <p class="sub" data-i18n="header.sub">Client-side. No uploads. Works offline once loaded.</p>
   </header>
 
@@ -74,13 +75,18 @@
         <button id="convertAll" class="btn primary" disabled data-i18n="buttons.convertAll">Convert all</button>
         <button id="downloadZip" class="btn" disabled data-i18n="buttons.downloadZip">Download ZIP</button>
         <button id="clearAll" class="btn" disabled data-i18n="buttons.clear">Clear</button>
-      
+
         <div class="progress">
-            <div id="progressLabel" class="progress-label"></div>
-            <progress id="progressBar" class="progress-bar" value="0" max="1" aria-label="Conversion progress"></progress>
+          <div id="progressLabel" class="progress-label"></div>
+          <progress
+            id="progressBar"
+            class="progress-bar"
+            value="0"
+            max="1"
+            aria-label="Conversion progress"
+          ></progress>
         </div>
-    
-        </div>
+      </div>
     </section>
 
     <section class="panel">
