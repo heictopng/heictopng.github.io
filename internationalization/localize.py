@@ -268,6 +268,21 @@ def inject_locale_meta(html: str, locale: str) -> str:
     return re.sub(r"(<head\b[^>]*>\s*)", r"\1\n" + meta_line, html, flags=re.IGNORECASE, count=1)
 
 
+def inject_base_href(html: str, nested_depth: int) -> str:
+    # Remove existing <base ...> if any
+    html = re.sub(r'^\s*<base\b[^>]*>\s*\n?', "", html, flags=re.IGNORECASE | re.MULTILINE)
+
+    prefix = "../" * nested_depth
+    base_line = f'  <base href="{prefix}" />\n'
+
+    # Insert after viewport meta if present, else right after <head>
+    viewport_re = re.compile(r'(<meta\b[^>]*name=["\']viewport["\'][^>]*>\s*)', re.IGNORECASE)
+    if viewport_re.search(html):
+        return viewport_re.sub(r"\1\n" + base_line, html, count=1)
+
+    return re.sub(r"(<head\b[^>]*>\s*)", r"\1\n" + base_line, html, flags=re.IGNORECASE, count=1)
+
+
 # ----------------------------
 # Main
 # ----------------------------
@@ -311,6 +326,7 @@ def main():
     # Output is {out}/{locale}/index.html.
     # If out="lang", file is lang/{locale}/index.html -> to root is ../../ (2 levels)
     nested_depth = 2
+    index_html = inject_base_href(index_html, nested_depth=nested_depth)
 
     # prevent duplicating canonical/hreflang if template already has them
     index_html = remove_existing_hreflang_and_canonical(index_html)
