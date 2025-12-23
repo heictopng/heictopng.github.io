@@ -20,6 +20,9 @@ SEO:
   - Injects <link rel="canonical" ...>
   - Injects <link rel="alternate" hreflang="..." ...> for all locales + x-default
 
+Locale lock (prevents “flash to English”):
+  - Injects: <meta name="app:locale" content="{locale}">
+
 Paths:
   - Rewrites href/src/url(./...) so pages work from nested /lang/{locale}/
 
@@ -46,13 +49,12 @@ def load_dicts_via_node(dict_file: Path, node_helper: Path) -> Dict[str, Dict[st
     """
     cmd = ["node", str(node_helper), str(dict_file)]
 
-    # NOTE: text=True uses system encoding unless you set encoding explicitly.
     res = subprocess.run(
         cmd,
         capture_output=True,
         text=True,
         encoding="utf-8",
-        errors="strict"  # use "replace" if you prefer not to hard-fail
+        errors="strict",  # use "replace" if you prefer not to hard-fail
     )
 
     if res.returncode != 0:
@@ -123,7 +125,7 @@ def translate_text_nodes_data_i18n(html: str, d: Dict[str, str], fallback: Dict[
         key = m.group("key")
         val = d.get(key, fallback.get(key, key))
 
-        closing = m.group(7)  # ✅ THIS is the closing tag
+        closing = m.group(7)
         return f"{opening}{html_escape(val)}{closing}"
 
     return pattern.sub(repl, html)
@@ -240,6 +242,32 @@ def inject_before_head_close(html: str, injection: str) -> str:
     return re.sub(r"</head>", injection + "</head>", html, flags=re.IGNORECASE, count=1)
 
 
+def inject_locale_meta(html: str, locale: str) -> str:
+    """
+    Inserts: <meta name="app:locale" content="{locale}">
+    right after the viewport meta if present, otherwise after <meta charset>, otherwise after <head>.
+    Removes any existing app:locale meta first to avoid duplicates.
+    """
+    html = re.sub(
+        r'^\s*<meta\s+name=["\']app:locale["\'][^>]*>\s*\n?',
+        "",
+        html,
+        flags=re.IGNORECASE | re.MULTILINE,
+    )
+
+    meta_line = f'  <meta name="app:locale" content="{html_escape(locale)}" />\n'
+
+    viewport_re = re.compile(r'(<meta\b[^>]*name=["\']viewport["\'][^>]*>\s*)', re.IGNORECASE)
+    if viewport_re.search(html):
+        return viewport_re.sub(r"\1\n" + meta_line, html, count=1)
+
+    charset_re = re.compile(r'(<meta\b[^>]*charset=["\'][^"\']+["\'][^>]*>\s*)', re.IGNORECASE)
+    if charset_re.search(html):
+        return charset_re.sub(r"\1\n" + meta_line, html, count=1)
+
+    return re.sub(r"(<head\b[^>]*>\s*)", r"\1\n" + meta_line, html, flags=re.IGNORECASE, count=1)
+
+
 # ----------------------------
 # Main
 # ----------------------------
@@ -292,6 +320,8 @@ def main():
         html = index_html
 
         html = set_html_lang(html, locale)
+        html = inject_locale_meta(html, locale)
+
         html = set_attribute_for_data_i18n_attr(html, d, fallback)
         html = set_attribute_from_data_key(html, "data-i18n-aria-label", "aria-label", d, fallback)
         html = set_attribute_from_data_key(html, "data-i18n-title", "title", d, fallback)

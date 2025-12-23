@@ -2,6 +2,9 @@
 import { DICTS } from './dicts.js';
 
 function getInitialLocale() {
+    const meta = document.querySelector('meta[name="app:locale"]')?.getAttribute("content");
+    if (meta && DICTS[meta]) return meta;
+    
     const params = new URLSearchParams(location.search);
     const fromQuery = params.get("lang");
     if (fromQuery && DICTS[fromQuery]) return fromQuery;
@@ -11,7 +14,7 @@ function getInitialLocale() {
 
     const nav = (navigator.language || "en").split("-")[0];
     return DICTS[nav] ? nav : "en";
-}
+};
 
 const state = {
     locale: getInitialLocale()
