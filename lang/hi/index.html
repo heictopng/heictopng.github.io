@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="hi" data-i18n-root>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title data-i18n="meta.title">HEIC/HEIF से JPG कनवर्टर – फ्री, ऑफ़लाइन और प्राइवेट (नो अपलोड्स)</title>
+  <meta
+    name="description"
+    data-i18n="meta.description"
+    data-i18n-attr="content"
+    content="HEIC, HEIF और HIF इमेज को JPG, PNG या WEBP में सीधे ब्राउज़र में कनवर्ट करें। कोई अपलोड नहीं, लोड होने के बाद ऑफ़लाइन काम करता है और तेज़ लोकल प्रोसेसिंग से आपकी फ़ोटो प्राइवेट रहती हैं — डेस्कटॉप और मोबाइल पर।"
+  />
+<link rel="alternate" hreflang="es" href="https://heictopng.github.io/lang/es/" />
+<link rel="alternate" hreflang="ja" href="https://heictopng.github.io/lang/ja/" />
+<link rel="alternate" hreflang="ar" href="https://heictopng.github.io/lang/ar/" />
+<link rel="alternate" hreflang="de" href="https://heictopng.github.io/lang/de/" />
+<link rel="alternate" hreflang="ru" href="https://heictopng.github.io/lang/ru/" />
+<link rel="alternate" hreflang="nl" href="https://heictopng.github.io/lang/nl/" />
+<link rel="alternate" hreflang="tr" href="https://heictopng.github.io/lang/tr/" />
+<link rel="icon" type="image/png" href="../../assets/favicon_flat.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicon.png" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9130038212194388"
+    crossorigin="anonymous"></script>
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d18462b4c6434be6b1f764da28ce7441"}'></script>
+  <!-- SEO: canonical + hreflang alternates -->
+  <link rel="canonical" href="https://heictopng.github.io/lang/hi/" />
+  <link rel="alternate" hreflang="en" href="https://heictopng.github.io/lang/en/" />
+  <link rel="alternate" hreflang="es" href="https://heictopng.github.io/lang/es/" />
+  <link rel="alternate" hreflang="pt" href="https://heictopng.github.io/lang/pt/" />
+  <link rel="alternate" hreflang="ja" href="https://heictopng.github.io/lang/ja/" />
+  <link rel="alternate" hreflang="zh" href="https://heictopng.github.io/lang/zh/" />
+  <link rel="alternate" hreflang="ar" href="https://heictopng.github.io/lang/ar/" />
+  <link rel="alternate" hreflang="hi" href="https://heictopng.github.io/lang/hi/" />
+  <link rel="alternate" hreflang="de" href="https://heictopng.github.io/lang/de/" />
+  <link rel="alternate" hreflang="fr" href="https://heictopng.github.io/lang/fr/" />
+  <link rel="alternate" hreflang="ru" href="https://heictopng.github.io/lang/ru/" />
+  <link rel="alternate" hreflang="it" href="https://heictopng.github.io/lang/it/" />
+  <link rel="alternate" hreflang="nl" href="https://heictopng.github.io/lang/nl/" />
+  <link rel="alternate" hreflang="pl" href="https://heictopng.github.io/lang/pl/" />
+  <link rel="alternate" hreflang="tr" href="https://heictopng.github.io/lang/tr/" />
+  <link rel="alternate" hreflang="x-default" href="https://heictopng.github.io/lang/en/" />
+</head>
+<body>
+  <header class="header">
+    <h1 data-i18n="header.title">HEIC / HEIF / HIF → JPG / PNG / WEBP</h1>
+    <p class="sub" data-i18n="header.sub">डिवाइस पर ही प्रोसेसिंग। कोई अपलोड नहीं। लोड होने के बाद ऑफ़लाइन काम करता है।</p>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <div class="options" style="margin-bottom: 15px; gap: 0px;">
+        <label>
+          <span data-i18n="options.cpuUsage">CPU उपयोग</span>
+          <input id="concurrencyPct" type="range" min="10" max="100" step="5" value="70" />
+          <span id="concurrencyPctVal">70%</span>
+        </label>
+        <div id="concurrencyWarn" class="sub" hidden data-i18n="options.cpuWarn">⚠️ CPU का अधिक उपयोग (75%+) आपके हार्डवेयर के अनुसार PC को धीमा कर सकता है।</div>
+      </div>
+
+      <div
+        id="dropzone"
+        class="dropzone"
+        tabindex="0"
+        role="button"
+        aria-label="HEIC / HEIF / HIF फ़ाइलें यहाँ छोड़ें"
+        data-i18n-aria-label="dropzone.ariaLabel"
+      >
+        <div class="dropzone-inner">
+          <strong data-i18n="dropzone.strong">.heic / .heif / .hif फ़ाइलें छोड़ें</strong>
+          <span data-i18n="dropzone.or">या</span>
+          <label class="btn">
+            <span data-i18n="dropzone.choose">फ़ाइलें चुनें</span>
+            <input id="fileInput" type="file" accept=".heic,.heif,.hif,image/heic,image/heif" multiple hidden />
+          </label>
+        </div>
+      </div>
+
+      <div class="options">
+        <label>
+          <span data-i18n="options.output">आउटपुट</span>
+          <select id="format">
+            <option value="image/jpeg" data-i18n="options.jpg">JPG</option>
+            <option value="image/png" data-i18n="options.png">PNG</option>
+            <option value="image/webp" data-i18n="options.webp">WEBP</option>
+          </select>
+        </label>
+
+        <label id="qualityWrap">
+          <span data-i18n="options.jpgQuality">JPG गुणवत्ता</span>
+          <input id="quality" type="range" min="0.1" max="1" step="0.05" value="1" />
+          <span id="qualityVal">1.00</span>
+        </label>
+
+        <button id="convertAll" class="btn primary" disabled data-i18n="buttons.convertAll">सभी कनवर्ट करें</button>
+        <button id="downloadZip" class="btn" disabled data-i18n="buttons.downloadZip">ZIP डाउनलोड करें</button>
+        <button id="clearAll" class="btn" disabled data-i18n="buttons.clear">साफ़ करें</button>
+
+        <div class="progress">
+          <div id="progressLabel" class="progress-label"></div>
+          <progress
+            id="progressBar"
+            class="progress-bar"
+            value="0"
+            max="1"
+            aria-label="Conversion progress"
+          ></progress>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2 data-i18n="queue.title">कतार</h2>
+      <div id="list" class="grid"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small data-i18n="footer.tip">सुझाव: टैब को सक्रिय रखने से बड़े बैच तेज़ी से प्रोसेस होते हैं।</small>
+  </footer>
+
+  <div id="zipOverlay" class="overlay" hidden aria-live="polite" aria-busy="true">
+    <div class="overlay-card" role="dialog" aria-modal="true">
+      <div class="spinner" aria-hidden="true"></div>
+
+      <div class="overlay-title" data-i18n="zip.overlay.title">ZIP बनाया जा रहा है…</div>
+      <div id="zipOverlayLabel" class="overlay-sub">0%</div>
+
+      <progress id="zipOverlayBar" class="overlay-bar" value="0" max="1"></progress>
+    </div>
+  </div>
+
+  <script type="module" src="../../app.js"></script>
+</body>
+</html>

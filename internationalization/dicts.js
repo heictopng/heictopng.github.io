@@ -1,3 +1,5 @@
+// internationalization/dicts.js
+
 export const DICTS = {
     en: {
         // SEO
@@ -833,8 +835,7 @@ export const DICTS = {
         // SEO
         "meta.title": "HEIC & HEIF’ten JPG’ye Dönüştürücü – Ücretsiz, çevrimdışı ve gizli (yükleme yok)",
         "meta.description":
-            "HEIC, HEIF ve HIF görsellerini tarayıcıda doğrudan JPG, PNG veya WEBP’ye dönüştürün. Yükleme yok, yüklendikten sonra çevrimdışı çalışır ve masaüstü ile мобил cihazlarda hızlı yerel işlemle fotoğraflarınızı gizli tutar.",
-
+             "HEIC, HEIF ve HIF görsellerini tarayıcıda doğrudan JPG, PNG veya WEBP’ye dönüştürün. Yükleme yok, yüklendikten sonra çevrimdışı çalışır ve masaüstü ve mobil cihazlarda hızlı yerel işlemle fotoğraflarınızı gizli tutar.",
         // Existing UI
         "app.title": "HEIC / HEIF / HIF (.hif/.heic) → JPG / PNG / WEBP Dönüştürücü",
         "header.title": "HEIC / HEIF / HIF → JPG / PNG / WEBP",

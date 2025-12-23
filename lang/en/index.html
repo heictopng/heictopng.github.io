@@ -4,14 +4,27 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title data-i18n="meta.title">HEIC &amp; HEIF &amp; HIF to JPG Converter – Free, Offline &amp; Private (No Uploads)</title>
+  <title data-i18n="meta.title">HEIC &amp; HEIF to JPG Converter – Free, Offline &amp; Private (No Uploads)</title>
   <meta
     name="description"
     data-i18n="meta.description"
     data-i18n-attr="content"
     content="Convert HEIC, HEIF &amp; HIF images to JPG, PNG or WEBP directly in your browser. No uploads, works offline, and keeps your photos private with fast, local processing on desktop and mobile devices."
   />
-
+<link rel="alternate" hreflang="es" href="https://heictopng.github.io/lang/es/" />
+<link rel="alternate" hreflang="ja" href="https://heictopng.github.io/lang/ja/" />
+<link rel="alternate" hreflang="ar" href="https://heictopng.github.io/lang/ar/" />
+<link rel="alternate" hreflang="de" href="https://heictopng.github.io/lang/de/" />
+<link rel="alternate" hreflang="ru" href="https://heictopng.github.io/lang/ru/" />
+<link rel="alternate" hreflang="nl" href="https://heictopng.github.io/lang/nl/" />
+<link rel="alternate" hreflang="tr" href="https://heictopng.github.io/lang/tr/" />
+<link rel="icon" type="image/png" href="../../assets/favicon_flat.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicon.png" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9130038212194388"
+    crossorigin="anonymous"></script>
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d18462b4c6434be6b1f764da28ce7441"}'></script>
+  <!-- SEO: canonical + hreflang alternates -->
   <link rel="canonical" href="https://heictopng.github.io/lang/en/" />
   <link rel="alternate" hreflang="en" href="https://heictopng.github.io/lang/en/" />
   <link rel="alternate" hreflang="es" href="https://heictopng.github.io/lang/es/" />
@@ -28,13 +41,6 @@
   <link rel="alternate" hreflang="pl" href="https://heictopng.github.io/lang/pl/" />
   <link rel="alternate" hreflang="tr" href="https://heictopng.github.io/lang/tr/" />
   <link rel="alternate" hreflang="x-default" href="https://heictopng.github.io/lang/en/" />
-
-  <link rel="icon" type="image/png" href="./assets/favicon_flat.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon.png" />
-  <link rel="stylesheet" href="./styles.css" />
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9130038212194388"
-    crossorigin="anonymous"></script>
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d18462b4c6434be6b1f764da28ce7441"}'></script>
 </head>
 <body>
   <header class="header">
@@ -50,9 +56,7 @@
           <input id="concurrencyPct" type="range" min="10" max="100" step="5" value="70" />
           <span id="concurrencyPctVal">70%</span>
         </label>
-        <div id="concurrencyWarn" class="sub" hidden data-i18n="options.cpuWarn">
-          ⚠️ High CPU usage (75%+) may slow down your PC depending on hardware capabilities.
-        </div>
+        <div id="concurrencyWarn" class="sub" hidden data-i18n="options.cpuWarn">⚠️ High CPU usage (75%+) may slow down your PC depending on hardware capabilities.</div>
       </div>
 
       <div
@@ -60,7 +64,7 @@
         class="dropzone"
         tabindex="0"
         role="button"
-        aria-label="Drop HEIF files here"
+        aria-label="Drop HEIC / HEIF / HIF files here"
         data-i18n-aria-label="dropzone.ariaLabel"
       >
         <div class="dropzone-inner">
@@ -127,6 +131,6 @@
     </div>
   </div>
 
-  <script type="module" src="./app.js"></script>
+  <script type="module" src="../../app.js"></script>
 </body>
 </html>

@@ -1,18 +1,31 @@
 <!doctype html>
-<html lang="en" data-i18n-root>
+<html lang="zh" data-i18n-root>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title data-i18n="meta.title">HEIC &amp; HEIF &amp; HIF to JPG Converter – Free, Offline &amp; Private (No Uploads)</title>
+  <title data-i18n="meta.title">HEIC/HEIF 转 JPG – 免费、离线、隐私（无需上传）</title>
   <meta
     name="description"
     data-i18n="meta.description"
     data-i18n-attr="content"
-    content="Convert HEIC, HEIF &amp; HIF images to JPG, PNG or WEBP directly in your browser. No uploads, works offline, and keeps your photos private with fast, local processing on desktop and mobile devices."
+    content="在浏览器中将 HEIC、HEIF、HIF 转换为 JPG、PNG 或 WEBP。无需上传，加载后可离线使用，并通过快速本地处理保护你的照片隐私，支持电脑和手机。"
   />
-
-  <link rel="canonical" href="https://heictopng.github.io/lang/en/" />
+<link rel="alternate" hreflang="es" href="https://heictopng.github.io/lang/es/" />
+<link rel="alternate" hreflang="ja" href="https://heictopng.github.io/lang/ja/" />
+<link rel="alternate" hreflang="ar" href="https://heictopng.github.io/lang/ar/" />
+<link rel="alternate" hreflang="de" href="https://heictopng.github.io/lang/de/" />
+<link rel="alternate" hreflang="ru" href="https://heictopng.github.io/lang/ru/" />
+<link rel="alternate" hreflang="nl" href="https://heictopng.github.io/lang/nl/" />
+<link rel="alternate" hreflang="tr" href="https://heictopng.github.io/lang/tr/" />
+<link rel="icon" type="image/png" href="../../assets/favicon_flat.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicon.png" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9130038212194388"
+    crossorigin="anonymous"></script>
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d18462b4c6434be6b1f764da28ce7441"}'></script>
+  <!-- SEO: canonical + hreflang alternates -->
+  <link rel="canonical" href="https://heictopng.github.io/lang/zh/" />
   <link rel="alternate" hreflang="en" href="https://heictopng.github.io/lang/en/" />
   <link rel="alternate" hreflang="es" href="https://heictopng.github.io/lang/es/" />
   <link rel="alternate" hreflang="pt" href="https://heictopng.github.io/lang/pt/" />
@@ -28,31 +41,22 @@
   <link rel="alternate" hreflang="pl" href="https://heictopng.github.io/lang/pl/" />
   <link rel="alternate" hreflang="tr" href="https://heictopng.github.io/lang/tr/" />
   <link rel="alternate" hreflang="x-default" href="https://heictopng.github.io/lang/en/" />
-
-  <link rel="icon" type="image/png" href="./assets/favicon_flat.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon.png" />
-  <link rel="stylesheet" href="./styles.css" />
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9130038212194388"
-    crossorigin="anonymous"></script>
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d18462b4c6434be6b1f764da28ce7441"}'></script>
 </head>
 <body>
   <header class="header">
     <h1 data-i18n="header.title">HEIC / HEIF / HIF → JPG / PNG / WEBP</h1>
-    <p class="sub" data-i18n="header.sub">Client-side. No uploads. Works offline once loaded.</p>
+    <p class="sub" data-i18n="header.sub">本地处理，无需上传。加载后可离线使用。</p>
   </header>
 
   <main class="container">
     <section class="panel">
       <div class="options" style="margin-bottom: 15px; gap: 0px;">
         <label>
-          <span data-i18n="options.cpuUsage">CPU usage</span>
+          <span data-i18n="options.cpuUsage">CPU 使用率</span>
           <input id="concurrencyPct" type="range" min="10" max="100" step="5" value="70" />
           <span id="concurrencyPctVal">70%</span>
         </label>
-        <div id="concurrencyWarn" class="sub" hidden data-i18n="options.cpuWarn">
-          ⚠️ High CPU usage (75%+) may slow down your PC depending on hardware capabilities.
-        </div>
+        <div id="concurrencyWarn" class="sub" hidden data-i18n="options.cpuWarn">⚠️ CPU 使用率较高（75% 以上）可能会因硬件性能不同而导致电脑变慢。</div>
       </div>
 
       <div
@@ -60,14 +64,14 @@
         class="dropzone"
         tabindex="0"
         role="button"
-        aria-label="Drop HEIF files here"
+        aria-label="将 HEIC / HEIF / HIF 文件拖到这里"
         data-i18n-aria-label="dropzone.ariaLabel"
       >
         <div class="dropzone-inner">
-          <strong data-i18n="dropzone.strong">Drop .heic/.heif/.hif files</strong>
-          <span data-i18n="dropzone.or">or</span>
+          <strong data-i18n="dropzone.strong">拖放 .heic / .heif / .hif 文件</strong>
+          <span data-i18n="dropzone.or">或</span>
           <label class="btn">
-            <span data-i18n="dropzone.choose">Choose files</span>
+            <span data-i18n="dropzone.choose">选择文件</span>
             <input id="fileInput" type="file" accept=".heic,.heif,.hif,image/heic,image/heif" multiple hidden />
           </label>
         </div>
@@ -75,7 +79,7 @@
 
       <div class="options">
         <label>
-          <span data-i18n="options.output">Output</span>
+          <span data-i18n="options.output">输出格式</span>
           <select id="format">
             <option value="image/jpeg" data-i18n="options.jpg">JPG</option>
             <option value="image/png" data-i18n="options.png">PNG</option>
@@ -84,14 +88,14 @@
         </label>
 
         <label id="qualityWrap">
-          <span data-i18n="options.jpgQuality">JPG quality</span>
+          <span data-i18n="options.jpgQuality">JPG 质量</span>
           <input id="quality" type="range" min="0.1" max="1" step="0.05" value="1" />
           <span id="qualityVal">1.00</span>
         </label>
 
-        <button id="convertAll" class="btn primary" disabled data-i18n="buttons.convertAll">Convert all</button>
-        <button id="downloadZip" class="btn" disabled data-i18n="buttons.downloadZip">Download ZIP</button>
-        <button id="clearAll" class="btn" disabled data-i18n="buttons.clear">Clear</button>
+        <button id="convertAll" class="btn primary" disabled data-i18n="buttons.convertAll">全部转换</button>
+        <button id="downloadZip" class="btn" disabled data-i18n="buttons.downloadZip">下载 ZIP</button>
+        <button id="clearAll" class="btn" disabled data-i18n="buttons.clear">清除</button>
 
         <div class="progress">
           <div id="progressLabel" class="progress-label"></div>
@@ -107,26 +111,26 @@
     </section>
 
     <section class="panel">
-      <h2 data-i18n="queue.title">Queue</h2>
+      <h2 data-i18n="queue.title">队列</h2>
       <div id="list" class="grid"></div>
     </section>
   </main>
 
   <footer class="footer">
-    <small data-i18n="footer.tip">Tip: Large batches decode faster if you keep the tab focused.</small>
+    <small data-i18n="footer.tip">提示：保持标签页激活可加快批量处理速度。</small>
   </footer>
 
   <div id="zipOverlay" class="overlay" hidden aria-live="polite" aria-busy="true">
     <div class="overlay-card" role="dialog" aria-modal="true">
       <div class="spinner" aria-hidden="true"></div>
 
-      <div class="overlay-title" data-i18n="zip.overlay.title">Creating ZIP…</div>
+      <div class="overlay-title" data-i18n="zip.overlay.title">正在创建 ZIP…</div>
       <div id="zipOverlayLabel" class="overlay-sub">0%</div>
 
       <progress id="zipOverlayBar" class="overlay-bar" value="0" max="1"></progress>
     </div>
   </div>
 
-  <script type="module" src="./app.js"></script>
+  <script type="module" src="../../app.js"></script>
 </body>
 </html>
