@@ -20,6 +20,8 @@ export function initUI() {
         zipOverlay: document.getElementById('zipOverlay'),
         zipOverlayBar: document.getElementById('zipOverlayBar'),
         zipOverlayLabel: document.getElementById('zipOverlayLabel'),
+        zipOverlayPartLabel: document.getElementById('zipOverlayPartLabel'),
+        zipOverlayPartProgress: document.getElementById('zipOverlayPartProgress'),
         concurrencyPct: document.getElementById('concurrencyPct'),
         concurrencyPctVal: document.getElementById('concurrencyPctVal'),
         concurrencyWarn: document.getElementById('concurrencyWarn'),
@@ -205,6 +207,14 @@ export function showZipOverlay(els) {
     if (els.zipOverlayLabel) {
         els.zipOverlayLabel.textContent = '0%';
     }
+
+    if (els.zipOverlayPartLabel) {
+        els.zipOverlayPartLabel.textContent = '';
+    }
+    if (els.zipOverlayPartProgress) {
+        els.zipOverlayPartProgress.max = 1;
+        els.zipOverlayPartProgress.value = 0;
+    }
 }
 
 export function updateZipOverlayProgress(els, current, total) {
@@ -229,6 +239,25 @@ export function updateZipOverlayProgress(els, current, total) {
     }
 }
 
+export function updateZipOverlayPartProgress(els, partIndex, totalParts) {
+    if (!els.zipOverlay || els.zipOverlay.hidden) return;
+
+    const safeTotal = Math.max(1, Number(totalParts || 1));
+    const safeIndex = Math.min(safeTotal, Math.max(1, Number(partIndex || 1)));
+    const ratio = safeIndex / safeTotal;
+
+    if (els.zipOverlayPartLabel) {
+        els.zipOverlayPartLabel.textContent = t('zip.overlay.part', {
+            current: safeIndex,
+            total: safeTotal
+        });
+    }
+
+    if (els.zipOverlayPartProgress) {
+        els.zipOverlayPartProgress.value = ratio;
+    }
+}
+
 export function hideZipOverlay(els) {
     if (!els.zipOverlay) return;
 
@@ -240,5 +269,13 @@ export function hideZipOverlay(els) {
 
     if (els.zipOverlayLabel) {
         els.zipOverlayLabel.textContent = '';
+    }
+
+    if (els.zipOverlayPartLabel) {
+        els.zipOverlayPartLabel.textContent = '';
+    }
+
+    if (els.zipOverlayPartProgress) {
+        els.zipOverlayPartProgress.value = 0;
     }
 }

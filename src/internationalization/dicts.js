@@ -126,6 +126,8 @@ export const DICTS = {
 
         "zip.overlay.title": "Creating ZIP…",
         "zip.overlay.progress": "{pct}% ({current}/{total})",
+        "zip.overlay.part": "ZIP {current}/{total}",
+        "zip.overlay.partProgressAria": "ZIP parts progress",
     },
 
     es: {
@@ -254,6 +256,8 @@ export const DICTS = {
 
         "zip.overlay.title": "Creando ZIP…",
         "zip.overlay.progress": "{pct}% ({current}/{total})",
+        "zip.overlay.part": "ZIP {current}/{total}",
+        "zip.overlay.partProgressAria": "Progreso de partes ZIP",
     },
 
     pt: {
@@ -382,6 +386,8 @@ export const DICTS = {
 
         "zip.overlay.title": "Criando ZIP…",
         "zip.overlay.progress": "{pct}% ({current}/{total})",
+         "zip.overlay.part": "ZIP {current}/{total}",
+        "zip.overlay.partProgressAria": "Progresso das partes ZIP",
     },
 
     ja: {
@@ -508,6 +514,8 @@ export const DICTS = {
 
         "zip.overlay.title": "ZIP を作成中…",
         "zip.overlay.progress": "{pct}%（{current}/{total}）",
+        "zip.overlay.part": "ZIP {current}/{total}",
+        "zip.overlay.partProgressAria": "ZIP 分割の進捗",
     },
 
     zh: {
@@ -634,6 +642,8 @@ export const DICTS = {
 
         "zip.overlay.title": "正在创建 ZIP…",
         "zip.overlay.progress": "{pct}%（{current}/{total}）",
+        "zip.overlay.part": "ZIP {current}/{total}",
+        "zip.overlay.partProgressAria": "ZIP 分卷进度",
     },
 
     ar: {
@@ -759,6 +769,8 @@ export const DICTS = {
 
         "zip.overlay.title": "جارٍ إنشاء ZIP…",
         "zip.overlay.progress": "{pct}% ({current}/{total})",
+        "zip.overlay.part": "ZIP {current}/{total}",
+        "zip.overlay.partProgressAria": "تقدّم أجزاء ملف ZIP",
     },
 
     hi: {
@@ -885,6 +897,8 @@ export const DICTS = {
 
         "zip.overlay.title": "ZIP बनाया जा रहा है…",
         "zip.overlay.progress": "{pct}% ({current}/{total})",
+        "zip.overlay.part": "ZIP {current}/{total}",
+        "zip.overlay.partProgressAria": "ZIP भागों की प्रगति",
     },
 
     de: {
@@ -1011,6 +1025,8 @@ export const DICTS = {
 
         "zip.overlay.title": "ZIP wird erstellt…",
         "zip.overlay.progress": "{pct}% ({current}/{total})",
+        "zip.overlay.part": "ZIP {current}/{total}",
+        "zip.overlay.partProgressAria": "Fortschritt der ZIP-Teile",
     },
 
     fr: {
@@ -1138,6 +1154,8 @@ export const DICTS = {
 
         "zip.overlay.title": "Création du ZIP…",
         "zip.overlay.progress": "{pct}% ({current}/{total})",
+        "zip.overlay.part": "ZIP {current}/{total}",
+        "zip.overlay.partProgressAria": "Progression des parties ZIP",
     },
 
     ru: {
@@ -1265,6 +1283,8 @@ export const DICTS = {
 
         "zip.overlay.title": "Создание ZIP…",
         "zip.overlay.progress": "{pct}% ({current}/{total})",
+        "zip.overlay.part": "ZIP {current}/{total}",
+        "zip.overlay.partProgressAria": "Прогресс частей ZIP",
     },
 
     it: {
@@ -1391,6 +1411,8 @@ export const DICTS = {
 
         "zip.overlay.title": "Creazione ZIP…",
         "zip.overlay.progress": "{pct}% ({current}/{total})",
+        "zip.overlay.part": "ZIP {current}/{total}",
+        "zip.overlay.partProgressAria": "Avanzamento parti ZIP",
     },
 
     nl: {
@@ -1517,6 +1539,8 @@ export const DICTS = {
 
         "zip.overlay.title": "ZIP maken…",
         "zip.overlay.progress": "{pct}% ({current}/{total})",
+        "zip.overlay.part": "ZIP {current}/{total}",
+        "zip.overlay.partProgressAria": "Voortgang ZIP-delen",
     },
 
     pl: {
@@ -1643,6 +1667,8 @@ export const DICTS = {
 
         "zip.overlay.title": "Tworzenie ZIP…",
         "zip.overlay.progress": "{pct}% ({current}/{total})",
+        "zip.overlay.part": "ZIP {current}/{total}",
+        "zip.overlay.partProgressAria": "Postęp części ZIP",
     },
 
     tr: {
@@ -1769,5 +1795,7 @@ export const DICTS = {
 
         "zip.overlay.title": "ZIP oluşturuluyor…",
         "zip.overlay.progress": "{pct}% ({current}/{total})",
+        "zip.overlay.part": "ZIP {current}/{total}",
+        "zip.overlay.partProgressAria": "ZIP parçaları ilerlemesi",
     },
 };

@@ -345,6 +345,13 @@ export async function downloadAllAsZip({ state, render, els }) {
         for (let partIndex = 0; partIndex < batches.length; partIndex++) {
             const batch = batches[partIndex];
 
+            if (els.zipOverlayPartLabel) {
+                els.zipOverlayPartLabel.textContent = `${partIndex + 1}/${batches.length}`;
+            }
+            if (els.zipOverlayPartProgress) {
+                els.zipOverlayPartProgress.value = (partIndex + 1) / batches.length;
+            }
+
             await buildAndDownloadZipStreaming({
                 fflate,
                 batch,
