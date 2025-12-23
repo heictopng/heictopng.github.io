@@ -295,7 +295,7 @@ def main():
     ap.add_argument("--base-url", required=True, help="Public base URL, e.g. https://heictopng.github.io")
     ap.add_argument("--prefix", default="lang", help="URL prefix for localized pages (default: lang)")
     ap.add_argument("--x-default", default="en", help="Default language for hreflang x-default (default: en)")
-    ap.add_argument("--node-helper", default="internationalization/read_dicts.mjs",
+    ap.add_argument("--node-helper", default="src/internationalization/read_dicts.mjs",
                     help="Path to Node helper that imports dicts.js and prints DICTS as JSON")
     args = ap.parse_args()
 

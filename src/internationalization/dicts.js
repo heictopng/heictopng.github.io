@@ -34,7 +34,7 @@ export const DICTS = {
 
         "footer.tip": "Tip: Large batches decode faster if you keep the tab focused.",
 
-        // Runtime strings (app.js)
+        // Runtime strings (src/app.js)
         "card.noPreview": "No preview yet",
         "card.convert": "Convert",
         "card.reconvert": "Re-convert",
@@ -97,7 +97,7 @@ export const DICTS = {
 
         "footer.tip": "Consejo: Los lotes grandes decodifican más rápido si mantienes la pestaña activa.",
 
-        // Runtime strings (app.js)
+        // Runtime strings (src/app.js)
         "card.noPreview": "Sin vista previa",
         "card.convert": "Convertir",
         "card.reconvert": "Reconvertir",

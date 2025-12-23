@@ -1,0 +1,13 @@
+# robots.txt for https://heictopng.github.io/
+
+User-agent: *
+Allow: /
+
+# (Optional but recommended) avoid indexing query-parameter variants like ?lang=es
+Disallow: /*?lang=
+Disallow: /*&lang=
+Disallow: /internationalization/
+Disallow: /src/
+Disallow: /vendor/
+
+Sitemap: https://heictopng.github.io/sitemap.xml
