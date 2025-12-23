@@ -8,6 +8,17 @@ import { createWorkerPool } from './workers/pool.js';
 export function createConverter({ els, state, render }) {
     const pool = createWorkerPool('./src/workers/worker.mjs', { concurrencyPct: Number(els.concurrencyPct?.value ?? 100) });
 
+    function thumbsEnabled() {
+        // TODO: future settings
+        return true;
+    }
+
+    function clearThumb(item) {
+        item.thumbError = false;
+        if (item.thumbUrl) URL.revokeObjectURL(item.thumbUrl);
+        item.thumbUrl = null;
+    }
+
     async function handleDecodedMessage({ msg, item }) {
         if (!msg.ok) {
             item.status = t('status.error', { msg: msg.error });
@@ -25,19 +36,24 @@ export function createConverter({ els, state, render }) {
 
             const blob = await encodeRgbaToBlob(msg.rgba, msg.width, msg.height, mime, quality);
 
-            try {
-                const thumbBlob = await makeThumbFromRgba(msg.rgba, msg.width, msg.height);
+            if (!thumbsEnabled()) {
                 msg.rgba = null;
-                item.thumbError = false;
+                clearThumb(item);
+            } else {
+                try {
+                    const thumbBlob = await makeThumbFromRgba(msg.rgba, msg.width, msg.height);
+                    msg.rgba = null;
+                    item.thumbError = false;
 
-                if (item.thumbUrl) URL.revokeObjectURL(item.thumbUrl);
-                item.thumbUrl = URL.createObjectURL(thumbBlob);
-            } catch {
-                msg.rgba = null;
-                item.thumbError = true;
+                    if (item.thumbUrl) URL.revokeObjectURL(item.thumbUrl);
+                    item.thumbUrl = URL.createObjectURL(thumbBlob);
+                } catch {
+                    msg.rgba = null;
+                    item.thumbError = true;
 
-                if (item.thumbUrl) URL.revokeObjectURL(item.thumbUrl);
-                item.thumbUrl = null;
+                    if (item.thumbUrl) URL.revokeObjectURL(item.thumbUrl);
+                    item.thumbUrl = null;
+                }
             }
 
             const ext = mime === 'image/png' ? 'png' : (mime === 'image/webp' ? 'webp' : 'jpg');
@@ -74,9 +90,9 @@ export function createConverter({ els, state, render }) {
                     arrayBuffer,
                     mime,
                     quality,
-                    thumbMax: 300
+                    thumbMax: thumbsEnabled() ? 300 : 0,
                 },
-                transfer: [arrayBuffer]
+                transfer: [arrayBuffer],
             });
 
             // Error
@@ -89,7 +105,11 @@ export function createConverter({ els, state, render }) {
 
             if (msg.encoded && msg.thumb) {
                 const outBlob = new Blob([msg.encoded], { type: msg.encodedMime || mime });
-                const thumbBlob = new Blob([msg.thumb], { type: msg.thumbMime || 'image/jpeg' });
+
+                let thumbBlob = null;
+                if (thumbsEnabled() && msg.thumb) {
+                    thumbBlob = new Blob([msg.thumb], { type: msg.thumbMime || 'image/jpeg' });
+                }
 
                 // Release large buffers ASAP
                 msg.encoded = null;
@@ -98,9 +118,13 @@ export function createConverter({ els, state, render }) {
                 const ext = mime === 'image/png' ? 'png' : (mime === 'image/webp' ? 'webp' : 'jpg');
                 item.outName = replaceExt((item.file?.name || item.originalName || ''), ext);
 
-                if (item.thumbUrl) URL.revokeObjectURL(item.thumbUrl);
-                item.thumbUrl = URL.createObjectURL(thumbBlob);
-                item.thumbError = false;
+                if (thumbsEnabled() && thumbBlob) {
+                    if (item.thumbUrl) URL.revokeObjectURL(item.thumbUrl);
+                    item.thumbUrl = URL.createObjectURL(thumbBlob);
+                    item.thumbError = false;
+                } else {
+                    clearThumb(item);
+                }
 
                 item.outBlob = outBlob;
                 item.status = t('status.ready', { fmt: ext.toUpperCase() });
@@ -132,6 +156,9 @@ export function createConverter({ els, state, render }) {
         item.outBlob = null;
         item.outName = null;
         item.thumbError = false;
+
+        if (!thumbsEnabled()) clearThumb(item);
+
         render();
 
         const mime = els.format.value;
@@ -163,17 +190,21 @@ export function createConverter({ els, state, render }) {
                 item.outName = replaceExt((item.file?.name || item.originalName || ''), ext);
                 item.status = t('status.ready', { fmt: ext.toUpperCase() });
 
-                try {
-                    const thumbBlob = await makeThumbFromImage(img);
-                    item.thumbError = false;
+                if (!thumbsEnabled()) {
+                    clearThumb(item);
+                } else {
+                    try {
+                        const thumbBlob = await makeThumbFromImage(img);
+                        item.thumbError = false;
 
-                    if (item.thumbUrl) URL.revokeObjectURL(item.thumbUrl);
-                    item.thumbUrl = URL.createObjectURL(thumbBlob);
-                } catch {
-                    item.thumbError = true;
+                        if (item.thumbUrl) URL.revokeObjectURL(item.thumbUrl);
+                        item.thumbUrl = URL.createObjectURL(thumbBlob);
+                    } catch {
+                        item.thumbError = true;
 
-                    if (item.thumbUrl) URL.revokeObjectURL(item.thumbUrl);
-                    item.thumbUrl = null;
+                        if (item.thumbUrl) URL.revokeObjectURL(item.thumbUrl);
+                        item.thumbUrl = null;
+                    }
                 }
 
                 // Reduce retained RAM

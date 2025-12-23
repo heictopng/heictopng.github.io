@@ -104,21 +104,17 @@ select, input[type="range"] {
   aspect-ratio: 4 / 3;
   background: #000;
   overflow: hidden;
-
-  /* center child */
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-/* Image: fit inside in BOTH directions */
 .thumb img {
   display: block;
-  width: auto;        /* important: don't force 100% */
-  height: auto;       /* important: don't force 100% */
+  width: auto;
+  height: auto;
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain;      /* fine to keep */
+  object-fit: contain;
   object-position: center;
 }
 .meta {
@@ -298,6 +294,11 @@ select, input[type="range"] {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 16px;
+}
+
+.panel.seo {
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
 .seo h2,
