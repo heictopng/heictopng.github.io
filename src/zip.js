@@ -1,10 +1,10 @@
 // zip.js
 import { t } from './internationalization/i18n.js';
 
-// ESM build via jsDelivr. For true offline, vendor this file locally and import that instead.
-async function loadJSZip() {
-    const mod = await import('https://cdn.jsdelivr.net/npm/jszip@3.10.1/+esm');
-    return mod.default;
+// Streaming ZIP via fflate.
+// For true offline, vendor this file locally and import that instead.
+async function loadFflate() {
+    return await import('https://cdn.jsdelivr.net/npm/fflate@0.8.2/esm/browser.js');
 }
 
 function downloadBlob(blob, filename) {
@@ -93,8 +93,8 @@ function getZipSizeEstimate(converted) {
     const { mean, sampled } = sampleMeanSize(blobs, 3);
     const estTotalInput = estimateTotalBytesFromMean(mean, blobs.length);
 
-    // JSZip is memory-hungry: input buffers + internal buffers + output blob
-    const estPeakRam = estimatePeakRamBytes(estTotalInput, 3.0);
+    // With streaming, peak RAM is much lower, but keep conservative estimate.
+    const estPeakRam = estimatePeakRamBytes(estTotalInput, 1.5);
 
     const usableRam = estimateUsableRamBytes();
 
@@ -110,7 +110,7 @@ function getZipSizeEstimate(converted) {
 
 // ---------- Split + cleanup helpers ----------
 
-function computeItemsPerZip(est, peakMultiplier = 3.0) {
+function computeItemsPerZip(est, peakMultiplier = 1.5) {
     const mean = est.meanBytes || 0;
     if (mean <= 0) return 1;
 
@@ -143,44 +143,155 @@ async function yieldForGC() {
     }
 }
 
-async function buildAndDownloadZip({ JSZip, batch, partIndex, totalParts, els }) {
+function canStreamToDisk() {
+    return typeof window !== 'undefined' && typeof window.showSaveFilePicker === 'function';
+}
+
+function canPickDirectory() {
+    return typeof window !== 'undefined' && typeof window.showDirectoryPicker === 'function';
+}
+
+async function streamBlobIntoZipEntry(fflate, zip, name, blob, onChunkProgress) {
+    const def = new fflate.ZipDeflate(name, { level: 6 });
+    zip.add(def);
+
+    const reader = blob.stream().getReader();
+    try {
+        while (true) {
+            const { value, done } = await reader.read();
+            if (done) break;
+            def.push(value, false);
+            if (onChunkProgress) onChunkProgress(value.byteLength);
+        }
+        def.push(new Uint8Array(0), true);
+    } finally {
+        try { reader.releaseLock(); } catch (_) { /* noop */ }
+    }
+}
+
+async function createZipWritableStream(filename) {
+    const handle = await window.showSaveFilePicker({
+        suggestedName: filename,
+        types: [
+            {
+                description: 'ZIP archive',
+                accept: { 'application/zip': ['.zip'] },
+            },
+        ],
+    });
+    return await handle.createWritable();
+}
+
+async function createMultiZipWriter(totalParts) {
+    // Best: one prompt, write multiple files into chosen directory (Chromium).
+    if (totalParts > 1 && canPickDirectory()) {
+        const dirHandle = await window.showDirectoryPicker();
+        return {
+            async open(filename) {
+                const fileHandle = await dirHandle.getFileHandle(filename, { create: true });
+                return await fileHandle.createWritable();
+            },
+            async closeAll() { },
+        };
+    }
+
+    // Fallback: one save dialog per part (may be blocked by browsers, but this is the only
+    // true stream-to-disk option without directory access).
+    if (canStreamToDisk()) {
+        return {
+            async open(filename) {
+                return await createZipWritableStream(filename);
+            },
+            async closeAll() { },
+        };
+    }
+
+    // No disk streaming available.
+    return {
+        async open() { return null; },
+        async closeAll() { },
+    };
+}
+
+async function buildZipStream({ fflate, batch, els, writable }) {
+    const totalBytes = batch.reduce((sum, item) => sum + (item.outBlob?.size || 0), 0);
+    let processedBytes = 0;
+
+    const onProgress = (delta) => {
+        processedBytes += delta;
+        const pct = totalBytes > 0 ? Math.round((processedBytes / totalBytes) * 100) : 0;
+        if (els.zipOverlayBar) els.zipOverlayBar.value = pct / 100;
+        if (els.zipOverlayLabel) els.zipOverlayLabel.textContent = `${pct}%`;
+    };
+
     let zip = null;
-    let zipBlob = null;
+    let chunks = null;
 
     try {
-        zip = new JSZip();
+        if (!writable) {
+            chunks = [];
+        }
+
+        zip = new fflate.Zip((err, data, final) => {
+            if (err) throw err;
+            if (data && data.length) {
+                if (writable) {
+                    writable.write(data);
+                } else {
+                    chunks.push(data);
+                }
+            }
+            if (final) {
+                // handled after zip.end()
+            }
+        });
 
         for (let i = 0; i < batch.length; i++) {
             const item = batch[i];
             const name = item.outName || fallbackName(item, i);
-            let buf = await item.outBlob.arrayBuffer();
-            zip.file(name, buf);
-            // Drop our reference ASAP (JSZip keeps what it needs internally)
-            buf = null;
+            await streamBlobIntoZipEntry(fflate, zip, name, item.outBlob, onProgress);
         }
 
-        zipBlob = await zip.generateAsync(
-            {
-                type: 'blob',
-                compression: 'DEFLATE',
-            }, (meta) => {
-                const pct = Math.round(meta.percent || 0);
-                if (els.zipOverlayBar) els.zipOverlayBar.value = pct / 100;
-                if (els.zipOverlayLabel) {
-                    els.zipOverlayLabel.textContent = `${pct}%`;
-                }
-            }
-        );
+        zip.end();
 
-        const filename = totalParts > 1
-            ? `converted_images_part${String(partIndex + 1).padStart(3, '0')}.zip`
-            : 'converted_images.zip';
+        // If writing to disk, nothing to return.
+        if (writable) return null;
 
-        downloadBlob(zipBlob, filename);
+        return new Blob(chunks, { type: 'application/zip' });
     } finally {
-        // Explicitly drop references so GC can reclaim memory sooner.
-        zipBlob = null;
         zip = null;
+        chunks = null;
+    }
+}
+
+async function buildAndDownloadZipStreaming({ fflate, batch, partIndex, totalParts, els, writer }) {
+    const filename = totalParts > 1
+        ? `converted_images_part${String(partIndex + 1).padStart(3, '0')}.zip`
+        : 'converted_images.zip';
+
+    let writable = null;
+
+    try {
+        writable = await writer.open(filename);
+
+        const zipBlob = await buildZipStream({
+            fflate,
+            batch,
+            els,
+            writable,
+        });
+
+        if (writable) {
+            await writable.close();
+        } else if (zipBlob) {
+            downloadBlob(zipBlob, filename);
+        }
+    } finally {
+        try {
+            if (writable) await writable.abort();
+        } catch (_) { /* noop */ }
+
+        writable = null;
         await yieldForGC();
     }
 }
@@ -206,7 +317,7 @@ export async function downloadAllAsZip({ state, render, els }) {
     console.info('[zip] usable RAM budget:', formatBytes(est.usableRamBytes));
 
     // Decide split size based on estimates
-    const itemsPerZip = computeItemsPerZip(est, 3.0);
+    const itemsPerZip = computeItemsPerZip(est, 1.5);
     const batches = chunkArray(converted, itemsPerZip);
 
     // Optional: show status on first item (minimal UI change)
@@ -215,17 +326,22 @@ export async function downloadAllAsZip({ state, render, els }) {
     first.status = t('status.zipping');
     render();
 
+    let writer = null;
+
     try {
-        const JSZip = await loadJSZip();
+        const fflate = await loadFflate();
+        writer = await createMultiZipWriter(batches.length);
 
         for (let partIndex = 0; partIndex < batches.length; partIndex++) {
             const batch = batches[partIndex];
-            await buildAndDownloadZip({
-                JSZip,
+
+            await buildAndDownloadZipStreaming({
+                fflate,
                 batch,
                 partIndex,
                 totalParts: batches.length,
                 els,
+                writer,
             });
 
             if (els.zipOverlayBar) els.zipOverlayBar.value = 0;
@@ -235,7 +351,11 @@ export async function downloadAllAsZip({ state, render, els }) {
         console.error(err);
         alert(t('alert.zipFailed'));
     } finally {
-        // Restore status
+        try {
+            if (writer) await writer.closeAll();
+        } catch (_) { /* noop */ }
+
+        writer = null;
         first.status = prevStatus;
         render();
     }
