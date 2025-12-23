@@ -8,24 +8,24 @@
   
   <meta name="app:locale" content="tr" />
 <base href="../../" />
-<title data-i18n="meta.title">HEIC &amp; HEIF’ten JPG’ye Dönüştürücü – Ücretsiz, çevrimdışı ve gizli (yükleme yok)</title>
+<title data-i18n="meta.title">HEIC/HEIF/HIF’ten JPG/JPEG, PNG ve WEBP’ye Dönüştürücü – Ücretsiz, çevrimdışı ve gizli (yükleme yok)</title>
   <meta
     name="description"
     data-i18n="meta.description"
     data-i18n-attr="content"
-    content="HEIC, HEIF ve HIF görsellerini tarayıcıda doğrudan JPG, PNG veya WEBP’ye dönüştürün. Yükleme yok, yüklendikten sonra çevrimdışı çalışır ve masaüstü ve mobil cihazlarda hızlı yerel işlemle fotoğraflarınızı gizli tutar."
+    content="HEIC, HEIF ve HIF görsellerini tarayıcıda doğrudan JPG/JPEG, PNG veya WEBP’ye dönüştürün. Yükleme yok, yüklendikten sonra çevrimdışı çalışır ve masaüstü ve mobil cihazlarda hızlı yerel işlemle fotoğraflarınızı gizli tutar."
   />
   <meta
     property="og:title"
     data-i18n="meta.ogTitle"
     data-i18n-attr="content"
-    content="HEIC &amp; HEIF’ten JPG’ye Dönüştürücü – Ücretsiz, çevrimdışı ve gizli (yükleme yok)"
+    content="HEIC/HEIF/HIF’ten JPG/JPEG, PNG ve WEBP’ye Dönüştürücü – Ücretsiz, çevrimdışı ve gizli (yükleme yok)"
   />
   <meta
     property="og:description"
     data-i18n="meta.ogDescription"
     data-i18n-attr="content"
-    content="HEIC, HEIF ve HIF görsellerini tarayıcıda doğrudan JPG, PNG veya WEBP’ye dönüştürün. Yükleme yok, yüklendikten sonra çevrimdışı çalışır ve masaüstü ve mobil cihazlarda hızlı yerel işlemle fotoğraflarınızı gizli tutar."
+    content="HEIC, HEIF ve HIF görsellerini tarayıcıda doğrudan JPG/JPEG, PNG veya WEBP’ye dönüştürün. Yükleme yok, yüklendikten sonra çevrimdışı çalışır ve masaüstü ve mobil cihazlarda hızlı yerel işlemle fotoğraflarınızı gizli tutar."
   />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://heictopng.github.io/" />
@@ -39,13 +39,13 @@
     name="twitter:title"
     data-i18n="meta.twitterTitle"
     data-i18n-attr="content"
-    content="HEIC &amp; HEIF’ten JPG’ye Dönüştürücü – Ücretsiz, çevrimdışı ve gizli (yükleme yok)"
+    content="HEIC/HEIF/HIF’ten JPG/JPEG, PNG ve WEBP’ye Dönüştürücü – Ücretsiz, çevrimdışı ve gizli (yükleme yok)"
   />
   <meta
     name="twitter:description"
     data-i18n="meta.twitterDescription"
     data-i18n-attr="content"
-    content="HEIC, HEIF ve HIF görsellerini tarayıcıda doğrudan JPG, PNG veya WEBP’ye dönüştürün. Yükleme yok, yüklendikten sonra çevrimdışı çalışır ve masaüstü ve mobil cihazlarda hızlı yerel işlemle fotoğraflarınızı gizli tutar."
+    content="HEIC, HEIF ve HIF görsellerini tarayıcıda doğrudan JPG/JPEG, PNG veya WEBP’ye dönüştürün. Yükleme yok, yüklendikten sonra çevrimdışı çalışır ve masaüstü ve mobil cihazlarda hızlı yerel işlemle fotoğraflarınızı gizli tutar."
   />
   <meta name="twitter:image" content="https://heictopng.github.io/assets/favicon.png" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -67,13 +67,13 @@
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      "name": "HEIC to JPG/PNG/WEBP Converter",
-      "description": "Convert HEIC, HEIF and HIF images to JPG, PNG or WEBP locally in your browser. No uploads.",
+      "name": "HEIC to JPG/JPEG/PNG/WEBP Converter",
+      "description": "Convert HEIC, HEIF and HIF images to JPG/JPEG, PNG or WEBP locally in your browser. No uploads.",
       "applicationCategory": "MultimediaApplication",
       "operatingSystem": "Any",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
       "url": "https://heictopng.github.io/lang/en/",
-      "keywords": ["HEIC to JPG", "HEIF to PNG", "HIF converter", "HEIC converter", "WEBP converter"]
+      "keywords": ["HEIC to JPG", "HEIC to JPEG", "HEIC to PNG", "HEIF to JPG", "HEIF to JPEG",  "HEIF to PNG", "HIF to JPG", "HIF to JPEG", "HIF to PNG", "HIF converter", "HEIC converter", "WEBP converter"]
     }
   </script>
   <meta name="theme-color" content="#0b0d10" />
@@ -98,7 +98,7 @@
 </head>
 <body>
   <header class="header">
-    <h1 data-i18n="header.title">HEIC / HEIF / HIF → JPG / PNG / WEBP</h1>
+    <h1 data-i18n="header.title">HEIC / HEIF / HIF → JPG / JPEG / PNG / WEBP</h1>
     <p class="sub" data-i18n="header.sub">Yerel işlem. Yükleme yok. Yüklendikten sonra çevrimdışı çalışır.</p>
   </header>
 
@@ -135,7 +135,7 @@
         <label>
           <span data-i18n="options.output">Çıktı</span>
           <select id="format">
-            <option value="image/jpeg" data-i18n="options.jpg">JPG</option>
+            <option value="image/jpeg" data-i18n="options.jpg">JPG / JPEG</option>
             <option value="image/png" data-i18n="options.png">PNG</option>
             <option value="image/webp" data-i18n="options.webp">WEBP</option>
           </select>
@@ -175,28 +175,28 @@
   </footer>
 
   <section class="panel seo">
-    <h2 data-i18n="seo.aboutTitle">HEIC/HEIF/HIF görsellerini tarayıcıda dönüştürün</h2>
-    <p data-i18n="seo.aboutP1">Bu ücretsiz dönüştürücü, HEIC/HEIF/HIF dosyalarını yerel işlemle JPG, PNG veya WEBP’ye çevirir — fotoğraflarınız cihazınızdan çıkmaz.</p>
+    <h2 data-i18n="seo.aboutTitle">HEIC/HEIF/HIF dosyalarını tarayıcıda dönüştürün</h2>
+    <p data-i18n="seo.aboutP1">.heic, .heif ve .hif fotoğraflarını tarayıcıda yerel olarak JPG/JPEG, PNG veya WEBP’ye dönüştürün. Yükleme yok — görselleriniz cihazınızda kalır.</p>
 
     <h3 data-i18n="seo.faqTitle">SSS</h3>
     <div class="faq">
       <details class="faq-item">
-        <summary data-i18n="seo.faq1q">HEIC’i JPG’ye nasıl dönüştürürüm?</summary>
-        <div class="faq-body" data-i18n="seo.faq1a">.heic veya .heif dosyalarını bırakın, JPG seçin ve “Hepsini dönüştür”e tıklayın.</div>
+        <summary data-i18n="seo.faq1q">HEIC / HEIF / HIF dosyalarını JPG veya JPEG’e nasıl dönüştürürüm?</summary>
+        <div class="faq-body" data-i18n="seo.faq1a">.heic, .heif veya .hif dosyalarını sayfaya bırakın (veya “Dosya seç”e tıklayın), çıktı olarak JPG/JPEG seçin ve “Hepsini dönüştür”e basın. Bittiğinde tek tek indirebilir veya “ZIP indir”i kullanabilirsiniz.</div>
       </details>
 
       <details class="faq-item">
-        <summary data-i18n="seo.faq2q">HEIF’i PNG veya WEBP’ye dönüştürebilir miyim?</summary>
-        <div class="faq-body" data-i18n="seo.faq2a">Evet — dönüştürmeden önce çıktı formatı olarak PNG veya WEBP’yi seçin.</div>
+        <summary data-i18n="seo.faq2q">HEIC / HEIF / HIF dosyalarını PNG, WEBP veya JPEG’e dönüştürebilir miyim?</summary>
+        <div class="faq-body" data-i18n="seo.faq2a">Evet. Çıktı menüsünden JPG/JPEG, PNG veya WEBP seçip dönüştürün. .heic, .heif ve .hif için çalışır.</div>
       </details>
 
       <details class="faq-item">
-        <summary data-i18n="seo.faq3q">Gizli mi? Görsellerimi yüklüyor musunuz?</summary>
-        <div class="faq-body" data-i18n="seo.faq3a">Yükleme yok. Her şey tarayıcınızda yerel olarak çalışır.</div>
+        <summary data-i18n="seo.faq3q">Gizli mi? HEIC / HEIF / HIF dosyalarım yükleniyor mu?</summary>
+        <div class="faq-body" data-i18n="seo.faq3a">Yükleme yok. Dönüştürme tarayıcınızda yerel olarak yapılır; .heic, .heif ve .hif dosyalarınız cihazınızdan çıkmaz.</div>
       </details>
     </div>
 
-    <div class="seo-synonyms" data-i18n="seo.synonyms">HEIC/HEIF/HIF’i JPG/JPEG, PNG veya WEBP’ye dönüştürün — tarayıcıda ücretsiz görsel dönüştürücü.</div>
+    <div class="seo-synonyms" data-i18n="seo.synonyms">HEIC / HEIF / HIF dönüştürücü • HEIC’ten JPG • HEIC’ten JPEG • HEIC’ten PNG • HEIF’ten JPG • HEIF’ten JPEG • HEIF’ten PNG • HIF’ten JPG • HIF’ten JPEG • HIF’ten PNG • HIF’ten WEBP • çevrimdışı görsel dönüştürücü</div>
   </section>
 
   <div id="zipOverlay" class="overlay" hidden aria-live="polite" aria-busy="true">

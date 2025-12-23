@@ -8,24 +8,24 @@
   
   <meta name="app:locale" content="ja" />
 <base href="../../" />
-<title data-i18n="meta.title">HEIC/HEIF→JPG 変換 – 無料・オフライン・プライベート（アップロード不要）</title>
+<title data-i18n="meta.title">HEIC/HEIF/HIF → JPG/JPEG・PNG・WEBP 変換 – 無料・オフライン・プライベート（アップロード不要）</title>
   <meta
     name="description"
     data-i18n="meta.description"
     data-i18n-attr="content"
-    content="HEIC/HEIF/HIF を JPG・PNG・WEBP にブラウザで直接変換。アップロード不要、読み込み後はオフライン対応。PC/スマホで高速なローカル処理で写真を安全に変換できます。"
+    content="HEIC/HEIF/HIF を JPG/JPEG・PNG・WEBP にブラウザで直接変換。アップロード不要、読み込み後はオフライン対応。PC/スマホで高速なローカル処理で写真を安全に変換できます。"
   />
   <meta
     property="og:title"
     data-i18n="meta.ogTitle"
     data-i18n-attr="content"
-    content="HEIC/HEIF→JPG 変換 – 無料・オフライン・プライベート（アップロード不要）"
+    content="HEIC/HEIF/HIF → JPG/JPEG・PNG・WEBP 変換 – 無料・オフライン・プライベート（アップロード不要）"
   />
   <meta
     property="og:description"
     data-i18n="meta.ogDescription"
     data-i18n-attr="content"
-    content="HEIC/HEIF/HIF を JPG・PNG・WEBP にブラウザで直接変換。アップロード不要、読み込み後はオフライン対応。PC/スマホで高速なローカル処理で写真を安全に変換できます。"
+    content="HEIC/HEIF/HIF を JPG/JPEG・PNG・WEBP にブラウザで直接変換。アップロード不要、読み込み後はオフライン対応。PC/スマホで高速なローカル処理で写真を安全に変換できます。"
   />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://heictopng.github.io/" />
@@ -39,13 +39,13 @@
     name="twitter:title"
     data-i18n="meta.twitterTitle"
     data-i18n-attr="content"
-    content="HEIC/HEIF→JPG 変換 – 無料・オフライン・プライベート（アップロード不要）"
+    content="HEIC/HEIF/HIF → JPG/JPEG・PNG・WEBP 変換 – 無料・オフライン・プライベート（アップロード不要）"
   />
   <meta
     name="twitter:description"
     data-i18n="meta.twitterDescription"
     data-i18n-attr="content"
-    content="HEIC/HEIF/HIF を JPG・PNG・WEBP にブラウザで直接変換。アップロード不要、読み込み後はオフライン対応。PC/スマホで高速なローカル処理で写真を安全に変換できます。"
+    content="HEIC/HEIF/HIF を JPG/JPEG・PNG・WEBP にブラウザで直接変換。アップロード不要、読み込み後はオフライン対応。PC/スマホで高速なローカル処理で写真を安全に変換できます。"
   />
   <meta name="twitter:image" content="https://heictopng.github.io/assets/favicon.png" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -67,13 +67,13 @@
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      "name": "HEIC to JPG/PNG/WEBP Converter",
-      "description": "Convert HEIC, HEIF and HIF images to JPG, PNG or WEBP locally in your browser. No uploads.",
+      "name": "HEIC to JPG/JPEG/PNG/WEBP Converter",
+      "description": "Convert HEIC, HEIF and HIF images to JPG/JPEG, PNG or WEBP locally in your browser. No uploads.",
       "applicationCategory": "MultimediaApplication",
       "operatingSystem": "Any",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
       "url": "https://heictopng.github.io/lang/en/",
-      "keywords": ["HEIC to JPG", "HEIF to PNG", "HIF converter", "HEIC converter", "WEBP converter"]
+      "keywords": ["HEIC to JPG", "HEIC to JPEG", "HEIC to PNG", "HEIF to JPG", "HEIF to JPEG",  "HEIF to PNG", "HIF to JPG", "HIF to JPEG", "HIF to PNG", "HIF converter", "HEIC converter", "WEBP converter"]
     }
   </script>
   <meta name="theme-color" content="#0b0d10" />
@@ -98,7 +98,7 @@
 </head>
 <body>
   <header class="header">
-    <h1 data-i18n="header.title">HEIC / HEIF / HIF → JPG / PNG / WEBP</h1>
+    <h1 data-i18n="header.title">HEIC / HEIF / HIF → JPG / JPEG / PNG / WEBP</h1>
     <p class="sub" data-i18n="header.sub">端末内で処理。アップロード不要。読み込み後はオフライン対応。</p>
   </header>
 
@@ -135,7 +135,7 @@
         <label>
           <span data-i18n="options.output">出力形式</span>
           <select id="format">
-            <option value="image/jpeg" data-i18n="options.jpg">JPG</option>
+            <option value="image/jpeg" data-i18n="options.jpg">JPG / JPEG</option>
             <option value="image/png" data-i18n="options.png">PNG</option>
             <option value="image/webp" data-i18n="options.webp">WEBP</option>
           </select>
@@ -175,24 +175,24 @@
   </footer>
 
   <section class="panel seo">
-    <h2 data-i18n="seo.aboutTitle">ブラウザで HEIC/HEIF/HIF を変換</h2>
-    <p data-i18n="seo.aboutP1">この無料コンバーターは、HEIC/HEIF/HIF を JPG・PNG・WEBP にローカル処理で変換します。写真はデバイス外に送信されません。</p>
+    <h2 data-i18n="seo.aboutTitle">ブラウザで HEIC/HEIF/HIF（.hif）を変換</h2>
+    <p data-i18n="seo.aboutP1">.heic / .heif / .hif の写真を、ブラウザ内のローカル処理で JPG/JPEG・PNG・WEBP に変換できます。アップロード不要 — 画像は端末から出ません。</p>
 
     <h3 data-i18n="seo.faqTitle">よくある質問</h3>
     <div class="faq">
       <details class="faq-item">
-        <summary data-i18n="seo.faq1q">HEIC を JPG に変換するには？</summary>
-        <div class="faq-body" data-i18n="seo.faq1a"> .heic / .heif をドロップして JPG を選び、「すべて変換」をクリックします。</div>
+        <summary data-i18n="seo.faq1q">HEIC / HEIF / HIF（.hif）を JPG または JPEG に変換するには？</summary>
+        <div class="faq-body" data-i18n="seo.faq1a">.heic / .heif / .hif をページにドロップ（または「ファイルを選択」）し、出力を JPG/JPEG にして「すべて変換」をクリックします。完了後、個別にダウンロードするか「ZIPをダウンロード」を使えます。</div>
       </details>
 
       <details class="faq-item">
-        <summary data-i18n="seo.faq2q">HEIF を PNG や WEBP に変換できますか？</summary>
-        <div class="faq-body" data-i18n="seo.faq2a">はい。変換前に出力形式として PNG または WEBP を選択してください。</div>
+        <summary data-i18n="seo.faq2q">HEIC / HEIF / HIF（.hif）を PNG・WEBP・JPEG に変換できますか？</summary>
+        <div class="faq-body" data-i18n="seo.faq2a">はい。出力のプルダウンで JPG/JPEG・PNG・WEBP を選んで変換してください。.heic / .heif / .hif に対応しています。</div>
       </details>
 
       <details class="faq-item">
-        <summary data-i18n="seo.faq3q">プライバシーは大丈夫？画像をアップロードしますか？</summary>
-        <div class="faq-body" data-i18n="seo.faq3a">アップロードはありません。すべてブラウザ上でローカルに実行されます。</div>
+        <summary data-i18n="seo.faq3q">プライバシーは大丈夫？HEIC / HEIF / HIF（.hif）をアップロードしますか？</summary>
+        <div class="faq-body" data-i18n="seo.faq3a">アップロードはありません。変換はブラウザ内でローカルに行われるため、.heic / .heif / .hif は端末から出ません。</div>
       </details>
     </div>
 
