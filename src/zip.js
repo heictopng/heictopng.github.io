@@ -108,6 +108,83 @@ function getZipSizeEstimate(converted) {
     };
 }
 
+// ---------- Split + cleanup helpers ----------
+
+function computeItemsPerZip(est, peakMultiplier = 3.0) {
+    const mean = est.meanBytes || 0;
+    if (mean <= 0) return 1;
+
+    // Keep a bit of headroom even inside "usable" budget
+    const budgetBytes = Math.floor(est.usableRamBytes * 0.9);
+    const maxTotalInputBytesPerZip = Math.floor(budgetBytes / peakMultiplier);
+
+    const items = Math.max(1, Math.floor(maxTotalInputBytesPerZip / mean));
+    return items;
+}
+
+function chunkArray(arr, chunkSize) {
+    const out = [];
+    for (let i = 0; i < arr.length; i += chunkSize) {
+        out.push(arr.slice(i, i + chunkSize));
+    }
+    return out;
+}
+
+async function yieldForGC() {
+    // Give the event loop a chance to run so the engine can reclaim memory.
+    await new Promise((r) => setTimeout(r, 0));
+    await new Promise((r) => requestAnimationFrame(() => r()));
+    if (typeof requestIdleCallback === 'function') {
+        await new Promise((r) => requestIdleCallback(() => r(), { timeout: 250 }));
+    }
+    // In some dev builds / flags, this can exist; harmless otherwise.
+    if (typeof window !== 'undefined' && typeof window.gc === 'function') {
+        try { window.gc(); } catch (_) { /* noop */ }
+    }
+}
+
+async function buildAndDownloadZip({ JSZip, batch, partIndex, totalParts, els }) {
+    let zip = null;
+    let zipBlob = null;
+
+    try {
+        zip = new JSZip();
+
+        for (let i = 0; i < batch.length; i++) {
+            const item = batch[i];
+            const name = item.outName || fallbackName(item, i);
+            let buf = await item.outBlob.arrayBuffer();
+            zip.file(name, buf);
+            // Drop our reference ASAP (JSZip keeps what it needs internally)
+            buf = null;
+        }
+
+        zipBlob = await zip.generateAsync(
+            {
+                type: 'blob',
+                compression: 'DEFLATE',
+            }, (meta) => {
+                const pct = Math.round(meta.percent || 0);
+                if (els.zipOverlayBar) els.zipOverlayBar.value = pct / 100;
+                if (els.zipOverlayLabel) {
+                    els.zipOverlayLabel.textContent = `${pct}%`;
+                }
+            }
+        );
+
+        const filename = totalParts > 1
+            ? `converted_images_part${String(partIndex + 1).padStart(3, '0')}.zip`
+            : 'converted_images.zip';
+
+        downloadBlob(zipBlob, filename);
+    } finally {
+        // Explicitly drop references so GC can reclaim memory sooner.
+        zipBlob = null;
+        zip = null;
+        await yieldForGC();
+    }
+}
+
 // ---------- Main export ----------
 
 export async function downloadAllAsZip({ state, render, els }) {
@@ -128,6 +205,10 @@ export async function downloadAllAsZip({ state, render, els }) {
     console.info('[zip] est peak RAM:', formatBytes(est.estPeakRamBytes));
     console.info('[zip] usable RAM budget:', formatBytes(est.usableRamBytes));
 
+    // Decide split size based on estimates
+    const itemsPerZip = computeItemsPerZip(est, 3.0);
+    const batches = chunkArray(converted, itemsPerZip);
+
     // Optional: show status on first item (minimal UI change)
     const first = converted[0];
     const prevStatus = first.status;
@@ -136,29 +217,20 @@ export async function downloadAllAsZip({ state, render, els }) {
 
     try {
         const JSZip = await loadJSZip();
-        const zip = new JSZip();
 
-        for (let i = 0; i < converted.length; i++) {
-            const item = converted[i];
-            const name = item.outName || fallbackName(item, i);
-            const buf = await item.outBlob.arrayBuffer();
-            zip.file(name, buf);
-        }
+        for (let partIndex = 0; partIndex < batches.length; partIndex++) {
+            const batch = batches[partIndex];
+            await buildAndDownloadZip({
+                JSZip,
+                batch,
+                partIndex,
+                totalParts: batches.length,
+                els,
+            });
 
-        const zipBlob = await zip.generateAsync(
-            {
-                type: 'blob',
-                compression: 'DEFLATE',
-            }, (meta) => {
-                const pct = Math.round(meta.percent || 0);
-                if (els.zipOverlayBar) els.zipOverlayBar.value = pct / 100;
-                if (els.zipOverlayLabel) {
-                    els.zipOverlayLabel.textContent = `${pct}%`;
-                }
-            }
-        );
-
-        downloadBlob(zipBlob, 'converted_images.zip');
+            if (els.zipOverlayBar) els.zipOverlayBar.value = 0;
+            if (els.zipOverlayLabel) els.zipOverlayLabel.textContent = '';
+        };
     } catch (err) {
         console.error(err);
         alert(t('alert.zipFailed'));
