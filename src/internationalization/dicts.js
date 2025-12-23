@@ -26,7 +26,7 @@ export const DICTS = {
         "seo.faq1q": "How do I convert HEIC / HEIF / HIF to JPG or JPEG?",
         "seo.faq1a":
             "Drop your .heic, .heif or .hif files into the page (or click “Choose files”), pick JPG/JPEG as the output format, then click “Convert all”. When it finishes, download each file or use “Download ZIP”.",
-        "seo.faq2q": "Can I convert HEIC / HEIF / HIFto PNG, WEBP, or JPEG?",
+        "seo.faq2q": "Can I convert HEIC / HEIF / HIF to PNG, WEBP, or JPEG?",
         "seo.faq2a":
             "Yes. Select JPG/JPEG, PNG or WEBP in the Output dropdown, then convert. This works for .heic, .heif and .hif images.",
         "seo.faq3q": "Is it private? Are my HEIC / HEIF / HIF files uploaded?",
@@ -38,12 +38,16 @@ export const DICTS = {
         // Existing UI
         "app.title": "HEIC / HEIF / HIF (.hif/.heic) → JPG / JPEG / PNG / WEBP Converter",
         "header.title": "HEIC / HEIF / HIF → JPG / JPEG / PNG / WEBP",
-        "header.sub": "Client-side. No uploads. Works offline once loaded.",
+        "header.sub":
+            "Free & private HEIC/HIF Converter. Local processing, no uploads. Works on desktop and mobile.",
 
         "dropzone.ariaLabel": "Drop HEIC / HEIF / HIF files here",
         "dropzone.strong": "Drop .heic/.heif/.hif files",
         "dropzone.or": "or",
         "dropzone.choose": "Choose files",
+
+        "trust.line": "Free • No uploads • Works on all devices",
+        "trust.buttons": "100% free · No sign-up · No uploads",
 
         "options.output": "Output",
         "options.jpg": "JPG / JPEG",
@@ -129,12 +133,16 @@ export const DICTS = {
         // Existing UI
         "app.title": "Convertidor HEIC / HEIF / HIF (.hif/.heic) → JPG / JPEG / PNG / WEBP",
         "header.title": "HEIC / HEIF / HIF → JPG / JPEG / PNG / WEBP",
-        "header.sub": "En tu dispositivo. Sin subidas. Funciona sin conexión una vez cargado.",
+        "header.sub":
+            "Convertidor HEIC/HIF gratis y privado. Procesamiento local, sin subidas. Funciona en ordenador y móvil.",
 
         "dropzone.ariaLabel": "Suelta archivos HEIC / HEIF / HIF aquí",
         "dropzone.strong": "Suelta archivos .heic/.heif/.hif",
         "dropzone.or": "o",
         "dropzone.choose": "Elegir archivos",
+
+        "trust.line": "Gratis • Sin subidas • Funciona en todos los dispositivos",
+        "trust.buttons": "100% gratis · Sin registro · Sin subidas",
 
         "options.output": "Salida",
         "options.jpg": "JPG / JPEG",
@@ -220,12 +228,16 @@ export const DICTS = {
         // Existing UI
         "app.title": "Conversor HEIC / HEIF / HIF (.hif/.heic) → JPG / JPEG / PNG / WEBP",
         "header.title": "HEIC / HEIF / HIF → JPG / JPEG / PNG / WEBP",
-        "header.sub": "No seu dispositivo. Sem uploads. Funciona offline após carregar.",
+        "header.sub":
+            "Conversor HEIC/HIF grátis e privado. Processamento local, sem uploads. Funciona em desktop e celular.",
 
         "dropzone.ariaLabel": "Solte arquivos HEIC / HEIF / HIF aqui",
         "dropzone.strong": "Solte arquivos .heic/.heif/.hif",
         "dropzone.or": "ou",
         "dropzone.choose": "Escolher arquivos",
+
+        "trust.line": "Grátis • Sem uploads • Funciona em todos os dispositivos",
+        "trust.buttons": "100% grátis · Sem cadastro · Sem uploads",
 
         "options.output": "Formato",
         "options.jpg": "JPG / JPEG",
@@ -312,12 +324,16 @@ export const DICTS = {
         // Existing UI
         "app.title": "HEIC / HEIF / HIF（.hif/.heic）→ JPG / JPEG / PNG / WEBP 変換",
         "header.title": "HEIC / HEIF / HIF → JPG / JPEG / PNG / WEBP",
-        "header.sub": "端末内で処理。アップロード不要。読み込み後はオフライン対応。",
+        "header.sub":
+            "無料＆プライベートな HEIC/HIF 変換。ローカル処理、アップロード不要。PC/スマホ対応。",
 
         "dropzone.ariaLabel": "ここに HEIC / HEIF / HIF ファイルをドロップ",
         "dropzone.strong": ".heic / .heif / .hif ファイルをドロップ",
         "dropzone.or": "または",
         "dropzone.choose": "ファイルを選択",
+
+        "trust.line": "無料 • アップロード不要 • すべての端末で動作",
+        "trust.buttons": "100% 無料 · 登録不要 · アップロード不要",
 
         "options.output": "出力形式",
         "options.jpg": "JPG / JPEG",
@@ -369,8 +385,7 @@ export const DICTS = {
 
     zh: {
         // SEO
-        "meta.title":
-            "HEIC/HEIF/HIF 转 JPG/JPEG、PNG、WEBP – 免费、离线、隐私（无需上传）",
+        "meta.title": "HEIC/HEIF/HIF 转 JPG/JPEG、PNG、WEBP – 免费、离线、隐私（无需上传）",
         "meta.description":
             "在浏览器中将 HEIC、HEIF、HIF 转换为 JPG/JPEG、PNG 或 WEBP。无需上传，加载后可离线使用，并通过快速本地处理保护你的照片隐私，支持电脑和手机。",
 
@@ -404,12 +419,15 @@ export const DICTS = {
         // Existing UI
         "app.title": "HEIC / HEIF / HIF（.hif/.heic）→ JPG / JPEG / PNG / WEBP",
         "header.title": "HEIC / HEIF / HIF → JPG / JPEG / PNG / WEBP",
-        "header.sub": "本地处理，无需上传。加载后可离线使用。",
+        "header.sub": "免费且注重隐私的 HEIC/HIF 转换器。本地处理，无需上传。支持电脑和手机。",
 
         "dropzone.ariaLabel": "将 HEIC / HEIF / HIF 文件拖到这里",
         "dropzone.strong": "拖放 .heic / .heif / .hif 文件",
         "dropzone.or": "或",
         "dropzone.choose": "选择文件",
+
+        "trust.line": "免费 • 无需上传 • 适用于所有设备",
+        "trust.buttons": "100% 免费 · 无需注册 · 无需上传",
 
         "options.output": "输出格式",
         "options.jpg": "JPG / JPEG",
@@ -417,8 +435,7 @@ export const DICTS = {
         "options.webp": "WEBP",
         "options.jpgQuality": "JPG 质量",
         "options.cpuUsage": "CPU 使用率",
-        "options.cpuWarn":
-            "⚠️ CPU 使用率较高（75% 以上）可能会因硬件性能不同而导致电脑变慢。",
+        "options.cpuWarn": "⚠️ CPU 使用率较高（75% 以上）可能会因硬件性能不同而导致电脑变慢。",
 
         "buttons.convertAll": "全部转换",
         "buttons.downloadZip": "下载 ZIP",
@@ -461,8 +478,7 @@ export const DICTS = {
 
     ar: {
         // SEO
-        "meta.title":
-            "محول HEIC/HEIF/HIF إلى JPG/JPEG وPNG وWEBP – مجاني، أوفلاين وخاص (بدون رفع)",
+        "meta.title": "محول HEIC/HEIF/HIF إلى JPG/JPEG وPNG وWEBP – مجاني، أوفلاين وخاص (بدون رفع)",
         "meta.description":
             "حوّل صور HEIC وHEIF وHIF إلى JPG/JPEG أو PNG أو WEBP مباشرةً في المتصفح. بدون رفع ملفات، يعمل دون اتصال بعد التحميل، ويحافظ على خصوصية صورك عبر معالجة محلية سريعة على الكمبيوتر والجوال.",
 
@@ -496,12 +512,15 @@ export const DICTS = {
         // Existing UI
         "app.title": "محول HEIC / HEIF / HIF ‏(.hif/.heic) → JPG / JPEG / PNG / WEBP",
         "header.title": "HEIC / HEIF / HIF → JPG / JPEG / PNG / WEBP",
-        "header.sub": "يعمل محليًا. بدون رفع ملفات. يعمل دون اتصال بعد التحميل.",
+        "header.sub": "محول HEIC/HIF مجاني وخاص. معالجة محلية بدون رفع. يعمل على الكمبيوتر والجوال.",
 
         "dropzone.ariaLabel": "اسحب ملفات HEIC / HEIF / HIF هنا",
         "dropzone.strong": "اسحب ملفات ‎.heic / .heif / .hif",
         "dropzone.or": "أو",
         "dropzone.choose": "اختر الملفات",
+
+        "trust.line": "مجاني • بدون رفع • يعمل على جميع الأجهزة",
+        "trust.buttons": "مجاني 100% · بدون تسجيل · بدون رفع",
 
         "options.output": "الصيغة",
         "options.jpg": "JPG / JPEG",
@@ -509,8 +528,7 @@ export const DICTS = {
         "options.webp": "WEBP",
         "options.jpgQuality": "جودة JPG",
         "options.cpuUsage": "استخدام المعالج",
-        "options.cpuWarn":
-            "⚠️ قد يؤدي الاستخدام المرتفع للمعالج (75%+) إلى إبطاء جهازك حسب قدرات العتاد.",
+        "options.cpuWarn": "⚠️ قد يؤدي الاستخدام المرتفع للمعالج (75%+) إلى إبطاء جهازك حسب قدرات العتاد.",
 
         "buttons.convertAll": "تحويل الكل",
         "buttons.downloadZip": "تحميل ZIP",
@@ -553,8 +571,7 @@ export const DICTS = {
 
     hi: {
         // SEO
-        "meta.title":
-            "HEIC/HEIF/HIF से JPG/JPEG, PNG और WEBP कनवर्टर – फ्री, ऑफ़लाइन और प्राइवेट (नो अपलोड्स)",
+        "meta.title": "HEIC/HEIF/HIF से JPG/JPEG, PNG और WEBP कनवर्टर – फ्री, ऑफ़लाइन और प्राइवेट (नो अपलोड्स)",
         "meta.description":
             "HEIC, HEIF और HIF इमेज को JPG/JPEG, PNG या WEBP में सीधे ब्राउज़र में कनवर्ट करें। कोई अपलोड नहीं, लोड होने के बाद ऑफ़लाइन काम करता है और तेज़ लोकल प्रोसेसिंग से आपकी फ़ोटो प्राइवेट रहती हैं — डेस्कटॉप और मोबाइल पर।",
 
@@ -588,12 +605,16 @@ export const DICTS = {
         // Existing UI
         "app.title": "HEIC / HEIF / HIF (.hif/.heic) → JPG / JPEG / PNG / WEBP कनवर्टर",
         "header.title": "HEIC / HEIF / HIF → JPG / JPEG / PNG / WEBP",
-        "header.sub": "डिवाइस पर ही प्रोसेसिंग। कोई अपलोड नहीं। लोड होने के बाद ऑफ़लाइन काम करता है।",
+        "header.sub":
+            "फ्री और प्राइवेट HEIC/HIF कनवर्टर। लोकल प्रोसेसिंग, कोई अपलोड नहीं। डेस्कटॉप और मोबाइल पर काम करता है।",
 
         "dropzone.ariaLabel": "HEIC / HEIF / HIF फ़ाइलें यहाँ छोड़ें",
         "dropzone.strong": ".heic / .heif / .hif फ़ाइलें छोड़ें",
         "dropzone.or": "या",
         "dropzone.choose": "फ़ाइलें चुनें",
+        
+        "trust.line": "फ्री • कोई अपलोड नहीं • सभी डिवाइस पर काम करता है",
+        "trust.buttons": "100% फ्री · साइन-अप नहीं · कोई अपलोड नहीं",
 
         "options.output": "आउटपुट",
         "options.jpg": "JPG / JPEG",
@@ -601,8 +622,7 @@ export const DICTS = {
         "options.webp": "WEBP",
         "options.jpgQuality": "JPG गुणवत्ता",
         "options.cpuUsage": "CPU उपयोग",
-        "options.cpuWarn":
-            "⚠️ CPU का अधिक उपयोग (75%+) आपके हार्डवेयर के अनुसार PC को धीमा कर सकता है।",
+        "options.cpuWarn": "⚠️ CPU का अधिक उपयोग (75%+) आपके हार्डवेयर के अनुसार PC को धीमा कर सकता है।",
 
         "buttons.convertAll": "सभी कनवर्ट करें",
         "buttons.downloadZip": "ZIP डाउनलोड करें",
@@ -645,8 +665,7 @@ export const DICTS = {
 
     de: {
         // SEO
-        "meta.title":
-            "HEIC, HEIF & HIF zu JPG/JPEG, PNG & WEBP Konverter – Kostenlos, offline & privat (ohne Uploads)",
+        "meta.title": "HEIC, HEIF & HIF zu JPG/JPEG, PNG & WEBP Konverter – Kostenlos, offline & privat (ohne Uploads)",
         "meta.description":
             "Konvertiere HEIC-, HEIF- und HIF-Bilder zu JPG/JPEG, PNG oder WEBP direkt im Browser. Keine Uploads, offline nutzbar und privat dank schneller, lokaler Verarbeitung auf Desktop und Mobilgeräten.",
 
@@ -680,12 +699,16 @@ export const DICTS = {
         // Existing UI
         "app.title": "HEIC / HEIF / HIF (.hif/.heic) → JPG / JPEG / PNG / WEBP Konverter",
         "header.title": "HEIC / HEIF / HIF → JPG / JPEG / PNG / WEBP",
-        "header.sub": "Lokal im Browser. Keine Uploads. Nach dem Laden offline nutzbar.",
+        "header.sub":
+            "Kostenloser & privater HEIC/HIF-Konverter. Lokale Verarbeitung, keine Uploads. Funktioniert auf Desktop und Mobil.",
 
         "dropzone.ariaLabel": "HEIC / HEIF / HIF Dateien hier ablegen",
         "dropzone.strong": ".heic / .heif / .hif Dateien ablegen",
         "dropzone.or": "oder",
         "dropzone.choose": "Dateien auswählen",
+        
+        "trust.line": "Kostenlos • Keine Uploads • Funktioniert auf allen Geräten",
+        "trust.buttons": "100% kostenlos · Keine Anmeldung · Keine Uploads",
 
         "options.output": "Ausgabe",
         "options.jpg": "JPG / JPEG",
@@ -693,8 +716,7 @@ export const DICTS = {
         "options.webp": "WEBP",
         "options.jpgQuality": "JPG-Qualität",
         "options.cpuUsage": "CPU-Auslastung",
-        "options.cpuWarn":
-            "⚠️ Eine hohe CPU-Auslastung (75%+) kann deinen PC je nach Hardware verlangsamen.",
+        "options.cpuWarn": "⚠️ Eine hohe CPU-Auslastung (75%+) kann deinen PC je nach Hardware verlangsamen.",
 
         "buttons.convertAll": "Alle konvertieren",
         "buttons.downloadZip": "ZIP herunterladen",
@@ -772,12 +794,16 @@ export const DICTS = {
         // Existing UI
         "app.title": "Convertisseur HEIC / HEIF / HIF (.hif/.heic) → JPG / JPEG / PNG / WEBP",
         "header.title": "HEIC / HEIF / HIF → JPG / JPEG / PNG / WEBP",
-        "header.sub": "Traitement local. Aucun envoi. Fonctionne hors ligne après chargement.",
+        "header.sub":
+            "Convertisseur HEIC/HIF gratuit & privé. Traitement local, aucun envoi. Fonctionne sur ordinateur et mobile.",
 
         "dropzone.ariaLabel": "Déposez des fichiers HEIC / HEIF / HIF ici",
         "dropzone.strong": "Déposez des fichiers .heic / .heif / .hif",
         "dropzone.or": "ou",
         "dropzone.choose": "Choisir des fichiers",
+
+        "trust.line": "Gratuit • Aucun envoi • Fonctionne sur tous les appareils",
+        "trust.buttons": "100% gratuit · Sans inscription · Aucun envoi",
 
         "options.output": "Sortie",
         "options.jpg": "JPG / JPEG",
@@ -829,8 +855,7 @@ export const DICTS = {
 
     ru: {
         // SEO
-        "meta.title":
-            "Конвертер HEIC/HEIF/HIF в JPG/JPEG, PNG и WEBP – Бесплатно, офлайн и приватно (без загрузок)",
+        "meta.title": "Конвертер HEIC/HEIF/HIF в JPG/JPEG, PNG и WEBP – Бесплатно, офлайн и приватно (без загрузок)",
         "meta.description":
             "Конвертируйте изображения HEIC, HEIF и HIF в JPG/JPEG, PNG или WEBP прямо в браузере. Без загрузки файлов, работает офлайн и сохраняет приватность благодаря быстрой локальной обработке на компьютере и телефоне.",
 
@@ -864,12 +889,16 @@ export const DICTS = {
         // Existing UI
         "app.title": "Конвертер HEIC / HEIF / HIF (.hif/.heic) → JPG / JPEG / PNG / WEBP",
         "header.title": "HEIC / HEIF / HIF → JPG / JPEG / PNG / WEBP",
-        "header.sub": "Локальная обработка. Без загрузок. Работает офлайн после загрузки.",
+        "header.sub":
+            "Бесплатный и приватный конвертер HEIC/HIF. Локальная обработка, без загрузок. Работает на ПК и мобильных.",
 
         "dropzone.ariaLabel": "Перетащите файлы HEIC / HEIF / HIF сюда",
         "dropzone.strong": "Перетащите файлы .heic / .heif / .hif",
         "dropzone.or": "или",
         "dropzone.choose": "Выбрать файлы",
+
+        "trust.line": "Бесплатно • Без загрузок • Работает на всех устройствах",
+        "trust.buttons": "100% бесплатно · Без регистрации · Без загрузок",
 
         "options.output": "Формат",
         "options.jpg": "JPG / JPEG",
@@ -921,8 +950,7 @@ export const DICTS = {
 
     it: {
         // SEO
-        "meta.title":
-            "Convertitore HEIC/HEIF/HIF in JPG/JPEG, PNG e WEBP – Gratis, offline e privato (senza upload)",
+        "meta.title": "Convertitore HEIC/HEIF/HIF in JPG/JPEG, PNG e WEBP – Gratis, offline e privato (senza upload)",
         "meta.description":
             "Converti immagini HEIC, HEIF e HIF in JPG/JPEG, PNG o WEBP direttamente nel browser. Nessun upload, funziona offline e protegge le tue foto con elaborazione locale rapida su desktop e dispositivi mobili.",
 
@@ -956,12 +984,16 @@ export const DICTS = {
         // Existing UI
         "app.title": "Convertitore HEIC / HEIF / HIF (.hif/.heic) → JPG / JPEG / PNG / WEBP",
         "header.title": "HEIC / HEIF / HIF → JPG / JPEG / PNG / WEBP",
-        "header.sub": "Elaborazione locale. Nessun upload. Funziona offline dopo il caricamento.",
+        "header.sub":
+            "Convertitore HEIC/HIF gratuito e privato. Elaborazione locale, nessun upload. Funziona su desktop e mobile.",
 
         "dropzone.ariaLabel": "Trascina qui i file HEIC / HEIF / HIF",
         "dropzone.strong": "Trascina file .heic / .heif / .hif",
         "dropzone.or": "o",
         "dropzone.choose": "Scegli file",
+    
+        "trust.line": "Gratis • Nessun upload • Funziona su tutti i dispositivi",
+        "trust.buttons": "100% gratis · Nessuna registrazione · Nessun upload",
 
         "options.output": "Output",
         "options.jpg": "JPG / JPEG",
@@ -969,8 +1001,7 @@ export const DICTS = {
         "options.webp": "WEBP",
         "options.jpgQuality": "Qualità JPG",
         "options.cpuUsage": "Uso CPU",
-        "options.cpuWarn":
-            "⚠️ Un uso elevato della CPU (75%+) potrebbe rallentare il PC a seconda dell’hardware.",
+        "options.cpuWarn": "⚠️ Un uso elevato della CPU (75%+) potrebbe rallentare il PC a seconda dell’hardware.",
 
         "buttons.convertAll": "Converti tutto",
         "buttons.downloadZip": "Scarica ZIP",
@@ -1013,8 +1044,7 @@ export const DICTS = {
 
     nl: {
         // SEO
-        "meta.title":
-            "HEIC/HEIF/HIF naar JPG/JPEG, PNG & WEBP Converter – Gratis, offline & privé (geen uploads)",
+        "meta.title": "HEIC/HEIF/HIF naar JPG/JPEG, PNG & WEBP Converter – Gratis, offline & privé (geen uploads)",
         "meta.description":
             "Converteer HEIC-, HEIF- en HIF-afbeeldingen naar JPG/JPEG, PNG of WEBP rechtstreeks in je browser. Geen uploads, werkt offline en houdt je foto’s privé met snelle lokale verwerking op desktop en mobiel.",
 
@@ -1048,12 +1078,16 @@ export const DICTS = {
         // Existing UI
         "app.title": "HEIC / HEIF / HIF (.hif/.heic) → JPG / JPEG / PNG / WEBP Converter",
         "header.title": "HEIC / HEIF / HIF → JPG / JPEG / PNG / WEBP",
-        "header.sub": "Lokaal verwerkt. Geen uploads. Offline beschikbaar na laden.",
+        "header.sub":
+            "Gratis & privé HEIC/HIF-converter. Lokale verwerking, geen uploads. Werkt op desktop en mobiel.",
 
         "dropzone.ariaLabel": "Sleep HEIC / HEIF / HIF bestanden hierheen",
         "dropzone.strong": "Sleep .heic / .heif / .hif bestanden",
         "dropzone.or": "of",
         "dropzone.choose": "Bestanden kiezen",
+
+        "trust.line": "Gratis • Geen uploads • Werkt op alle apparaten",
+        "trust.buttons": "100% gratis · Geen aanmelding · Geen uploads",
 
         "options.output": "Uitvoer",
         "options.jpg": "JPG / JPEG",
@@ -1061,8 +1095,7 @@ export const DICTS = {
         "options.webp": "WEBP",
         "options.jpgQuality": "JPG-kwaliteit",
         "options.cpuUsage": "CPU-gebruik",
-        "options.cpuWarn":
-            "⚠️ Hoog CPU-gebruik (75%+) kan je pc vertragen, afhankelijk van de hardware.",
+        "options.cpuWarn": "⚠️ Hoog CPU-gebruik (75%+) kan je pc vertragen, afhankelijk van de hardware.",
 
         "buttons.convertAll": "Alles converteren",
         "buttons.downloadZip": "ZIP downloaden",
@@ -1105,8 +1138,7 @@ export const DICTS = {
 
     pl: {
         // SEO
-        "meta.title":
-            "Konwerter HEIC/HEIF/HIF do JPG/JPEG, PNG i WEBP – Darmowy, offline i prywatny (bez uploadów)",
+        "meta.title": "Konwerter HEIC/HEIF/HIF do JPG/JPEG, PNG i WEBP – Darmowy, offline i prywatny (bez uploadów)",
         "meta.description":
             "Konwertuj obrazy HEIC, HEIF i HIF do JPG/JPEG, PNG lub WEBP bezpośrednio w przeglądarce. Bez wysyłania plików, działa offline i chroni prywatność dzięki szybkiej lokalnej obróbce na komputerze i telefonie.",
 
@@ -1140,12 +1172,16 @@ export const DICTS = {
         // Existing UI
         "app.title": "Konwerter HEIC / HEIF / HIF (.hif/.heic) → JPG / JPEG / PNG / WEBP",
         "header.title": "HEIC / HEIF / HIF → JPG / JPEG / PNG / WEBP",
-        "header.sub": "Przetwarzanie lokalne. Bez wysyłania plików. Działa offline po załadowaniu.",
+        "header.sub":
+            "Darmowy i prywatny konwerter HEIC/HIF. Przetwarzanie lokalne, bez uploadów. Działa na komputerze i telefonie.",
 
         "dropzone.ariaLabel": "Upuść pliki HEIC / HEIF / HIF tutaj",
         "dropzone.strong": "Upuść pliki .heic / .heif / .hif",
         "dropzone.or": "lub",
         "dropzone.choose": "Wybierz pliki",
+
+        "trust.line": "Darmowe • Bez uploadów • Działa na wszystkich urządzeniach",
+        "trust.buttons": "100% darmowe · Bez rejestracji · Bez uploadów",
 
         "options.output": "Wyjście",
         "options.jpg": "JPG / JPEG",
@@ -1153,8 +1189,7 @@ export const DICTS = {
         "options.webp": "WEBP",
         "options.jpgQuality": "Jakość JPG",
         "options.cpuUsage": "Użycie CPU",
-        "options.cpuWarn":
-            "⚠️ Wysokie użycie CPU (75%+) może spowolnić komputer w zależności od sprzętu.",
+        "options.cpuWarn": "⚠️ Wysokie użycie CPU (75%+) może spowolnić komputer w zależności od sprzętu.",
 
         "buttons.convertAll": "Konwertuj wszystko",
         "buttons.downloadZip": "Pobierz ZIP",
@@ -1232,12 +1267,16 @@ export const DICTS = {
         // Existing UI
         "app.title": "HEIC / HEIF / HIF (.hif/.heic) → JPG / JPEG / PNG / WEBP Dönüştürücü",
         "header.title": "HEIC / HEIF / HIF → JPG / JPEG / PNG / WEBP",
-        "header.sub": "Yerel işlem. Yükleme yok. Yüklendikten sonra çevrimdışı çalışır.",
+        "header.sub":
+            "Ücretsiz ve gizli HEIC/HIF dönüştürücü. Yerel işlem, yükleme yok. Masaüstü ve мобилде çalışır.",
 
         "dropzone.ariaLabel": "HEIC / HEIF / HIF dosyalarını buraya bırakın",
         "dropzone.strong": ".heic / .heif / .hif dosyalarını bırakın",
         "dropzone.or": "veya",
         "dropzone.choose": "Dosya seç",
+
+        "trust.line": "Ücretsiz • Yükleme yok • Tüm cihazlarda çalışır",
+        "trust.buttons": "%100 ücretsiz · Kayıt yok · Yükleme yok",
 
         "options.output": "Çıktı",
         "options.jpg": "JPG / JPEG",
@@ -1245,8 +1284,7 @@ export const DICTS = {
         "options.webp": "WEBP",
         "options.jpgQuality": "JPG kalitesi",
         "options.cpuUsage": "CPU kullanımı",
-        "options.cpuWarn":
-            "⚠️ Yüksek CPU kullanımı (%75+) donanım özelliklerine bağlı olarak bilgisayarınızı yavaşlatabilir.",
+        "options.cpuWarn": "⚠️ Yüksek CPU kullanımı (%75+) donanım özelliklerine bağlı olarak bilgisayarınızı yavaşlatabilir.",
 
         "buttons.convertAll": "Hepsini dönüştür",
         "buttons.downloadZip": "ZIP indir",
