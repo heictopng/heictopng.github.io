@@ -41,6 +41,14 @@ export const DICTS = {
         "seo.faq4a":
             "No uploads at all. All image conversions happen locally in your browser, so your .heic, .heif, and .hif files never leave your device. Your photos stay private on desktop and mobile.",
 
+        "seo.faq5q": "Why does “no uploads” matter for photo privacy?",
+        "seo.faq5a":
+            "Photos often contain personal data (faces, places, documents, private moments). When an online converter uploads images to a server, you lose control: files can be logged, stored longer than expected, shared with third parties, or reused in ways you didn’t intend. A local, in-browser converter avoids that risk by processing everything on your device, so your images don’t travel across the internet and are far less likely to end up somewhere you wouldn’t want.",
+
+        "seo.faq6q": "Why should I care about photos being stored, shared, or used for training?",
+        "seo.faq6a":
+            "If a tool stores uploaded photos, they can become part of backups, analytics systems, or third-party services — which increases the chance of exposure, resale, or reuse (including training datasets) without you noticing. Choosing a converter that works locally keeps your images under your control: your files stay on your device, you decide who sees them, and your photos aren’t turned into someone else’s product.",
+
         "seo.synonyms":
             "HEIC / HEIF / HIF converter • HEIC to JPG • HEIC to JPEG • HEIC to PNG • HEIC to WEBP • HEIF to JPG • HEIF to PNG • HIF to JPG • HIF to WEBP • free HEIC converter • offline image converter • no uploads • works on all devices • private image converter",
 
@@ -144,6 +152,14 @@ export const DICTS = {
         "seo.faq4q": "¿Es privado? ¿Se suben mis archivos HEIC / HEIF / HIF?",
         "seo.faq4a":
             "No se sube nada. Todas las conversiones se hacen localmente en tu navegador, así que tus archivos .heic, .heif y .hif nunca salen de tu dispositivo. Tus fotos se mantienen privadas en ordenador y móvil.",
+
+        "seo.faq5q": "¿Por qué importa “sin subidas” para la privacidad de tus fotos?",
+        "seo.faq5a":
+            "Las fotos suelen contener datos personales (caras, lugares, documentos, momentos privados). Cuando un conversor online sube imágenes a un servidor, pierdes control: los archivos pueden quedar registrados, almacenarse más tiempo del esperado, compartirse con terceros o reutilizarse de formas que no pretendías. Un conversor local en el navegador reduce ese riesgo al procesar todo en tu dispositivo: tus imágenes no viajan por internet y es mucho menos probable que acaben donde no quieres.",
+
+        "seo.faq6q": "¿Por qué debería preocuparme si las fotos se almacenan, comparten o se usan para entrenar?",
+        "seo.faq6a":
+            "Si una herramienta almacena fotos subidas, pueden acabar en copias de seguridad, sistemas de analítica o servicios de terceros, lo que aumenta la posibilidad de exposición, reventa o reutilización (incluidos datasets de entrenamiento) sin que te des cuenta. Elegir un conversor que funciona localmente te deja el control: tus archivos se quedan en tu dispositivo, tú decides quién los ve y tus fotos no se convierten en el producto de otra persona.",
 
         "seo.synonyms":
             "Convertidor HEIC / HEIF / HIF • HEIC a JPG • HEIC a JPEG • HEIC a PNG • HEIC a WEBP • HEIF a JPG • HEIF a PNG • HIF a JPG • HIF a WEBP • convertidor HEIC gratis • convertidor de imágenes offline • sin subidas • funciona en todos los dispositivos • convertidor privado",
@@ -249,6 +265,14 @@ export const DICTS = {
         "seo.faq4a":
             "Sem uploads. Todas as conversões acontecem localmente no seu navegador, então seus arquivos .heic, .heif e .hif nunca saem do seu dispositivo. Suas fotos ficam privadas no computador e no celular.",
 
+        "seo.faq5q": "Por que “sem uploads” importa para a privacidade das fotos?",
+        "seo.faq5a":
+            "Fotos frequentemente contêm dados pessoais (rostos, lugares, documentos, momentos privados). Quando um conversor online envia imagens para um servidor, você perde o controle: arquivos podem ser registrados, armazenados por mais tempo do que o esperado, compartilhados com terceiros ou reutilizados de maneiras que você não pretendia. Um conversor local no navegador reduz esse risco ao processar tudo no seu dispositivo — suas imagens não viajam pela internet e têm muito menos chance de parar onde você não quer.",
+
+        "seo.faq6q": "Por que devo me preocupar com fotos sendo armazenadas, compartilhadas ou usadas para treinamento?",
+        "seo.faq6a":
+            "Se uma ferramenta armazena fotos enviadas, elas podem entrar em backups, sistemas de análise ou serviços de terceiros — aumentando a chance de exposição, revenda ou reutilização (inclusive em conjuntos de dados de treinamento) sem que você perceba. Ao escolher um conversor que funciona localmente, você mantém o controle: seus arquivos ficam no seu dispositivo, você decide quem vê e suas fotos não viram o produto de outra pessoa.",
+
         "seo.synonyms":
             "Conversor HEIC / HEIF / HIF • HEIC para JPG • HEIC para JPEG • HEIC para PNG • HEIC para WEBP • HEIF para JPG • HEIF para PNG • HIF para JPG • HIF para WEBP • conversor HEIC grátis • conversor de imagens offline • sem uploads • funciona em todos os dispositivos • conversor privado",
 
@@ -353,6 +377,14 @@ export const DICTS = {
         "seo.faq4a":
             "アップロードはありません。変換はブラウザ内でローカルに行われるため、.heic / .heif / .hif は端末から出ません。PC/スマホでも写真はプライベートに保たれます。",
 
+        "seo.faq5q": "写真のプライバシーで「アップロード不要」が重要なのはなぜ？",
+        "seo.faq5a":
+            "写真には個人情報（顔、場所、書類、プライベートな瞬間）が含まれることがあります。オンライン変換ツールが画像をサーバーへアップロードすると、管理の主導権が薄れ、ログ記録・想定より長い保管・第三者共有・意図しない再利用の可能性が増えます。端末内で処理するローカル変換なら、画像がインターネットを移動しないため、望まない場所へ広がるリスクを大きく下げられます。",
+
+        "seo.faq6q": "写真が保存・共有・学習に使われることを気にするべき理由は？",
+        "seo.faq6a":
+            "アップロードされた写真が保存されると、バックアップや解析システム、外部サービスに取り込まれ、露出・転売・再利用（学習データセットを含む）のリスクが高まることがあります。ローカルで動く変換ツールを選べば、画像は端末に留まり、見せる相手を自分で決められ、写真が“誰かのビジネス”に変わってしまう可能性を抑えられます。",
+
         "seo.synonyms":
             "HEIC / HEIF / HIF 変換 • HEIC→JPG • HEIC→JPEG • HEIC→PNG • HEIC→WEBP • HEIF→JPG • HEIF→PNG • HIF→JPG • HIF→WEBP • 無料 HEIC 変換 • オフライン画像変換 • アップロード不要 • 全端末対応 • プライベート変換",
 
@@ -456,6 +488,14 @@ export const DICTS = {
         "seo.faq4a":
             "不会上传。所有转换都在浏览器本地完成，你的 .heic、.heif、.hif 文件不会离开设备。电脑和手机上都能保持照片隐私。",
 
+        "seo.faq5q": "为什么“无需上传”对照片隐私很重要？",
+        "seo.faq5a":
+            "照片常包含个人信息（人脸、地点、证件、私密瞬间）。当在线转换工具把图片上传到服务器时，你对文件的控制会变弱：可能会被记录、保存时间超出预期、与第三方共享，或以你没想到的方式被再次使用。使用在浏览器本地处理的工具能降低这些风险：图片不需要通过网络传输，更不容易出现在你不希望的地方。",
+
+        "seo.faq6q": "为什么要在意照片被存储、共享或用于训练？",
+        "seo.faq6a":
+            "如果工具会存储上传的照片，它们可能进入备份、数据分析系统或第三方服务，增加泄露、转卖或再利用（包括训练数据集）的可能性，而你可能并不会察觉。选择本地运行的转换器能让你保留控制权：文件留在设备上，由你决定谁能看到，也能避免照片变成别人的“产品”。",
+
         "seo.synonyms":
             "HEIC / HEIF / HIF 转换器 • HEIC 转 JPG • HEIC 转 JPEG • HEIC 转 PNG • HEIC 转 WEBP • HEIF 转 JPG • HEIF 转 PNG • HIF 转 JPG • HIF 转 WEBP • 免费 HEIC 转换器 • 离线图片转换器 • 无需上传 • 适用于所有设备 • 隐私转换器",
 
@@ -556,6 +596,14 @@ export const DICTS = {
         "seo.faq4q": "هل هو خاص؟ هل يتم رفع ملفات HEIC / HEIF / HIF؟",
         "seo.faq4a":
             "لا يوجد رفع. كل عمليات التحويل تتم محليًا داخل متصفحك، لذا ملفات ‎.heic و‎.heif و‎.hif لا تغادر جهازك. تبقى صورك خاصة على الكمبيوتر والجوال.",
+
+        "seo.faq5q": "لماذا يهم “بدون رفع” لخصوصية الصور؟",
+        "seo.faq5a":
+            "الصور غالبًا تحتوي على بيانات شخصية (وجوه، أماكن، مستندات، لحظات خاصة). عندما يرفع محول عبر الإنترنت الصور إلى خادم، يقل تحكمك: قد يتم تسجيل الملفات أو تخزينها مدة أطول من المتوقع أو مشاركتها مع أطراف ثالثة أو إعادة استخدامها بطرق لم تقصدها. المحول المحلي داخل المتصفح يقلّل هذه المخاطر لأنه يعالج كل شيء على جهازك — فلا تنتقل صورك عبر الإنترنت ويصبح من الأقل احتمالًا أن تصل إلى مكان لا تريده.",
+
+        "seo.faq6q": "لماذا يجب أن أهتم بتخزين الصور أو مشاركتها أو استخدامها للتدريب؟",
+        "seo.faq6a":
+            "إذا كانت الأداة تخزّن الصور المرفوعة، فقد تُضمَّن ضمن النسخ الاحتياطية أو أنظمة التحليلات أو خدمات طرف ثالث — ما يزيد احتمالات التعرّض أو إعادة البيع أو إعادة الاستخدام (بما في ذلك مجموعات بيانات التدريب) دون أن تلاحظ. اختيار محول يعمل محليًا يبقي التحكم بيدك: ملفاتك تبقى على جهازك، وأنت من يقرر من يراها، ولا تتحول صورك إلى “منتج” لدى أي جهة أخرى.",
 
         "seo.synonyms":
             "محول HEIC / HEIF / HIF • HEIC إلى JPG • HEIC إلى JPEG • HEIC إلى PNG • HEIC إلى WEBP • HEIF إلى JPG • HEIF إلى PNG • HIF إلى JPG • HIF إلى WEBP • محول HEIC مجاني • محول صور أوفلاين • بدون رفع • يعمل على جميع الأجهزة • محول خاص",
@@ -658,6 +706,14 @@ export const DICTS = {
         "seo.faq4a":
             "कोई अपलोड नहीं। सभी कन्वर्ज़न आपके ब्राउज़र में लोकल होते हैं, इसलिए आपकी .heic, .heif और .hif फ़ाइलें डिवाइस से बाहर नहीं जातीं। डेस्कटॉप और मोबाइल पर आपकी फ़ोटो प्राइवेट रहती हैं।",
 
+        "seo.faq5q": "फोटो प्राइवेसी के लिए “नो अपलोड्स” क्यों ज़रूरी है?",
+        "seo.faq5a":
+            "फोटो में अक्सर निजी जानकारी होती है (चेहरे, लोकेशन, डॉक्यूमेंट, निजी पल)। जब कोई ऑनलाइन कनवर्टर इमेज को सर्वर पर अपलोड करता है, तो कंट्रोल कम हो जाता है: फाइलें लॉग हो सकती हैं, अपेक्षा से ज़्यादा समय तक स्टोर रह सकती हैं, थर्ड-पार्टी के साथ शेयर हो सकती हैं, या अनचाहे तरीके से दोबारा इस्तेमाल हो सकती हैं। लोकल, इन-ब्राउज़र कनवर्टर इस जोखिम को घटाता है क्योंकि प्रोसेसिंग आपके डिवाइस पर ही होती है — आपकी इमेज इंटरनेट पर नहीं जातीं और गलत जगह पहुँचने की संभावना काफी कम हो जाती है।",
+
+        "seo.faq6q": "फोटो के स्टोर/शेयर होने या ट्रेनिंग के लिए इस्तेमाल होने की चिंता क्यों करनी चाहिए?",
+        "seo.faq6a":
+            "अगर कोई टूल अपलोड की गई फोटो स्टोर करता है, तो वह बैकअप, एनालिटिक्स सिस्टम या थर्ड-पार्टी सर्विस का हिस्सा बन सकती है — जिससे एक्सपोज़र, रीसेल या री-यूज़ (ट्रेनिंग डाटासेट सहित) का जोखिम बढ़ता है, और आपको पता भी नहीं चलता। जो कनवर्टर लोकल चलता है, वह कंट्रोल आपके पास रखता है: फाइलें आपके डिवाइस पर रहती हैं, आप तय करते हैं कौन देखे, और आपकी फोटो किसी और का “प्रोडक्ट” नहीं बनती।",
+
         "seo.synonyms":
             "HEIC / HEIF / HIF कनवर्टर • HEIC से JPG • HEIC से JPEG • HEIC से PNG • HEIC से WEBP • HEIF से JPG • HEIF से PNG • HIF से JPG • HIF से WEBP • फ्री HEIC कनवर्टर • ऑफ़लाइन इमेज कनवर्टर • नो अपलोड्स • सभी डिवाइस पर काम करता है • प्राइवेट कनवर्टर",
 
@@ -759,6 +815,14 @@ export const DICTS = {
         "seo.faq4q": "Ist es privat? Werden meine HEIC / HEIF / HIF Dateien hochgeladen?",
         "seo.faq4a":
             "Keine Uploads. Die Konvertierung läuft lokal im Browser, daher verlassen deine .heic-, .heif- und .hif-Dateien dein Gerät nicht. Deine Fotos bleiben privat — auf Desktop und Mobil.",
+
+        "seo.faq5q": "Warum ist „keine Uploads“ wichtig für die Foto-Privatsphäre?",
+        "seo.faq5a":
+            "Fotos enthalten oft persönliche Daten (Gesichter, Orte, Dokumente, private Momente). Wenn ein Online-Konverter Bilder auf einen Server hochlädt, wird die Kontrolle kleiner: Dateien können protokolliert, länger als erwartet gespeichert, mit Dritten geteilt oder anders wiederverwendet werden. Ein lokaler In-Browser-Konverter reduziert dieses Risiko, weil alles auf deinem Gerät verarbeitet wird — deine Bilder wandern nicht durchs Internet und landen viel seltener dort, wo du sie nicht haben willst.",
+
+        "seo.faq6q": "Warum sollte ich mich darum kümmern, ob Fotos gespeichert, geteilt oder fürs Training genutzt werden?",
+        "seo.faq6a":
+            "Wenn ein Tool hochgeladene Fotos speichert, können sie in Backups, Analytics-Systeme oder Drittanbieter-Services gelangen — das erhöht das Risiko von Offenlegung, Weiterverkauf oder Wiederverwendung (auch für Trainingsdatensätze), ohne dass du es merkst. Ein lokal arbeitender Konverter lässt die Kontrolle bei dir: Dateien bleiben auf deinem Gerät, du entscheidest, wer sie sieht, und deine Fotos werden nicht zum „Produkt“ von jemand anderem.",
 
         "seo.synonyms":
             "HEIC / HEIF / HIF Konverter • HEIC zu JPG • HEIC zu JPEG • HEIC zu PNG • HEIC zu WEBP • HEIF zu JPG • HEIF zu PNG • HIF zu JPG • HIF zu WEBP • kostenloser HEIC Konverter • Offline-Bildkonverter • keine Uploads • funktioniert auf allen Geräten • privater Bildkonverter",
@@ -863,6 +927,14 @@ export const DICTS = {
         "seo.faq4a":
             "Aucun envoi. La conversion se fait localement dans votre navigateur, donc vos fichiers .heic, .heif et .hif ne quittent jamais votre appareil. Vos photos restent privées sur ordinateur et mobile.",
 
+        "seo.faq5q": "Pourquoi « sans envoi » est important pour la confidentialité des photos ?",
+        "seo.faq5a":
+            "Les photos contiennent souvent des données personnelles (visages, lieux, documents, moments privés). Quand un convertisseur en ligne envoie des images vers un serveur, vous perdez une partie du contrôle : les fichiers peuvent être journalisés, conservés plus longtemps que prévu, partagés avec des tiers ou réutilisés d’une manière non souhaitée. Un convertisseur local dans le navigateur réduit ce risque en traitant tout sur votre appareil — vos images ne transitent pas par Internet et ont beaucoup moins de chances d’atterrir là où vous ne le voulez pas.",
+
+        "seo.faq6q": "Pourquoi se soucier de photos stockées, partagées ou utilisées pour l’entraînement ?",
+        "seo.faq6a":
+            "Si un outil stocke des photos envoyées, elles peuvent se retrouver dans des sauvegardes, des systèmes d’analytics ou des services tiers — ce qui augmente le risque d’exposition, de revente ou de réutilisation (y compris dans des jeux de données d’entraînement) sans que vous le remarquiez. Choisir un convertisseur qui fonctionne localement vous laisse le contrôle : vos fichiers restent sur votre appareil, vous décidez qui les voit et vos photos ne deviennent pas le « produit » de quelqu’un d’autre.",
+
         "seo.synonyms":
             "Convertisseur HEIC / HEIF / HIF • HEIC en JPG • HEIC en JPEG • HEIC en PNG • HEIC en WEBP • HEIF en JPG • HEIF en PNG • HIF en JPG • HIF en WEBP • convertisseur HEIC gratuit • convertisseur d’images hors ligne • aucun envoi • fonctionne sur tous les appareils • convertisseur privé",
 
@@ -965,6 +1037,14 @@ export const DICTS = {
         "seo.faq4q": "Это приватно? Мои файлы HEIC / HEIF / HIF загружаются?",
         "seo.faq4a":
             "Никаких загрузок. Конвертация происходит локально в вашем браузере, поэтому .heic, .heif и .hif не покидают устройство. Ваши фото остаются приватными на ПК и мобильных.",
+
+        "seo.faq5q": "Почему «без загрузок» важно для приватности фотографий?",
+        "seo.faq5a":
+            "Фото часто содержат личные данные (лица, места, документы, приватные моменты). Когда онлайн-конвертер загружает изображения на сервер, вы теряете часть контроля: файлы могут логироваться, храниться дольше ожидаемого, передаваться третьим сторонам или использоваться иначе. Локальный конвертер в браузере снижает этот риск, потому что обработка идёт на вашем устройстве — изображения не путешествуют по интернету и гораздо реже оказываются там, где вы бы не хотели.",
+
+        "seo.faq6q": "Почему важно думать о хранении, обмене или использовании фото для обучения?",
+        "seo.faq6a":
+            "Если инструмент хранит загруженные фото, они могут попасть в резервные копии, аналитику или сторонние сервисы — и это повышает риск утечек, перепродажи или повторного использования (включая обучающие датасеты) незаметно для вас. Выбирая конвертер, который работает локально, вы сохраняете контроль: файлы остаются на устройстве, вы решаете, кто их видит, и ваши фото не становятся «продуктом» для кого-то ещё.",
 
         "seo.synonyms":
             "Конвертер HEIC / HEIF / HIF • HEIC в JPG • HEIC в JPEG • HEIC в PNG • HEIC в WEBP • HEIF в JPG • HEIF в PNG • HIF в JPG • HIF в WEBP • бесплатный HEIC конвертер • офлайн-конвертер изображений • без загрузок • работает на всех устройствах • приватный конвертер",
@@ -1069,6 +1149,14 @@ export const DICTS = {
         "seo.faq4a":
             "Nessun upload. La conversione avviene localmente nel browser, quindi i file .heic, .heif e .hif non lasciano mai il dispositivo. Le tue foto restano private su desktop e mobile.",
 
+        "seo.faq5q": "Perché “niente upload” è importante per la privacy delle foto?",
+        "seo.faq5a":
+            "Le foto spesso contengono dati personali (volti, luoghi, documenti, momenti privati). Quando un convertitore online carica le immagini su un server, perdi controllo: i file possono essere registrati, conservati più del previsto, condivisi con terze parti o riutilizzati in modi non desiderati. Un convertitore locale nel browser riduce questi rischi perché elabora tutto sul tuo dispositivo: le immagini non viaggiano su Internet ed è molto meno probabile che finiscano dove non vuoi.",
+
+        "seo.faq6q": "Perché dovrei preoccuparmi se le foto vengono salvate, condivise o usate per l’addestramento?",
+        "seo.faq6a":
+            "Se uno strumento archivia foto caricate, possono finire in backup, sistemi di analytics o servizi di terze parti — aumentando il rischio di esposizione, rivendita o riutilizzo (anche in dataset di addestramento) senza che tu te ne accorga. Scegliere un convertitore che funziona localmente ti lascia il controllo: i file restano sul dispositivo, decidi tu chi li vede e le tue foto non diventano il “prodotto” di qualcun altro.",
+
         "seo.synonyms":
             "Convertitore HEIC / HEIF / HIF • HEIC in JPG • HEIC in JPEG • HEIC in PNG • HEIC in WEBP • HEIF in JPG • HEIF in PNG • HIF in JPG • HIF in WEBP • convertitore HEIC gratis • convertitore immagini offline • nessun upload • funziona su tutti i dispositivi • convertitore privato",
 
@@ -1170,6 +1258,14 @@ export const DICTS = {
         "seo.faq4q": "Is het privé? Worden mijn HEIC / HEIF / HIF bestanden geüpload?",
         "seo.faq4a":
             "Geen uploads. De conversie gebeurt lokaal in je browser, dus je .heic-, .heif- en .hif-bestanden verlaten je apparaat niet. Je foto’s blijven privé op desktop en mobiel.",
+
+        "seo.faq5q": "Waarom is “geen uploads” belangrijk voor foto-privacy?",
+        "seo.faq5a":
+            "Foto’s bevatten vaak persoonlijke data (gezichten, locaties, documenten, privé-momenten). Als een online converter afbeeldingen naar een server uploadt, verlies je controle: bestanden kunnen gelogd worden, langer opgeslagen blijven dan verwacht, met derden gedeeld worden of opnieuw gebruikt worden. Een lokale converter in de browser verlaagt dat risico doordat alles op je apparaat wordt verwerkt — je beelden reizen niet over het internet en belanden veel minder snel ergens waar je ze niet wilt hebben.",
+
+        "seo.faq6q": "Waarom zou ik me zorgen maken over foto’s die worden opgeslagen, gedeeld of gebruikt voor training?",
+        "seo.faq6a":
+            "Als een tool geüploade foto’s opslaat, kunnen ze onderdeel worden van back-ups, analytics-systemen of diensten van derden — wat de kans op blootstelling, doorverkoop of hergebruik (ook voor trainingsdatasets) vergroot zonder dat je het merkt. Met een converter die lokaal werkt, houd je de controle: je bestanden blijven op je apparaat, jij beslist wie ze ziet en je foto’s worden niet iemands anders product.",
 
         "seo.synonyms":
             "HEIC / HEIF / HIF converter • HEIC naar JPG • HEIC naar JPEG • HEIC naar PNG • HEIC naar WEBP • HEIF naar JPG • HEIF naar PNG • HIF naar JPG • HIF naar WEBP • gratis HEIC converter • offline afbeeldingsconverter • geen uploads • werkt op alle apparaten • privé converter",
@@ -1273,6 +1369,14 @@ export const DICTS = {
         "seo.faq4a":
             "Bez uploadów. Konwersja działa lokalnie w przeglądarce, więc pliki .heic, .heif i .hif nie opuszczają urządzenia. Twoje zdjęcia pozostają prywatne na komputerze i telefonie.",
 
+        "seo.faq5q": "Dlaczego „bez uploadów” ma znaczenie dla prywatności zdjęć?",
+        "seo.faq5a":
+            "Zdjęcia często zawierają dane osobowe (twarze, miejsca, dokumenty, prywatne chwile). Gdy konwerter online wysyła obrazy na serwer, tracisz część kontroli: pliki mogą być logowane, przechowywane dłużej niż oczekujesz, udostępniane stronom trzecim lub ponownie wykorzystywane. Lokalny konwerter w przeglądarce zmniejsza to ryzyko, bo wszystko dzieje się na Twoim urządzeniu — obrazy nie „podróżują” przez internet i rzadziej trafiają tam, gdzie nie chcesz.",
+
+        "seo.faq6q": "Dlaczego mam się przejmować przechowywaniem, udostępnianiem lub użyciem zdjęć do trenowania?",
+        "seo.faq6a":
+            "Jeśli narzędzie przechowuje wysłane zdjęcia, mogą trafić do kopii zapasowych, systemów analitycznych lub usług stron trzecich — zwiększając ryzyko ujawnienia, odsprzedaży lub ponownego użycia (także w zbiorach treningowych) bez Twojej wiedzy. Wybierając konwerter działający lokalnie, zachowujesz kontrolę: pliki zostają na urządzeniu, Ty decydujesz, kto je widzi, a zdjęcia nie stają się „produktem” kogoś innego.",
+
         "seo.synonyms":
             "Konwerter HEIC / HEIF / HIF • HEIC do JPG • HEIC do JPEG • HEIC do PNG • HEIC do WEBP • HEIF do JPG • HEIF do PNG • HIF do JPG • HIF do WEBP • darmowy konwerter HEIC • konwerter obrazów offline • bez uploadów • działa na wszystkich urządzeniach • prywatny konwerter",
 
@@ -1374,7 +1478,15 @@ export const DICTS = {
 
         "seo.faq4q": "Gizli mi? HEIC / HEIF / HIF dosyalarım yükleniyor mu?",
         "seo.faq4a":
-            "Yükleme yok. Dönüştürme tarayıcınızda yerel olarak yapılır; .heic, .heif ve .hif dosyalarınız cihazınızdan çıkmaz. Fotoğraflarınız masaüstü ve мобилde gizli kalır.",
+            "Yükleme yok. Dönüştürme tarayıcınızda yerel olarak yapılır; .heic, .heif ve .hif dosyalarınız cihazınızdan çıkmaz. Fotoğraflarınız masaüstü ve mobilde gizli kalır.",
+
+        "seo.faq5q": "Fotoğraf gizliliği için “yükleme yok” neden önemli?",
+        "seo.faq5a":
+            "Fotoğraflar çoğu zaman kişisel veri içerir (yüzler, konumlar, belgeler, özel anlar). Çevrimiçi bir dönüştürücü görselleri sunucuya yüklediğinde kontrol azalır: dosyalar kaydedilebilir, beklenenden uzun süre saklanabilir, üçüncü taraflarla paylaşılabilir veya istenmeyen biçimde yeniden kullanılabilir. Tarayıcıda yerel çalışan dönüştürücü bu riski azaltır; çünkü her şey cihazınızda işlenir — görseller internet üzerinden taşınmaz ve istemediğiniz yerlere düşme olasılığı çok daha düşüktür.",
+
+        "seo.faq6q": "Fotoğrafların saklanması, paylaşılması veya eğitim için kullanılması neden önemli?",
+        "seo.faq6a":
+            "Bir araç yüklenen fotoğrafları saklarsa, yedeklemelerin, analiz sistemlerinin veya üçüncü taraf hizmetlerin parçası olabilir — bu da fark etmeden ifşa, yeniden satış veya yeniden kullanım (eğitim veri setleri dahil) riskini artırır. Yerel çalışan bir dönüştürücü seçmek kontrolü sizde tutar: dosyalar cihazınızda kalır, kimin göreceğine siz karar verirsiniz ve fotoğraflarınız başkasının “ürünü”ne dönüşmez.",
 
         "seo.synonyms":
             "HEIC / HEIF / HIF dönüştürücü • HEIC’ten JPG • HEIC’ten JPEG • HEIC’ten PNG • HEIC’ten WEBP • HEIF’ten JPG • HEIF’ten PNG • HIF’ten JPG • HIF’ten WEBP • ücretsiz HEIC dönüştürücü • çevrimdışı görsel dönüştürücü • yükleme yok • tüm cihazlarda çalışır • gizli dönüştürücü",
@@ -1383,7 +1495,7 @@ export const DICTS = {
         "app.title": "HEIC / HEIF / HIF (.hif/.heic) → JPG / JPEG / PNG / WEBP Dönüştürücü",
         "header.title": "HEIC / HEIF / HIF → JPG / JPEG / PNG / WEBP",
         "header.sub":
-            "Ücretsiz ve gizli HEIC/HIF dönüştürücü. Yerel işlem, yükleme yok. Masaüstü ve موبилde çalışır.",
+            "Ücretsiz ve gizli HEIC/HIF dönüştürücü. Yerel işlem, yükleme yok. Masaüstü ve mobilde çalışır.",
 
         "dropzone.ariaLabel": "HEIC / HEIF / HIF dosyalarını buraya bırakın",
         "dropzone.strong": ".heic / .heif / .hif dosyalarını bırakın",
