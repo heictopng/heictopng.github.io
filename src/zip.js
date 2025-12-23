@@ -1,6 +1,16 @@
 // zip.js
 import { t } from './internationalization/i18n.js';
 
+
+// Constants
+const PEAK_RAM_MULTIPLIER = 1.2;
+const FREE_RAM_PERCENTAGE = 0.6;
+const DEFAULT_MOBILE_RAM_PERCENTAGE = 0.15;
+const DEFAULT_DESKTOP_RAM_PERCENTAGE = 0.25;
+const DEFAULT_MOBILE_RAM_BYTES = 150 * 1024 * 1024;
+const DEFAULT_DESKTOP_RAM_BYTES = 400 * 1024 * 1024;
+
+
 // Streaming ZIP via fflate.
 // For true offline, vendor this file locally and import that instead.
 async function loadFflate() {
@@ -60,7 +70,7 @@ function estimateUsableRamBytes() {
     ) {
         const remainingHeap = pm.jsHeapSizeLimit - pm.usedJSHeapSize;
         // Safety margin: only use 60% of remaining heap
-        return Math.max(0, Math.floor(remainingHeap * 0.6));
+        return Math.max(0, Math.floor(remainingHeap * FREE_RAM_PERCENTAGE));
     }
 
     // Fallback: coarse device RAM estimate (not supported everywhere)
@@ -69,12 +79,12 @@ function estimateUsableRamBytes() {
     if (deviceGB) {
         const deviceBytes = deviceGB * 1024 * 1024 * 1024;
         // Conservative slice for JS allocations
-        const fraction = isMobile ? 0.08 : 0.15;
+        const fraction = isMobile ? DEFAULT_MOBILE_RAM_PERCENTAGE : DEFAULT_DESKTOP_RAM_PERCENTAGE;
         return Math.floor(deviceBytes * fraction);
     }
 
     // Last resort defaults
-    return isMobile ? 150 * 1024 * 1024 : 400 * 1024 * 1024;
+    return isMobile ? DEFAULT_MOBILE_RAM_BYTES : DEFAULT_DESKTOP_RAM_BYTES;
 }
 
 function formatBytes(bytes) {
@@ -94,7 +104,7 @@ function getZipSizeEstimate(converted) {
     const estTotalInput = estimateTotalBytesFromMean(mean, blobs.length);
 
     // With streaming, peak RAM is much lower, but keep conservative estimate.
-    const estPeakRam = estimatePeakRamBytes(estTotalInput, 1.5);
+    const estPeakRam = estimatePeakRamBytes(estTotalInput, PEAK_RAM_MULTIPLIER);
 
     const usableRam = estimateUsableRamBytes();
 
@@ -110,7 +120,7 @@ function getZipSizeEstimate(converted) {
 
 // ---------- Split + cleanup helpers ----------
 
-function computeItemsPerZip(est, peakMultiplier = 1.5) {
+function computeItemsPerZip(est, peakMultiplier = PEAK_RAM_MULTIPLIER) {
     const mean = est.meanBytes || 0;
     if (mean <= 0) return 1;
 
