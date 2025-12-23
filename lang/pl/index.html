@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="pl" data-i18n-root>
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -9,24 +10,12 @@
   <meta name="app:locale" content="pl" />
 <base href="../../" />
 <title data-i18n="meta.title">Konwerter HEIC/HEIF/HIF do JPG/JPEG, PNG i WEBP – Darmowy, offline i prywatny (bez uploadów)</title>
-  <meta
-    name="description"
-    data-i18n="meta.description"
-    data-i18n-attr="content"
-    content="Konwertuj obrazy HEIC, HEIF i HIF do JPG/JPEG, PNG lub WEBP bezpośrednio w przeglądarce. Bez wysyłania plików, działa offline i chroni prywatność dzięki szybkiej lokalnej obróbce na komputerze i telefonie."
-  />
-  <meta
-    property="og:title"
-    data-i18n="meta.ogTitle"
-    data-i18n-attr="content"
-    content="Konwerter HEIC/HEIF/HIF do JPG/JPEG, PNG i WEBP – Darmowy, offline i prywatny (bez uploadów)"
-  />
-  <meta
-    property="og:description"
-    data-i18n="meta.ogDescription"
-    data-i18n-attr="content"
-    content="Konwertuj obrazy HEIC, HEIF i HIF do JPG/JPEG, PNG lub WEBP bezpośrednio w przeglądarce. Bez wysyłania plików, działa offline i chroni prywatność dzięki szybkiej lokalnej obróbce na komputerze i telefonie."
-  />
+  <meta name="description" data-i18n="meta.description" data-i18n-attr="content"
+    content="Konwertuj obrazy HEIC, HEIF i HIF do JPG/JPEG, PNG lub WEBP bezpośrednio w przeglądarce. Bez wysyłania plików, działa offline i chroni prywatność dzięki szybkiej lokalnej obróbce na komputerze i telefonie." />
+  <meta property="og:title" data-i18n="meta.ogTitle" data-i18n-attr="content"
+    content="Konwerter HEIC/HEIF/HIF do JPG/JPEG, PNG i WEBP – Darmowy, offline i prywatny (bez uploadów)" />
+  <meta property="og:description" data-i18n="meta.ogDescription" data-i18n-attr="content"
+    content="Konwertuj obrazy HEIC, HEIF i HIF do JPG/JPEG, PNG lub WEBP bezpośrednio w przeglądarce. Bez wysyłania plików, działa offline i chroni prywatność dzięki szybkiej lokalnej obróbce na komputerze i telefonie." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://heictopng.github.io/" />
   <meta property="og:site_name" content="HEIC to PNG" />
@@ -35,18 +24,10 @@
   <meta property="og:image:height" content="747" />
 
   <meta name="twitter:card" content="summary" />
-  <meta
-    name="twitter:title"
-    data-i18n="meta.twitterTitle"
-    data-i18n-attr="content"
-    content="Konwerter HEIC/HEIF/HIF do JPG/JPEG, PNG i WEBP – Darmowy, offline i prywatny (bez uploadów)"
-  />
-  <meta
-    name="twitter:description"
-    data-i18n="meta.twitterDescription"
-    data-i18n-attr="content"
-    content="Konwertuj obrazy HEIC, HEIF i HIF do JPG/JPEG, PNG lub WEBP bezpośrednio w przeglądarce. Bez wysyłania plików, działa offline i chroni prywatność dzięki szybkiej lokalnej obróbce na komputerze i telefonie."
-  />
+  <meta name="twitter:title" data-i18n="meta.twitterTitle" data-i18n-attr="content"
+    content="Konwerter HEIC/HEIF/HIF do JPG/JPEG, PNG i WEBP – Darmowy, offline i prywatny (bez uploadów)" />
+  <meta name="twitter:description" data-i18n="meta.twitterDescription" data-i18n-attr="content"
+    content="Konwertuj obrazy HEIC, HEIF i HIF do JPG/JPEG, PNG lub WEBP bezpośrednio w przeglądarce. Bez wysyłania plików, działa offline i chroni prywatność dzięki szybkiej lokalnej obróbce na komputerze i telefonie." />
   <meta name="twitter:image" content="https://heictopng.github.io/assets/favicon.png" />
   <meta name="twitter:card" content="summary_large_image" />
 <link rel="alternate" hreflang="es" href="https://heictopng.github.io/lang/es/" />
@@ -61,7 +42,8 @@
   <link rel="stylesheet" href="../../styles.css" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9130038212194388"
     crossorigin="anonymous"></script>
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d18462b4c6434be6b1f764da28ce7441"}'></script>
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+    data-cf-beacon='{"token": "d18462b4c6434be6b1f764da28ce7441"}'></script>
 
   <script type="application/ld+json">
     {
@@ -96,6 +78,7 @@
   <link rel="alternate" hreflang="tr" href="https://heictopng.github.io/lang/tr/" />
   <link rel="alternate" hreflang="x-default" href="https://heictopng.github.io/lang/en/" />
 </head>
+
 <body>
   <header class="header">
     <h1 data-i18n="header.title">HEIC / HEIF / HIF → JPG / JPEG / PNG / WEBP</h1>
@@ -110,19 +93,13 @@
           <input id="concurrencyPct" type="range" min="10" max="100" step="5" value="70" />
           <span id="concurrencyPctVal">70%</span>
         </label>
-        <div id="concurrencyWarn" class="sub" hidden data-i18n="options.cpuWarn">⚠️ Wysokie użycie CPU (75%+) może spowolnić komputer w zależności od sprzętu.</div>
+        <div id="concurrencyWarn" class="sub" hidden data-i18n="options.cpuWarn">⚠️ Wysokie użycie CPU (75%+) może spowolnić komputer w zależności od możliwości sprzętowych.</div>
       </div>
 
-      <div
-        id="dropzone"
-        class="dropzone"
-        tabindex="0"
-        role="button"
-        aria-label="Upuść pliki HEIC / HEIF / HIF tutaj"
-        data-i18n-aria-label="dropzone.ariaLabel"
-      >
+      <div id="dropzone" class="dropzone" tabindex="0" role="button" aria-label="Upuść pliki HEIC / HEIF / HIF tutaj"
+        data-i18n-aria-label="dropzone.ariaLabel">
         <div class="dropzone-inner">
-          <strong data-i18n="dropzone.strong">Upuść pliki .heic / .heif / .hif</strong>
+          <strong data-i18n="dropzone.strong">Upuść pliki .heic/.heif/.hif</strong>
           <span data-i18n="dropzone.or">lub</span>
           <label class="btn">
             <span data-i18n="dropzone.choose">Wybierz pliki</span>
@@ -155,13 +132,7 @@
 
         <div class="progress">
           <div id="progressLabel" class="progress-label"></div>
-          <progress
-            id="progressBar"
-            class="progress-bar"
-            value="0"
-            max="1"
-            aria-label="Conversion progress"
-          ></progress>
+          <progress id="progressBar" class="progress-bar" value="0" max="1" aria-label="Conversion progress"></progress>
 
           <small class="sub subtle" data-i18n="trust.buttons" style="margin-top: 6px;">100% darmowe · Bez rejestracji · Bez uploadów</small>
         </div>
@@ -175,7 +146,7 @@
   </main>
 
   <footer class="footer">
-    <small data-i18n="footer.tip">Wskazówka: duże partie działają szybciej przy aktywnej karcie.</small>
+    <small data-i18n="footer.tip">Wskazówka: duże partie dekodują szybciej, gdy karta jest aktywna.</small>
   </footer>
 
   <section class="panel seo">
@@ -190,28 +161,48 @@
       </details>
 
       <details class="faq-item">
-        <summary data-i18n="seo.faq2q">Czy mogę konwertować HEIC / HEIF / HIF do PNG, WEBP lub JPEG na dowolnym urządzeniu?</summary>
-        <div class="faq-body" data-i18n="seo.faq2a">Tak. Wybierz w menu wyjścia JPG/JPEG, PNG lub WEBP i konwertuj. Ten darmowy konwerter działa bezpośrednio w przeglądarce na wszystkich urządzeniach, w tym Windows, macOS, Linux, Android i iOS.</div>
+        <summary data-i18n="seo.faq2q">Dlaczego Windows nie może otworzyć zdjęć HEIC?</summary>
+        <div class="faq-body" data-i18n="seo.faq2a">HEIC to domyślny format zdjęć na iPhone’ach i w niektórych nowoczesnych aparatach, ale Windows nie obsługuje go w pełni od razu po instalacji. Dlatego wielu użytkowników Windows widzi błędy przy otwieraniu zdjęć HEIC z iPhone’a lub aparatu. Konwersja HEIC do JPG, PNG lub WEBP sprawia, że obrazy są od razu kompatybilne z Windowsem i większością aplikacji do zdjęć — bez instalowania dodatkowego oprogramowania.</div>
       </details>
 
       <details class="faq-item">
-        <summary data-i18n="seo.faq3q">Czy ten konwerter HEIC / HEIF / HIF jest naprawdę darmowy?</summary>
-        <div class="faq-body" data-i18n="seo.faq3a">Tak. Konwerter jest całkowicie darmowy. Brak limitów, brak znaków wodnych, brak rejestracji i brak ukrytych opłat. Możesz konwertować dowolną liczbę obrazów HEIC/HEIF/HIF na każdym urządzeniu.</div>
+        <summary data-i18n="seo.faq3q">Czy to działa ze zdjęciami z iPhone’a i z aparatów?</summary>
+        <div class="faq-body" data-i18n="seo.faq3a">Tak. Zdjęcia z iPhone’a są zwykle zapisywane jako pliki HEIC, a niektóre aparaty (w tym wybrane modele Sony) również używają formatów HEIF lub HEIC. Ten konwerter działa ze zdjęciami z iPhone’a i zgodnymi zdjęciami z aparatów, umożliwiając konwersję do JPG, PNG lub WEBP do łatwego użycia na Windows, macOS, Androidzie i innych urządzeniach.</div>
       </details>
 
       <details class="faq-item">
-        <summary data-i18n="seo.faq4q">Czy to prywatne? Czy moje pliki HEIC / HEIF / HIF są wysyłane?</summary>
-        <div class="faq-body" data-i18n="seo.faq4a">Bez uploadów. Konwersja działa lokalnie w przeglądarce, więc pliki .heic, .heif i .hif nie opuszczają urządzenia. Twoje zdjęcia pozostają prywatne na komputerze i telefonie.</div>
+        <summary data-i18n="seo.faq4q">Czy mogę konwertować HEIC / HEIF / HIF na Windows bez instalowania czegokolwiek?</summary>
+        <div class="faq-body" data-i18n="seo.faq4a">Tak. Konwerter działa bezpośrednio w przeglądarce, więc użytkownicy Windows nie muszą instalować aplikacji, kodeków ani rozszerzeń systemowych. Wystarczy otworzyć stronę, przekonwertować zdjęcia HEIC z iPhone’a lub aparatu i pobrać standardowe pliki JPG lub PNG, które działają wszędzie.</div>
       </details>
 
       <details class="faq-item">
-        <summary data-i18n="seo.faq5q">Dlaczego „bez uploadów” ma znaczenie dla prywatności zdjęć?</summary>
-        <div class="faq-body" data-i18n="seo.faq5a">Zdjęcia często zawierają dane osobowe (twarze, miejsca, dokumenty, prywatne chwile). Gdy konwerter online wysyła obrazy na serwer, tracisz część kontroli: pliki mogą być logowane, przechowywane dłużej niż oczekujesz, udostępniane stronom trzecim lub ponownie wykorzystywane. Lokalny konwerter w przeglądarce zmniejsza to ryzyko, bo wszystko dzieje się na Twoim urządzeniu — obrazy nie „podróżują” przez internet i rzadziej trafiają tam, gdzie nie chcesz.</div>
+        <summary data-i18n="seo.faq5q">Jak przekonwertować HEIC do JPG bez wysyłania zdjęć?</summary>
+        <div class="faq-body" data-i18n="seo.faq5a">Wiele konwerterów online wysyła obrazy na serwer, co oznacza, że zdjęcia opuszczają Twoje urządzenie. Lokalny konwerter w przeglądarce tego unika. Wszystko dzieje się na Twoim komputerze lub telefonie, więc zdjęcia z iPhone’a i aparatu są konwertowane prywatnie — bez wysyłania ich przez internet.</div>
       </details>
 
       <details class="faq-item">
-        <summary data-i18n="seo.faq6q">Dlaczego mam się przejmować przechowywaniem, udostępnianiem lub użyciem zdjęć do trenowania?</summary>
-        <div class="faq-body" data-i18n="seo.faq6a">Jeśli narzędzie przechowuje wysłane zdjęcia, mogą trafić do kopii zapasowych, systemów analitycznych lub usług stron trzecich — zwiększając ryzyko ujawnienia, odsprzedaży lub ponownego użycia (także w zbiorach treningowych) bez Twojej wiedzy. Wybierając konwerter działający lokalnie, zachowujesz kontrolę: pliki zostają na urządzeniu, Ty decydujesz, kto je widzi, a zdjęcia nie stają się „produktem” kogoś innego.</div>
+        <summary data-i18n="seo.faq6q">Dlaczego lokalna konwersja ma znaczenie dla prywatności?</summary>
+        <div class="faq-body" data-i18n="seo.faq6a">Zdjęcia często zawierają dane osobowe, takie jak twarze, lokalizacje, dokumenty lub prywatne chwile. Gdy obrazy są wysyłane na zewnętrzne serwery, tracisz kontrolę nad tym, gdzie są przechowywane i jak mogą być ponownie użyte. Lokalna konwersja trzyma pliki na Twoim urządzeniu, zmniejszając ryzyko niepożądanego dostępu — a przy tym pozostaje całkowicie darmowa.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary data-i18n="seo.faq7q">Zdjęcia HEIC nie otwierają się na Windows — co mogę zrobić?</summary>
+        <div class="faq-body" data-i18n="seo.faq7a">To często zdarza się, gdy zdjęcia pochodzą z iPhone’a lub z aparatu, który zapisuje obrazy w formacie HEIC. Ponieważ obsługa w Windows bywa ograniczona, konwersja HEIC do JPG lub PNG to najszybszy sposób, aby je otwierać, edytować lub udostępniać bez zmiany ustawień systemu i bez instalowania dodatkowego oprogramowania.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary data-i18n="seo.faq8q">Jak otworzyć zdjęcia z iPhone’a na komputerze z Windows?</summary>
+        <div class="faq-body" data-i18n="seo.faq8a">Zdjęcia z iPhone’a są zwykle zapisane jako pliki HEIC, które mogą być trudne do otwarcia w Windows. Konwersja do JPG lub PNG w przeglądarce sprawia, że są od razu kompatybilne z przeglądarkami zdjęć, edytorami, drukarkami i aplikacjami do udostępniania na Windows.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary data-i18n="seo.faq9q">Czy do konwersji zdjęć HEIC potrzebuję internetu?</summary>
+        <div class="faq-body" data-i18n="seo.faq9a">Połączenie z internetem jest potrzebne tylko do załadowania strony. Gdy strona jest już wczytana, cała konwersja działa lokalnie w Twojej przeglądarce. Dzięki temu możesz konwertować zdjęcia HEIC nawet przy ograniczonym dostępie do sieci, zachowując pełną prywatność i kontrolę.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary data-i18n="seo.faq10q">Czy konwersja HEIC do JPG obniży jakość obrazu?</summary>
+        <div class="faq-body" data-i18n="seo.faq10a">HEIC to bardzo wydajny format, ale konwersja do JPG, PNG lub WEBP może zachować świetną jakość wizualną do codziennego użytku. Możesz wybrać format, który najlepiej pasuje do Twoich potrzeb — czy priorytetem jest kompatybilność, jakość obrazu czy mniejszy rozmiar plików.</div>
       </details>
     </div>
 
@@ -231,4 +222,5 @@
 
   <script type="module" src="../../src/app.js"></script>
 </body>
+
 </html>

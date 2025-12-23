@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="ja" data-i18n-root>
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -9,24 +10,12 @@
   <meta name="app:locale" content="ja" />
 <base href="../../" />
 <title data-i18n="meta.title">HEIC/HEIF/HIF → JPG/JPEG・PNG・WEBP 変換 – 無料・オフライン・プライベート（アップロード不要）</title>
-  <meta
-    name="description"
-    data-i18n="meta.description"
-    data-i18n-attr="content"
-    content="HEIC/HEIF/HIF を JPG/JPEG・PNG・WEBP にブラウザで直接変換。アップロード不要、読み込み後はオフライン対応。PC/スマホで高速なローカル処理で写真を安全に変換できます。"
-  />
-  <meta
-    property="og:title"
-    data-i18n="meta.ogTitle"
-    data-i18n-attr="content"
-    content="HEIC/HEIF/HIF → JPG/JPEG・PNG・WEBP 変換 – 無料・オフライン・プライベート（アップロード不要）"
-  />
-  <meta
-    property="og:description"
-    data-i18n="meta.ogDescription"
-    data-i18n-attr="content"
-    content="HEIC/HEIF/HIF を JPG/JPEG・PNG・WEBP にブラウザで直接変換。アップロード不要、読み込み後はオフライン対応。PC/スマホで高速なローカル処理で写真を安全に変換できます。"
-  />
+  <meta name="description" data-i18n="meta.description" data-i18n-attr="content"
+    content="HEIC/HEIF/HIF を JPG/JPEG・PNG・WEBP にブラウザで直接変換。アップロード不要、読み込み後はオフライン対応。PC/スマホで高速なローカル処理で写真を安全に変換できます。" />
+  <meta property="og:title" data-i18n="meta.ogTitle" data-i18n-attr="content"
+    content="HEIC/HEIF/HIF → JPG/JPEG・PNG・WEBP 変換 – 無料・オフライン・プライベート（アップロード不要）" />
+  <meta property="og:description" data-i18n="meta.ogDescription" data-i18n-attr="content"
+    content="HEIC/HEIF/HIF を JPG/JPEG・PNG・WEBP にブラウザで直接変換。アップロード不要、読み込み後はオフライン対応。PC/スマホで高速なローカル処理で写真を安全に変換できます。" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://heictopng.github.io/" />
   <meta property="og:site_name" content="HEIC to PNG" />
@@ -35,18 +24,10 @@
   <meta property="og:image:height" content="747" />
 
   <meta name="twitter:card" content="summary" />
-  <meta
-    name="twitter:title"
-    data-i18n="meta.twitterTitle"
-    data-i18n-attr="content"
-    content="HEIC/HEIF/HIF → JPG/JPEG・PNG・WEBP 変換 – 無料・オフライン・プライベート（アップロード不要）"
-  />
-  <meta
-    name="twitter:description"
-    data-i18n="meta.twitterDescription"
-    data-i18n-attr="content"
-    content="HEIC/HEIF/HIF を JPG/JPEG・PNG・WEBP にブラウザで直接変換。アップロード不要、読み込み後はオフライン対応。PC/スマホで高速なローカル処理で写真を安全に変換できます。"
-  />
+  <meta name="twitter:title" data-i18n="meta.twitterTitle" data-i18n-attr="content"
+    content="HEIC/HEIF/HIF → JPG/JPEG・PNG・WEBP 変換 – 無料・オフライン・プライベート（アップロード不要）" />
+  <meta name="twitter:description" data-i18n="meta.twitterDescription" data-i18n-attr="content"
+    content="HEIC/HEIF/HIF を JPG/JPEG・PNG・WEBP にブラウザで直接変換。アップロード不要、読み込み後はオフライン対応。PC/スマホで高速なローカル処理で写真を安全に変換できます。" />
   <meta name="twitter:image" content="https://heictopng.github.io/assets/favicon.png" />
   <meta name="twitter:card" content="summary_large_image" />
 <link rel="alternate" hreflang="es" href="https://heictopng.github.io/lang/es/" />
@@ -61,7 +42,8 @@
   <link rel="stylesheet" href="../../styles.css" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9130038212194388"
     crossorigin="anonymous"></script>
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d18462b4c6434be6b1f764da28ce7441"}'></script>
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+    data-cf-beacon='{"token": "d18462b4c6434be6b1f764da28ce7441"}'></script>
 
   <script type="application/ld+json">
     {
@@ -96,6 +78,7 @@
   <link rel="alternate" hreflang="tr" href="https://heictopng.github.io/lang/tr/" />
   <link rel="alternate" hreflang="x-default" href="https://heictopng.github.io/lang/en/" />
 </head>
+
 <body>
   <header class="header">
     <h1 data-i18n="header.title">HEIC / HEIF / HIF → JPG / JPEG / PNG / WEBP</h1>
@@ -113,14 +96,8 @@
         <div id="concurrencyWarn" class="sub" hidden data-i18n="options.cpuWarn">⚠️ CPU 使用率が高い（75% 以上）と、ハードウェアによっては PC が遅くなる可能性があります。</div>
       </div>
 
-      <div
-        id="dropzone"
-        class="dropzone"
-        tabindex="0"
-        role="button"
-        aria-label="ここに HEIC / HEIF / HIF ファイルをドロップ"
-        data-i18n-aria-label="dropzone.ariaLabel"
-      >
+      <div id="dropzone" class="dropzone" tabindex="0" role="button" aria-label="ここに HEIC / HEIF / HIF ファイルをドロップ"
+        data-i18n-aria-label="dropzone.ariaLabel">
         <div class="dropzone-inner">
           <strong data-i18n="dropzone.strong">.heic / .heif / .hif ファイルをドロップ</strong>
           <span data-i18n="dropzone.or">または</span>
@@ -155,13 +132,7 @@
 
         <div class="progress">
           <div id="progressLabel" class="progress-label"></div>
-          <progress
-            id="progressBar"
-            class="progress-bar"
-            value="0"
-            max="1"
-            aria-label="Conversion progress"
-          ></progress>
+          <progress id="progressBar" class="progress-bar" value="0" max="1" aria-label="Conversion progress"></progress>
 
           <small class="sub subtle" data-i18n="trust.buttons" style="margin-top: 6px;">100% 無料 · 登録不要 · アップロード不要</small>
         </div>
@@ -190,28 +161,48 @@
       </details>
 
       <details class="faq-item">
-        <summary data-i18n="seo.faq2q">どの端末でも HEIC / HEIF / HIF を PNG・WEBP・JPEG に変換できますか？</summary>
-        <div class="faq-body" data-i18n="seo.faq2a">はい。出力のプルダウンで JPG/JPEG・PNG・WEBP を選んで変換してください。無料で、Windows / macOS / Linux / Android / iOS など、あらゆる端末のブラウザで動作します。</div>
+        <summary data-i18n="seo.faq2q">なぜ Windows で HEIC 写真を開けないのですか？</summary>
+        <div class="faq-body" data-i18n="seo.faq2a">HEIC は iPhone や一部の最新カメラで使われる標準フォーマットですが、Windows は標準状態では完全に対応していません。そのため iPhone やカメラの HEIC 写真を開くとエラーになることがあります。HEIC を JPG/PNG/WEBP に変換すると、追加ソフトなしで Windows や多くの写真アプリでそのまま使えるようになります。</div>
       </details>
 
       <details class="faq-item">
-        <summary data-i18n="seo.faq3q">この HEIC / HEIF / HIF 変換ツールは本当に無料ですか？</summary>
-        <div class="faq-body" data-i18n="seo.faq3a">はい。完全に無料です。回数制限・透かし・登録・隠れた課金はありません。どの端末でも HEIC/HEIF/HIF を好きなだけ変換できます。</div>
+        <summary data-i18n="seo.faq3q">iPhone の写真やカメラ画像でも使えますか？</summary>
+        <div class="faq-body" data-i18n="seo.faq3a">はい。iPhone で撮影した写真は通常 HEIC で保存され、Sony の一部機種などのカメラでも HEIF/HEIC が使われることがあります。この変換ツールは iPhone 写真と対応カメラ画像を扱え、JPG/PNG/WEBP に変換して Windows、macOS、Android などで簡単に使えます。</div>
       </details>
 
       <details class="faq-item">
-        <summary data-i18n="seo.faq4q">プライバシーは大丈夫？ファイルはアップロードされますか？</summary>
-        <div class="faq-body" data-i18n="seo.faq4a">アップロードはありません。変換はブラウザ内でローカルに行われるため、.heic / .heif / .hif は端末から出ません。PC/スマホでも写真はプライベートに保たれます。</div>
+        <summary data-i18n="seo.faq4q">Windows で何もインストールせずに HEIC / HEIF / HIF を変換できますか？</summary>
+        <div class="faq-body" data-i18n="seo.faq4a">はい。ブラウザ上で動作するため、Windows でアプリやコーデック、拡張機能を入れる必要はありません。ページを開いて iPhone/カメラの HEIC を変換し、どこでも使える標準 JPG/PNG をダウンロードできます。</div>
       </details>
 
       <details class="faq-item">
-        <summary data-i18n="seo.faq5q">写真のプライバシーで「アップロード不要」が重要なのはなぜ？</summary>
-        <div class="faq-body" data-i18n="seo.faq5a">写真には個人情報（顔、場所、書類、プライベートな瞬間）が含まれることがあります。オンライン変換ツールが画像をサーバーへアップロードすると、管理の主導権が薄れ、ログ記録・想定より長い保管・第三者共有・意図しない再利用の可能性が増えます。端末内で処理するローカル変換なら、画像がインターネットを移動しないため、望まない場所へ広がるリスクを大きく下げられます。</div>
+        <summary data-i18n="seo.faq5q">写真をアップロードせずに HEIC を JPG に変換するには？</summary>
+        <div class="faq-body" data-i18n="seo.faq5a">多くのオンライン変換はサーバーにアップロードするため、写真が端末外へ出ます。ローカル（ブラウザ内）変換ならそれを回避できます。すべてが手元の PC/スマホ内で完結するので、iPhone やカメラの写真をインターネットへ送らずにプライベートに変換できます。</div>
       </details>
 
       <details class="faq-item">
-        <summary data-i18n="seo.faq6q">写真が保存・共有・学習に使われることを気にするべき理由は？</summary>
-        <div class="faq-body" data-i18n="seo.faq6a">アップロードされた写真が保存されると、バックアップや解析システム、外部サービスに取り込まれ、露出・転売・再利用（学習データセットを含む）のリスクが高まることがあります。ローカルで動く変換ツールを選べば、画像は端末に留まり、見せる相手を自分で決められ、写真が“誰かのビジネス”に変わってしまう可能性を抑えられます。</div>
+        <summary data-i18n="seo.faq6q">ローカル変換がプライバシーに重要なのはなぜ？</summary>
+        <div class="faq-body" data-i18n="seo.faq6a">写真には顔、位置情報、書類、プライベートな場面などの個人情報が含まれることがあります。外部サーバーへアップロードすると、保存先や再利用のされ方をコントロールしにくくなります。ローカル変換ならファイルは端末内に留まり、不要なアクセスのリスクを下げつつ無料で利用できます。</div>
+      </details>
+
+      <details class="faq-item">
+        <summary data-i18n="seo.faq7q">Windows で HEIC 写真が開けません。どうすれば？</summary>
+        <div class="faq-body" data-i18n="seo.faq7a">iPhone や HEIC 保存のカメラから来た写真でよく起きます。Windows の対応が限定的な場合、HEIC を JPG/PNG に変換するのが最速です。システム設定を変えたり追加ソフトを入れたりせずに、開く・編集する・共有するができます。</div>
+      </details>
+
+      <details class="faq-item">
+        <summary data-i18n="seo.faq8q">Windows PC で iPhone の写真を開くには？</summary>
+        <div class="faq-body" data-i18n="seo.faq8a">iPhone の写真は多くが HEIC のため、Windows で開きにくいことがあります。ブラウザで JPG/PNG に変換すれば、Windows のビューアや編集ソフト、印刷、共有アプリで即使えるようになります。</div>
+      </details>
+
+      <details class="faq-item">
+        <summary data-i18n="seo.faq9q">HEIC 変換にインターネット接続は必要ですか？</summary>
+        <div class="faq-body" data-i18n="seo.faq9a">必要なのはページの読み込み時だけです。一度読み込めば変換はブラウザ内でローカル実行されます。接続が不安定でも変換でき、プライベートなまま自分の管理下で処理できます。</div>
+      </details>
+
+      <details class="faq-item">
+        <summary data-i18n="seo.faq10q">HEIC を JPG にすると画質は落ちますか？</summary>
+        <div class="faq-body" data-i18n="seo.faq10a">HEIC は高効率な形式ですが、JPG/PNG/WEBP へ変換しても日常用途では十分に高い画質を保てます。互換性、画質、ファイルサイズなど、目的に合わせて形式を選べます。</div>
       </details>
     </div>
 
@@ -231,4 +222,5 @@
 
   <script type="module" src="../../src/app.js"></script>
 </body>
+
 </html>

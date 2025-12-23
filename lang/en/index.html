@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en" data-i18n-root>
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -9,24 +10,12 @@
   <meta name="app:locale" content="en" />
 <base href="../../" />
 <title data-i18n="meta.title">HEIC &amp; HEIF &amp; HIF to JPG/JPEG, PNG &amp; WEBP Converter – Free, Offline &amp; Private (No Uploads)</title>
-  <meta
-    name="description"
-    data-i18n="meta.description"
-    data-i18n-attr="content"
-    content="Convert HEIC, HEIF &amp; HIF images to JPG/JPEG, PNG or WEBP directly in your browser. No uploads, works offline, and keeps your photos private with fast, local processing on desktop and mobile devices."
-  />
-  <meta
-    property="og:title"
-    data-i18n="meta.ogTitle"
-    data-i18n-attr="content"
-    content="HEIC &amp; HEIF &amp; HIF to JPG/JPEG, PNG &amp; WEBP Converter – Free, Offline &amp; Private (No Uploads)"
-  />
-  <meta
-    property="og:description"
-    data-i18n="meta.ogDescription"
-    data-i18n-attr="content"
-    content="Convert HEIC, HEIF &amp; HIF images to JPG/JPEG, PNG or WEBP directly in your browser. No uploads, works offline, and keeps your photos private with fast, local processing on desktop and mobile devices."
-  />
+  <meta name="description" data-i18n="meta.description" data-i18n-attr="content"
+    content="Convert HEIC, HEIF &amp; HIF images to JPG/JPEG, PNG or WEBP directly in your browser. No uploads, works offline, and keeps your photos private with fast, local processing on desktop and mobile devices." />
+  <meta property="og:title" data-i18n="meta.ogTitle" data-i18n-attr="content"
+    content="HEIC &amp; HEIF &amp; HIF to JPG/JPEG, PNG &amp; WEBP Converter – Free, Offline &amp; Private (No Uploads)" />
+  <meta property="og:description" data-i18n="meta.ogDescription" data-i18n-attr="content"
+    content="Convert HEIC, HEIF &amp; HIF images to JPG/JPEG, PNG or WEBP directly in your browser. No uploads, works offline, and keeps your photos private with fast, local processing on desktop and mobile devices." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://heictopng.github.io/" />
   <meta property="og:site_name" content="HEIC to PNG" />
@@ -35,18 +24,10 @@
   <meta property="og:image:height" content="747" />
 
   <meta name="twitter:card" content="summary" />
-  <meta
-    name="twitter:title"
-    data-i18n="meta.twitterTitle"
-    data-i18n-attr="content"
-    content="HEIC &amp; HEIF &amp; HIF to JPG/JPEG, PNG &amp; WEBP Converter – Free, Offline &amp; Private (No Uploads)"
-  />
-  <meta
-    name="twitter:description"
-    data-i18n="meta.twitterDescription"
-    data-i18n-attr="content"
-    content="Convert HEIC, HEIF &amp; HIF images to JPG/JPEG, PNG or WEBP directly in your browser. No uploads, works offline, and keeps your photos private with fast, local processing on desktop and mobile devices."
-  />
+  <meta name="twitter:title" data-i18n="meta.twitterTitle" data-i18n-attr="content"
+    content="HEIC &amp; HEIF &amp; HIF to JPG/JPEG, PNG &amp; WEBP Converter – Free, Offline &amp; Private (No Uploads)" />
+  <meta name="twitter:description" data-i18n="meta.twitterDescription" data-i18n-attr="content"
+    content="Convert HEIC, HEIF &amp; HIF images to JPG/JPEG, PNG or WEBP directly in your browser. No uploads, works offline, and keeps your photos private with fast, local processing on desktop and mobile devices." />
   <meta name="twitter:image" content="https://heictopng.github.io/assets/favicon.png" />
   <meta name="twitter:card" content="summary_large_image" />
 <link rel="alternate" hreflang="es" href="https://heictopng.github.io/lang/es/" />
@@ -61,7 +42,8 @@
   <link rel="stylesheet" href="../../styles.css" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9130038212194388"
     crossorigin="anonymous"></script>
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d18462b4c6434be6b1f764da28ce7441"}'></script>
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+    data-cf-beacon='{"token": "d18462b4c6434be6b1f764da28ce7441"}'></script>
 
   <script type="application/ld+json">
     {
@@ -96,6 +78,7 @@
   <link rel="alternate" hreflang="tr" href="https://heictopng.github.io/lang/tr/" />
   <link rel="alternate" hreflang="x-default" href="https://heictopng.github.io/lang/en/" />
 </head>
+
 <body>
   <header class="header">
     <h1 data-i18n="header.title">HEIC / HEIF / HIF → JPG / JPEG / PNG / WEBP</h1>
@@ -113,14 +96,8 @@
         <div id="concurrencyWarn" class="sub" hidden data-i18n="options.cpuWarn">⚠️ High CPU usage (75%+) may slow down your PC depending on hardware capabilities.</div>
       </div>
 
-      <div
-        id="dropzone"
-        class="dropzone"
-        tabindex="0"
-        role="button"
-        aria-label="Drop HEIC / HEIF / HIF files here"
-        data-i18n-aria-label="dropzone.ariaLabel"
-      >
+      <div id="dropzone" class="dropzone" tabindex="0" role="button" aria-label="Drop HEIC / HEIF / HIF files here"
+        data-i18n-aria-label="dropzone.ariaLabel">
         <div class="dropzone-inner">
           <strong data-i18n="dropzone.strong">Drop .heic/.heif/.hif files</strong>
           <span data-i18n="dropzone.or">or</span>
@@ -155,13 +132,7 @@
 
         <div class="progress">
           <div id="progressLabel" class="progress-label"></div>
-          <progress
-            id="progressBar"
-            class="progress-bar"
-            value="0"
-            max="1"
-            aria-label="Conversion progress"
-          ></progress>
+          <progress id="progressBar" class="progress-bar" value="0" max="1" aria-label="Conversion progress"></progress>
 
           <small class="sub subtle" data-i18n="trust.buttons" style="margin-top: 6px;">100% free · No sign-up · No uploads</small>
         </div>
@@ -190,28 +161,48 @@
       </details>
 
       <details class="faq-item">
-        <summary data-i18n="seo.faq2q">Can I convert HEIC / HEIF / HIF to PNG, WEBP, or JPEG on any device?</summary>
-        <div class="faq-body" data-i18n="seo.faq2a">Yes. Choose JPG/JPEG, PNG, or WEBP in the Output dropdown and convert your images instantly. This free converter works directly in your browser on all devices, including Windows, macOS, Linux, Android, and iOS.</div>
+        <summary data-i18n="seo.faq2q">Why can’t Windows open HEIC photos?</summary>
+        <div class="faq-body" data-i18n="seo.faq2a">HEIC is the default photo format used by iPhones and some modern cameras, but Windows does not fully support it out of the box. This is why many Windows users see errors when opening iPhone or camera HEIC photos. Converting HEIC to JPG, PNG, or WEBP makes your images instantly compatible with Windows and most photo apps, without installing extra software.</div>
       </details>
 
       <details class="faq-item">
-        <summary data-i18n="seo.faq3q">Is this HEIC / HEIF / HIF converter really free?</summary>
-        <div class="faq-body" data-i18n="seo.faq3a">Yes. The converter is completely free to use. There are no limits, no watermarks, no sign-up, and no hidden payments. You can convert as many HEIC, HEIF, or HIF images as you want on any device.</div>
+        <summary data-i18n="seo.faq3q">Does this work with iPhone photos and camera images?</summary>
+        <div class="faq-body" data-i18n="seo.faq3a">Yes. Photos taken on an iPhone are usually saved as HEIC files, and some cameras, including certain Sony models, also use HEIF or HEIC formats. This converter works with iPhone photos and compatible camera images, letting you convert them to JPG, PNG, or WEBP for easy use on Windows, macOS, Android, and other devices.</div>
       </details>
 
       <details class="faq-item">
-        <summary data-i18n="seo.faq4q">Is it private? Are my HEIC / HEIF / HIF files uploaded?</summary>
-        <div class="faq-body" data-i18n="seo.faq4a">No uploads at all. All image conversions happen locally in your browser, so your .heic, .heif, and .hif files never leave your device. Your photos stay private on desktop and mobile.</div>
+        <summary data-i18n="seo.faq4q">Can I convert HEIC / HEIF / HIF on Windows without installing anything?</summary>
+        <div class="faq-body" data-i18n="seo.faq4a">Yes. The converter runs directly in your web browser, so Windows users don’t need to install apps, codecs, or system extensions. You can open the page, convert iPhone or camera HEIC photos, and download standard JPG or PNG files that work everywhere.</div>
       </details>
 
       <details class="faq-item">
-        <summary data-i18n="seo.faq5q">Why does “no uploads” matter for photo privacy?</summary>
-        <div class="faq-body" data-i18n="seo.faq5a">Photos often contain personal data (faces, places, documents, private moments). When an online converter uploads images to a server, you lose control: files can be logged, stored longer than expected, shared with third parties, or reused in ways you didn’t intend. A local, in-browser converter avoids that risk by processing everything on your device, so your images don’t travel across the internet and are far less likely to end up somewhere you wouldn’t want.</div>
+        <summary data-i18n="seo.faq5q">How do I convert HEIC to JPG without uploading my photos?</summary>
+        <div class="faq-body" data-i18n="seo.faq5a">Many online converters upload images to a server, which means your photos leave your device. A local, in-browser converter avoids that. Everything happens on your own computer or phone, so iPhone and camera photos are converted privately without being sent anywhere over the internet.</div>
       </details>
 
       <details class="faq-item">
-        <summary data-i18n="seo.faq6q">Why should I care about photos being stored, shared, or used for training?</summary>
-        <div class="faq-body" data-i18n="seo.faq6a">If a tool stores uploaded photos, they can become part of backups, analytics systems, or third-party services — which increases the chance of exposure, resale, or reuse (including training datasets) without you noticing. Choosing a converter that works locally keeps your images under your control: your files stay on your device, you decide who sees them, and your photos aren’t turned into someone else’s product.</div>
+        <summary data-i18n="seo.faq6q">Why does converting locally matter for privacy?</summary>
+        <div class="faq-body" data-i18n="seo.faq6a">Photos often contain personal information such as faces, locations, documents, or private moments. When images are uploaded to external servers, you lose control over where they are stored and how they may be reused. Local conversion keeps your files on your own device, reducing the risk of unwanted access while remaining completely free to use.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary data-i18n="seo.faq7q">HEIC photos are not opening on Windows — what can I do?</summary>
+        <div class="faq-body" data-i18n="seo.faq7a">This commonly happens when photos come from an iPhone or a camera that saves images in HEIC format. Since Windows support can be limited, converting HEIC to JPG or PNG is the fastest way to open, edit, or share those photos without changing system settings or installing additional software.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary data-i18n="seo.faq8q">How do I open iPhone photos on a Windows PC?</summary>
+        <div class="faq-body" data-i18n="seo.faq8a">iPhone photos are usually stored as HEIC files, which can be difficult to open on Windows. Converting them to JPG or PNG in your browser makes them instantly compatible with Windows photo viewers, editors, printers, and sharing apps.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary data-i18n="seo.faq9q">Do I need an internet connection to convert HEIC photos?</summary>
+        <div class="faq-body" data-i18n="seo.faq9a">An internet connection is only needed to load the page. Once loaded, all conversions run locally in your browser. This allows you to convert HEIC photos even with limited connectivity while keeping everything private and under your control.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary data-i18n="seo.faq10q">Will converting HEIC to JPG reduce image quality?</summary>
+        <div class="faq-body" data-i18n="seo.faq10a">HEIC is a highly efficient format, but converting to JPG, PNG, or WEBP can preserve excellent visual quality for everyday use. You can choose the format that best fits your needs, whether you prioritize compatibility, image quality, or smaller file sizes.</div>
       </details>
     </div>
 
@@ -231,4 +222,5 @@
 
   <script type="module" src="../../src/app.js"></script>
 </body>
+
 </html>
