@@ -296,9 +296,12 @@ select, input[type="range"] {
   padding: 16px;
 }
 
-.panel.seo {
+.container.seo {
   max-width: 1300px;
   margin: 0 auto;
+  border: none;
+  background: transparent;
+  padding-top: 0;
 }
 
 .seo h2,

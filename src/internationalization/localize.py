@@ -27,7 +27,7 @@ Paths:
   - Rewrites href/src/url(./...) so pages work from nested /lang/{locale}/
 
 Usage:
-  python ./internationalization/localize.py --index ./index.html --dict ./internationalization/dicts.js --out ./lang --base-url https://heictopng.github.io --prefix lang
+  python ./src/internationalization/localize.py --index ./index.html --dict ./src/internationalization/dicts.js --out ./lang --base-url https://heictopng.github.io --prefix lang
 """
 
 import argparse
