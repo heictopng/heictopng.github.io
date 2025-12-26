@@ -7,5 +7,7 @@ Disallow: /*?lang=
 Disallow: /*&lang=
 Disallow: /src/
 Disallow: /vendor/
+Disallow: /lang/
+Disallow: /assets/
 
 Sitemap: https://heictopng.github.io/sitemap.xml
