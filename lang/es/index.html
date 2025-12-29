@@ -12,11 +12,11 @@
   <meta name="app:locale" content="es" />
 <base href="../../" />
 <meta name="google-site-verification" content="2uyKp2wnQaNS3wNAhk-t8kocWCPYhawXyKLN_dHeYWM" />
-  <title data-i18n="meta.title">Convertidor de HEIC, HEIF y HIF a JPG/JPEG, PNG y WEBP – Gratis, offline y privado (sin subidas)</title>
+  <title data-i18n="meta.title">Conversor de HEIC, HEIF y HIF a JPG/JPEG, PNG y WEBP – Gratis, offline y privado (sin subidas)</title>
   <meta name="description" data-i18n="meta.description" data-i18n-attr="content"
     content="Convierte imágenes HEIC, HEIF y HIF a JPG/JPEG, PNG o WEBP directamente en tu navegador. Sin subidas, funciona offline y mantiene tus fotos privadas con procesamiento local rápido en ordenador y móvil." />
   <meta property="og:title" data-i18n="meta.ogTitle" data-i18n-attr="content"
-    content="Convertidor de HEIC, HEIF y HIF a JPG/JPEG, PNG y WEBP – Gratis, offline y privado (sin subidas)" />
+    content="Conversor de HEIC, HEIF y HIF a JPG/JPEG, PNG y WEBP – Gratis, offline y privado (sin subidas)" />
   <meta property="og:description" data-i18n="meta.ogDescription" data-i18n-attr="content"
     content="Convierte imágenes HEIC, HEIF y HIF a JPG/JPEG, PNG o WEBP directamente en tu navegador. Sin subidas, funciona offline y mantiene tus fotos privadas con procesamiento local rápido en ordenador y móvil." />
   <meta property="og:type" content="website" />
@@ -28,7 +28,7 @@
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" data-i18n="meta.twitterTitle" data-i18n-attr="content"
-    content="Convertidor de HEIC, HEIF y HIF a JPG/JPEG, PNG y WEBP – Gratis, offline y privado (sin subidas)" />
+    content="Conversor de HEIC, HEIF y HIF a JPG/JPEG, PNG y WEBP – Gratis, offline y privado (sin subidas)" />
   <meta name="twitter:description" data-i18n="meta.twitterDescription" data-i18n-attr="content"
     content="Convierte imágenes HEIC, HEIF y HIF a JPG/JPEG, PNG o WEBP directamente en tu navegador. Sin subidas, funciona offline y mantiene tus fotos privadas con procesamiento local rápido en ordenador y móvil." />
   <meta name="twitter:image" content="https://heictopng.github.io/assets/favicon.png" />
@@ -198,7 +198,7 @@
 <body>
   <header class="header">
     <h1 data-i18n="header.title">HEIC / HEIF / HIF → JPG / JPEG / PNG / WEBP</h1>
-    <p class="sub" data-i18n="header.sub">Convertidor HEIC/HIF gratis y privado. Procesamiento local, sin subidas. Funciona en ordenador y móvil.</p>
+    <p class="sub" data-i18n="header.sub">Conversor HEIC/HIF gratis y privado. Procesamiento local, sin subidas. Funciona en ordenador y móvil.</p>
     <div class="lang-switcher">
       <select id="langSelect" aria-label="Select language">
         <option value="en" selected>English</option>
@@ -346,7 +346,7 @@
         </details>
       </div>
 
-      <div class="seo-synonyms" data-i18n="seo.synonyms">Convertidor HEIC / HEIF / HIF • HEIC a JPG • HEIC a JPEG • HEIC a PNG • HEIC a WEBP • HEIF a JPG • HEIF a PNG • HIF a JPG • HIF a WEBP • convertidor HEIC gratis • convertidor de imágenes offline • sin subidas • funciona en todos los dispositivos • convertidor privado</div>
+      <div class="seo-synonyms" data-i18n="seo.synonyms">Conversor HEIC / HEIF / HIF • HEIC a JPG • HEIC a JPEG • HEIC a PNG • HEIC a WEBP • HEIF a JPG • HEIF a PNG • HIF a JPG • HIF a WEBP • Conversor HEIC gratis • Conversor de imágenes offline • sin subidas • funciona en todos los dispositivos • Conversor privado</div>
     </section>
   </div>
 
@@ -364,6 +364,17 @@
   </div>
 
   <script type="module" src="../../src/app.js"></script>
+  <script>
+    const langSelect = document.getElementById('langSelect');
+    const pathParts = window.location.pathname.split('/');
+    const currentLang = pathParts[2] || 'en';
+    langSelect.value = currentLang;
+
+    langSelect.addEventListener('change', (event) => {
+      const selectedLang = event.target.value;
+      window.location.href = `/lang/${selectedLang}/`;
+    });
+  </script>
 </body>
 
 </html>

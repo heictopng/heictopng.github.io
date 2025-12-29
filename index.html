@@ -441,6 +441,17 @@
   </div>
 
   <script type="module" src="./src/app.js"></script>
+  <script>
+    const langSelect = document.getElementById('langSelect');
+    const pathParts = window.location.pathname.split('/');
+    const currentLang = pathParts[2] || 'en';
+    langSelect.value = currentLang;
+
+    langSelect.addEventListener('change', (event) => {
+      const selectedLang = event.target.value;
+      window.location.href = `/lang/${selectedLang}/`;
+    });
+  </script>
 </body>
 
 </html>

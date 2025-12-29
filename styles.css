@@ -21,7 +21,7 @@ body {
 }
 
 .header {
-  padding: 28px 18px 10px;
+  padding: 35px 18px 10px;
   text-align: center;
 }
 
@@ -463,16 +463,47 @@ input[type="range"] {
 /* Language switcher */
 .lang-switcher {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 18px; /* slightly lower to avoid overlapping header title */
+  right: 18px;
   z-index: 1000;
 }
 
 .lang-switcher select {
-  padding: 4px 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background: #fff;
-  font-size: 0.9rem;
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+  font-size: 13px;
   cursor: pointer;
+  appearance: none; /* remove default OS arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  min-width: 100px;
+  max-width: 140px;
+}
+
+/* Add a custom arrow */
+.lang-switcher select::-ms-expand {
+  display: none;
+}
+
+.lang-switcher select::after {
+  content: "▼";
+  position: absolute;
+  right: 12px;
+  pointer-events: none;
+}
+
+/* Ensure it doesn’t overlap on small screens */
+@media (max-width: 500px) {
+  .lang-switcher {
+    top: 10px;
+    right: 10px;
+  }
+
+  .lang-switcher select {
+    font-size: 12px;
+    min-width: 80px;
+  }
 }

@@ -131,16 +131,16 @@ export const DICTS = {
 
     es: {
         "meta.title":
-            "Convertidor de HEIC, HEIF y HIF a JPG/JPEG, PNG y WEBP – Gratis, offline y privado (sin subidas)",
+            "Conversor de HEIC, HEIF y HIF a JPG/JPEG, PNG y WEBP – Gratis, offline y privado (sin subidas)",
         "meta.description":
             "Convierte imágenes HEIC, HEIF y HIF a JPG/JPEG, PNG o WEBP directamente en tu navegador. Sin subidas, funciona offline y mantiene tus fotos privadas con procesamiento local rápido en ordenador y móvil.",
 
         "meta.ogTitle":
-            "Convertidor de HEIC, HEIF y HIF a JPG/JPEG, PNG y WEBP – Gratis, offline y privado (sin subidas)",
+            "Conversor de HEIC, HEIF y HIF a JPG/JPEG, PNG y WEBP – Gratis, offline y privado (sin subidas)",
         "meta.ogDescription":
             "Convierte imágenes HEIC, HEIF y HIF a JPG/JPEG, PNG o WEBP directamente en tu navegador. Sin subidas, funciona offline y mantiene tus fotos privadas con procesamiento local rápido en ordenador y móvil.",
         "meta.twitterTitle":
-            "Convertidor de HEIC, HEIF y HIF a JPG/JPEG, PNG y WEBP – Gratis, offline y privado (sin subidas)",
+            "Conversor de HEIC, HEIF y HIF a JPG/JPEG, PNG y WEBP – Gratis, offline y privado (sin subidas)",
         "meta.twitterDescription":
             "Convierte imágenes HEIC, HEIF y HIF a JPG/JPEG, PNG o WEBP directamente en tu navegador. Sin subidas, funciona offline y mantiene tus fotos privadas con procesamiento local rápido en ordenador y móvil.",
 
@@ -194,12 +194,12 @@ export const DICTS = {
             "Puedes convertir miles de imágenes HEIC, HEIF o HIF en un solo lote. El conversor está diseñado para conversiones masivas y, al descargar, divide automáticamente los lotes grandes en varios archivos ZIP. Esto ayuda a mantener el navegador rápido, reduce el uso de memoria y garantiza un rendimiento fluido incluso al convertir una gran cantidad de fotos a la vez.",
 
         "seo.synonyms":
-            "Convertidor HEIC / HEIF / HIF • HEIC a JPG • HEIC a JPEG • HEIC a PNG • HEIC a WEBP • HEIF a JPG • HEIF a PNG • HIF a JPG • HIF a WEBP • convertidor HEIC gratis • convertidor de imágenes offline • sin subidas • funciona en todos los dispositivos • convertidor privado",
+            "Conversor HEIC / HEIF / HIF • HEIC a JPG • HEIC a JPEG • HEIC a PNG • HEIC a WEBP • HEIF a JPG • HEIF a PNG • HIF a JPG • HIF a WEBP • Conversor HEIC gratis • Conversor de imágenes offline • sin subidas • funciona en todos los dispositivos • Conversor privado",
 
-        "app.title": "Convertidor HEIC / HEIF / HIF (.hif/.heic) → JPG / JPEG / PNG / WEBP",
+        "app.title": "Conversor HEIC / HEIF / HIF (.hif/.heic) → JPG / JPEG / PNG / WEBP",
         "header.title": "HEIC / HEIF / HIF → JPG / JPEG / PNG / WEBP",
         "header.sub":
-            "Convertidor HEIC/HIF gratis y privado. Procesamiento local, sin subidas. Funciona en ordenador y móvil.",
+            "Conversor HEIC/HIF gratis y privado. Procesamiento local, sin subidas. Funciona en ordenador y móvil.",
 
         "dropzone.ariaLabel": "Suelta archivos HEIC / HEIF / HIF aquí",
         "dropzone.strong": "Suelta archivos .heic/.heif/.hif",
