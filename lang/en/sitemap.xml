@@ -3,6 +3,7 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
+  <!-- English -->
   <url>
     <loc>https://heictopng.github.io/lang/en/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://heictopng.github.io/lang/en/" />
@@ -22,6 +23,97 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://heictopng.github.io/lang/en/" />
     <lastmod>2025-12-29</lastmod>
     <priority>1.0</priority>
+  </url>
+
+  <!-- Spanish -->
+  <url>
+    <loc>https://heictopng.github.io/lang/es/</loc>
+    <lastmod>2025-12-29</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Portuguese -->
+  <url>
+    <loc>https://heictopng.github.io/lang/pt/</loc>
+    <lastmod>2025-12-29</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Japanese -->
+  <url>
+    <loc>https://heictopng.github.io/lang/ja/</loc>
+    <lastmod>2025-12-29</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Chinese -->
+  <url>
+    <loc>https://heictopng.github.io/lang/zh/</loc>
+    <lastmod>2025-12-29</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Arabic -->
+  <url>
+    <loc>https://heictopng.github.io/lang/ar/</loc>
+    <lastmod>2025-12-29</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Hindi -->
+  <url>
+    <loc>https://heictopng.github.io/lang/hi/</loc>
+    <lastmod>2025-12-29</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- German -->
+  <url>
+    <loc>https://heictopng.github.io/lang/de/</loc>
+    <lastmod>2025-12-29</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- French -->
+  <url>
+    <loc>https://heictopng.github.io/lang/fr/</loc>
+    <lastmod>2025-12-29</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Russian -->
+  <url>
+    <loc>https://heictopng.github.io/lang/ru/</loc>
+    <lastmod>2025-12-29</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Italian -->
+  <url>
+    <loc>https://heictopng.github.io/lang/it/</loc>
+    <lastmod>2025-12-29</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Dutch -->
+  <url>
+    <loc>https://heictopng.github.io/lang/nl/</loc>
+    <lastmod>2025-12-29</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Polish -->
+  <url>
+    <loc>https://heictopng.github.io/lang/pl/</loc>
+    <lastmod>2025-12-29</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Turkish -->
+  <url>
+    <loc>https://heictopng.github.io/lang/tr/</loc>
+    <lastmod>2025-12-29</lastmod>
+    <priority>0.9</priority>
   </url>
 
 </urlset>
