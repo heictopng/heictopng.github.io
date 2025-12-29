@@ -19,54 +19,43 @@ export const DICTS = {
         "seo.aboutTitle": "Convert HEIC/HEIF/HIF in your browser",
         "seo.aboutP1":
             "Convert .heic, .heif and .hif photos to JPG/JPEG, PNG or WEBP locally in your browser. No uploads — your images stay on your device.",
+
         "seo.faqTitle": "FAQ",
 
-        "seo.faq1q": "How do I convert HEIC / HEIF / HIF to JPG or JPEG for free?",
+        "seo.faq1q": "How do I convert HEIC, HEIF, or HIF to JPG, PNG, or WEBP?",
         "seo.faq1a":
-            "Drop your .heic, .heif or .hif files into the page (or click “Choose files”), select JPG/JPEG as the output format, and click “Convert all”. The conversion is 100% free, requires no sign-up, and works on desktop, mobile, and tablet devices. When it finishes, download each file individually or use “Download ZIP”.",
+            "Drop your .heic, .heif, or .hif files into the page (or click “Choose files”), select the output format, and click “Convert all”. Works offline on desktop, tablet, and mobile. Download files individually or as a ZIP.",
 
-        "seo.faq2q": "Why can’t Windows open HEIC photos?",
+        "seo.faq2q": "Why can’t Windows open HEIC photos, and how can I fix it?",
         "seo.faq2a":
-            "HEIC is the default photo format used by iPhones and some modern cameras, but Windows does not fully support it out of the box. This is why many Windows users see errors when opening iPhone or camera HEIC photos. Converting HEIC to JPG, PNG, or WEBP makes your images instantly compatible with Windows and most photo apps, without installing extra software.",
+            "Windows does not fully support HEIC/HEIF formats by default. Converting these images to JPG, PNG, or WEBP ensures compatibility with Windows photo apps, without installing extra software.",
 
-        "seo.faq3q": "Does this work with iPhone photos and camera images?",
+        "seo.faq3q": "Does this work with iPhone and camera photos?",
         "seo.faq3a":
-            "Yes. Photos taken on an iPhone are usually saved as HEIC files, and some cameras, including certain Sony models, also use HEIF or HEIC formats. This converter works with iPhone photos and compatible camera images, letting you convert them to JPG, PNG, or WEBP for easy use on Windows, macOS, Android, and other devices.",
+            "Yes. The converter supports iPhone photos and cameras that use HEIC or HEIF formats, letting you convert images to JPG, PNG, or WEBP for use on Windows, macOS, Android, and other devices.",
 
-        "seo.faq4q": "Can I convert HEIC / HEIF / HIF on Windows without installing anything?",
+        "seo.faq4q": "Can I convert images without installing software?",
         "seo.faq4a":
-            "Yes. The converter runs directly in your web browser, so Windows users don’t need to install apps, codecs, or system extensions. You can open the page, convert iPhone or camera HEIC photos, and download standard JPG or PNG files that work everywhere.",
+            "Yes. The converter runs entirely in your browser. No apps, plugins, or system extensions are required. Everything happens locally.",
 
-        "seo.faq5q": "How do I convert HEIC to JPG without uploading my photos?",
+        "seo.faq5q": "Are my photos private?",
         "seo.faq5a":
-            "Many online converters upload images to a server, which means your photos leave your device. A local, in-browser converter avoids that. Everything happens on your own computer or phone, so iPhone and camera photos are converted privately without being sent anywhere over the internet.",
+            "Absolutely. All conversions happen locally in your browser. Your images never leave your device, keeping your files private and secure.",
 
-        "seo.faq6q": "Why does converting locally matter for privacy?",
+        "seo.faq6q": "Do I need an internet connection?",
         "seo.faq6a":
-            "Photos often contain personal information such as faces, locations, documents, or private moments. When images are uploaded to external servers, you lose control over where they are stored and how they may be reused. Local conversion keeps your files on your own device, reducing the risk of unwanted access while remaining completely free to use.",
+            "Only to load the page. Once loaded, all conversions run offline in your browser, even for large batches of images.",
 
-        "seo.faq7q": "HEIC photos are not opening on Windows — what can I do?",
+        "seo.faq7q": "Will converting reduce image quality?",
         "seo.faq7a":
-            "This commonly happens when photos come from an iPhone or a camera that saves images in HEIC format. Since Windows support can be limited, converting HEIC to JPG or PNG is the fastest way to open, edit, or share those photos without changing system settings or installing additional software.",
+            "Converting HEIC/HEIF/HIF to JPG, PNG, or WEBP preserves excellent visual quality. You can choose the format that balances quality, compatibility, or file size.",
 
-        "seo.faq8q": "How do I open iPhone photos on a Windows PC?",
+        "seo.faq8q": "How many images can I convert at once?",
         "seo.faq8a":
-            "iPhone photos are usually stored as HEIC files, which can be difficult to open on Windows. Converting them to JPG or PNG in your browser makes them instantly compatible with Windows photo viewers, editors, printers, and sharing apps.",
-
-        "seo.faq9q": "Do I need an internet connection to convert HEIC photos?",
-        "seo.faq9a":
-            "An internet connection is only needed to load the page. Once loaded, all conversions run locally in your browser. This allows you to convert HEIC photos even with limited connectivity while keeping everything private and under your control.",
-
-        "seo.faq10q": "Will converting HEIC to JPG reduce image quality?",
-        "seo.faq10a":
-            "HEIC is a highly efficient format, but converting to JPG, PNG, or WEBP can preserve excellent visual quality for everyday use. You can choose the format that best fits your needs, whether you prioritize compatibility, image quality, or smaller file sizes.",
-
-        "seo.faq11q": "How many images can I convert at once?",
-        "seo.faq11a":
-            "You can convert thousands of HEIC, HEIF, or HIF images in a single batch. The converter is designed for bulk image conversion and automatically splits large batches into multiple ZIP files when you download them. This helps keep your browser fast, reduces memory usage, and ensures smooth performance even when converting a very large number of photos at once.",
+            "You can convert thousands of images in a single batch. Large batches are automatically split into multiple ZIP files for smooth performance.",
 
         "seo.synonyms":
-            "HEIC / HEIF / HIF converter • HEIC to JPG • HEIC to JPEG • HEIC to PNG • HEIC to WEBP • HEIF to JPG • HEIF to PNG • HIF to JPG • HIF to WEBP • free HEIC converter • offline image converter • no uploads • works on all devices • private image converter",
+            "Convert HEIC, HEIF, or HIF photos to JPG, PNG, or WEBP locally in your browser. Works offline, keeps your images private, and supports large batches of photos.",
 
         "app.title": "HEIC / HEIF / HIF (.hif/.heic) → JPG / JPEG / PNG / WEBP Converter",
         "header.title": "HEIC / HEIF / HIF → JPG / JPEG / PNG / WEBP",
@@ -149,52 +138,40 @@ export const DICTS = {
             "Convierte fotos .heic, .heif y .hif a JPG/JPEG, PNG o WEBP localmente en tu navegador. Sin subidas: tus imágenes se quedan en tu dispositivo.",
         "seo.faqTitle": "Preguntas frecuentes",
 
-        "seo.faq1q": "¿Cómo convierto HEIC / HEIF / HIF a JPG o JPEG gratis?",
+        "seo.faq1q": "¿Cómo convierto HEIC, HEIF o HIF a JPG, PNG o WEBP?",
         "seo.faq1a":
-            "Suelta tus archivos .heic, .heif o .hif en la página (o haz clic en “Elegir archivos”), selecciona JPG/JPEG como salida y pulsa “Convertir todo”. La conversión es 100% gratis, no requiere registro y funciona en ordenador, móvil y tablet. Al terminar, descarga cada archivo o usa “Descargar ZIP”.",
+            "Arrastra tus archivos .heic, .heif o .hif a la página (o haz clic en “Elegir archivos”), selecciona el formato de salida y pulsa “Convertir todo”. Funciona sin conexión en ordenador, tablet y móvil. Puedes descargar los archivos individualmente o en un ZIP.",
 
-        "seo.faq2q": "¿Por qué Windows no puede abrir fotos HEIC?",
+        "seo.faq2q": "¿Por qué Windows no puede abrir fotos HEIC y cómo solucionarlo?",
         "seo.faq2a":
-            "HEIC es el formato de fotos predeterminado en iPhone y en algunas cámaras modernas, pero Windows no lo soporta completamente “de serie”. Por eso muchos usuarios ven errores al abrir fotos HEIC de iPhone o cámara. Convertir HEIC a JPG, PNG o WEBP hace que las imágenes sean compatibles al instante con Windows y la mayoría de apps de fotos, sin instalar software extra.",
+            "Windows no admite completamente los formatos HEIC/HEIF de forma predeterminada. Convertir estas imágenes a JPG, PNG o WEBP garantiza compatibilidad con las aplicaciones de fotos de Windows sin instalar software adicional.",
 
-        "seo.faq3q": "¿Funciona con fotos de iPhone y con imágenes de cámara?",
+        "seo.faq3q": "¿Funciona con fotos de iPhone y cámaras?",
         "seo.faq3a":
-            "Sí. Las fotos hechas con un iPhone suelen guardarse como HEIC, y algunas cámaras (incluidos ciertos modelos de Sony) también usan HEIF o HEIC. Este conversor funciona con fotos de iPhone y con imágenes de cámara compatibles para convertirlas a JPG, PNG o WEBP y usarlas fácilmente en Windows, macOS, Android y otros dispositivos.",
+            "Sí. El conversor admite fotos de iPhone y cámaras que usan formatos HEIC o HEIF, permitiéndote convertirlas a JPG, PNG o WEBP para usarlas en Windows, macOS, Android y otros dispositivos.",
 
-        "seo.faq4q": "¿Puedo convertir HEIC / HEIF / HIF en Windows sin instalar nada?",
+        "seo.faq4q": "¿Puedo convertir imágenes sin instalar programas?",
         "seo.faq4a":
-            "Sí. El conversor funciona directamente en tu navegador, así que en Windows no necesitas instalar apps, códecs ni extensiones del sistema. Abre la página, convierte fotos HEIC de iPhone o cámara y descarga archivos JPG o PNG estándar que funcionan en cualquier sitio.",
+            "Sí. El conversor funciona completamente en el navegador. No necesitas aplicaciones, complementos ni extensiones del sistema. Todo se procesa localmente.",
 
-        "seo.faq5q": "¿Cómo convierto HEIC a JPG sin subir mis fotos?",
+        "seo.faq5q": "¿Mis fotos son privadas?",
         "seo.faq5a":
-            "Muchos conversores online suben imágenes a un servidor, lo que significa que tus fotos salen del dispositivo. Un conversor local en el navegador evita eso. Todo sucede en tu propio ordenador o móvil, así que las fotos de iPhone y cámara se convierten de forma privada sin enviarse por internet.",
+            "Sí. Todas las conversiones se realizan localmente en tu navegador. Tus imágenes nunca salen de tu dispositivo.",
 
-        "seo.faq6q": "¿Por qué convertir localmente importa para la privacidad?",
+        "seo.faq6q": "¿Necesito conexión a internet?",
         "seo.faq6a":
-            "Las fotos suelen contener información personal como caras, ubicaciones, documentos o momentos privados. Cuando se suben a servidores externos, pierdes el control sobre dónde se almacenan y cómo podrían reutilizarse. La conversión local mantiene tus archivos en tu dispositivo y reduce el riesgo de accesos no deseados, sin dejar de ser completamente gratis.",
+            "Solo para cargar la página. Una vez cargada, las conversiones funcionan sin conexión, incluso para grandes cantidades de imágenes.",
 
-        "seo.faq7q": "Las fotos HEIC no se abren en Windows — ¿qué puedo hacer?",
+        "seo.faq7q": "¿La conversión reduce la calidad?",
         "seo.faq7a":
-            "Esto suele pasar cuando las fotos vienen de un iPhone o de una cámara que guarda en HEIC. Como el soporte en Windows puede ser limitado, convertir HEIC a JPG o PNG es la forma más rápida de abrir, editar o compartir esas fotos sin cambiar ajustes del sistema ni instalar software adicional.",
+            "Convertir HEIC/HEIF/HIF a JPG, PNG o WEBP mantiene una excelente calidad visual. Puedes elegir el formato según calidad, compatibilidad o tamaño.",
 
-        "seo.faq8q": "¿Cómo abro fotos de iPhone en un PC con Windows?",
+        "seo.faq8q": "¿Cuántas imágenes puedo convertir a la vez?",
         "seo.faq8a":
-            "Las fotos de iPhone suelen estar en HEIC, y a veces cuesta abrirlas en Windows. Convertirlas a JPG o PNG en el navegador las hace compatibles al instante con visores, editores, impresoras y apps de compartir en Windows.",
-
-        "seo.faq9q": "¿Necesito conexión a internet para convertir fotos HEIC?",
-        "seo.faq9a":
-            "Solo necesitas internet para cargar la página. Una vez cargada, todas las conversiones se ejecutan localmente en tu navegador. Así puedes convertir HEIC incluso con poca conectividad, manteniendo todo privado y bajo tu control.",
-
-        "seo.faq10q": "¿Convertir HEIC a JPG reduce la calidad?",
-        "seo.faq10a":
-            "HEIC es un formato muy eficiente, pero convertir a JPG, PNG o WEBP puede mantener una excelente calidad visual para el uso diario. Puedes elegir el formato que mejor se adapte a lo que necesitas: compatibilidad, calidad o archivos más pequeños.",
-
-        "seo.faq11q": "¿Cuántas imágenes puedo convertir a la vez?",
-        "seo.faq11a":
-            "Puedes convertir miles de imágenes HEIC, HEIF o HIF en un solo lote. El conversor está diseñado para conversiones masivas y, al descargar, divide automáticamente los lotes grandes en varios archivos ZIP. Esto ayuda a mantener el navegador rápido, reduce el uso de memoria y garantiza un rendimiento fluido incluso al convertir una gran cantidad de fotos a la vez.",
+            "Puedes convertir miles de imágenes en un solo lote. Los lotes grandes se dividen automáticamente en varios archivos ZIP para un mejor rendimiento.",
 
         "seo.synonyms":
-            "Conversor HEIC / HEIF / HIF • HEIC a JPG • HEIC a JPEG • HEIC a PNG • HEIC a WEBP • HEIF a JPG • HEIF a PNG • HIF a JPG • HIF a WEBP • Conversor HEIC gratis • Conversor de imágenes offline • sin subidas • funciona en todos los dispositivos • Conversor privado",
+            "Conversor HEIC HEIF HIF • HEIC a JPG • HEIC a PNG • HEIC a WEBP • conversor offline • sin subidas • imágenes privadas",
 
         "app.title": "Conversor HEIC / HEIF / HIF (.hif/.heic) → JPG / JPEG / PNG / WEBP",
         "header.title": "HEIC / HEIF / HIF → JPG / JPEG / PNG / WEBP",
@@ -279,52 +256,40 @@ export const DICTS = {
             "Converta fotos .heic, .heif e .hif em JPG/JPEG, PNG ou WEBP localmente no seu navegador. Sem uploads — suas imagens ficam no seu dispositivo.",
         "seo.faqTitle": "Perguntas frequentes",
 
-        "seo.faq1q": "Como converter HEIC / HEIF / HIF para JPG ou JPEG de graça?",
+        "seo.faq1q": "Como converter HEIC, HEIF ou HIF para JPG, PNG ou WEBP?",
         "seo.faq1a":
-            "Solte seus arquivos .heic, .heif ou .hif na página (ou clique em “Escolher arquivos”), selecione JPG/JPEG como saída e clique em “Converter tudo”. A conversão é 100% grátis, não exige cadastro e funciona em computador, celular e tablet. Ao finalizar, baixe cada arquivo ou use “Baixar ZIP”.",
+            "Arraste seus arquivos .heic, .heif ou .hif para a página (ou clique em “Escolher arquivos”), selecione o formato de saída e clique em “Converter tudo”. Funciona offline em computador, tablet e celular. Baixe os arquivos individualmente ou em ZIP.",
 
-        "seo.faq2q": "Por que o Windows não abre fotos HEIC?",
+        "seo.faq2q": "Por que o Windows não abre fotos HEIC e como resolver?",
         "seo.faq2a":
-            "HEIC é o formato padrão de fotos do iPhone e de algumas câmeras modernas, mas o Windows não oferece suporte completo nativamente. Por isso muitos usuários veem erros ao abrir fotos HEIC do iPhone ou da câmera. Converter HEIC para JPG, PNG ou WEBP torna suas imagens compatíveis com o Windows e com a maioria dos apps de fotos, sem instalar nada extra.",
+            "O Windows não oferece suporte completo a HEIC/HEIF por padrão. Converter as imagens para JPG, PNG ou WEBP garante compatibilidade sem instalar programas extras.",
 
-        "seo.faq3q": "Funciona com fotos do iPhone e imagens de câmera?",
+        "seo.faq3q": "Funciona com fotos de iPhone e câmeras?",
         "seo.faq3a":
-            "Sim. Fotos tiradas no iPhone geralmente são salvas em HEIC, e algumas câmeras (incluindo certos modelos da Sony) também usam HEIF/HEIC. Este conversor funciona com fotos do iPhone e imagens de câmera compatíveis, permitindo converter para JPG, PNG ou WEBP para uso fácil no Windows, macOS, Android e outros dispositivos.",
+            "Sim. O conversor funciona com fotos do iPhone e câmeras que usam HEIC ou HEIF, permitindo convertê-las para JPG, PNG ou WEBP.",
 
-        "seo.faq4q": "Posso converter HEIC / HEIF / HIF no Windows sem instalar nada?",
+        "seo.faq4q": "Posso converter imagens sem instalar nada?",
         "seo.faq4a":
-            "Sim. O conversor roda direto no navegador, então usuários de Windows não precisam instalar aplicativos, codecs ou extensões do sistema. Basta abrir a página, converter fotos HEIC do iPhone ou da câmera e baixar arquivos JPG ou PNG padrão que funcionam em qualquer lugar.",
+            "Sim. O conversor roda totalmente no navegador. Não é necessário instalar aplicativos ou extensões.",
 
-        "seo.faq5q": "Como converter HEIC para JPG sem fazer upload das minhas fotos?",
+        "seo.faq5q": "Minhas fotos ficam privadas?",
         "seo.faq5a":
-            "Muitos conversores online enviam imagens para um servidor, o que faz suas fotos saírem do dispositivo. Um conversor local no navegador evita isso. Tudo acontece no seu computador ou celular, então fotos do iPhone e da câmera são convertidas de forma privada, sem serem enviadas pela internet.",
+            "Sim. Todas as conversões acontecem localmente no seu navegador. Suas imagens nunca são enviadas.",
 
-        "seo.faq6q": "Por que converter localmente importa para a privacidade?",
+        "seo.faq6q": "Preciso de internet?",
         "seo.faq6a":
-            "Fotos frequentemente contêm informações pessoais como rostos, locais, documentos ou momentos privados. Quando imagens são enviadas para servidores externos, você perde controle sobre onde ficam armazenadas e como podem ser reutilizadas. A conversão local mantém os arquivos no seu dispositivo, reduzindo o risco de acesso indesejado — e continua sendo totalmente grátis.",
+            "Apenas para carregar a página. Depois disso, tudo funciona offline, mesmo com muitos arquivos.",
 
-        "seo.faq7q": "Fotos HEIC não abrem no Windows — o que posso fazer?",
+        "seo.faq7q": "A conversão reduz a qualidade?",
         "seo.faq7a":
-            "Isso é comum quando as fotos vêm de um iPhone ou de uma câmera que salva em HEIC. Como o suporte no Windows pode ser limitado, converter HEIC para JPG ou PNG é a forma mais rápida de abrir, editar ou compartilhar essas fotos sem mudar configurações do sistema ou instalar software adicional.",
+            "A conversão mantém excelente qualidade visual. Você pode escolher entre qualidade, compatibilidade ou tamanho do arquivo.",
 
-        "seo.faq8q": "Como abrir fotos do iPhone em um PC com Windows?",
+        "seo.faq8q": "Quantas imagens posso converter de uma vez?",
         "seo.faq8a":
-            "Fotos do iPhone geralmente estão em HEIC, o que pode dificultar a abertura no Windows. Convertê-las para JPG ou PNG no navegador as torna compatíveis instantaneamente com visualizadores, editores, impressoras e apps de compartilhamento do Windows.",
-
-        "seo.faq9q": "Preciso de internet para converter fotos HEIC?",
-        "seo.faq9a":
-            "A internet é necessária apenas para carregar a página. Depois de carregada, todas as conversões rodam localmente no navegador. Assim você consegue converter HEIC mesmo com conexão limitada, mantendo tudo privado e sob seu controle.",
-
-        "seo.faq10q": "Converter HEIC para JPG reduz a qualidade da imagem?",
-        "seo.faq10a":
-            "HEIC é um formato muito eficiente, mas converter para JPG, PNG ou WEBP pode manter excelente qualidade visual para o dia a dia. Você pode escolher o formato que melhor se encaixa: compatibilidade, qualidade ou arquivos menores.",
-
-        "seo.faq11q": "Quantas imagens posso converter de uma vez?",
-        "seo.faq11a":
-            "Você pode converter milhares de imagens HEIC, HEIF ou HIF em um único lote. O conversor foi feito para conversão em massa e divide automaticamente lotes grandes em vários arquivos ZIP quando você faz o download. Isso ajuda a manter o navegador rápido, reduz o uso de memória e garante um desempenho suave mesmo ao converter um número muito grande de fotos de uma só vez.",
+            "Você pode converter milhares de imagens de uma só vez. Grandes lotes são divididos automaticamente em vários arquivos ZIP.",
 
         "seo.synonyms":
-            "Conversor HEIC / HEIF / HIF • HEIC para JPG • HEIC para JPEG • HEIC para PNG • HEIC para WEBP • HEIF para JPG • HEIF para PNG • HIF para JPG • HIF para WEBP • conversor HEIC grátis • conversor de imagens offline • sem uploads • funciona em todos os dispositivos • conversor privado",
+            "Conversor HEIC HEIF HIF • HEIC para JPG • conversor offline • sem upload • imagens privadas",
 
         "app.title": "Conversor HEIC / HEIF / HIF (.hif/.heic) → JPG / JPEG / PNG / WEBP",
         "header.title": "HEIC / HEIF / HIF → JPG / JPEG / PNG / WEBP",
@@ -404,57 +369,42 @@ export const DICTS = {
         "meta.twitterDescription":
             "HEIC/HEIF/HIF を JPG/JPEG・PNG・WEBP にブラウザで直接変換。アップロード不要、読み込み後はオフライン対応。PC/スマホで高速なローカル処理で写真を安全に変換できます。",
 
-        "seo.aboutTitle": "ブラウザで HEIC/HEIF/HIF（.hif）を変換",
-        "seo.aboutP1":
-            ".heic / .heif / .hif の写真を、ブラウザ内のローカル処理で JPG/JPEG・PNG・WEBP に変換できます。アップロード不要 — 画像は端末から出ません。",
         "seo.faqTitle": "よくある質問",
 
-        "seo.faq1q": "HEIC / HEIF / HIF（.hif）を無料で JPG/JPEG に変換するには？",
+        "seo.faq1q": "HEIC / HEIF / HIF を JPG・PNG・WEBP に変換する方法は？",
         "seo.faq1a":
-            ".heic / .heif / .hif をページにドロップ（または「ファイルを選択」）し、出力を JPG/JPEG にして「すべて変換」をクリックします。変換は 100% 無料で登録不要、PC・スマホ・タブレットで動作します。完了後、個別にダウンロードするか「ZIPをダウンロード」を使えます。",
+            ".heic / .heif / .hif ファイルをページにドラッグするか、「ファイルを選択」をクリックし、形式を選んで「すべて変換」を押します。PC・スマホ・タブレットでオフライン動作します。",
 
-        "seo.faq2q": "なぜ Windows で HEIC 写真を開けないのですか？",
+        "seo.faq2q": "WindowsでHEICが開けないのはなぜ？",
         "seo.faq2a":
-            "HEIC は iPhone や一部の最新カメラで使われる標準フォーマットですが、Windows は標準状態では完全に対応していません。そのため iPhone やカメラの HEIC 写真を開くとエラーになることがあります。HEIC を JPG/PNG/WEBP に変換すると、追加ソフトなしで Windows や多くの写真アプリでそのまま使えるようになります。",
+            "WindowsはHEIC/HEIFを標準では完全にサポートしていません。JPGやPNGに変換すれば追加ソフトなしで開けます。",
 
-        "seo.faq3q": "iPhone の写真やカメラ画像でも使えますか？",
+        "seo.faq3q": "iPhoneやカメラの写真でも使えますか？",
         "seo.faq3a":
-            "はい。iPhone で撮影した写真は通常 HEIC で保存され、Sony の一部機種などのカメラでも HEIF/HEIC が使われることがあります。この変換ツールは iPhone 写真と対応カメラ画像を扱え、JPG/PNG/WEBP に変換して Windows、macOS、Android などで簡単に使えます。",
+            "はい。iPhoneやHEIC対応カメラの写真をJPG・PNG・WEBPに変換できます。",
 
-        "seo.faq4q": "Windows で何もインストールせずに HEIC / HEIF / HIF を変換できますか？",
+        "seo.faq4q": "ソフトをインストールせずに使えますか？",
         "seo.faq4a":
-            "はい。ブラウザ上で動作するため、Windows でアプリやコーデック、拡張機能を入れる必要はありません。ページを開いて iPhone/カメラの HEIC を変換し、どこでも使える標準 JPG/PNG をダウンロードできます。",
+            "はい。すべてブラウザ内で動作し、インストールは不要です。",
 
-        "seo.faq5q": "写真をアップロードせずに HEIC を JPG に変換するには？",
+        "seo.faq5q": "写真は安全ですか？",
         "seo.faq5a":
-            "多くのオンライン変換はサーバーにアップロードするため、写真が端末外へ出ます。ローカル（ブラウザ内）変換ならそれを回避できます。すべてが手元の PC/スマホ内で完結するので、iPhone やカメラの写真をインターネットへ送らずにプライベートに変換できます。",
+            "はい。すべてローカル処理され、写真は外部に送信されません。",
 
-        "seo.faq6q": "ローカル変換がプライバシーに重要なのはなぜ？",
+        "seo.faq6q": "インターネットは必要ですか？",
         "seo.faq6a":
-            "写真には顔、位置情報、書類、プライベートな場面などの個人情報が含まれることがあります。外部サーバーへアップロードすると、保存先や再利用のされ方をコントロールしにくくなります。ローカル変換ならファイルは端末内に留まり、不要なアクセスのリスクを下げつつ無料で利用できます。",
+            "ページ読み込み時のみ必要です。その後はオフラインで変換できます。",
 
-        "seo.faq7q": "Windows で HEIC 写真が開けません。どうすれば？",
+        "seo.faq7q": "画質は劣化しますか？",
         "seo.faq7a":
-            "iPhone や HEIC 保存のカメラから来た写真でよく起きます。Windows の対応が限定的な場合、HEIC を JPG/PNG に変換するのが最速です。システム設定を変えたり追加ソフトを入れたりせずに、開く・編集する・共有するができます。",
+            "高品質を維持したまま変換できます。用途に応じて形式を選択できます。",
 
-        "seo.faq8q": "Windows PC で iPhone の写真を開くには？",
+        "seo.faq8q": "一度に何枚変換できますか？",
         "seo.faq8a":
-            "iPhone の写真は多くが HEIC のため、Windows で開きにくいことがあります。ブラウザで JPG/PNG に変換すれば、Windows のビューアや編集ソフト、印刷、共有アプリで即使えるようになります。",
-
-        "seo.faq9q": "HEIC 変換にインターネット接続は必要ですか？",
-        "seo.faq9a":
-            "必要なのはページの読み込み時だけです。一度読み込めば変換はブラウザ内でローカル実行されます。接続が不安定でも変換でき、プライベートなまま自分の管理下で処理できます。",
-
-        "seo.faq10q": "HEIC を JPG にすると画質は落ちますか？",
-        "seo.faq10a":
-            "HEIC は高効率な形式ですが、JPG/PNG/WEBP へ変換しても日常用途では十分に高い画質を保てます。互換性、画質、ファイルサイズなど、目的に合わせて形式を選べます。",
-
-        "seo.faq11q": "一度に何枚まで変換できますか？",
-        "seo.faq11a":
-            "HEIC/HEIF/HIF の画像を一度に数千枚まとめて変換できます。本ツールは大量変換向けに設計されており、ダウンロード時に大きなバッチを複数の ZIP に自動分割します。これによりブラウザの動作を軽く保ち、メモリ使用量を抑え、非常に多くの写真を一度に変換してもスムーズに処理できます。",
+            "数千枚まで一括変換可能で、大量の場合はZIPに自動分割されます。",
 
         "seo.synonyms":
-            "HEIC / HEIF / HIF 変換 • HEIC→JPG • HEIC→JPEG • HEIC→PNG • HEIC→WEBP • HEIF→JPG • HEIF→PNG • HIF→JPG • HIF→WEBP • 無料 HEIC 変換 • オフライン画像変換 • アップロード不要 • 全端末対応 • プライベート変換",
+            "HEIC変換 • JPG変換 • オフライン画像変換 • プライベート変換",
 
         "app.title": "HEIC / HEIF / HIF（.hif/.heic）→ JPG / JPEG / PNG / WEBP 変換",
         "header.title": "HEIC / HEIF / HIF → JPG / JPEG / PNG / WEBP",
@@ -536,52 +486,40 @@ export const DICTS = {
             "将 .heic、.heif、.hif 照片在浏览器本地转换为 JPG/JPEG、PNG 或 WEBP。无需上传——图片始终保留在你的设备上。",
         "seo.faqTitle": "常见问题",
 
-        "seo.faq1q": "如何免费把 HEIC / HEIF / HIF（.hif）转换为 JPG 或 JPEG？",
+        "seo.faq1q": "如何将 HEIC / HEIF / HIF 转换为 JPG、PNG 或 WEBP？",
         "seo.faq1a":
-            "把 .heic、.heif 或 .hif 拖到页面（或点击“选择文件”），输出选择 JPG/JPEG，然后点击“全部转换”。转换 100% 免费，无需注册，支持电脑、手机和平板。完成后可逐个下载，或使用“下载 ZIP”。",
+            "将 .heic、.heif 或 .hif 文件拖入页面（或点击“选择文件”），选择输出格式，然后点击“全部转换”。支持离线使用，可下载单个文件或 ZIP。",
 
-        "seo.faq2q": "为什么 Windows 不能打开 HEIC 照片？",
+        "seo.faq2q": "为什么 Windows 无法打开 HEIC？",
         "seo.faq2a":
-            "HEIC 是 iPhone 和部分现代相机默认使用的照片格式，但 Windows 在默认情况下并不完全支持它。因此很多 Windows 用户在打开 iPhone 或相机的 HEIC 照片时会报错。把 HEIC 转成 JPG、PNG 或 WEBP 后，就能立刻在 Windows 和大多数照片应用中使用，无需安装额外软件。",
+            "Windows 默认不完全支持 HEIC/HEIF。将其转换为 JPG、PNG 或 WEBP 可直接兼容，无需安装软件。",
 
-        "seo.faq3q": "能转换 iPhone 照片和相机图片吗？",
+        "seo.faq3q": "支持 iPhone 和相机照片吗？",
         "seo.faq3a":
-            "可以。iPhone 拍摄的照片通常保存为 HEIC，一些相机（包括某些索尼机型）也会使用 HEIF 或 HEIC。这个转换器支持 iPhone 照片和兼容相机图片，可转换为 JPG、PNG 或 WEBP，方便在 Windows、macOS、Android 等设备上使用。",
+            "支持。可将 iPhone 或相机拍摄的 HEIC/HEIF 照片转换为 JPG、PNG 或 WEBP。",
 
-        "seo.faq4q": "在 Windows 上不安装任何东西也能转换 HEIC / HEIF / HIF 吗？",
+        "seo.faq4q": "需要安装软件吗？",
         "seo.faq4a":
-            "可以。转换器直接在浏览器里运行，所以 Windows 用户无需安装应用、编解码器或系统扩展。打开页面后即可转换 iPhone 或相机的 HEIC 照片，并下载通用的 JPG 或 PNG 文件。",
+            "不需要。所有操作都在浏览器中完成。",
 
-        "seo.faq5q": "如何在不上传照片的情况下把 HEIC 转成 JPG？",
+        "seo.faq5q": "照片安全吗？",
         "seo.faq5a":
-            "很多在线转换器会把图片上传到服务器，这意味着照片会离开你的设备。本地浏览器转换能避免这一点：一切都在你的电脑或手机上完成，iPhone 和相机照片可在不经由互联网发送的情况下私密转换。",
+            "完全安全。所有转换都在本地完成，照片不会上传。",
 
-        "seo.faq6q": "为什么本地转换对隐私很重要？",
+        "seo.faq6q": "需要联网吗？",
         "seo.faq6a":
-            "照片常包含人脸、地点、证件或私密时刻等个人信息。上传到外部服务器后，你会失去对存储位置和可能复用方式的控制。本地转换让文件留在你的设备上，降低被不当访问的风险，同时仍然完全免费。",
+            "仅加载页面时需要，之后可离线使用。",
 
-        "seo.faq7q": "Windows 上 HEIC 照片打不开——怎么办？",
+        "seo.faq7q": "会影响画质吗？",
         "seo.faq7a":
-            "这通常发生在照片来自 iPhone 或使用 HEIC 保存的相机时。由于 Windows 的支持可能有限，把 HEIC 转成 JPG 或 PNG 是最快的办法：无需改系统设置，也不用安装额外软件，就能打开、编辑或分享这些照片。",
+            "转换后仍可保持高质量，可根据需要选择格式。",
 
-        "seo.faq8q": "如何在 Windows 电脑上打开 iPhone 照片？",
+        "seo.faq8q": "一次可以转换多少张？",
         "seo.faq8a":
-            "iPhone 照片通常是 HEIC 格式，在 Windows 上可能不易打开。用浏览器把它们转换为 JPG 或 PNG 后，就能直接在 Windows 的查看器、编辑器、打印和分享应用中使用。",
-
-        "seo.faq9q": "转换 HEIC 照片需要联网吗？",
-        "seo.faq9a":
-            "只需要用网络加载页面。页面加载完成后，所有转换都在浏览器本地运行。即使网络较差也能转换，同时保持内容私密并由你控制。",
-
-        "seo.faq10q": "把 HEIC 转成 JPG 会降低画质吗？",
-        "seo.faq10a":
-            "HEIC 是非常高效的格式，但转换为 JPG、PNG 或 WEBP 仍可保持日常使用所需的优秀画质。你可以按需求选择格式：优先兼容性、画质或更小的文件体积。",
-
-        "seo.faq11q": "一次最多可以转换多少张图片？",
-        "seo.faq11a":
-            "你可以在一次批处理中转换数千张 HEIC、HEIF 或 HIF 图片。该转换器专为批量转换而设计，在你下载时会自动将超大批次拆分为多个 ZIP 文件。这样可以让浏览器保持流畅、降低内存占用，并确保即使一次转换大量照片也能稳定运行。",
+            "可一次转换数千张图片，大批量会自动拆分 ZIP。",
 
         "seo.synonyms":
-            "HEIC / HEIF / HIF 转换器 • HEIC 转 JPG • HEIC 转 JPEG • HEIC 转 PNG • HEIC 转 WEBP • HEIF 转 JPG • HEIF 转 PNG • HIF 转 JPG • HIF 转 WEBP • 免费 HEIC 转换器 • 离线图片转换器 • 无需上传 • 适用于所有设备 • 隐私转换器",
+            "HEIC 转 JPG • HEIC 转 PNG • 离线图片转换 • 无需上传 • 隐私保护",
 
         "app.title": "HEIC / HEIF / HIF（.hif/.heic）→ JPG / JPEG / PNG / WEBP",
         "header.title": "HEIC / HEIF / HIF → JPG / JPEG / PNG / WEBP",
@@ -664,52 +602,40 @@ export const DICTS = {
             "حوّل صور ‎.heic و‎.heif و‎.hif إلى JPG/JPEG أو PNG أو WEBP محليًا داخل المتصفح. بدون رفع — صورك تبقى على جهازك.",
         "seo.faqTitle": "الأسئلة الشائعة",
 
-        "seo.faq1q": "كيف أحوّل HEIC / HEIF / HIF ‏(.hif) إلى JPG أو JPEG مجانًا؟",
+        "seo.faq1q": "كيف يمكنني تحويل HEIC أو HEIF أو HIF إلى JPG أو PNG أو WEBP؟",
         "seo.faq1a":
-            "اسحب ملفات ‎.heic أو ‎.heif أو ‎.hif إلى الصفحة (أو اضغط «اختر الملفات»)، اختر JPG/JPEG كصيغة إخراج، ثم اضغط «تحويل الكل». التحويل مجاني 100% وبدون تسجيل ويعمل على الكمبيوتر والجوال والتابلت. بعد الانتهاء يمكنك تنزيل كل ملف أو استخدام «تحميل ZIP».",
+            "اسحب ملفات .heic أو .heif أو .hif إلى الصفحة (أو انقر على «اختيار الملفات»)، ثم اختر الصيغة واضغط على «تحويل الكل». يعمل بدون إنترنت على الكمبيوتر والهاتف والتابلت.",
 
         "seo.faq2q": "لماذا لا يستطيع Windows فتح صور HEIC؟",
         "seo.faq2a":
-            "HEIC هو تنسيق الصور الافتراضي في iPhone وبعض الكاميرات الحديثة، لكن Windows لا يدعمه بالكامل افتراضيًا. لذلك قد يظهر خطأ عند فتح صور HEIC القادمة من iPhone أو الكاميرا. تحويل HEIC إلى JPG أو PNG أو WEBP يجعل الصور متوافقة فورًا مع Windows ومعظم تطبيقات الصور دون تثبيت برامج إضافية.",
+            "لا يدعم Windows تنسيق HEIC بشكل كامل افتراضيًا. تحويل الصور إلى JPG أو PNG أو WEBP يجعلها متوافقة دون الحاجة لتثبيت أي برامج.",
 
-        "seo.faq3q": "هل يعمل مع صور iPhone وصور الكاميرا؟",
+        "seo.faq3q": "هل يعمل مع صور iPhone والكاميرات؟",
         "seo.faq3a":
-            "نعم. صور iPhone غالبًا تُحفظ بصيغة HEIC، وبعض الكاميرات (بما في ذلك بعض موديلات Sony) تستخدم أيضًا HEIF أو HEIC. هذا المحول يدعم صور iPhone وصور الكاميرات المتوافقة لتحويلها إلى JPG أو PNG أو WEBP لاستخدام سهل على Windows وmacOS وAndroid وغيرها.",
+            "نعم. يدعم صور iPhone والكاميرات التي تستخدم HEIC أو HEIF، ويمكن تحويلها إلى JPG أو PNG أو WEBP.",
 
-        "seo.faq4q": "هل يمكنني تحويل HEIC / HEIF / HIF على Windows بدون تثبيت أي شيء؟",
+        "seo.faq4q": "هل أحتاج إلى تثبيت برنامج؟",
         "seo.faq4a":
-            "نعم. يعمل المحول مباشرة داخل المتصفح، لذلك لا يحتاج مستخدمو Windows إلى تثبيت تطبيقات أو كودكات أو إضافات للنظام. افتح الصفحة، حوّل صور HEIC من iPhone أو الكاميرا، ثم نزّل ملفات JPG أو PNG القياسية التي تعمل في كل مكان.",
+            "لا. يعمل المحول بالكامل داخل المتصفح دون الحاجة لأي برامج أو إضافات.",
 
-        "seo.faq5q": "كيف أحوّل HEIC إلى JPG بدون رفع صوري؟",
+        "seo.faq5q": "هل صوري آمنة؟",
         "seo.faq5a":
-            "الكثير من المحولات على الإنترنت ترفع الصور إلى خادم، أي أن صورك تغادر جهازك. المحول المحلي داخل المتصفح يتجنب ذلك. كل شيء يتم على جهازك (كمبيوتر أو هاتف)، لذا تُحوَّل صور iPhone والكاميرا بشكل خاص بدون إرسالها عبر الإنترنت.",
+            "نعم. تتم جميع عمليات التحويل محليًا داخل جهازك ولا يتم رفع أي ملفات.",
 
-        "seo.faq6q": "لماذا يهم التحويل المحلي للخصوصية؟",
+        "seo.faq6q": "هل أحتاج إلى اتصال بالإنترنت؟",
         "seo.faq6a":
-            "الصور قد تحتوي على معلومات شخصية مثل الوجوه والمواقع والمستندات أو لحظات خاصة. عند رفع الصور إلى خوادم خارجية تفقد التحكم في مكان تخزينها وكيف يمكن إعادة استخدامها. التحويل المحلي يبقي الملفات على جهازك ويقلل خطر الوصول غير المرغوب فيه مع بقاء الخدمة مجانية تمامًا.",
+            "فقط لتحميل الصفحة. بعد ذلك يعمل التحويل دون اتصال بالإنترنت.",
 
-        "seo.faq7q": "صور HEIC لا تُفتح على Windows — ماذا أفعل؟",
+        "seo.faq7q": "هل تقل جودة الصور بعد التحويل؟",
         "seo.faq7a":
-            "هذا يحدث غالبًا عندما تأتي الصور من iPhone أو من كاميرا تحفظ بصيغة HEIC. وبما أن دعم Windows قد يكون محدودًا، فإن تحويل HEIC إلى JPG أو PNG هو أسرع طريقة لفتح الصور أو تعديلها أو مشاركتها بدون تغيير إعدادات النظام أو تثبيت برامج إضافية.",
+            "لا، يتم الحفاظ على جودة عالية. يمكنك اختيار الصيغة المناسبة للجودة أو الحجم.",
 
-        "seo.faq8q": "كيف أفتح صور iPhone على كمبيوتر يعمل بنظام Windows؟",
+        "seo.faq8q": "كم عدد الصور التي يمكنني تحويلها دفعة واحدة؟",
         "seo.faq8a":
-            "صور iPhone عادة تكون بصيغة HEIC، وقد يصعب فتحها على Windows. تحويلها إلى JPG أو PNG في المتصفح يجعلها متوافقة فورًا مع عارضات الصور والمحررات والطابعات وتطبيقات المشاركة على Windows.",
-
-        "seo.faq9q": "هل أحتاج اتصال إنترنت لتحويل صور HEIC؟",
-        "seo.faq9a":
-            "تحتاج الإنترنت فقط لتحميل الصفحة. بعد التحميل، تعمل التحويلات محليًا داخل المتصفح. هذا يسمح بتحويل HEIC حتى مع اتصال محدود مع الحفاظ على الخصوصية وبقاء التحكم بيدك.",
-
-        "seo.faq10q": "هل تحويل HEIC إلى JPG يقلل الجودة؟",
-        "seo.faq10a":
-            "HEIC تنسيق عالي الكفاءة، لكن التحويل إلى JPG أو PNG أو WEBP يمكن أن يحافظ على جودة ممتازة للاستخدام اليومي. اختر الصيغة الأنسب لاحتياجاتك: التوافق، الجودة، أو حجم ملف أصغر.",
-
-        "seo.faq11q": "كم عدد الصور التي يمكنني تحويلها دفعة واحدة؟",
-        "seo.faq11a":
-            "يمكنك تحويل آلاف صور HEIC أو HEIF أو HIF في دفعة واحدة. صُمّم هذا المحول للتحويل بالجملة، وعند التنزيل يقوم تلقائيًا بتقسيم الدُفعات الكبيرة إلى عدة ملفات ZIP. يساعد ذلك على إبقاء المتصفح سريعًا، وتقليل استخدام الذاكرة، وضمان أداء سلس حتى عند تحويل عدد كبير جدًا من الصور دفعة واحدة.",
+            "يمكنك تحويل آلاف الصور مرة واحدة، ويتم تقسيمها تلقائيًا إلى ملفات ZIP.",
 
         "seo.synonyms":
-            "محول HEIC / HEIF / HIF • HEIC إلى JPG • HEIC إلى JPEG • HEIC إلى PNG • HEIC إلى WEBP • HEIF إلى JPG • HEIF إلى PNG • HIF إلى JPG • HIF إلى WEBP • محول HEIC مجاني • محول صور أوفلاين • بدون رفع • يعمل على جميع الأجهزة • محول خاص",
+            "تحويل HEIC • HEIC إلى JPG • تحويل صور بدون إنترنت • خصوصية الصور",
 
         "app.title": "محول HEIC / HEIF / HIF ‏(.hif/.heic) → JPG / JPEG / PNG / WEBP",
         "header.title": "HEIC / HEIF / HIF → JPG / JPEG / PNG / WEBP",
@@ -788,56 +714,43 @@ export const DICTS = {
             "HEIC, HEIF और HIF इमेज को JPG/JPEG, PNG या WEBP में सीधे ब्राउज़र में कनवर्ट करें। कोई अपलोड नहीं, लोड होने के बाद ऑफ़लाइन काम करता है और तेज़ लोकल प्रोसेसिंग से आपकी फ़ोटो प्राइवेट रहती हैं — डेस्कटॉप और मोबाइल पर।",
 
         "seo.aboutTitle": "ब्राउज़र में HEIC/HEIF/HIF कनवर्ट करें",
-        "seo.aboutP1":
-            ".heic, .heif और .hif फ़ोटो को अपने ब्राउज़र में लोकल प्रोसेसिंग से JPG/JPEG, PNG या WEBP में कनवर्ट करें। कोई अपलोड नहीं — आपकी इमेज आपके डिवाइस पर ही रहती है।",
-        "seo.faqTitle": "FAQ",
+        "seo.aboutP1": ".heic, .heif और .hif फ़ोटो को अपने ब्राउज़र में लोकल प्रोसेसिंग से JPG/JPEG, PNG या WEBP में कनवर्ट करें। कोई अपलोड नहीं — आपकी इमेज आपके डिवाइस पर ही रहती है।",
+        "seo.faqTitle": "अक्सर पूछे जाने वाले प्रश्न",
 
-        "seo.faq1q": "HEIC / HEIF / HIF को फ्री में JPG या JPEG में कैसे कनवर्ट करें?",
+        "seo.faq1q": "HEIC, HEIF या HIF को JPG, PNG या WEBP में कैसे बदलें?",
         "seo.faq1a":
-            ".heic, .heif या .hif फ़ाइलें पेज पर ड्रॉप करें (या “फ़ाइलें चुनें” पर क्लिक करें), आउटपुट में JPG/JPEG चुनें, फिर “सभी कनवर्ट करें” दबाएँ। कन्वर्ज़न 100% फ्री है, साइन-अप नहीं चाहिए, और डेस्कटॉप, मोबाइल व टैबलेट पर काम करता है। पूरा होने पर हर फ़ाइल डाउनलोड करें या “ZIP डाउनलोड करें” का उपयोग करें।",
+            ".heic, .heif या .hif फ़ाइलों को पेज पर ड्रैग करें (या “फ़ाइल चुनें” पर क्लिक करें), आउटपुट फ़ॉर्मेट चुनें और “सभी कन्वर्ट करें” दबाएँ। यह मोबाइल और कंप्यूटर पर ऑफ़लाइन काम करता है।",
 
-        "seo.faq2q": "Windows HEIC फ़ोटो क्यों नहीं खोल पाता?",
+        "seo.faq2q": "Windows HEIC फ़ोटो क्यों नहीं खोलता?",
         "seo.faq2a":
-            "HEIC iPhone और कुछ आधुनिक कैमरों का डिफ़ॉल्ट फोटो फ़ॉर्मैट है, लेकिन Windows इसे पूरी तरह से “आउट ऑफ़ द बॉक्स” सपोर्ट नहीं करता। इसलिए iPhone/कैमरा की HEIC फ़ोटो खोलते समय कई यूज़र्स को एरर दिखता है। HEIC को JPG, PNG या WEBP में कनवर्ट करने से बिना अतिरिक्त सॉफ़्टवेयर इंस्टॉल किए तस्वीरें Windows और अधिकांश फोटो ऐप्स में तुरंत काम करने लगती हैं।",
+            "Windows डिफ़ॉल्ट रूप से HEIC/HEIF को सपोर्ट नहीं करता। JPG या PNG में बदलने से समस्या हल हो जाती है।",
 
-        "seo.faq3q": "क्या यह iPhone फ़ोटो और कैमरा इमेज के साथ काम करता है?",
+        "seo.faq3q": "क्या यह iPhone और कैमरा फ़ोटो के साथ काम करता है?",
         "seo.faq3a":
-            "हाँ। iPhone पर ली गई फ़ोटो आमतौर पर HEIC में सेव होती हैं, और कुछ कैमरे (कुछ Sony मॉडल सहित) HEIF/HEIC भी उपयोग करते हैं। यह कनवर्टर iPhone फ़ोटो और संगत कैमरा इमेज को JPG, PNG या WEBP में बदलकर Windows, macOS, Android आदि पर आसान उपयोग के लिए तैयार करता है।",
+            "हाँ। यह iPhone और HEIC/HEIF कैमरा फ़ोटो को JPG, PNG या WEBP में बदल सकता है।",
 
-        "seo.faq4q": "क्या मैं Windows पर बिना कुछ इंस्टॉल किए HEIC / HEIF / HIF कनवर्ट कर सकता हूँ?",
+        "seo.faq4q": "क्या मुझे कोई सॉफ़्टवेयर इंस्टॉल करना होगा?",
         "seo.faq4a":
-            "हाँ। यह कनवर्टर सीधे आपके ब्राउज़र में चलता है, इसलिए Windows यूज़र्स को ऐप, कोडेक या सिस्टम एक्सटेंशन इंस्टॉल करने की ज़रूरत नहीं। पेज खोलें, iPhone/कैमरा की HEIC फ़ोटो कनवर्ट करें और ऐसे JPG/PNG डाउनलोड करें जो हर जगह चलते हैं।",
+            "नहीं। सब कुछ सीधे ब्राउज़र में होता है।",
 
-        "seo.faq5q": "मैं अपनी फ़ोटो अपलोड किए बिना HEIC को JPG में कैसे कनवर्ट करूँ?",
+        "seo.faq5q": "क्या मेरी तस्वीरें सुरक्षित हैं?",
         "seo.faq5a":
-            "कई ऑनलाइन कनवर्टर इमेज को सर्वर पर अपलोड करते हैं, यानी आपकी फ़ोटो डिवाइस से बाहर चली जाती हैं। लोकल, इन-ब्राउज़र कनवर्टर इससे बचाता है। सब कुछ आपके अपने कंप्यूटर/फोन पर होता है, इसलिए iPhone और कैमरा फ़ोटो बिना इंटरनेट पर भेजे प्राइवेटली कनवर्ट होती हैं।",
+            "हाँ। सभी कन्वर्ज़न आपके डिवाइस पर ही होते हैं। कोई फ़ाइल अपलोड नहीं होती।",
 
-        "seo.faq6q": "प्राइवेसी के लिए लोकल कनवर्ज़न क्यों ज़रूरी है?",
+        "seo.faq6q": "क्या इंटरनेट की ज़रूरत है?",
         "seo.faq6a":
-            "फ़ोटो में अक्सर व्यक्तिगत जानकारी होती है जैसे चेहरे, लोकेशन, डॉक्यूमेंट या निजी पल। जब इमेज बाहरी सर्वर पर अपलोड होती हैं, तो वे कहाँ स्टोर होंगी और कैसे री-यूज़ होंगी—इस पर आपका कंट्रोल कम हो जाता है। लोकल कनवर्ज़न फाइलों को आपके डिवाइस पर रखता है, अनचाहे एक्सेस का जोखिम घटाता है और फिर भी पूरी तरह फ्री रहता है।",
+            "सिर्फ़ पेज लोड करने के लिए। उसके बाद सब कुछ ऑफ़लाइन काम करता है।",
 
-        "seo.faq7q": "Windows पर HEIC फ़ोटो नहीं खुल रही — मैं क्या करूँ?",
+        "seo.faq7q": "क्या क्वालिटी कम होती है?",
         "seo.faq7a":
-            "यह अक्सर तब होता है जब फ़ोटो iPhone या HEIC में सेव करने वाले कैमरे से आती हैं। Windows सपोर्ट सीमित हो सकता है, इसलिए HEIC को JPG/PNG में कनवर्ट करना सबसे तेज़ तरीका है—बिना सिस्टम सेटिंग बदले या अतिरिक्त सॉफ़्टवेयर इंस्टॉल किए।",
+            "नहीं। उच्च गुणवत्ता बनी रहती है और आप फ़ॉर्मेट चुन सकते हैं।",
 
-        "seo.faq8q": "Windows PC पर iPhone फ़ोटो कैसे खोलें?",
+        "seo.faq8q": "एक बार में कितनी तस्वीरें बदल सकता हूँ?",
         "seo.faq8a":
-            "iPhone फ़ोटो अक्सर HEIC में होती हैं, जो Windows पर खोलना मुश्किल कर सकती हैं। ब्राउज़र में JPG/PNG में कनवर्ट करने से वे Windows फोटो व्यूअर, एडिटर, प्रिंटर और शेयरिंग ऐप्स के साथ तुरंत संगत हो जाती हैं।",
-
-        "seo.faq9q": "क्या HEIC कनवर्ट करने के लिए इंटरनेट चाहिए?",
-        "seo.faq9a":
-            "इंटरनेट केवल पेज लोड करने के लिए चाहिए। एक बार लोड होने के बाद सभी कन्वर्ज़न आपके ब्राउज़र में लोकल चलते हैं। इससे कम कनेक्टिविटी में भी कनवर्ज़न हो जाता है और सब कुछ प्राइवेट/आपके कंट्रोल में रहता है।",
-
-        "seo.faq10q": "HEIC को JPG में कनवर्ट करने से क्या क्वालिटी कम होगी?",
-        "seo.faq10a":
-            "HEIC बहुत एफिशिएंट फ़ॉर्मैट है, लेकिन JPG, PNG या WEBP में कनवर्ज़न रोज़मर्रा के उपयोग के लिए शानदार विज़ुअल क्वालिटी बनाए रख सकता है। आप अपनी जरूरत के हिसाब से फ़ॉर्मैट चुन सकते हैं: कम्पैटिबिलिटी, क्वालिटी या छोटा फ़ाइल साइज।",
-
-        "seo.faq11q": "मैं एक बार में कितनी इमेज कनवर्ट कर सकता/सकती हूँ?",
-        "seo.faq11a":
-            "आप एक ही बैच में HEIC, HEIF या HIF की हज़ारों इमेज कनवर्ट कर सकते/सकती हैं। यह कनवर्टर बल्क कन्वर्ज़न के लिए बनाया गया है और डाउनलोड करते समय बड़े बैच को अपने आप कई ZIP फाइलों में बाँट देता है। इससे ब्राउज़र तेज़ रहता है, मेमोरी उपयोग कम होता है, और बहुत बड़ी संख्या में फोटो एक साथ कनवर्ट करने पर भी परफ़ॉर्मेंस स्मूद रहती है।",
+            "आप हज़ारों तस्वीरें एक साथ बदल सकते हैं। बड़ी फ़ाइलें अपने आप ZIP में बंट जाती हैं।",
 
         "seo.synonyms":
-            "HEIC / HEIF / HIF कनवर्टर • HEIC से JPG • HEIC से JPEG • HEIC से PNG • HEIC से WEBP • HEIF से JPG • HEIF से PNG • HIF से JPG • HIF से WEBP • फ्री HEIC कनवर्टर • ऑफ़लाइन इमेज कनवर्टर • नो अपलोड्स • सभी डिवाइस पर काम करता है • प्राइवेट कनवर्टर",
+            "HEIC कनवर्टर • HEIC से JPG • ऑफ़लाइन इमेज कन्वर्ज़न • सुरक्षित फोटो",
 
         "app.title": "HEIC / HEIF / HIF (.hif/.heic) → JPG / JPEG / PNG / WEBP कनवर्टर",
         "header.title": "HEIC / HEIF / HIF → JPG / JPEG / PNG / WEBP",
@@ -920,52 +833,40 @@ export const DICTS = {
             "Konvertiere .heic-, .heif- und .hif-Fotos lokal im Browser zu JPG/JPEG, PNG oder WEBP. Keine Uploads — deine Bilder bleiben auf deinem Gerät.",
         "seo.faqTitle": "FAQ",
 
-        "seo.faq1q": "Wie konvertiere ich HEIC / HEIF / HIF kostenlos zu JPG oder JPEG?",
+        "seo.faq1q": "Wie konvertiere ich HEIC, HEIF oder HIF in JPG, PNG oder WEBP?",
         "seo.faq1a":
-            "Ziehe deine .heic-, .heif- oder .hif-Dateien auf die Seite (oder klicke „Dateien auswählen“), wähle JPG/JPEG als Ausgabe und klicke „Alle konvertieren“. Die Konvertierung ist 100% kostenlos, ohne Anmeldung, und funktioniert auf Desktop, Handy und Tablet. Danach kannst du jede Datei einzeln herunterladen oder „ZIP herunterladen“ nutzen.",
+            "Ziehe deine .heic-, .heif- oder .hif-Dateien auf die Seite oder klicke auf „Dateien auswählen“, wähle das Ausgabeformat und klicke auf „Alle konvertieren“. Funktioniert offline auf allen Geräten.",
 
-        "seo.faq2q": "Warum kann Windows HEIC-Fotos nicht öffnen?",
+        "seo.faq2q": "Warum kann Windows HEIC nicht öffnen?",
         "seo.faq2a":
-            "HEIC ist das Standard-Fotoformat von iPhones und manchen modernen Kameras, aber Windows unterstützt es standardmäßig nicht vollständig. Deshalb sehen viele Windows-Nutzer Fehler beim Öffnen von iPhone- oder Kamera-HEICs. Wenn du HEIC in JPG, PNG oder WEBP konvertierst, sind die Bilder sofort mit Windows und den meisten Foto-Apps kompatibel – ohne zusätzliche Software.",
+            "Windows unterstützt HEIC/HEIF nicht vollständig. Durch die Umwandlung in JPG, PNG oder WEBP werden die Bilder sofort kompatibel.",
 
-        "seo.faq3q": "Funktioniert das mit iPhone-Fotos und Kamera-Bildern?",
+        "seo.faq3q": "Funktioniert das mit iPhone- und Kamera-Fotos?",
         "seo.faq3a":
-            "Ja. iPhone-Fotos werden meist als HEIC gespeichert, und manche Kameras (u. a. bestimmte Sony-Modelle) nutzen ebenfalls HEIF/HEIC. Dieser Converter unterstützt iPhone-Fotos und kompatible Kamera-Bilder und konvertiert sie in JPG, PNG oder WEBP für die einfache Nutzung unter Windows, macOS, Android und mehr.",
+            "Ja. iPhone- und Kameraaufnahmen im HEIC-Format können problemlos konvertiert werden.",
 
-        "seo.faq4q": "Kann ich HEIC / HEIF / HIF unter Windows konvertieren, ohne etwas zu installieren?",
+        "seo.faq4q": "Muss ich Software installieren?",
         "seo.faq4a":
-            "Ja. Der Converter läuft direkt im Webbrowser – Windows-Nutzer müssen keine Apps, Codecs oder System-Erweiterungen installieren. Seite öffnen, iPhone- oder Kamera-HEICs konvertieren und standardmäßige JPG/PNG-Dateien herunterladen, die überall funktionieren.",
+            "Nein. Alles läuft direkt im Browser – ohne Installation.",
 
-        "seo.faq5q": "Wie konvertiere ich HEIC zu JPG, ohne meine Fotos hochzuladen?",
+        "seo.faq5q": "Sind meine Fotos privat?",
         "seo.faq5a":
-            "Viele Online-Converter laden Bilder auf einen Server hoch – deine Fotos verlassen dabei dein Gerät. Ein lokaler In-Browser-Converter vermeidet das. Alles passiert auf deinem eigenen Computer oder Handy, sodass iPhone- und Kamera-Fotos privat konvertiert werden, ohne übers Internet gesendet zu werden.",
+            "Ja. Die Konvertierung erfolgt lokal, ohne Uploads.",
 
-        "seo.faq6q": "Warum ist lokales Konvertieren wichtig für die Privatsphäre?",
+        "seo.faq6q": "Brauche ich Internet?",
         "seo.faq6a":
-            "Fotos enthalten oft persönliche Informationen wie Gesichter, Orte, Dokumente oder private Momente. Beim Upload auf externe Server verlierst du Kontrolle darüber, wo sie gespeichert werden und wie sie ggf. wiederverwendet werden. Lokale Konvertierung hält die Dateien auf deinem Gerät und reduziert das Risiko unerwünschten Zugriffs – komplett kostenlos.",
+            "Nur zum Laden der Seite. Danach funktioniert alles offline.",
 
-        "seo.faq7q": "HEIC-Fotos öffnen sich unter Windows nicht — was kann ich tun?",
+        "seo.faq7q": "Geht Qualität verloren?",
         "seo.faq7a":
-            "Das passiert häufig bei Fotos vom iPhone oder von Kameras, die in HEIC speichern. Da der Windows-Support begrenzt sein kann, ist das Konvertieren in JPG oder PNG der schnellste Weg, um die Fotos zu öffnen, zu bearbeiten oder zu teilen – ohne Systemeinstellungen zu ändern oder zusätzliche Software zu installieren.",
+            "Nein. Die Umwandlung erhält eine sehr gute Bildqualität.",
 
-        "seo.faq8q": "Wie öffne ich iPhone-Fotos auf einem Windows-PC?",
+        "seo.faq8q": "Wie viele Bilder kann ich auf einmal konvertieren?",
         "seo.faq8a":
-            "iPhone-Fotos liegen meist als HEIC vor und lassen sich unter Windows manchmal schwer öffnen. Wenn du sie im Browser in JPG oder PNG konvertierst, sind sie sofort kompatibel mit Windows-Bildbetrachtern, Editoren, Druckern und Sharing-Apps.",
-
-        "seo.faq9q": "Brauche ich eine Internetverbindung, um HEIC-Fotos zu konvertieren?",
-        "seo.faq9a":
-            "Internet wird nur benötigt, um die Seite zu laden. Danach laufen alle Konvertierungen lokal im Browser. So kannst du auch bei eingeschränkter Verbindung konvertieren und behältst Privatsphäre und Kontrolle.",
-
-        "seo.faq10q": "Verringert das Konvertieren von HEIC zu JPG die Bildqualität?",
-        "seo.faq10a":
-            "HEIC ist sehr effizient, aber die Konvertierung zu JPG, PNG oder WEBP kann für den Alltag eine hervorragende Qualität beibehalten. Wähle das Format, das zu deinen Prioritäten passt: Kompatibilität, Qualität oder kleinere Dateigrößen.",
-
-        "seo.faq11q": "Wie viele Bilder kann ich auf einmal konvertieren?",
-        "seo.faq11a":
-            "Du kannst tausende HEIC-, HEIF- oder HIF-Bilder in einem einzigen Durchlauf konvertieren. Der Converter ist für Massenkonvertierung ausgelegt und teilt große Batches beim Download automatisch in mehrere ZIP-Dateien auf. Das hält den Browser schnell, reduziert den Speicherverbrauch und sorgt für eine flüssige Performance – selbst bei sehr vielen Fotos auf einmal.",
+            "Tausende Bilder pro Durchgang, automatisch in ZIP-Dateien aufgeteilt.",
 
         "seo.synonyms":
-            "HEIC / HEIF / HIF Konverter • HEIC zu JPG • HEIC zu JPEG • HEIC zu PNG • HEIC zu WEBP • HEIF zu JPG • HEIF zu PNG • HIF zu JPG • HIF zu WEBP • kostenloser HEIC Konverter • Offline-Bildkonverter • keine Uploads • funktioniert auf allen Geräten • privater Bildkonverter",
+            "HEIC Konverter • JPG umwandeln • Offline Bildkonverter • Ohne Uploads",
 
         "app.title": "HEIC / HEIF / HIF (.hif/.heic) → JPG / JPEG / PNG / WEBP Konverter",
         "header.title": "HEIC / HEIF / HIF → JPG / JPEG / PNG / WEBP",
@@ -1049,52 +950,40 @@ export const DICTS = {
             "Convertissez des photos .heic, .heif et .hif en JPG/JPEG, PNG ou WEBP localement dans votre navigateur. Aucun envoi — vos images restent sur votre appareil.",
         "seo.faqTitle": "FAQ",
 
-        "seo.faq1q": "Comment convertir HEIC / HEIF / HIF en JPG ou JPEG gratuitement ?",
+        "seo.faq1q": "Comment convertir HEIC, HEIF ou HIF en JPG, PNG ou WEBP ?",
         "seo.faq1a":
-            "Déposez vos fichiers .heic, .heif ou .hif sur la page (ou cliquez sur « Choisir des fichiers »), sélectionnez JPG/JPEG comme sortie, puis cliquez sur « Tout convertir ». La conversion est 100% gratuite, sans inscription, et fonctionne sur ordinateur, mobile et tablette. Ensuite, téléchargez chaque fichier ou utilisez « Télécharger le ZIP ».",
+            "Glissez vos fichiers .heic, .heif ou .hif dans la page (ou cliquez sur « Choisir des fichiers »), choisissez le format et cliquez sur « Tout convertir ». Fonctionne hors ligne.",
 
         "seo.faq2q": "Pourquoi Windows ne peut-il pas ouvrir les photos HEIC ?",
         "seo.faq2a":
-            "HEIC est le format photo par défaut des iPhone et de بعض appareils photo modernes, mais Windows ne le prend pas totalement en charge par défaut. C’est pourquoi certains utilisateurs voient des erreurs en ouvrant des HEIC d’iPhone ou d’appareil photo. Convertir HEIC en JPG, PNG ou WEBP rend vos images immédiatement compatibles avec Windows et la plupart des applications photo, sans installer de logiciel supplémentaire.",
+            "Windows ne prend pas totalement en charge HEIC par défaut. La conversion en JPG ou PNG règle le problème.",
 
-        "seo.faq3q": "Est-ce que ça fonctionne avec les photos d’iPhone et les images d’appareil photo ?",
+        "seo.faq3q": "Fonctionne-t-il avec les photos iPhone et appareil photo ?",
         "seo.faq3a":
-            "Oui. Les photos prises sur iPhone sont généralement enregistrées en HEIC, et certaines caméras (y compris certains modèles Sony) utilisent aussi HEIF/HEIC. Ce convertisseur fonctionne avec les photos iPhone et les images d’appareils compatibles, pour les convertir en JPG, PNG ou WEBP et les utiliser facilement sur Windows, macOS, Android, etc.",
+            "Oui. Les photos iPhone et celles des appareils compatibles HEIC peuvent être converties.",
 
-        "seo.faq4q": "Puis-je convertir HEIC / HEIF / HIF sur Windows sans rien installer ?",
+        "seo.faq4q": "Faut-il installer un logiciel ?",
         "seo.faq4a":
-            "Oui. Le convertisseur fonctionne directement dans le navigateur : pas besoin d’installer d’app, de codec ou d’extension système sous Windows. Ouvrez la page, convertissez vos photos HEIC d’iPhone ou d’appareil photo, puis téléchargez des JPG/PNG стандарт qui fonctionnent partout.",
+            "Non. Tout fonctionne directement dans le navigateur.",
 
-        "seo.faq5q": "Comment convertir HEIC en JPG sans envoyer mes photos ?",
+        "seo.faq5q": "Mes photos sont-elles privées ?",
         "seo.faq5a":
-            "De nombreux convertisseurs en ligne envoient les images vers un serveur, ce qui fait sortir vos photos de votre appareil. Un convertisseur local dans le navigateur évite cela. Tout se passe sur votre ordinateur ou votre téléphone, donc les photos iPhone et appareil photo sont converties en privé, sans transit sur Internet.",
+            "Oui. Les images restent sur votre appareil.",
 
-        "seo.faq6q": "Pourquoi la conversion locale est importante pour la confidentialité ?",
+        "seo.faq6q": "Une connexion internet est-elle nécessaire ?",
         "seo.faq6a":
-            "Les photos contiennent souvent des informations personnelles (visages, lieux, documents, moments privés). En envoyant des images vers des serveurs externes, vous perdez le contrôle sur leur stockage et leur éventuelle réutilisation. La conversion locale garde les fichiers sur votre appareil et réduit les risques d’accès non souhaités, tout en restant entièrement gratuite.",
+            "Seulement pour charger la page. Ensuite, tout fonctionne hors ligne.",
 
-        "seo.faq7q": "Les photos HEIC ne s’ouvrent pas sur Windows — que faire ?",
+        "seo.faq7q": "La qualité est-elle réduite ?",
         "seo.faq7a":
-            "Cela arrive souvent quand les photos proviennent d’un iPhone ou d’un appareil photo qui enregistre en HEIC. Comme le support Windows peut être limité, convertir HEIC en JPG ou PNG est la solution la plus rapide pour ouvrir, éditer ou partager ces photos sans modifier les paramètres système ni installer de logiciel supplémentaire.",
+            "Non. La conversion conserve une excellente qualité.",
 
-        "seo.faq8q": "Comment ouvrir des photos d’iPhone sur un PC Windows ?",
+        "seo.faq8q": "Combien d’images puis-je convertir ?",
         "seo.faq8a":
-            "Les photos d’iPhone sont souvent en HEIC, ce qui peut être difficile à ouvrir sous Windows. Les convertir en JPG ou PNG dans votre navigateur les rend immédiatement compatibles avec les visionneuses, éditeurs, imprimantes et apps de partage Windows.",
-
-        "seo.faq9q": "Ai-je besoin d’une connexion Internet pour convertir des photos HEIC ?",
-        "seo.faq9a":
-            "Internet n’est nécessaire que pour charger la page. Une fois chargée, toutes les conversions se font localement dans le navigateur. Vous pouvez donc convertir même avec une connectivité limitée, tout en gardant vos fichiers privés et sous votre contrôle.",
-
-        "seo.faq10q": "Convertir HEIC en JPG réduit-il la qualité ?",
-        "seo.faq10a":
-            "HEIC est un format très efficace, mais la conversion vers JPG, PNG ou WEBP peut conserver une excellente qualité pour un usage courant. Choisissez le format selon vos priorités : compatibilité, qualité d’image ou taille de fichier plus petite.",
-
-        "seo.faq11q": "Combien d’images puis-je convertir en une seule fois ?",
-        "seo.faq11a":
-            "Vous pouvez convertir des milliers d’images HEIC, HEIF ou HIF en un seul lot. Le convertisseur est conçu pour la conversion en masse et, lors du téléchargement, il découpe automatiquement les gros lots en plusieurs fichiers ZIP. Cela aide à garder le navigateur rapide, à réduire l’utilisation de la mémoire et à assurer des performances fluides même lors de la conversion d’un très grand nombre de photos en une seule fois.",
+            "Des milliers d’images peuvent être converties en une fois.",
 
         "seo.synonyms":
-            "Convertisseur HEIC / HEIF / HIF • HEIC en JPG • HEIC en JPEG • HEIC en PNG • HEIC en WEBP • HEIF en JPG • HEIF en PNG • HIF en JPG • HIF en WEBP • convertisseur HEIC gratuit • convertisseur d’images hors ligne • aucun envoi • fonctionne sur tous les appareils • convertisseur privé",
+            "convertisseur HEIC • HEIC en JPG • conversion hors ligne • sans upload",
 
         "app.title": "Convertisseur HEIC / HEIF / HIF (.hif/.heic) → JPG / JPEG / PNG / WEBP",
         "header.title": "HEIC / HEIF / HIF → JPG / JPEG / PNG / WEBP",
@@ -1178,52 +1067,40 @@ export const DICTS = {
             "Конвертируйте фото .heic, .heif и .hif в JPG/JPEG, PNG или WEBP локально в браузере. Без загрузок — изображения остаются на вашем устройстве.",
         "seo.faqTitle": "FAQ",
 
-        "seo.faq1q": "Как бесплатно конвертировать HEIC / HEIF / HIF в JPG или JPEG?",
+        "seo.faq1q": "Как конвертировать HEIC, HEIF или HIF в JPG, PNG или WEBP?",
         "seo.faq1a":
-            "Перетащите .heic, .heif или .hif на страницу (или нажмите «Выбрать файлы»), выберите JPG/JPEG как выходной формат и нажмите «Конвертировать все». Конвертация 100% бесплатная, без регистрации, работает на ПК, телефоне и планшете. После завершения скачайте файлы по одному или используйте «Скачать ZIP».",
+            "Перетащите файлы .heic, .heif или .hif на страницу (или нажмите «Выбрать файлы»), выберите формат вывода и нажмите «Конвертировать все». Работает офлайн на компьютере, планшете и телефоне. Скачивайте файлы по одному или одним ZIP-архивом.",
 
-        "seo.faq2q": "Почему Windows не открывает фото HEIC?",
+        "seo.faq2q": "Почему Windows не открывает фото HEIC и как это исправить?",
         "seo.faq2a":
-            "HEIC — формат по умолчанию на iPhone и некоторых современных камерах, но Windows не полностью поддерживает его «из коробки». Поэтому у многих пользователей возникают ошибки при открытии HEIC с iPhone или камеры. Конвертация HEIC в JPG, PNG или WEBP делает изображения сразу совместимыми с Windows и большинством фото-приложений без установки дополнительного ПО.",
+            "Windows по умолчанию не полностью поддерживает форматы HEIC/HEIF. Конвертация в JPG, PNG или WEBP обеспечивает совместимость с фото-приложениями Windows без установки дополнительного ПО.",
 
-        "seo.faq3q": "Работает ли это с фото iPhone и изображениями с камеры?",
+        "seo.faq3q": "Работает ли это с фото с iPhone и с камер?",
         "seo.faq3a":
-            "Да. Фото с iPhone обычно сохраняются в HEIC, а некоторые камеры (включая отдельные модели Sony) тоже используют HEIF/HEIC. Этот конвертер работает с фото iPhone и совместимыми камерными изображениями, позволяя конвертировать их в JPG, PNG или WEBP для удобного использования на Windows, macOS, Android и других устройствах.",
+            "Да. Конвертер поддерживает фото с iPhone и камеры, которые используют HEIC или HEIF, позволяя преобразовать изображения в JPG, PNG или WEBP для использования на Windows, macOS, Android и других устройствах.",
 
-        "seo.faq4q": "Можно ли конвертировать HEIC / HEIF / HIF в Windows без установки чего-либо?",
+        "seo.faq4q": "Можно ли конвертировать изображения без установки программ?",
         "seo.faq4a":
-            "Да. Конвертер работает прямо в браузере, поэтому пользователям Windows не нужно устанавливать приложения, кодеки или расширения системы. Откройте страницу, конвертируйте фото HEIC с iPhone или камеры и скачайте стандартные JPG/PNG, которые работают везде.",
+            "Да. Конвертер полностью работает в браузере. Не нужны приложения, плагины или системные расширения. Всё происходит локально.",
 
-        "seo.faq5q": "Как конвертировать HEIC в JPG без загрузки фото на сервер?",
+        "seo.faq5q": "Мои фото остаются приватными?",
         "seo.faq5a":
-            "Многие онлайн-конвертеры загружают изображения на сервер, из-за чего фото покидают ваше устройство. Локальный конвертер в браузере этого избегает: всё происходит на вашем компьютере или телефоне, поэтому фото с iPhone и камеры конвертируются приватно, без отправки через интернет.",
+            "Да. Все преобразования выполняются локально в вашем браузере. Ваши изображения никогда не покидают устройство, поэтому файлы остаются приватными и защищёнными.",
 
-        "seo.faq6q": "Почему локальная конвертация важна для приватности?",
+        "seo.faq6q": "Нужен ли интернет?",
         "seo.faq6a":
-            "Фото часто содержат личные данные: лица, локации, документы или приватные моменты. При загрузке на внешние серверы вы теряете контроль над хранением и возможным повторным использованием. Локальная конвертация оставляет файлы на вашем устройстве, снижая риск нежелательного доступа, и остаётся полностью бесплатной.",
+            "Только для загрузки страницы. После загрузки все конвертации работают офлайн в браузере, даже при больших партиях изображений.",
 
-        "seo.faq7q": "HEIC не открываются в Windows — что делать?",
+        "seo.faq7q": "Снижается ли качество при конвертации?",
         "seo.faq7a":
-            "Это часто происходит, когда фото пришли с iPhone или камеры, сохраняющей в HEIC. Поскольку поддержка Windows может быть ограниченной, конвертация HEIC в JPG или PNG — самый быстрый способ открыть, отредактировать или поделиться такими фото без изменения настроек системы и без установки дополнительного ПО.",
+            "Конвертация HEIC/HEIF/HIF в JPG, PNG или WEBP сохраняет отличное визуальное качество. Вы можете выбрать формат, который лучше подходит по качеству, совместимости или размеру файла.",
 
-        "seo.faq8q": "Как открыть фото с iPhone на ПК с Windows?",
+        "seo.faq8q": "Сколько изображений можно конвертировать за один раз?",
         "seo.faq8a":
-            "Фото с iPhone обычно в формате HEIC, который бывает сложно открыть в Windows. Конвертация в JPG или PNG в браузере делает их сразу совместимыми с просмотрщиками, редакторами, печатью и приложениями для обмена в Windows.",
-
-        "seo.faq9q": "Нужен ли интернет, чтобы конвертировать HEIC?",
-        "seo.faq9a":
-            "Интернет нужен только для загрузки страницы. После загрузки все конвертации выполняются локально в вашем браузере. Это позволяет конвертировать даже при слабом соединении, сохраняя приватность и контроль.",
-
-        "seo.faq10q": "Снижается ли качество при конвертации HEIC в JPG?",
-        "seo.faq10a":
-            "HEIC — очень эффективный формат, но конвертация в JPG, PNG или WEBP может сохранить отличное качество для повседневного использования. Выберите формат под задачу: совместимость, качество или меньший размер файла.",
-
-        "seo.faq11q": "Сколько изображений можно конвертировать за один раз?",
-        "seo.faq11a":
-            "Вы можете конвертировать тысячи изображений HEIC, HEIF или HIF в одном пакете. Конвертер рассчитан на массовую обработку и при скачивании автоматически разбивает большие пакеты на несколько ZIP-файлов. Это помогает браузеру работать быстрее, снижает потребление памяти и обеспечивает плавную работу даже при конвертации очень большого количества фото за один раз.",
+            "Вы можете конвертировать тысячи изображений за один проход. Большие партии автоматически разбиваются на несколько ZIP-файлов для стабильной и быстрой работы.",
 
         "seo.synonyms":
-            "Конвертер HEIC / HEIF / HIF • HEIC в JPG • HEIC в JPEG • HEIC в PNG • HEIC в WEBP • HEIF в JPG • HEIF в PNG • HIF в JPG • HIF в WEBP • бесплатный HEIC конвертер • офлайн-конвертер изображений • без загрузок • работает на всех устройствах • приватный конвертер",
+            "Конвертируйте фото HEIC, HEIF или HIF в JPG, PNG или WEBP локально в браузере. Работает офлайн, сохраняет приватность и поддерживает большие партии фотографий.",
 
         "app.title": "Конвертер HEIC / HEIF / HIF (.hif/.heic) → JPG / JPEG / PNG / WEBP",
         "header.title": "HEIC / HEIF / HIF → JPG / JPEG / PNG / WEBP",
@@ -1307,52 +1184,40 @@ export const DICTS = {
             "Converti foto .heic, .heif e .hif in JPG/JPEG, PNG o WEBP localmente nel browser. Nessun upload — le immagini restano sul tuo dispositivo.",
         "seo.faqTitle": "FAQ",
 
-        "seo.faq1q": "Come convertire HEIC / HEIF / HIF in JPG o JPEG gratis?",
+        "seo.faq1q": "Come convertire HEIC, HEIF o HIF in JPG, PNG o WEBP?",
         "seo.faq1a":
-            "Trascina i file .heic, .heif o .hif nella pagina (o clicca “Scegli file”), seleziona JPG/JPEG come output e clicca “Converti tutto”. La conversione è 100% gratis, senza registrazione, e funziona su desktop, mobile e tablet. Alla fine, scarica i file singolarmente o usa “Scarica ZIP”.",
+            "Trascina i file .heic, .heif o .hif nella pagina oppure clicca su “Scegli file”, seleziona il formato e clicca su “Converti tutto”. Funziona anche offline.",
 
-        "seo.faq2q": "Perché Windows non riesce ad aprire le foto HEIC?",
+        "seo.faq2q": "Perché Windows non apre le foto HEIC?",
         "seo.faq2a":
-            "HEIC è il formato foto predefinito di iPhone e di alcune fotocamere moderne, ma Windows non lo supporta completamente in modo nativo. Per questo molti utenti vedono errori aprendo foto HEIC da iPhone o fotocamera. Convertire HEIC in JPG, PNG o WEBP rende le immagini subito compatibili con Windows e con la maggior parte delle app foto, senza installare software extra.",
+            "Windows non supporta completamente HEIC. Convertendole in JPG o PNG diventano compatibili.",
 
-        "seo.faq3q": "Funziona con le foto di iPhone e con le immagini della fotocamera?",
+        "seo.faq3q": "Funziona con foto iPhone e fotocamere?",
         "seo.faq3a":
-            "Sì. Le foto scattate con iPhone di solito vengono salvate come HEIC, e alcune fotocamere (incluse certe Sony) usano anche HEIF/HEIC. Questo convertitore funziona con foto iPhone e immagini di fotocamere compatibili, permettendo di convertirle in JPG, PNG o WEBP per usarle facilmente su Windows, macOS, Android e altri dispositivi.",
+            "Sì, supporta foto iPhone e fotocamere HEIC/HEIF.",
 
-        "seo.faq4q": "Posso convertire HEIC / HEIF / HIF su Windows senza installare nulla?",
+        "seo.faq4q": "Serve installare un programma?",
         "seo.faq4a":
-            "Sì. Il convertitore gira direttamente nel browser, quindi su Windows non devi installare app, codec o estensioni di sistema. Apri la pagina, converti le foto HEIC di iPhone o fotocamera e scarica JPG o PNG standard che funzionano ovunque.",
+            "No, tutto funziona direttamente nel browser.",
 
-        "seo.faq5q": "Come convertire HEIC in JPG senza caricare le foto?",
+        "seo.faq5q": "Le mie foto sono al sicuro?",
         "seo.faq5a":
-            "Molti convertitori online caricano le immagini su un server, quindi le foto escono dal tuo dispositivo. Un convertitore locale nel browser evita questo: tutto avviene sul tuo computer o telefono, così le foto di iPhone e fotocamera vengono convertite in modo privato senza essere inviate su Internet.",
+            "Sì, vengono elaborate localmente e non caricate.",
 
-        "seo.faq6q": "Perché la conversione locale è importante per la privacy?",
+        "seo.faq6q": "Serve internet?",
         "seo.faq6a":
-            "Le foto spesso contengono informazioni personali (volti, posizioni, documenti o momenti privati). Quando le immagini vengono caricate su server esterni, perdi controllo su dove siano conservate e come possano essere riutilizzate. La conversione locale mantiene i file sul tuo dispositivo, riducendo il rischio di accessi indesiderati, restando completamente gratuita.",
+            "Solo per caricare la pagina. Dopo funziona offline.",
 
-        "seo.faq7q": "Le foto HEIC non si aprono su Windows — cosa posso fare?",
+        "seo.faq7q": "La qualità viene ridotta?",
         "seo.faq7a":
-            "Succede spesso quando le foto provengono da iPhone o da una fotocamera che salva in HEIC. Poiché il supporto Windows può essere limitato, convertire HEIC in JPG o PNG è il modo più veloce per aprire, modificare o condividere le foto senza cambiare impostazioni di sistema o installare software aggiuntivo.",
+            "No, la qualità resta elevata.",
 
-        "seo.faq8q": "Come apro le foto di iPhone su un PC Windows?",
+        "seo.faq8q": "Quante immagini posso convertire?",
         "seo.faq8a":
-            "Le foto di iPhone sono spesso in HEIC, che può essere difficile da aprire su Windows. Convertirle in JPG o PNG nel browser le rende subito compatibili con visualizzatori, editor, stampanti e app di condivisione su Windows.",
-
-        "seo.faq9q": "Serve una connessione internet per convertire foto HEIC?",
-        "seo.faq9a":
-            "Serve internet solo per caricare la pagina. Una volta caricata, tutte le conversioni avvengono localmente nel browser. Questo ti permette di convertire HEIC anche con connettività limitata, mantenendo tutto privato e sotto il tuo controllo.",
-
-        "seo.faq10q": "Convertire HEIC in JPG riduce la qualità?",
-        "seo.faq10a":
-            "HEIC è un formato molto efficiente, ma la conversione in JPG, PNG o WEBP può preservare un’ottima qualità visiva per l’uso quotidiano. Puoi scegliere il formato migliore per le tue esigenze: compatibilità, qualità o dimensioni più piccole.",
-
-        "seo.faq11q": "Quante immagini posso convertire in una sola volta?",
-        "seo.faq11a":
-            "Puoi convertire migliaia di immagini HEIC, HEIF o HIF in un unico batch. Il convertitore è progettato per conversioni di massa e, al momento del download, divide automaticamente i batch più grandi in più file ZIP. Questo aiuta a mantenere il browser veloce, riduce l’uso della memoria e garantisce prestazioni fluide anche quando converti un numero molto elevato di foto in una volta sola.",
+            "Anche migliaia di immagini in un’unica operazione.",
 
         "seo.synonyms":
-            "Convertitore HEIC / HEIF / HIF • HEIC in JPG • HEIC in JPEG • HEIC in PNG • HEIC in WEBP • HEIF in JPG • HEIF in PNG • HIF in JPG • HIF in WEBP • convertitore HEIC gratis • convertitore immagini offline • nessun upload • funziona su tutti i dispositivi • convertitore privato",
+            "convertitore HEIC • HEIC in JPG • offline • senza upload",
 
         "app.title": "Convertitore HEIC / HEIF / HIF (.hif/.heic) → JPG / JPEG / PNG / WEBP",
         "header.title": "HEIC / HEIF / HIF → JPG / JPEG / PNG / WEBP",
@@ -1438,53 +1303,40 @@ export const DICTS = {
             "Converteer .heic-, .heif- en .hif-foto’s lokaal in je browser naar JPG/JPEG, PNG of WEBP. Geen uploads — je afbeeldingen blijven op je apparaat.",
         "seo.faqTitle": "FAQ",
 
-        "seo.faq1q": "Hoe converteer ik HEIC / HEIF / HIF gratis naar JPG of JPEG?",
+        "seo.faq1q": "Hoe zet ik HEIC, HEIF of HIF om naar JPG, PNG of WEBP?",
         "seo.faq1a":
-            "Sleep je .heic-, .heif- of .hif-bestanden naar de pagina (of klik op “Bestanden kiezen”), selecteer JPG/JPEG als uitvoer en klik op “Alles converteren”. De conversie is 100% gratis, zonder aanmelding, en werkt op desktop, mobiel en tablet. Download daarna losse bestanden of gebruik “ZIP downloaden”.",
+            "Sleep je bestanden naar de pagina of klik op “Bestanden kiezen”, selecteer het formaat en klik op “Alles converteren”. Werkt ook offline.",
 
-        "seo.faq2q": "Waarom kan Windows HEIC-foto’s niet openen?",
+        "seo.faq2q": "Waarom opent Windows HEIC niet?",
         "seo.faq2a":
-            "HEIC is het standaard fotoformaat van iPhones en sommige moderne camera’s, maar Windows ondersteunt het niet volledig standaard. Daarom krijgen veel Windows-gebruikers fouten bij het openen van HEIC-foto’s van iPhone of camera. Door HEIC naar JPG, PNG of WEBP te converteren, zijn je beelden meteen compatibel met Windows en de meeste foto-apps, zonder extra software te installeren.",
+            "Windows ondersteunt HEIC niet standaard. Door te converteren naar JPG of PNG werkt alles direct.",
 
-        "seo.faq3q": "Werkt dit met iPhone-foto’s en camera-afbeeldingen?",
+        "seo.faq3q": "Werkt dit met iPhone- en camerafoto’s?",
         "seo.faq3a":
-            "Ja. Foto’s op iPhone worden meestal als HEIC opgeslagen, en sommige camera’s (o.a. bepaalde Sony-modellen) gebruiken ook HEIF/HEIC. Deze converter werkt met iPhone-foto’s en compatibele camera-afbeeldingen en zet ze om naar JPG, PNG of WEBP voor eenvoudig gebruik op Windows, macOS, Android en meer.",
+            "Ja, HEIC-foto’s van iPhone en camera’s worden ondersteund.",
 
-        "seo.faq4q": "Kan ik HEIC / HEIF / HIF op Windows converteren zonder iets te installeren?",
+        "seo.faq4q": "Moet ik iets installeren?",
         "seo.faq4a":
-            "Ja. De converter draait direct in je browser, dus Windows-gebruikers hoeven geen apps, codecs of systeemextensies te installeren. Open de pagina, converteer iPhone- of camera-HEIC’s en download standaard JPG/PNG-bestanden die overal werken.",
+            "Nee, alles werkt in de browser.",
 
-        "seo.faq5q": "Hoe converteer ik HEIC naar JPG zonder mijn foto’s te uploaden?",
+        "seo.faq5q": "Zijn mijn foto’s privé?",
         "seo.faq5a":
-            "Veel online converters uploaden afbeeldingen naar een server, waardoor je foto’s je apparaat verlaten. Een lokale converter in de browser voorkomt dat. Alles gebeurt op je eigen computer of telefoon, dus iPhone- en camerafoto’s worden privé geconverteerd zonder via internet verstuurd te worden.",
+            "Ja, alles gebeurt lokaal op je apparaat.",
 
-        "seo.faq6q": "Waarom is lokaal converteren belangrijk voor privacy?",
+        "seo.faq6q": "Is internet nodig?",
         "seo.faq6a":
-            "Foto’s bevatten vaak persoonlijke info zoals gezichten, locaties, documenten of privé-momenten. Als beelden naar externe servers worden geüpload, verlies je controle over opslag en hergebruik. Lokale conversie houdt bestanden op je apparaat, vermindert het risico op ongewenste toegang en blijft volledig gratis.",
+            "Alleen om de pagina te laden.",
 
-        "seo.faq7q": "HEIC-foto’s openen niet op Windows — wat kan ik doen?",
+        "seo.faq7q": "Gaat de kwaliteit achteruit?",
         "seo.faq7a":
-            "Dit gebeurt vaak bij foto’s van een iPhone of camera die in HEIC opslaat. Omdat Windows-ondersteuning beperkt kan zijn, is converteren naar JPG of PNG de snelste manier om ze te openen, bewerken of delen zonder systeeminstellingen te wijzigen of extra software te installeren.",
+            "Nee, de kwaliteit blijft hoog.",
 
-        "seo.faq8q": "Hoe open ik iPhone-foto’s op een Windows-pc?",
+        "seo.faq8q": "Hoeveel afbeeldingen kan ik tegelijk converteren?",
         "seo.faq8a":
-            "iPhone-foto’s zijn meestal HEIC, wat lastig kan zijn op Windows. Door ze in je browser naar JPG of PNG te converteren, worden ze direct compatibel met Windows-viewers, editors, printers en deel-apps.",
-
-        "seo.faq9q": "Heb ik internet nodig om HEIC-foto’s te converteren?",
-        "seo.faq9a":
-            "Internet is alleen nodig om de pagina te laden. Zodra die geladen is, draaien alle conversies lokaal in je browser. Zo kun je ook met beperkte verbinding converteren, terwijl alles privé en onder jouw controle blijft.",
-
-        "seo.faq10q": "Gaat de kwaliteit omlaag als ik HEIC naar JPG converteer?",
-        "seo.faq10a":
-            "HEIC is een zeer efficiënt formaat, maar conversie naar JPG, PNG of WEBP kan uitstekende beeldkwaliteit behouden voor dagelijks gebruik. Kies het formaat dat bij je behoeften past: compatibiliteit, kwaliteit of kleinere bestanden.",
-
-        // NEW
-        "seo.faq11q": "Hoeveel afbeeldingen kan ik tegelijk converteren?",
-        "seo.faq11a":
-            "Je kunt duizenden HEIC-, HEIF- of HIF-afbeeldingen in één keer converteren. De converter is ontworpen voor batchverwerking en splitst grote batches automatisch in meerdere ZIP-bestanden bij het downloaden. Dit houdt je browser snel, vermindert het geheugengebruik en zorgt voor soepele prestaties, zelfs bij het converteren van zeer grote aantallen foto’s.",
+            "Duizenden tegelijk, automatisch verdeeld in ZIP-bestanden.",
 
         "seo.synonyms":
-            "HEIC / HEIF / HIF converter • HEIC naar JPG • HEIC naar JPEG • HEIC naar PNG • HEIC naar WEBP • HEIF naar JPG • HEIF naar PNG • HIF naar JPG • HIF naar WEBP • gratis HEIC converter • offline afbeeldingsconverter • geen uploads • werkt op alle apparaten • privé converter",
+            "HEIC converter • offline converter • zonder upload",
 
         // Existing UI
         "app.title": "HEIC / HEIF / HIF (.hif/.heic) → JPG / JPEG / PNG / WEBP Converter",
@@ -1572,53 +1424,40 @@ export const DICTS = {
             "Konwertuj zdjęcia .heic, .heif i .hif na JPG/JPEG, PNG lub WEBP lokalnie w przeglądarce. Bez uploadów — obrazy pozostają na Twoim urządzeniu.",
         "seo.faqTitle": "FAQ",
 
-        "seo.faq1q": "Jak za darmo przekonwertować HEIC / HEIF / HIF na JPG lub JPEG?",
+        "seo.faq1q": "Jak przekonwertować HEIC, HEIF lub HIF na JPG, PNG lub WEBP?",
         "seo.faq1a":
-            "Upuść pliki .heic, .heif lub .hif na stronę (albo kliknij „Wybierz pliki”), wybierz JPG/JPEG jako wyjście i kliknij „Konwertuj wszystko”. Konwersja jest w 100% darmowa, bez rejestracji, działa na komputerze, telefonie i tablecie. Po zakończeniu pobierz pliki osobno lub użyj „Pobierz ZIP”.",
+            "Przeciągnij pliki na stronę lub kliknij „Wybierz pliki”, wybierz format i kliknij „Konwertuj wszystko”. Działa offline.",
 
-        "seo.faq2q": "Dlaczego Windows nie może otworzyć zdjęć HEIC?",
+        "seo.faq2q": "Dlaczego Windows nie otwiera HEIC?",
         "seo.faq2a":
-            "HEIC to domyślny format zdjęć na iPhone’ach i w niektórych nowoczesnych aparatach, ale Windows nie obsługuje go w pełni od razu po instalacji. Dlatego wielu użytkowników Windows widzi błędy przy otwieraniu zdjęć HEIC z iPhone’a lub aparatu. Konwersja HEIC do JPG, PNG lub WEBP sprawia, że obrazy są od razu kompatybilne z Windowsem i większością aplikacji do zdjęć — bez instalowania dodatkowego oprogramowania.",
+            "Windows nie obsługuje w pełni HEIC. Konwersja do JPG lub PNG rozwiązuje problem.",
 
-        "seo.faq3q": "Czy to działa ze zdjęciami z iPhone’a i z aparatów?",
+        "seo.faq3q": "Czy działa z iPhone’em i aparatami?",
         "seo.faq3a":
-            "Tak. Zdjęcia z iPhone’a są zwykle zapisywane jako pliki HEIC, a niektóre aparaty (w tym wybrane modele Sony) również używają formatów HEIF lub HEIC. Ten konwerter działa ze zdjęciami z iPhone’a i zgodnymi zdjęciami z aparatów, umożliwiając konwersję do JPG, PNG lub WEBP do łatwego użycia na Windows, macOS, Androidzie i innych urządzeniach.",
+            "Tak, obsługuje zdjęcia z iPhone’a i aparatów.",
 
-        "seo.faq4q": "Czy mogę konwertować HEIC / HEIF / HIF na Windows bez instalowania czegokolwiek?",
+        "seo.faq4q": "Czy muszę coś instalować?",
         "seo.faq4a":
-            "Tak. Konwerter działa bezpośrednio w przeglądarce, więc użytkownicy Windows nie muszą instalować aplikacji, kodeków ani rozszerzeń systemowych. Wystarczy otworzyć stronę, przekonwertować zdjęcia HEIC z iPhone’a lub aparatu i pobrać standardowe pliki JPG lub PNG, które działają wszędzie.",
+            "Nie. Wszystko działa w przeglądarce.",
 
-        "seo.faq5q": "Jak przekonwertować HEIC do JPG bez wysyłania zdjęć?",
+        "seo.faq5q": "Czy moje zdjęcia są bezpieczne?",
         "seo.faq5a":
-            "Wiele konwerterów online wysyła obrazy na serwer, co oznacza, że zdjęcia opuszczają Twoje urządzenie. Lokalny konwerter w przeglądarce tego unika. Wszystko dzieje się na Twoim komputerze lub telefonie, więc zdjęcia z iPhone’a i aparatu są konwertowane prywatnie — bez wysyłania ich przez internet.",
+            "Tak, wszystko odbywa się lokalnie.",
 
-        "seo.faq6q": "Dlaczego lokalna konwersja ma znaczenie dla prywatności?",
+        "seo.faq6q": "Czy potrzebny jest internet?",
         "seo.faq6a":
-            "Zdjęcia często zawierają dane osobowe, takie jak twarze, lokalizacje, dokumenty lub prywatne chwile. Gdy obrazy są wysyłane na zewnętrzne serwery, tracisz kontrolę nad tym, gdzie są przechowywane i jak mogą być ponownie użyte. Lokalna konwersja trzyma pliki na Twoim urządzeniu, zmniejszając ryzyko niepożądanego dostępu — a przy tym pozostaje całkowicie darmowa.",
+            "Tylko do załadowania strony.",
 
-        "seo.faq7q": "Zdjęcia HEIC nie otwierają się na Windows — co mogę zrobić?",
+        "seo.faq7q": "Czy jakość się pogarsza?",
         "seo.faq7a":
-            "To często zdarza się, gdy zdjęcia pochodzą z iPhone’a lub z aparatu, który zapisuje obrazy w formacie HEIC. Ponieważ obsługa w Windows bywa ograniczona, konwersja HEIC do JPG lub PNG to najszybszy sposób, aby je otwierać, edytować lub udostępniać bez zmiany ustawień systemu i bez instalowania dodatkowego oprogramowania.",
+            "Nie, jakość pozostaje wysoka.",
 
-        "seo.faq8q": "Jak otworzyć zdjęcia z iPhone’a na komputerze z Windows?",
+        "seo.faq8q": "Ile zdjęć mogę przekonwertować?",
         "seo.faq8a":
-            "Zdjęcia z iPhone’a są zwykle zapisane jako pliki HEIC, które mogą być trudne do otwarcia w Windows. Konwersja do JPG lub PNG w przeglądarce sprawia, że są od razu kompatybilne z przeglądarkami zdjęć, edytorami, drukarkami i aplikacjami do udostępniania na Windows.",
-
-        "seo.faq9q": "Czy do konwersji zdjęć HEIC potrzebuję internetu?",
-        "seo.faq9a":
-            "Połączenie z internetem jest potrzebne tylko do załadowania strony. Gdy strona jest już wczytana, cała konwersja działa lokalnie w Twojej przeglądarce. Dzięki temu możesz konwertować zdjęcia HEIC nawet przy ograniczonym dostępie do sieci, zachowując pełną prywatność i kontrolę.",
-
-        "seo.faq10q": "Czy konwersja HEIC do JPG obniży jakość obrazu?",
-        "seo.faq10a":
-            "HEIC to bardzo wydajny format, ale konwersja do JPG, PNG lub WEBP może zachować świetną jakość wizualną do codziennego użytku. Możesz wybrać format, który najlepiej pasuje do Twoich potrzeb — czy priorytetem jest kompatybilność, jakość obrazu czy mniejszy rozmiar plików.",
-
-        // NEW
-        "seo.faq11q": "Ile obrazów mogę przekonwertować jednocześnie?",
-        "seo.faq11a":
-            "Możesz konwertować tysiące obrazów HEIC, HEIF lub HIF w jednej partii. Konwerter został zaprojektowany do przetwarzania zbiorczego i automatycznie dzieli duże zestawy na wiele plików ZIP podczas pobierania. Dzięki temu przeglądarka działa płynnie, zużycie pamięci jest mniejsze, a nawet bardzo duże kolekcje zdjęć są przetwarzane bez problemów.",
+            "Nawet tysiące naraz.",
 
         "seo.synonyms":
-            "Konwerter HEIC / HEIF / HIF • HEIC do JPG • HEIC do JPEG • HEIC do PNG • HEIC do WEBP • HEIF do JPG • HEIF do PNG • HIF do JPG • HIF do WEBP • darmowy konwerter HEIC • konwerter obrazów offline • bez uploadów • działa na wszystkich urządzeniach • prywatny konwerter",
+            "konwerter HEIC • HEIC do JPG • offline • prywatny",
 
         // Existing UI
         "app.title": "Konwerter HEIC / HEIF / HIF (.hif/.heic) → JPG / JPEG / PNG / WEBP",
@@ -1705,53 +1544,40 @@ export const DICTS = {
             ".heic, .heif ve .hif fotoğraflarını tarayıcınızda yerel olarak JPG/JPEG, PNG veya WEBP’ye dönüştürün. Yükleme yok — görselleriniz cihazınızda kalır.",
         "seo.faqTitle": "SSS",
 
-        "seo.faq1q": "HEIC / HEIF / HIF dosyalarını ücretsiz olarak JPG veya JPEG’e nasıl dönüştürürüm?",
+        "seo.faq1q": "HEIC, HEIF veya HIF dosyalarını JPG, PNG ya da WEBP’ye nasıl dönüştürürüm?",
         "seo.faq1a":
-            ".heic, .heif veya .hif dosyalarınızı sayfaya sürükleyip bırakın (ya da “Dosya seç”e tıklayın), çıktı biçimi olarak JPG/JPEG seçin ve “Hepsini dönüştür”e basın. Dönüştürme %100 ücretsizdir, kayıt gerektirmez ve masaüstü, mobil ve tablet cihazlarda çalışır. Bittiğinde dosyaları tek tek indirebilir veya “ZIP indir”i kullanabilirsiniz.",
+            "Dosyaları sayfaya sürükleyin veya “Dosya seç”e tıklayın, formatı seçin ve “Hepsini dönüştür”e basın. Çevrimdışı çalışır.",
 
-        "seo.faq2q": "Windows neden HEIC fotoğraflarını açamıyor?",
+        "seo.faq2q": "Windows neden HEIC açamıyor?",
         "seo.faq2a":
-            "HEIC, iPhone’ların ve bazı modern kameraların varsayılan fotoğraf biçimidir; ancak Windows kutudan çıktığı haliyle bunu tam olarak desteklemez. Bu yüzden birçok Windows kullanıcısı iPhone’dan veya kameradan gelen HEIC fotoğraflarını açarken hata görür. HEIC’i JPG, PNG veya WEBP’ye dönüştürmek, ek yazılım kurmadan görsellerinizi Windows ve çoğu fotoğraf uygulamasıyla anında uyumlu hale getirir.",
+            "Windows HEIC’i varsayılan olarak desteklemez. JPG veya PNG’ye dönüştürmek sorunu çözer.",
 
-        "seo.faq3q": "Bu, iPhone fotoğrafları ve kamera görüntüleriyle çalışır mı?",
+        "seo.faq3q": "iPhone ve kamera fotoğrafları destekleniyor mu?",
         "seo.faq3a":
-            "Evet. iPhone’da çekilen fotoğraflar genellikle HEIC olarak kaydedilir ve bazı kameralar (bazı Sony modelleri dahil) HEIF veya HEIC biçimlerini kullanır. Bu dönüştürücü iPhone fotoğrafları ve uyumlu kamera görüntüleriyle çalışır; onları Windows, macOS, Android ve diğer cihazlarda kolay kullanım için JPG, PNG veya WEBP’ye dönüştürmenizi sağlar.",
+            "Evet, HEIC/HEIF kullanan tüm cihazlarla çalışır.",
 
-        "seo.faq4q": "Windows’ta hiçbir şey yüklemeden HEIC / HEIF / HIF dönüştürebilir miyim?",
+        "seo.faq4q": "Program kurmam gerekiyor mu?",
         "seo.faq4a":
-            "Evet. Dönüştürücü doğrudan web tarayıcınızda çalışır; bu yüzden Windows kullanıcılarının uygulama, codec veya sistem eklentisi yüklemesine gerek yoktur. Sayfayı açın, iPhone veya kamera HEIC fotoğraflarını dönüştürün ve her yerde çalışan standart JPG veya PNG dosyalarını indirin.",
+            "Hayır. Her şey tarayıcıda çalışır.",
 
-        "seo.faq5q": "Fotoğraflarımı yüklemeden HEIC’i JPG’ye nasıl dönüştürürüm?",
+        "seo.faq5q": "Fotoğraflarım güvende mi?",
         "seo.faq5a":
-            "Birçok çevrimiçi dönüştürücü görselleri sunucuya yükler; bu da fotoğraflarınızın cihazınızdan çıkması demektir. Tarayıcı içinde yerel çalışan bir dönüştürücü bunu önler. Her şey kendi bilgisayarınızda veya telefonunuzda gerçekleşir; böylece iPhone ve kamera fotoğrafları internete gönderilmeden gizlice dönüştürülür.",
+            "Evet. Tüm işlemler yerel olarak yapılır.",
 
-        "seo.faq6q": "Yerel dönüştürme gizlilik için neden önemli?",
+        "seo.faq6q": "İnternet gerekli mi?",
         "seo.faq6a":
-            "Fotoğraflar çoğu zaman yüzler, konumlar, belgeler veya özel anlar gibi kişisel bilgiler içerir. Görseller dış sunuculara yüklendiğinde, nerede saklandıkları ve nasıl yeniden kullanılabilecekleri üzerindeki kontrolünüz azalır. Yerel dönüştürme dosyaları kendi cihazınızda tutar; istenmeyen erişim riskini azaltır ve kullanımı tamamen ücretsiz kalır.",
+            "Sadece sayfa yüklenirken gerekir.",
 
-        "seo.faq7q": "HEIC fotoğrafları Windows’ta açılmıyor — ne yapabilirim?",
+        "seo.faq7q": "Kalite düşer mi?",
         "seo.faq7a":
-            "Bu durum genellikle fotoğraflar iPhone’dan geldiğinde veya HEIC biçiminde kaydeden bir kameradan çıktığında görülür. Windows desteği sınırlı olabildiği için, HEIC’i JPG veya PNG’ye dönüştürmek; sistem ayarlarını değiştirmeden ya da ek yazılım yüklemeden bu fotoğrafları açmanın, düzenlemenin veya paylaşmanın en hızlı yoludur.",
+            "Hayır, yüksek kalite korunur.",
 
-        "seo.faq8q": "iPhone fotoğraflarını Windows PC’de nasıl açarım?",
+        "seo.faq8q": "Kaç fotoğraf dönüştürebilirim?",
         "seo.faq8a":
-            "iPhone fotoğrafları genellikle Windows’ta açması zor olabilen HEIC dosyaları olarak saklanır. Tarayıcınızda JPG veya PNG’ye dönüştürmek, onları Windows fotoğraf görüntüleyicileri, düzenleyiciler, yazıcılar ve paylaşım uygulamalarıyla anında uyumlu hale getirir.",
-
-        "seo.faq9q": "HEIC fotoğraflarını dönüştürmek için internet bağlantısı gerekir mi?",
-        "seo.faq9a":
-            "İnternet bağlantısı yalnızca sayfayı yüklemek için gerekir. Sayfa yüklendikten sonra tüm dönüştürmeler tarayıcınızda yerel olarak çalışır. Bu sayede bağlantı kısıtlıyken bile HEIC fotoğraflarını dönüştürebilir, her şeyi gizli ve kontrolünüz altında tutabilirsiniz.",
-
-        "seo.faq10q": "HEIC’i JPG’ye dönüştürmek görüntü kalitesini düşürür mü?",
-        "seo.faq10a":
-            "HEIC çok verimli bir formattır; ancak JPG, PNG veya WEBP’ye dönüştürmek günlük kullanım için mükemmel görsel kaliteyi koruyabilir. İhtiyacınıza göre en uygun formatı seçebilirsiniz — uyumluluk, görüntü kalitesi veya daha küçük dosya boyutu önceliğiniz olabilir.",
-
-        // NEW
-        "seo.faq11q": "Aynı anda kaç görüntü dönüştürebilirim?",
-        "seo.faq11a":
-            "Tek seferde binlerce HEIC, HEIF veya HIF görüntüsünü dönüştürebilirsiniz. Dönüştürücü toplu dönüştürme için tasarlanmıştır ve büyük grupları indirirken otomatik olarak birden fazla ZIP dosyasına böler. Bu sayede tarayıcı hızlı kalır, bellek kullanımı azalır ve çok büyük fotoğraf koleksiyonlarında bile sorunsuz performans sağlanır.",
+            "Binlerce fotoğrafı tek seferde dönüştürebilirsiniz.",
 
         "seo.synonyms":
-            "HEIC / HEIF / HIF dönüştürücü • HEIC’ten JPG • HEIC’ten JPEG • HEIC’ten PNG • HEIC’ten WEBP • HEIF’ten JPG • HEIF’ten PNG • HIF’ten JPG • HIF’ten WEBP • ücretsiz HEIC dönüştürücü • çevrimdışı görsel dönüştürücü • yükleme yok • tüm cihazlarda çalışır • gizli dönüştürücü",
+            "HEIC dönüştürücü • JPG çevirici • offline • gizli",
 
         // Existing UI
         "app.title": "HEIC / HEIF / HIF (.hif/.heic) → JPG / JPEG / PNG / WEBP Dönüştürücü",
