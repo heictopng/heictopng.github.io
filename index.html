@@ -177,7 +177,13 @@
     }
   </script>
   <meta name="theme-color" content="#0b0d10" />
-  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="robots" content="noindex,follow,max-image-preview:large" />
+
+  <script>
+    if (location.pathname === "/" || location.pathname === "/index.html") {
+      location.replace("/lang/en/");
+    }
+  </script>
 </head>
 
 <body>
