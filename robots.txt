@@ -7,4 +7,4 @@ Disallow: /src/
 Disallow: /vendor/
 Disallow: /assets/
 
-Sitemap: https://heictopng.github.io/sitemap.xml
+Sitemap: https://heictopng.github.io/lang/en/sitemap.xml
