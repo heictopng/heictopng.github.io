@@ -282,6 +282,21 @@ def inject_base_href(html: str, nested_depth: int) -> str:
 
     return re.sub(r"(<head\b[^>]*>\s*)", r"\1\n" + base_line, html, flags=re.IGNORECASE, count=1)
 
+def inject_index_robots(html: str) -> str:
+    html = re.sub(
+        r'^\s*<meta\s+name=["\']robots["\'][^>]*>\s*\n?',
+        "",
+        html,
+        flags=re.IGNORECASE | re.MULTILINE,
+    )
+    return re.sub(
+        r"(<head\b[^>]*>\s*)",
+        r'\1\n  <meta name="robots" content="index,follow" />\n',
+        html,
+        flags=re.IGNORECASE,
+        count=1,
+    )
+
 
 # ----------------------------
 # Main
@@ -330,6 +345,7 @@ def main():
 
     # prevent duplicating canonical/hreflang if template already has them
     index_html = remove_existing_hreflang_and_canonical(index_html)
+    index_html = inject_index_robots(index_html)
 
     for locale in locales:
         d = dicts[locale]

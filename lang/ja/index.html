@@ -2,14 +2,17 @@
 <html lang="ja" data-i18n-root>
 
 <head>
-  <meta charset="utf-8" />
+  
+  <meta name="robots" content="index,follow" />
+<meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
   
   
   <meta name="app:locale" content="ja" />
 <base href="../../" />
-<title data-i18n="meta.title">HEIC/HEIF/HIF → JPG/JPEG・PNG・WEBP 変換 – 無料・オフライン・プライベート（アップロード不要）</title>
+<meta name="google-site-verification" content="2uyKp2wnQaNS3wNAhk-t8kocWCPYhawXyKLN_dHeYWM" />
+  <title data-i18n="meta.title">HEIC/HEIF/HIF → JPG/JPEG・PNG・WEBP 変換 – 無料・オフライン・プライベート（アップロード不要）</title>
   <meta name="description" data-i18n="meta.description" data-i18n-attr="content"
     content="HEIC/HEIF/HIF を JPG/JPEG・PNG・WEBP にブラウザで直接変換。アップロード不要、読み込み後はオフライン対応。PC/スマホで高速なローカル処理で写真を安全に変換できます。" />
   <meta property="og:title" data-i18n="meta.ogTitle" data-i18n-attr="content"
@@ -168,7 +171,11 @@
     }
   </script>
   <meta name="theme-color" content="#0b0d10" />
-  <meta name="robots" content="index,follow,max-image-preview:large" />
+<script>
+    if (location.pathname === "/" || location.pathname === "/index.html") {
+      location.replace("/lang/en/");
+    }
+  </script>
   <!-- SEO: canonical + hreflang alternates -->
   <link rel="canonical" href="https://heictopng.github.io/lang/ja/" />
   <link rel="alternate" hreflang="en" href="https://heictopng.github.io/lang/en/" />
