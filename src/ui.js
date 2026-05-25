@@ -58,13 +58,36 @@ export function initUI() {
     return els;
 }
 
+// Single O(n) pass over items — used by both button state and progress bar.
+function computeStats(items) {
+    let canConvert = false;
+    let hasConverted = false;
+    let converted = 0;
+    let errors = 0;
+    let done = 0;
+
+    for (let i = 0; i < items.length; i++) {
+        const x = items[i];
+        const isConverted = !!(x.outBlob || x.savedToDisk);
+        const isError = !!x.error;
+
+        if (isConverted) { converted++; hasConverted = true; }
+        if (isError) errors++;
+        if (isConverted || isError) done++;
+        if (!isConverted && !isError) canConvert = true;
+    }
+
+    return { total: items.length, canConvert, hasConverted, converted, errors, done };
+}
+
 export function render({ els, state, convertItem, downloadAllZip, handleSaveToFolder }) {
     els.scroller.setItems(
         state.items,
         (item) => renderCard({ item, convertItem, state }),
     );
-    setButtonsEnabled(els, state, convertItem, downloadAllZip, handleSaveToFolder);
-    updateProgressUI(els, state);
+    const stats = computeStats(state.items);
+    setButtonsEnabled(els, state, stats, convertItem, downloadAllZip, handleSaveToFolder);
+    updateProgressUI(els, stats);
 
     // Update save-to-folder button text when a directory is active
     if (els.saveToFolder && !els.saveToFolder.hidden) {
@@ -76,13 +99,10 @@ export function render({ els, state, convertItem, downloadAllZip, handleSaveToFo
     }
 }
 
-function setButtonsEnabled(els, state, convertItem, downloadAllZip, handleSaveToFolder) {
-    const hasItems = state.items.length > 0;
-    const canConvert = state.items.some(x => !x.outBlob && !x.error && !x.savedToDisk);
-    const hasConverted = state.items.some(x => x.outBlob || x.savedToDisk);
-    els.convertAll.disabled = !(hasItems && canConvert);
-    els.clearAll.disabled = !hasItems;
-    els.downloadZip.disabled = !hasConverted;
+function setButtonsEnabled(els, state, stats, convertItem, downloadAllZip, handleSaveToFolder) {
+    els.convertAll.disabled = !(stats.total > 0 && stats.canConvert);
+    els.clearAll.disabled = stats.total === 0;
+    els.downloadZip.disabled = !stats.hasConverted;
 
     if (!els._wired) {
         els._wired = true;
@@ -198,12 +218,8 @@ function downloadBlob(blob, filename) {
     URL.revokeObjectURL(url);
 }
 
-function updateProgressUI(els, state) {
-    const total = state.items.length;
-    const converted = state.items.filter(x => x.outBlob).length;
-    const errors = state.items.filter(x => x.error).length;
-    const done = state.items.filter(x => x.outBlob || x.error).length;
-
+function updateProgressUI(els, stats) {
+    const { total, converted, errors, done } = stats;
     const ratio = total > 0 ? done / total : 0;
 
     if (els.progressBar) {

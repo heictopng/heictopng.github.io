@@ -12,13 +12,20 @@ import { canSaveToDisk, pickOutputDirectory, saveItemToDisk } from './disk-strea
 const els = initUI();
 const state = createState();
 
+// Debounce renders via rAF so that the 4-5 status updates per item
+// during conversion coalesce into a single DOM update per frame.
+let _renderRafId = 0;
 function rerender() {
-    render({
-        els,
-        state,
-        convertItem,
-        downloadAllZip,
-        handleSaveToFolder,
+    if (_renderRafId) return;
+    _renderRafId = requestAnimationFrame(() => {
+        _renderRafId = 0;
+        render({
+            els,
+            state,
+            convertItem,
+            downloadAllZip,
+            handleSaveToFolder,
+        });
     });
 }
 
