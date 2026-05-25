@@ -2,6 +2,7 @@
 import { t } from './internationalization/i18n.js';
 import { removeItem, clearAll } from './state.js';
 import { runWithLimit, computeConcurrencyFromPct } from './workers/pool.js';
+import { createVirtualScroller } from './virtual-scroll.js';
 
 export function initUI() {
     const els = {
@@ -25,6 +26,7 @@ export function initUI() {
         concurrencyPct: document.getElementById('concurrencyPct'),
         concurrencyPctVal: document.getElementById('concurrencyPctVal'),
         concurrencyWarn: document.getElementById('concurrencyWarn'),
+        saveToFolder: document.getElementById('saveToFolder'),
     };
 
     function updateQualityUI() {
@@ -51,22 +53,33 @@ export function initUI() {
         els.concurrencyPct.addEventListener('change', els.updateConcurrencyUI);
     }
 
+    els.scroller = createVirtualScroller(els.list);
+
     return els;
 }
 
-export function render({ els, state, convertItem, downloadAllZip }) {
-    els.list.innerHTML = '';
-    for (const item of state.items) {
-        els.list.appendChild(renderCard({ item, convertItem, state }));
-    }
-    setButtonsEnabled(els, state, convertItem, downloadAllZip);
+export function render({ els, state, convertItem, downloadAllZip, handleSaveToFolder }) {
+    els.scroller.setItems(
+        state.items,
+        (item) => renderCard({ item, convertItem, state }),
+    );
+    setButtonsEnabled(els, state, convertItem, downloadAllZip, handleSaveToFolder);
     updateProgressUI(els, state);
+
+    // Update save-to-folder button text when a directory is active
+    if (els.saveToFolder && !els.saveToFolder.hidden) {
+        if (state.outputDirHandle) {
+            els.saveToFolder.textContent = `\u{1F4C1} ${state.outputDirHandle.name}`;
+        } else {
+            els.saveToFolder.textContent = t('buttons.saveToFolder');
+        }
+    }
 }
 
-function setButtonsEnabled(els, state, convertItem, downloadAllZip) {
+function setButtonsEnabled(els, state, convertItem, downloadAllZip, handleSaveToFolder) {
     const hasItems = state.items.length > 0;
-    const canConvert = state.items.some(x => !x.outBlob && !x.error);
-    const hasConverted = state.items.some(x => x.outBlob);
+    const canConvert = state.items.some(x => !x.outBlob && !x.error && !x.savedToDisk);
+    const hasConverted = state.items.some(x => x.outBlob || x.savedToDisk);
     els.convertAll.disabled = !(hasItems && canConvert);
     els.clearAll.disabled = !hasItems;
     els.downloadZip.disabled = !hasConverted;
@@ -80,14 +93,17 @@ function setButtonsEnabled(els, state, convertItem, downloadAllZip) {
                 x.outBlob = null;
                 x.outName = null;
                 x.error = null;
+                x.savedToDisk = false;
+                x.fileHandle = null;
+                x.outSize = 0;
             });
-            render({ els, state, convertItem, downloadAllZip });
+            render({ els, state, convertItem, downloadAllZip, handleSaveToFolder });
         });
 
         els.quality.addEventListener('input', () => els.updateQualityUI());
 
         els.convertAll.addEventListener('click', async () => {
-            const todo = state.items.filter(x => !x.outBlob && !x.error);
+            const todo = state.items.filter(x => !x.outBlob && !x.error && !x.savedToDisk);
             const pct = Number(els.concurrencyPct?.value ?? 100);
             const limit = computeConcurrencyFromPct(pct);
             await runWithLimit(todo, limit, convertItem);
@@ -95,8 +111,12 @@ function setButtonsEnabled(els, state, convertItem, downloadAllZip) {
 
         els.clearAll.addEventListener('click', () => {
             clearAll(state);
-            render({ els, state, convertItem, downloadAllZip });
+            render({ els, state, convertItem, downloadAllZip, handleSaveToFolder });
         });
+
+        if (els.saveToFolder) {
+            els.saveToFolder.addEventListener('click', () => handleSaveToFolder());
+        }
 
         els.downloadZip.addEventListener('click', async () => {
             await downloadAllZip();
@@ -136,15 +156,20 @@ function renderCard({ item, convertItem, state }) {
 
     const btnConvert = document.createElement('button');
     btnConvert.className = 'btn primary';
-    btnConvert.textContent = item.outBlob ? t('card.reconvert') : t('card.convert');
+    btnConvert.textContent = (item.outBlob || item.savedToDisk) ? t('card.reconvert') : t('card.convert');
     btnConvert.disabled = item.status.startsWith('Decoding') || item.status.startsWith('Encoding') || !item.file || item.file === null;
     btnConvert.onclick = () => convertItem(item);
 
     const btnDownload = document.createElement('button');
     btnDownload.className = 'btn';
-    btnDownload.textContent = t('card.download');
-    btnDownload.disabled = !item.outBlob;
-    btnDownload.onclick = () => downloadBlob(item.outBlob, item.outName);
+    if (item.savedToDisk) {
+        btnDownload.textContent = t('card.saved');
+        btnDownload.disabled = true;
+    } else {
+        btnDownload.textContent = t('card.download');
+        btnDownload.disabled = !item.outBlob;
+        btnDownload.onclick = () => downloadBlob(item.outBlob, item.outName);
+    }
 
     const btnRemove = document.createElement('button');
     btnRemove.className = 'btn danger';

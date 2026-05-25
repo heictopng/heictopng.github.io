@@ -80,6 +80,7 @@ export const DICTS = {
             "⚠️ High CPU usage (75%+) may slow down your PC depending on hardware capabilities.",
 
         "buttons.convertAll": "Convert all",
+        "buttons.saveToFolder": "\uD83D\uDCC1 Save to folder",
         "buttons.downloadZip": "Download ZIP",
         "buttons.clear": "Clear",
 
@@ -92,6 +93,7 @@ export const DICTS = {
         "card.reconvert": "Re-convert",
         "card.download": "Download",
         "card.remove": "Remove",
+        "card.saved": "Saved \u2713",
         "status.queued": "Queued",
         "status.preparing": "Preparing…",
         "status.checkingSupport": "Checking browser support (one-time)…",
@@ -102,6 +104,7 @@ export const DICTS = {
         "status.ready": "Ready ({fmt})",
         "status.zipping": "Creating ZIP…",
         "status.error": "Error: {msg}",
+        "status.savedToDisk": "Saved to folder ✓",
         "alert.decodeModeSelected": "Decode mode selected: {mode}\n\n{reason}",
         "alert.wasmWorkerFailed": "WASM worker failed to load/run. Check console.",
         "alert.noConverted": "No converted images to zip yet.",

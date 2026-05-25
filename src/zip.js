@@ -1,5 +1,6 @@
 // zip.js
 import { t } from './internationalization/i18n.js';
+import { getItemBlob } from './disk-stream.js';
 
 
 // Constants
@@ -99,9 +100,10 @@ function formatBytes(bytes) {
 }
 
 function getZipSizeEstimate(converted) {
-    const blobs = converted.map((x) => x.outBlob).filter(Boolean);
-    const { mean, sampled } = sampleMeanSize(blobs, 3);
-    const estTotalInput = estimateTotalBytesFromMean(mean, blobs.length);
+    const sizes = converted.map((x) => x.outBlob?.size ?? x.outSize ?? 0).filter(s => s > 0);
+    const k = Math.min(3, sizes.length);
+    const mean = k > 0 ? sizes.slice(0, k).reduce((a, b) => a + b, 0) / k : 0;
+    const estTotalInput = Math.round(mean * converted.length);
 
     // With streaming, peak RAM is much lower, but keep conservative estimate.
     const estPeakRam = estimatePeakRamBytes(estTotalInput, PEAK_RAM_MULTIPLIER);
@@ -109,9 +111,9 @@ function getZipSizeEstimate(converted) {
     const usableRam = estimateUsableRamBytes();
 
     return {
-        sampled,
+        sampled: sizes.slice(0, k),
         meanBytes: mean,
-        count: blobs.length,
+        count: converted.length,
         estTotalInputBytes: estTotalInput,
         estPeakRamBytes: estPeakRam,
         usableRamBytes: usableRam,
@@ -224,7 +226,7 @@ async function createMultiZipWriter(totalParts) {
 }
 
 async function buildZipStream({ fflate, batch, els, writable }) {
-    const totalBytes = batch.reduce((sum, item) => sum + (item.outBlob?.size || 0), 0);
+    const totalBytes = batch.reduce((sum, item) => sum + (item.outBlob?.size ?? item.outSize ?? 0), 0);
     let processedBytes = 0;
 
     const onProgress = (delta) => {
@@ -259,7 +261,9 @@ async function buildZipStream({ fflate, batch, els, writable }) {
         for (let i = 0; i < batch.length; i++) {
             const item = batch[i];
             const name = item.outName || fallbackName(item, i);
-            await streamBlobIntoZipEntry(fflate, zip, name, item.outBlob, onProgress);
+            const blob = await getItemBlob(item);
+            if (!blob) continue;
+            await streamBlobIntoZipEntry(fflate, zip, name, blob, onProgress);
         }
 
         zip.end();
@@ -309,7 +313,7 @@ async function buildAndDownloadZipStreaming({ fflate, batch, partIndex, totalPar
 // ---------- Main export ----------
 
 export async function downloadAllAsZip({ state, render, els }) {
-    const converted = state.items.filter((x) => x.outBlob);
+    const converted = state.items.filter((x) => x.outBlob || x.savedToDisk);
 
     if (converted.length === 0) {
         alert(t('alert.noConverted'));

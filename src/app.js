@@ -1,4 +1,5 @@
 // src/app.js
+import { t } from './internationalization/i18n.js';
 import { translateDocument } from './internationalization/i18n.js';
 import { createState } from './state.js';
 import { initUI, render } from './ui.js';
@@ -6,6 +7,7 @@ import { createConverter } from './converter.js';
 import { createDnD } from './dnd.js';
 import { downloadAllAsZip } from './zip.js';
 import { showZipOverlay, hideZipOverlay } from './ui.js';
+import { canSaveToDisk, pickOutputDirectory, saveItemToDisk } from './disk-stream.js';
 
 const els = initUI();
 const state = createState();
@@ -16,6 +18,7 @@ function rerender() {
         state,
         convertItem,
         downloadAllZip,
+        handleSaveToFolder,
     });
 }
 
@@ -27,6 +30,42 @@ const converter = createConverter({
 
 async function convertItem(item) {
     await converter.convertItem(item);
+
+    // Auto-save to disk if an output directory is set
+    if (state.outputDirHandle && item.outBlob) {
+        try {
+            await saveItemToDisk(state.outputDirHandle, item);
+            item.status = t('status.savedToDisk');
+        } catch (err) {
+            console.error('Failed to save to disk:', err);
+            // Keep the blob in memory as fallback
+        }
+        rerender();
+    }
+}
+
+async function handleSaveToFolder() {
+    try {
+        const dirHandle = await pickOutputDirectory();
+        state.outputDirHandle = dirHandle;
+
+        // Save any already-converted items still in memory
+        for (const item of state.items) {
+            if (item.outBlob) {
+                try {
+                    await saveItemToDisk(dirHandle, item);
+                    item.status = t('status.savedToDisk');
+                } catch (err) {
+                    console.error('Failed to save to disk:', err);
+                }
+            }
+        }
+        rerender();
+    } catch (err) {
+        if (err.name !== 'AbortError') {
+            console.error('Directory picker failed:', err);
+        }
+    }
 }
 
 async function downloadAllZip() {
@@ -40,6 +79,11 @@ createDnD({
     state,
     render: rerender,
 });
+
+// Show save-to-folder button when File System Access API is available
+if (canSaveToDisk() && els.saveToFolder) {
+    els.saveToFolder.hidden = false;
+}
 
 translateDocument();
 els.updateQualityUI();
