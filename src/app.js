@@ -1,13 +1,13 @@
 // src/app.js
 import { t } from './internationalization/i18n.js';
 import { translateDocument } from './internationalization/i18n.js';
-import { createState } from './state.js';
+import { createState, getGeneration } from './state.js';
 import { initUI, render } from './ui.js';
 import { createConverter } from './converter.js';
 import { createDnD } from './dnd.js';
 import { downloadAllAsZip } from './zip.js';
 import { showZipOverlay, hideZipOverlay } from './ui.js';
-import { canSaveToDisk, pickOutputDirectory, saveItemToDisk } from './disk-stream.js';
+import { canSaveToDisk, pickOutputDirectory, saveItemToDisk, scanExistingFiles } from './disk-stream.js';
 
 const els = initUI();
 const state = createState();
@@ -36,7 +36,11 @@ const converter = createConverter({
 });
 
 async function convertItem(item) {
+    const gen = getGeneration();
     await converter.convertItem(item);
+
+    // Items were cleared while this conversion was in-flight
+    if (getGeneration() !== gen) return;
 
     // Auto-save to disk if an output directory is set
     if (state.outputDirHandle && item.outBlob) {
@@ -55,6 +59,30 @@ async function handleSaveToFolder() {
     try {
         const dirHandle = await pickOutputDirectory();
         state.outputDirHandle = dirHandle;
+
+        // Scan destination folder for files already present
+        const existing = await scanExistingFiles(dirHandle);
+
+        const mime = document.getElementById('format').value;
+        const ext = mime === 'image/png' ? 'png' : (mime === 'image/webp' ? 'webp' : 'jpg');
+
+        // Mark items whose output file already exists in the folder
+        let skipped = 0;
+        for (const item of state.items) {
+            const predictedName = (item.outName)
+                || ((item.file?.name || item.originalName || '').replace(/\.[^.]+$/, '') + '.' + ext);
+            if (!item.outBlob && !item.savedToDisk && existing.has(predictedName)) {
+                item.savedToDisk = true;
+                item.outName = predictedName;
+                // Try to grab the file handle so ZIP / thumbnail can read it later
+                try { item.fileHandle = await dirHandle.getFileHandle(predictedName); } catch {}
+                item.status = t('status.savedToDisk');
+                skipped++;
+            }
+        }
+        if (skipped > 0) {
+            console.log(`[save-to-folder] Skipped ${skipped} items already in destination`);
+        }
 
         // Save any already-converted items still in memory
         for (const item of state.items) {

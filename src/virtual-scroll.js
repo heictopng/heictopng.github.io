@@ -104,7 +104,19 @@ export function createVirtualScroller(listEl) {
 
         const { startIdx, endIdx } = getVisibleRange();
 
-        if (!force && startIdx === prevStartIdx && endIdx === prevEndIdx) return;
+        if (!force && startIdx === prevStartIdx && endIdx === prevEndIdx) {
+            // Same visible range — patch status text in-place instead of full rebuild
+            const cards = listEl.children;
+            for (let i = 0; i < cards.length; i++) {
+                const item = items[startIdx + i];
+                if (!item) break;
+                const statusEl = cards[i]?.querySelector('.status');
+                if (statusEl && statusEl.textContent !== item.status) {
+                    statusEl.textContent = item.status;
+                }
+            }
+            return;
+        }
         prevStartIdx = startIdx;
         prevEndIdx = endIdx;
 
@@ -126,6 +138,7 @@ export function createVirtualScroller(listEl) {
     }
 
     function setItems(newItems, renderFn) {
+        const changed = newItems !== items || newItems.length !== items.length;
         items = newItems;
         if (renderFn) renderItemFn = renderFn;
 
@@ -134,9 +147,11 @@ export function createVirtualScroller(listEl) {
             rowHeight = 0;
         }
 
-        prevStartIdx = -1;
-        prevEndIdx = -1;
-        renderVisible(true);
+        if (changed) {
+            prevStartIdx = -1;
+            prevEndIdx = -1;
+        }
+        renderVisible(changed);
     }
 
     function scheduleUpdate() {

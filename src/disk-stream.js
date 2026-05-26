@@ -12,6 +12,15 @@ export async function pickOutputDirectory() {
     return await window.showDirectoryPicker({ mode: 'readwrite' });
 }
 
+// Scan the directory for existing filenames (fast — reads entries only, not content).
+export async function scanExistingFiles(dirHandle) {
+    const names = new Set();
+    for await (const [name, handle] of dirHandle.entries()) {
+        if (handle.kind === 'file') names.add(name);
+    }
+    return names;
+}
+
 export async function saveItemToDisk(dirHandle, item) {
     if (!item.outBlob || !item.outName) return false;
 

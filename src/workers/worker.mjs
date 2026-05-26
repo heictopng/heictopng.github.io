@@ -19,11 +19,10 @@ function canEncodeInWorker() {
 async function encodeRgbaOffscreen(rgba, width, height, mime, quality) {
     const canvas = new OffscreenCanvas(width, height);
     const ctx = canvas.getContext('2d', { willReadFrequently: false });
-    const imageData = new ImageData(new Uint8ClampedArray(rgba), width, height);
+    const imageData = new ImageData(rgba, width, height);
     ctx.putImageData(imageData, 0, 0);
 
     // Release big refs ASAP
-    // (imageData holds its own view; ctx keeps canvas backing store)
     rgba = null;
 
     const blob = await canvas.convertToBlob({
@@ -46,7 +45,7 @@ async function makeThumbOffscreen(rgba, width, height, maxSize) {
 
     const src = new OffscreenCanvas(width, height);
     const sctx = src.getContext('2d', { willReadFrequently: false });
-    sctx.putImageData(new ImageData(new Uint8ClampedArray(rgba), width, height), 0, 0);
+    sctx.putImageData(new ImageData(rgba, width, height), 0, 0);
 
     const dst = new OffscreenCanvas(tw, th);
     const dctx = dst.getContext('2d', { willReadFrequently: false });

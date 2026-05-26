@@ -64,6 +64,7 @@ export function createConverter({ els, state, render }) {
 
             if (item.file) {
                 item.originalName = item.file.name || item.originalName || '';
+                item.originalFile = item.file;
                 item.file = null;
             }
 
@@ -125,9 +126,10 @@ export function createConverter({ els, state, render }) {
                 item.outBlob = outBlob;
                 item.status = t('status.ready', { fmt: ext.toUpperCase() });
 
-                // Drop original file to reduce RAM
+                // Drop original file from hot path to reduce RAM
                 if (item.file) {
                     item.originalName = item.file.name || item.originalName || '';
+                    item.originalFile = item.file;
                     item.file = null;
                 }
 
@@ -151,6 +153,7 @@ export function createConverter({ els, state, render }) {
 
     async function convertItem(item) {
       try {
+        item.converting = true;
         item.status = t('status.preparing');
         item.error = null;
         item.outBlob = null;
@@ -210,6 +213,7 @@ export function createConverter({ els, state, render }) {
                 // Reduce retained RAM
                 if (item.file) {
                     item.originalName = item.file.name || item.originalName || '';
+                    item.originalFile = item.file;
                     item.file = null;
                 }
             } catch (err) {
@@ -237,6 +241,8 @@ export function createConverter({ els, state, render }) {
         item.status = t('status.error', { msg: String(err?.message || err) });
         item.error = String(err?.message || err);
         render();
+      } finally {
+        item.converting = false;
       }
     }
 

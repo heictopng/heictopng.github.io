@@ -1,6 +1,9 @@
 // state.js
 import { t } from './internationalization/i18n.js';
 
+let _generation = 0;
+export function getGeneration() { return _generation; }
+
 export function createState() {
     return {
         items: [],
@@ -9,8 +12,10 @@ export function createState() {
     };
 }
 
+const HEIF_EXTS = /\.(heic|heif|hif)$/i;
+
 export function addFiles(state, fileList) {
-    const files = Array.from(fileList || []);
+    const files = Array.from(fileList || []).filter(f => HEIF_EXTS.test(f.name));
     for (const file of files) {
         const id = state.nextId++;
         state.items.push({
@@ -36,6 +41,7 @@ export function removeItem(state, id) {
 }
 
 export function clearAll(state) {
+    _generation++;
     state.items.forEach(x => x.thumbUrl && URL.revokeObjectURL(x.thumbUrl));
     state.items = [];
 }

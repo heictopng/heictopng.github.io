@@ -102,6 +102,7 @@ export function initUI() {
         concurrencyWarn: document.getElementById('concurrencyWarn'),
         saveToFolder: document.getElementById('saveToFolder'),
         retryFailed: document.getElementById('retryFailed'),
+        cancelBatch: document.getElementById('cancelBatch'),
     };
 
     function updateQualityUI() {
@@ -197,29 +198,49 @@ function setButtonsEnabled(els, state, stats, convertItem, downloadAllZip, handl
                 x.savedToDisk = false;
                 x.fileHandle = null;
                 x.outSize = 0;
+                if (x.thumbUrl) { URL.revokeObjectURL(x.thumbUrl); x.thumbUrl = null; }
+                if (x.originalFile) x.file = x.originalFile; // restore for reconversion
             });
+            clearThumbCache();
             render({ els, state, convertItem, downloadAllZip, handleSaveToFolder });
         });
 
         els.quality.addEventListener('input', () => els.updateQualityUI());
 
+        let _batchAbort = null;
+
         els.convertAll.addEventListener('click', async () => {
             const pct = Number(els.concurrencyPct?.value ?? 100);
             const limit = computeConcurrencyFromPct(pct);
+            _batchAbort = new AbortController();
 
-            let todo = state.items.filter(x => !x.outBlob && !x.error && !x.savedToDisk);
-            let prevRemaining = todo.length;
+            if (els.cancelBatch) { els.cancelBatch.hidden = false; els.convertAll.hidden = true; }
 
-            while (todo.length > 0) {
-                await runWithLimit(todo, limit, convertItem);
-                todo = state.items.filter(x => !x.outBlob && !x.error && !x.savedToDisk);
-                if (todo.length >= prevRemaining) break; // no progress, stop
-                prevRemaining = todo.length;
-                if (todo.length > 0) {
-                    console.warn(`[app] ${todo.length} items still pending after batch, retrying...`);
+            try {
+                let todo = state.items.filter(x => !x.outBlob && !x.error && !x.savedToDisk);
+                let prevRemaining = todo.length;
+
+                while (todo.length > 0 && !_batchAbort.signal.aborted) {
+                    await runWithLimit(todo, limit, convertItem, _batchAbort.signal);
+                    todo = state.items.filter(x => !x.outBlob && !x.error && !x.savedToDisk);
+                    if (todo.length >= prevRemaining) break;
+                    prevRemaining = todo.length;
+                    if (todo.length > 0) {
+                        console.warn(`[app] ${todo.length} items still pending after batch, retrying...`);
+                    }
                 }
+            } finally {
+                _batchAbort = null;
+                if (els.cancelBatch) { els.cancelBatch.hidden = true; els.convertAll.hidden = false; }
+                render({ els, state, convertItem, downloadAllZip, handleSaveToFolder });
             }
         });
+
+        if (els.cancelBatch) {
+            els.cancelBatch.addEventListener('click', () => {
+                if (_batchAbort) _batchAbort.abort();
+            });
+        }
 
         els.clearAll.addEventListener('click', () => {
             clearAll(state);
@@ -298,7 +319,7 @@ function renderCard({ item, convertItem, state }) {
     const btnConvert = document.createElement('button');
     btnConvert.className = 'btn primary';
     btnConvert.textContent = (item.outBlob || item.savedToDisk) ? t('card.reconvert') : t('card.convert');
-    btnConvert.disabled = item.status.startsWith('Decoding') || item.status.startsWith('Encoding') || !item.file || item.file === null;
+    btnConvert.disabled = item.converting || !item.file;
     btnConvert.onclick = () => convertItem(item);
 
     const btnDownload = document.createElement('button');

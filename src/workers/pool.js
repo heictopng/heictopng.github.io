@@ -140,10 +140,11 @@ export function computeConcurrencyFromPct(concurrencyPct) {
     return computed;
 }
 
-export async function runWithLimit(items, limit, fn) {
+export async function runWithLimit(items, limit, fn, signal) {
     const executing = new Set();
 
     for (const item of items) {
+        if (signal?.aborted) break;
         // .catch() ensures a single rejection can never abort the batch
         // via Promise.race.  Individual errors are handled by fn().
         const p = Promise.resolve().then(() => fn(item)).catch(() => {});
