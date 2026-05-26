@@ -59,9 +59,114 @@ async function makeThumbOffscreen(rgba, width, height, maxSize) {
     return buf;
 }
 
+// --- Hardware-accelerated decoding via WebCodecs ImageDecoder ---
+// Uses the platform's hardware HEVC/HEIF decoder (GPU) instead of
+// CPU-based WASM.  Falls back transparently when unavailable.
+
+let _hwDecodeMime; // undefined = untested
+
+async function getHwDecodeMime() {
+    if (_hwDecodeMime !== undefined) return _hwDecodeMime;
+
+    if (typeof ImageDecoder === 'undefined') {
+        _hwDecodeMime = false;
+        return false;
+    }
+
+    for (const type of ['image/heic', 'image/heif']) {
+        try {
+            if (await ImageDecoder.isTypeSupported(type)) {
+                _hwDecodeMime = type;
+                console.log(`[worker] Hardware-accelerated decode available: ${type}`);
+                return type;
+            }
+        } catch { /* not supported */ }
+    }
+
+    _hwDecodeMime = false;
+    return false;
+}
+
+// Pre-warm: check support as soon as the worker loads
+getHwDecodeMime();
+
+async function tryHwDecode(arrayBuffer, id, fileName, mime, quality, thumbMax) {
+    const supportedType = await getHwDecodeMime();
+    if (!supportedType) return false;
+
+    try {
+        const decoder = new ImageDecoder({
+            data: arrayBuffer,
+            type: supportedType,
+        });
+
+        await decoder.completed;
+        const { image } = await decoder.decode({ frameIndex: 0 });
+
+        const width = image.displayWidth;
+        const height = image.displayHeight;
+
+        // VideoFrame → OffscreenCanvas (GPU → GPU, no RGBA round-trip)
+        const canvas = new OffscreenCanvas(width, height);
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(image, 0, 0);
+
+        const outBlob = await canvas.convertToBlob({
+            type: mime,
+            quality: mime === 'image/jpeg' ? quality : undefined,
+        });
+        const outBuf = await outBlob.arrayBuffer();
+
+        // Optional thumbnail
+        let thumbBuf = null;
+        if (thumbMax > 0) {
+            const maxDim = Math.max(width, height);
+            const scale = Math.min(1, thumbMax / maxDim);
+            const tw = Math.max(1, Math.round(width * scale));
+            const th = Math.max(1, Math.round(height * scale));
+
+            const tc = new OffscreenCanvas(tw, th);
+            const tctx = tc.getContext('2d');
+            tctx.drawImage(image, 0, 0, tw, th);
+
+            const tBlob = await tc.convertToBlob({ type: 'image/jpeg', quality: 0.8 });
+            thumbBuf = await tBlob.arrayBuffer();
+        }
+
+        image.close();
+        decoder.close();
+
+        const transfer = [outBuf];
+        if (thumbBuf) transfer.push(thumbBuf);
+
+        self.postMessage({
+            id,
+            ok: true,
+            fileName,
+            width,
+            height,
+            encoded: outBuf,
+            thumb: thumbBuf,
+            encodedMime: mime,
+            thumbMime: thumbBuf ? 'image/jpeg' : undefined,
+        }, transfer);
+
+        return true;
+    } catch (err) {
+        console.warn(`[worker] ImageDecoder failed for ${fileName}, falling back to WASM:`, err);
+        return false;
+    }
+}
+
 self.onmessage = async (e) => {
     const { id, arrayBuffer, fileName, mime, quality, thumbMax = 300 } = e.data;
 
+    // Try hardware-accelerated decode first (WebCodecs ImageDecoder)
+    if (await tryHwDecode(arrayBuffer, id, fileName, mime, quality, thumbMax)) {
+        return;
+    }
+
+    // Fall back to WASM (libheif)
     let mod = null;
     let decoder = null;
     let images = null;
