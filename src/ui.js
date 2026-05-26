@@ -27,6 +27,7 @@ export function initUI() {
         concurrencyPctVal: document.getElementById('concurrencyPctVal'),
         concurrencyWarn: document.getElementById('concurrencyWarn'),
         saveToFolder: document.getElementById('saveToFolder'),
+        retryFailed: document.getElementById('retryFailed'),
     };
 
     function updateQualityUI() {
@@ -62,6 +63,7 @@ export function initUI() {
 function computeStats(items) {
     let canConvert = false;
     let hasConverted = false;
+    let canRetry = false;
     let converted = 0;
     let errors = 0;
     let done = 0;
@@ -72,12 +74,12 @@ function computeStats(items) {
         const isError = !!x.error;
 
         if (isConverted) { converted++; hasConverted = true; }
-        if (isError) errors++;
+        if (isError) { errors++; if (x.file) canRetry = true; }
         if (isConverted || isError) done++;
         if (!isConverted && !isError) canConvert = true;
     }
 
-    return { total: items.length, canConvert, hasConverted, converted, errors, done };
+    return { total: items.length, canConvert, hasConverted, canRetry, converted, errors, done };
 }
 
 export function render({ els, state, convertItem, downloadAllZip, handleSaveToFolder }) {
@@ -103,6 +105,11 @@ function setButtonsEnabled(els, state, stats, convertItem, downloadAllZip, handl
     els.convertAll.disabled = !(stats.total > 0 && stats.canConvert);
     els.clearAll.disabled = stats.total === 0;
     els.downloadZip.disabled = !stats.hasConverted;
+
+    if (els.retryFailed) {
+        els.retryFailed.hidden = !stats.canRetry;
+        els.retryFailed.disabled = !stats.canRetry;
+    }
 
     if (!els._wired) {
         els._wired = true;
@@ -136,6 +143,20 @@ function setButtonsEnabled(els, state, stats, convertItem, downloadAllZip, handl
 
         if (els.saveToFolder) {
             els.saveToFolder.addEventListener('click', () => handleSaveToFolder());
+        }
+
+        if (els.retryFailed) {
+            els.retryFailed.addEventListener('click', async () => {
+                const failed = state.items.filter(x => x.error && x.file);
+                failed.forEach(x => {
+                    x.error = null;
+                    x.status = t('status.queued');
+                });
+                render({ els, state, convertItem, downloadAllZip, handleSaveToFolder });
+                const pct = Number(els.concurrencyPct?.value ?? 100);
+                const limit = computeConcurrencyFromPct(pct);
+                await runWithLimit(failed, limit, convertItem);
+            });
         }
 
         els.downloadZip.addEventListener('click', async () => {

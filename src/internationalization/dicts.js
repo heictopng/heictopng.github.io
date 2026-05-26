@@ -80,6 +80,7 @@ export const DICTS = {
             "⚠️ High CPU usage (75%+) may slow down your PC depending on hardware capabilities.",
 
         "buttons.convertAll": "Convert all",
+        "buttons.retryFailed": "Retry failed",
         "buttons.saveToFolder": "\uD83D\uDCC1 Save to folder",
         "buttons.downloadZip": "Download ZIP",
         "buttons.clear": "Clear",
