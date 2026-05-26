@@ -4,6 +4,80 @@ import { removeItem, clearAll } from './state.js';
 import { runWithLimit, computeConcurrencyFromPct } from './workers/pool.js';
 import { createVirtualScroller } from './virtual-scroll.js';
 
+// --- Lazy thumbnail generation with LRU eviction ---
+// Only ~40 cards are visible at once (virtual scrolling), so we cap cached
+// thumb blob-URLs to avoid holding O(n) memory for 10 000+ images.
+const THUMB_CACHE_MAX = 200;
+const _thumbLru = [];
+const _thumbPending = new Set();
+
+function clearThumbCache() {
+    for (const item of _thumbLru) {
+        if (item.thumbUrl) {
+            URL.revokeObjectURL(item.thumbUrl);
+            item.thumbUrl = null;
+        }
+    }
+    _thumbLru.length = 0;
+    _thumbPending.clear();
+}
+
+function evictOldThumbs() {
+    while (_thumbLru.length > THUMB_CACHE_MAX) {
+        const old = _thumbLru.shift();
+        if (old.thumbUrl) {
+            URL.revokeObjectURL(old.thumbUrl);
+            old.thumbUrl = null;
+        }
+    }
+}
+
+async function generateThumbUrl(item) {
+    let source = item.outBlob;
+    if (!source && item.fileHandle) source = await item.fileHandle.getFile();
+    if (!source) return null;
+
+    const bmp = await createImageBitmap(source);
+    const maxDim = Math.max(bmp.width, bmp.height);
+    const scale = Math.min(1, 150 / maxDim);
+    const tw = Math.max(1, Math.round(bmp.width * scale));
+    const th = Math.max(1, Math.round(bmp.height * scale));
+
+    const canvas = new OffscreenCanvas(tw, th);
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(bmp, 0, 0, tw, th);
+    bmp.close?.();
+
+    const blob = await canvas.convertToBlob({ type: 'image/jpeg', quality: 0.6 });
+    return URL.createObjectURL(blob);
+}
+
+function requestLazyThumb(item, thumbEl) {
+    if (_thumbPending.has(item.id)) return;
+    _thumbPending.add(item.id);
+
+    generateThumbUrl(item).then(url => {
+        _thumbPending.delete(item.id);
+        if (!url) return;
+        item.thumbUrl = url;
+        // Track in LRU
+        const idx = _thumbLru.indexOf(item);
+        if (idx >= 0) _thumbLru.splice(idx, 1);
+        _thumbLru.push(item);
+        evictOldThumbs();
+
+        if (thumbEl.isConnected) {
+            thumbEl.textContent = '';
+            const img = document.createElement('img');
+            img.src = url;
+            img.alt = item.originalName || '';
+            thumbEl.appendChild(img);
+        }
+    }).catch(() => {
+        _thumbPending.delete(item.id);
+    });
+}
+
 export function initUI() {
     const els = {
         dropzone: document.getElementById('dropzone'),
@@ -138,6 +212,7 @@ function setButtonsEnabled(els, state, stats, convertItem, downloadAllZip, handl
 
         els.clearAll.addEventListener('click', () => {
             clearAll(state);
+            clearThumbCache();
             render({ els, state, convertItem, downloadAllZip, handleSaveToFolder });
         });
 
@@ -177,6 +252,9 @@ function renderCard({ item, convertItem, state }) {
         img.src = item.thumbUrl;
         img.alt = (item.file?.name || item.originalName || '');
         thumb.appendChild(img);
+    } else if (item.outBlob || item.savedToDisk) {
+        thumb.textContent = '\u23F3';
+        requestLazyThumb(item, thumb);
     } else {
         thumb.textContent = item.thumbError ? t('thumb.failed') : t('card.noPreview');
     }

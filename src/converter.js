@@ -10,8 +10,9 @@ export function createConverter({ els, state, render }) {
     let _lastAlertTime = 0;
 
     function thumbsEnabled() {
-        // TODO: future settings
-        return true;
+        // Skip eager thumb generation for large batches;
+        // the UI generates lazy thumbnails on-demand for visible cards.
+        return state.items.length < 200;
     }
 
     function clearThumb(item) {
@@ -104,28 +105,23 @@ export function createConverter({ els, state, render }) {
                 return;
             }
 
-            if (msg.encoded && msg.thumb) {
+            if (msg.encoded) {
                 const outBlob = new Blob([msg.encoded], { type: msg.encodedMime || mime });
-
-                let thumbBlob = null;
-                if (thumbsEnabled() && msg.thumb) {
-                    thumbBlob = new Blob([msg.thumb], { type: msg.thumbMime || 'image/jpeg' });
-                }
-
-                // Release large buffers ASAP
                 msg.encoded = null;
-                msg.thumb = null;
 
-                const ext = mime === 'image/png' ? 'png' : (mime === 'image/webp' ? 'webp' : 'jpg');
-                item.outName = replaceExt((item.file?.name || item.originalName || ''), ext);
-
-                if (thumbsEnabled() && thumbBlob) {
+                if (msg.thumb) {
+                    const thumbBlob = new Blob([msg.thumb], { type: msg.thumbMime || 'image/jpeg' });
+                    msg.thumb = null;
                     if (item.thumbUrl) URL.revokeObjectURL(item.thumbUrl);
                     item.thumbUrl = URL.createObjectURL(thumbBlob);
                     item.thumbError = false;
                 } else {
+                    msg.thumb = null;
                     clearThumb(item);
                 }
+
+                const ext = mime === 'image/png' ? 'png' : (mime === 'image/webp' ? 'webp' : 'jpg');
+                item.outName = replaceExt((item.file?.name || item.originalName || ''), ext);
 
                 item.outBlob = outBlob;
                 item.status = t('status.ready', { fmt: ext.toUpperCase() });

@@ -94,17 +94,21 @@ self.onmessage = async (e) => {
         });
 
         if (canEncodeInWorker() && mime) {
-            // Encode + thumb in worker => do NOT send rgba to main
-            const [outBuf, thumbBuf] = await Promise.all([
-                encodeRgbaOffscreen(rgba, width, height, mime, Number(quality || 0.9)),
-                makeThumbOffscreen(rgba, width, height, Number(thumbMax || 300))
-            ]);
+            // Encode in worker; optionally generate thumb
+            const encodeP = encodeRgbaOffscreen(rgba, width, height, mime, Number(quality || 0.9));
+            const thumbP = thumbMax > 0
+                ? makeThumbOffscreen(rgba, width, height, Number(thumbMax))
+                : Promise.resolve(null);
+            const [outBuf, thumbBuf] = await Promise.all([encodeP, thumbP]);
 
             // Release big refs ASAP
             rgba = null;
             img = null;
             images = null;
             decoder = null;
+
+            const transfer = [outBuf];
+            if (thumbBuf) transfer.push(thumbBuf);
 
             self.postMessage(
                 {
@@ -116,9 +120,9 @@ self.onmessage = async (e) => {
                     encoded: outBuf,
                     thumb: thumbBuf,
                     encodedMime: mime,
-                    thumbMime: 'image/jpeg'
+                    thumbMime: thumbBuf ? 'image/jpeg' : undefined
                 },
-                [outBuf, thumbBuf]
+                transfer
             );
             return;
         }
