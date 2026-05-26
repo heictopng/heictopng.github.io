@@ -78,9 +78,8 @@ export function createConverter({ els, state, render }) {
     }
 
     async function decodeWithWasm(item) {
-        const arrayBuffer = await item.file.arrayBuffer();
-
         try {
+            var arrayBuffer = await item.file.arrayBuffer();
             const mime = els.format.value;
             const quality = Number(els.quality.value);
 
@@ -151,6 +150,7 @@ export function createConverter({ els, state, render }) {
     }
 
     async function convertItem(item) {
+      try {
         item.status = t('status.preparing');
         item.error = null;
         item.outBlob = null;
@@ -233,6 +233,11 @@ export function createConverter({ els, state, render }) {
         render();
 
         await decodeWithWasm(item);
+      } catch (err) {
+        item.status = t('status.error', { msg: String(err?.message || err) });
+        item.error = String(err?.message || err);
+        render();
+      }
     }
 
     return { convertItem };

@@ -144,11 +144,11 @@ export async function runWithLimit(items, limit, fn) {
     const executing = new Set();
 
     for (const item of items) {
-        const p = Promise.resolve().then(() => fn(item));
+        // .catch() ensures a single rejection can never abort the batch
+        // via Promise.race.  Individual errors are handled by fn().
+        const p = Promise.resolve().then(() => fn(item)).catch(() => {});
         executing.add(p);
-
-        const cleanup = () => executing.delete(p);
-        p.then(cleanup, cleanup);
+        p.then(() => executing.delete(p));
 
         if (executing.size >= limit) {
             await Promise.race(executing);

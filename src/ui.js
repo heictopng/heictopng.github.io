@@ -204,10 +204,21 @@ function setButtonsEnabled(els, state, stats, convertItem, downloadAllZip, handl
         els.quality.addEventListener('input', () => els.updateQualityUI());
 
         els.convertAll.addEventListener('click', async () => {
-            const todo = state.items.filter(x => !x.outBlob && !x.error && !x.savedToDisk);
             const pct = Number(els.concurrencyPct?.value ?? 100);
             const limit = computeConcurrencyFromPct(pct);
-            await runWithLimit(todo, limit, convertItem);
+
+            let todo = state.items.filter(x => !x.outBlob && !x.error && !x.savedToDisk);
+            let prevRemaining = todo.length;
+
+            while (todo.length > 0) {
+                await runWithLimit(todo, limit, convertItem);
+                todo = state.items.filter(x => !x.outBlob && !x.error && !x.savedToDisk);
+                if (todo.length >= prevRemaining) break; // no progress, stop
+                prevRemaining = todo.length;
+                if (todo.length > 0) {
+                    console.warn(`[app] ${todo.length} items still pending after batch, retrying...`);
+                }
+            }
         });
 
         els.clearAll.addEventListener('click', () => {
@@ -222,15 +233,26 @@ function setButtonsEnabled(els, state, stats, convertItem, downloadAllZip, handl
 
         if (els.retryFailed) {
             els.retryFailed.addEventListener('click', async () => {
-                const failed = state.items.filter(x => x.error && x.file);
-                failed.forEach(x => {
-                    x.error = null;
-                    x.status = t('status.queued');
-                });
-                render({ els, state, convertItem, downloadAllZip, handleSaveToFolder });
                 const pct = Number(els.concurrencyPct?.value ?? 100);
                 const limit = computeConcurrencyFromPct(pct);
-                await runWithLimit(failed, limit, convertItem);
+
+                let failed = state.items.filter(x => x.error && x.file);
+                let prevRemaining = failed.length;
+
+                while (failed.length > 0) {
+                    failed.forEach(x => {
+                        x.error = null;
+                        x.status = t('status.queued');
+                    });
+                    render({ els, state, convertItem, downloadAllZip, handleSaveToFolder });
+                    await runWithLimit(failed, limit, convertItem);
+                    failed = state.items.filter(x => x.error && x.file);
+                    if (failed.length >= prevRemaining) break; // no progress, stop
+                    prevRemaining = failed.length;
+                    if (failed.length > 0) {
+                        console.warn(`[app] ${failed.length} items still failed after retry, retrying...`);
+                    }
+                }
             });
         }
 
