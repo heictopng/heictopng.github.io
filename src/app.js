@@ -92,6 +92,12 @@ if (canSaveToDisk() && els.saveToFolder) {
     els.saveToFolder.hidden = false;
 }
 
+// When the page resumes after Win+L / OS sleep, re-render so the user
+// sees updated statuses (errors, "Retry failed" button, etc.)
+document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') rerender();
+});
+
 translateDocument();
 els.updateQualityUI();
 rerender();

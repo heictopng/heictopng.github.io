@@ -7,6 +7,7 @@ import { createWorkerPool } from './workers/pool.js';
 
 export function createConverter({ els, state, render }) {
     const pool = createWorkerPool('./src/workers/worker.mjs', { concurrencyPct: Number(els.concurrencyPct?.value ?? 100) });
+    let _lastAlertTime = 0;
 
     function thumbsEnabled() {
         // TODO: future settings
@@ -146,7 +147,10 @@ export function createConverter({ els, state, render }) {
             item.status = t('status.error', { msg: String(err?.message || err) });
             item.error = String(err?.message || err);
             render();
-            alert(t('alert.wasmWorkerFailed'));
+            if (Date.now() - _lastAlertTime > 5000) {
+                _lastAlertTime = Date.now();
+                alert(t('alert.wasmWorkerFailed'));
+            }
         }
     }
 
