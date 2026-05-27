@@ -71,7 +71,7 @@ async function handleSaveToFolder() {
         for (const item of state.items) {
             const predictedName = (item.outName)
                 || ((item.file?.name || item.originalName || '').replace(/\.[^.]+$/, '') + '.' + ext);
-            if (!item.outBlob && !item.savedToDisk && existing.has(predictedName)) {
+            if (!item.outBlob && !item.savedToDisk && existing.has(predictedName.toLowerCase())) {
                 item.savedToDisk = true;
                 item.skippedExisting = true;
                 item.outName = predictedName;

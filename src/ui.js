@@ -149,7 +149,10 @@ function computeStats(items) {
         const isConverted = !!(x.outBlob || x.savedToDisk);
         const isError = !!x.error;
 
-        if (isConverted) { converted++; hasConverted = true; if (x.skippedExisting) skipped++; }
+        if (isConverted) {
+            hasConverted = true;
+            if (x.skippedExisting) { skipped++; } else { converted++; }
+        }
         if (isError) { errors++; if (x.file) canRetry = true; }
         if (isConverted || isError) done++;
         if (!isConverted && !isError) canConvert = true;

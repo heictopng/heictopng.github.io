@@ -16,7 +16,7 @@ export async function pickOutputDirectory() {
 export async function scanExistingFiles(dirHandle) {
     const names = new Set();
     for await (const [name, handle] of dirHandle.entries()) {
-        if (handle.kind === 'file') names.add(name);
+        if (handle.kind === 'file') names.add(name.toLowerCase());
     }
     return names;
 }
