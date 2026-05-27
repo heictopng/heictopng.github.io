@@ -105,16 +105,13 @@ export function createVirtualScroller(listEl) {
         const { startIdx, endIdx } = getVisibleRange();
 
         if (!force && startIdx === prevStartIdx && endIdx === prevEndIdx) {
-            // Same visible range — patch status text in-place instead of full rebuild
-            const cards = listEl.children;
-            for (let i = 0; i < cards.length; i++) {
-                const item = items[startIdx + i];
-                if (!item) break;
-                const statusEl = cards[i]?.querySelector('.status');
-                if (statusEl && statusEl.textContent !== item.status) {
-                    statusEl.textContent = item.status;
-                }
+            // Same visible range — rebuild only the visible cards (fast, ~20-40 cards)
+            const frag = document.createDocumentFragment();
+            for (let i = startIdx; i < endIdx; i++) {
+                frag.appendChild(renderItemFn(items[i]));
             }
+            listEl.innerHTML = '';
+            listEl.appendChild(frag);
             return;
         }
         prevStartIdx = startIdx;
@@ -137,9 +134,12 @@ export function createVirtualScroller(listEl) {
         listEl.style.paddingBottom = (Math.max(0, totalRows() - endRow) * effectiveRowH) + 'px';
     }
 
+    let prevItemCount = 0;
+
     function setItems(newItems, renderFn) {
-        const changed = newItems !== items || newItems.length !== items.length;
+        const changed = newItems !== items || newItems.length !== prevItemCount;
         items = newItems;
+        prevItemCount = items.length;
         if (renderFn) renderItemFn = renderFn;
 
         if (!items.length) {

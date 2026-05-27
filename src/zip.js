@@ -1,5 +1,6 @@
 // zip.js
 import { t } from './internationalization/i18n.js';
+import { showToast } from './toast.js';
 import { getItemBlob } from './disk-stream.js';
 
 
@@ -316,7 +317,7 @@ export async function downloadAllAsZip({ state, render, els }) {
     const converted = state.items.filter((x) => x.outBlob || x.savedToDisk);
 
     if (converted.length === 0) {
-        alert(t('alert.noConverted'));
+        showToast(t('alert.noConverted'), 'warn');
         return;
     }
 
@@ -370,7 +371,7 @@ export async function downloadAllAsZip({ state, render, els }) {
         };
     } catch (err) {
         console.error(err);
-        alert(t('alert.zipFailed'));
+        showToast(t('alert.zipFailed', { error: String(err?.message || err) }));
     } finally {
         try {
             if (writer) await writer.closeAll();

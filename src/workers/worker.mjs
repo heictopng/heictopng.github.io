@@ -161,7 +161,10 @@ self.onmessage = async (e) => {
     const { id, arrayBuffer, fileName, mime, quality, thumbMax = 300 } = e.data;
 
     // Try hardware-accelerated decode first (WebCodecs ImageDecoder)
-    if (await tryHwDecode(arrayBuffer, id, fileName, mime, quality, thumbMax)) {
+    // Copy the buffer because ImageDecoder can detach it, leaving
+    // the WASM fallback with an empty/invalid buffer.
+    const hwCopy = arrayBuffer.slice(0);
+    if (await tryHwDecode(hwCopy, id, fileName, mime, quality, thumbMax)) {
         return;
     }
 

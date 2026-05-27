@@ -112,9 +112,9 @@ export const DICTS = {
         "status.savedToDisk": "Saved to folder ✓",
         "status.skippedExisting": "Already in folder — skipped ✓",
         "alert.decodeModeSelected": "Decode mode selected: {mode}\n\n{reason}",
-        "alert.wasmWorkerFailed": "WASM worker failed to load/run. Check console.",
+        "alert.wasmWorkerFailed": "{file}: conversion failed — {error}",
         "alert.noConverted": "No converted images to zip yet.",
-        "alert.zipFailed": "Failed to create ZIP. Check console.",
+        "alert.zipFailed": "Failed to create ZIP: {error}",
 
         "thumb.failed": "Preview unavailable (thumbnail failed).",
 
@@ -234,10 +234,9 @@ export const DICTS = {
         "status.error": "Error: {msg}",
         "status.skippedExisting": "Ya en la carpeta — omitida ✓",
         "alert.decodeModeSelected": "Modo de decodificación seleccionado: {mode}\n\n{reason}",
-        "alert.wasmWorkerFailed":
-            "El worker WASM no pudo cargarse/ejecutarse. Revisa la consola.",
+        "alert.wasmWorkerFailed": "{file}: error en la conversión — {error}",
         "alert.noConverted": "Todavía no hay imágenes convertidas para comprimir.",
-        "alert.zipFailed": "No se pudo crear el ZIP. Revisa la consola.",
+        "alert.zipFailed": "No se pudo crear el ZIP: {error}",
 
         "thumb.failed": "Vista previa no disponible (falló la miniatura).",
 
@@ -358,9 +357,9 @@ export const DICTS = {
         "status.skippedExisting": "Já na pasta — ignorada ✓",
 
         "alert.decodeModeSelected": "Modo de decodificação selecionado: {mode}\n\n{reason}",
-        "alert.wasmWorkerFailed": "Falha ao carregar/executar o worker WASM.",
+        "alert.wasmWorkerFailed": "{file}: falha na conversão — {error}",
         "alert.noConverted": "Ainda não há imagens convertidas para compactar.",
-        "alert.zipFailed": "Falha ao criar o ZIP. Verifique o console.",
+        "alert.zipFailed": "Falha ao criar o ZIP: {error}",
 
         "thumb.failed": "Pré-visualização indisponível.",
 
@@ -476,9 +475,9 @@ export const DICTS = {
         "status.skippedExisting": "フォルダに既存 — スキップ済み ✓",
 
         "alert.decodeModeSelected": "選択されたデコード方式: {mode}\n\n{reason}",
-        "alert.wasmWorkerFailed": "WASM ワーカーの読み込み/実行に失敗しました。",
+        "alert.wasmWorkerFailed": "{file}: 変換に失敗 — {error}",
         "alert.noConverted": "ZIP にする変換済み画像がまだありません。",
-        "alert.zipFailed": "ZIP の作成に失敗しました。コンソールを確認してください。",
+        "alert.zipFailed": "ZIP の作成に失敗: {error}",
 
         "thumb.failed": "サムネイルを表示できません。",
 
@@ -597,9 +596,9 @@ export const DICTS = {
         "status.skippedExisting": "文件夹中已存在 — 已跳过 ✓",
 
         "alert.decodeModeSelected": "已选择解码模式：{mode}\n\n{reason}",
-        "alert.wasmWorkerFailed": "WASM Worker 加载或运行失败。",
+        "alert.wasmWorkerFailed": "{file}: 转换失败 — {error}",
         "alert.noConverted": "还没有可打包为 ZIP 的已转换图片。",
-        "alert.zipFailed": "创建 ZIP 失败。请查看控制台。",
+        "alert.zipFailed": "创建 ZIP 失败: {error}",
 
         "thumb.failed": "无法生成预览。",
 
@@ -718,9 +717,9 @@ export const DICTS = {
         "status.skippedExisting": "موجود بالفعل في المجلد — تم التخطي ✓",
 
         "alert.decodeModeSelected": "تم اختيار وضع فك الترميز: {mode}\n\n{reason}",
-        "alert.wasmWorkerFailed": "فشل تحميل أو تشغيل عامل WASM.",
+        "alert.wasmWorkerFailed": "{file}: فشل التحويل — {error}",
         "alert.noConverted": "لا توجد صور محوّلة بعد لإنشاء ملف ZIP.",
-        "alert.zipFailed": "تعذر إنشاء ملف ZIP. تحقق من وحدة التحكم.",
+        "alert.zipFailed": "تعذر إنشاء ملف ZIP: {error}",
 
         "thumb.failed": "تعذر إنشاء المعاينة.",
 
@@ -838,9 +837,9 @@ export const DICTS = {
         "status.skippedExisting": "फ़ोल्डर में पहले से मौजूद — छोड़ दिया ✓",
 
         "alert.decodeModeSelected": "चयनित डिकोड मोड: {mode}\n\n{reason}",
-        "alert.wasmWorkerFailed": "WASM वर्कर लोड/चलाने में विफल।",
+        "alert.wasmWorkerFailed": "{file}: रूपांतरण विफल — {error}",
         "alert.noConverted": "ZIP बनाने के लिए अभी कोई कनवर्ट की गई इमेज नहीं है।",
-        "alert.zipFailed": "ZIP बनाने में विफल। कंसोल देखें।",
+        "alert.zipFailed": "ZIP बनाने में विफल: {error}",
 
         "thumb.failed": "प्रीव्यू उपलब्ध नहीं है।",
 
@@ -959,9 +958,9 @@ export const DICTS = {
         "status.skippedExisting": "Bereits im Ordner — übersprungen ✓",
 
         "alert.decodeModeSelected": "Ausgewählter Dekodiermodus: {mode}\n\n{reason}",
-        "alert.wasmWorkerFailed": "WASM-Worker konnte nicht geladen/ausgeführt werden.",
+        "alert.wasmWorkerFailed": "{file}: Konvertierung fehlgeschlagen — {error}",
         "alert.noConverted": "Noch keine konvertierten Bilder zum ZIPpen vorhanden.",
-        "alert.zipFailed": "ZIP konnte nicht erstellt werden. Konsole prüfen.",
+        "alert.zipFailed": "ZIP konnte nicht erstellt werden: {error}",
 
         "thumb.failed": "Vorschau nicht verfügbar.",
 
@@ -1082,9 +1081,9 @@ export const DICTS = {
         "status.skippedExisting": "Déjà dans le dossier — ignorée ✓",
 
         "alert.decodeModeSelected": "Mode de décodage sélectionné : {mode}\n\n{reason}",
-        "alert.wasmWorkerFailed": "Impossible de charger/exécuter le worker WASM.",
+        "alert.wasmWorkerFailed": "{file} : échec de la conversion — {error}",
         "alert.noConverted": "Aucune image convertie à compresser pour le moment.",
-        "alert.zipFailed": "Échec de la création du ZIP. Vérifiez la console.",
+        "alert.zipFailed": "Échec de la création du ZIP : {error}",
 
         "thumb.failed": "Aperçu indisponible.",
 
@@ -1204,9 +1203,9 @@ export const DICTS = {
         "status.skippedExisting": "Уже в папке — пропущено ✓",
 
         "alert.decodeModeSelected": "Выбран режим декодирования: {mode}\n\n{reason}",
-        "alert.wasmWorkerFailed": "Не удалось загрузить или запустить WASM worker.",
+        "alert.wasmWorkerFailed": "{file}: ошибка конвертации — {error}",
         "alert.noConverted": "Пока нет конвертированных изображений для ZIP.",
-        "alert.zipFailed": "Не удалось создать ZIP. Проверьте консоль.",
+        "alert.zipFailed": "Не удалось создать ZIP: {error}",
 
         "thumb.failed": "Предпросмотр недоступен.",
 
@@ -1325,9 +1324,9 @@ export const DICTS = {
         "status.skippedExisting": "Già nella cartella — saltata ✓",
 
         "alert.decodeModeSelected": "Modalità di decodifica selezionata: {mode}\n\n{reason}",
-        "alert.wasmWorkerFailed": "Impossibile caricare/eseguire il worker WASM.",
+        "alert.wasmWorkerFailed": "{file}: conversione non riuscita — {error}",
         "alert.noConverted": "Nessuna immagine convertita da comprimere al momento.",
-        "alert.zipFailed": "Impossibile creare lo ZIP. Controlla la console.",
+        "alert.zipFailed": "Impossibile creare lo ZIP: {error}",
 
         "thumb.failed": "Anteprima non disponibile.",
 
@@ -1450,9 +1449,9 @@ export const DICTS = {
         "status.skippedExisting": "Reeds in map — overgeslagen ✓",
 
         "alert.decodeModeSelected": "Geselecteerde decodeermodus: {mode}\n\n{reason}",
-        "alert.wasmWorkerFailed": "WASM-worker kon niet worden geladen/uitgevoerd.",
+        "alert.wasmWorkerFailed": "{file}: conversie mislukt — {error}",
         "alert.noConverted": "Er zijn nog geen geconverteerde afbeeldingen om te zippen.",
-        "alert.zipFailed": "ZIP maken mislukt. Controleer de console.",
+        "alert.zipFailed": "ZIP maken mislukt: {error}",
 
         "thumb.failed": "Voorbeeld niet beschikbaar.",
 
@@ -1575,9 +1574,9 @@ export const DICTS = {
         "status.error": "Błąd: {msg}",
         "status.skippedExisting": "Już w folderze — pominięte ✓",
         "alert.decodeModeSelected": "Wybrany tryb dekodowania: {mode}\n\n{reason}",
-        "alert.wasmWorkerFailed": "Nie udało się załadować/uruchomić workera WASM. Sprawdź konsolę.",
+        "alert.wasmWorkerFailed": "{file}: konwersja nie powiodła się — {error}",
         "alert.noConverted": "Brak przekonwertowanych obrazów do spakowania.",
-        "alert.zipFailed": "Nie udało się utworzyć ZIP. Sprawdź konsolę.",
+        "alert.zipFailed": "Nie udało się utworzyć ZIP: {error}",
 
         "thumb.failed": "Podgląd niedostępny (miniatura nie powiodła się).",
 
@@ -1700,9 +1699,9 @@ export const DICTS = {
         "status.error": "Hata: {msg}",
         "status.skippedExisting": "Zaten klasörde — atlandı ✓",
         "alert.decodeModeSelected": "Seçilen çözme modu: {mode}\n\n{reason}",
-        "alert.wasmWorkerFailed": "WASM worker yüklenemedi/çalıştırılamadı. Konsolu kontrol edin.",
+        "alert.wasmWorkerFailed": "{file}: dönüştürme başarısız — {error}",
         "alert.noConverted": "ZIP yapmak için dönüştürülmüş görsel yok.",
-        "alert.zipFailed": "ZIP oluşturulamadı. Konsolu kontrol edin.",
+        "alert.zipFailed": "ZIP oluşturulamadı: {error}",
 
         "thumb.failed": "Önizleme kullanılamıyor (küçük resim oluşturulamadı).",
 

@@ -1,5 +1,6 @@
 // converter.js
 import { t } from './internationalization/i18n.js';
+import { showToast } from './toast.js';
 import { encodeRgbaToBlob, imageToBlob, replaceExt, detectDecodeMode } from './convert-utils.js';
 import { makeThumbFromRgba, makeThumbFromImage } from './thumbs.js';
 import { createWorkerPool } from './workers/pool.js';
@@ -147,7 +148,8 @@ export function createConverter({ els, state, render }) {
             render();
             if (Date.now() - _lastAlertTime > 5000) {
                 _lastAlertTime = Date.now();
-                alert(t('alert.wasmWorkerFailed'));
+                const name = item.file?.name || item.originalName || '?';
+                showToast(t('alert.wasmWorkerFailed', { file: name, error: item.error }));
             }
         }
     }
