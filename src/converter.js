@@ -3,6 +3,7 @@ import { t } from './internationalization/i18n.js';
 import { encodeRgbaToBlob, imageToBlob, replaceExt, detectDecodeMode } from './convert-utils.js';
 import { makeThumbFromRgba, makeThumbFromImage } from './thumbs.js';
 import { createWorkerPool } from './workers/pool.js';
+import { resolveFileHandle } from './disk-stream.js';
 
 
 export function createConverter({ els, state, render }) {
@@ -159,6 +160,14 @@ export function createConverter({ els, state, render }) {
         item.outBlob = null;
         item.outName = null;
         item.thumbError = false;
+
+        // Lazy-resolve file from FileSystemFileHandle if needed
+        if (!item.file && item.fileSystemHandle) {
+            await resolveFileHandle(item);
+        }
+        if (!item.file) {
+            throw new Error('No file available');
+        }
 
         if (!thumbsEnabled()) clearThumb(item);
 

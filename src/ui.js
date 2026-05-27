@@ -153,7 +153,7 @@ function computeStats(items) {
             hasConverted = true;
             if (x.skippedExisting) { skipped++; } else { converted++; }
         }
-        if (isError) { errors++; if (x.file) canRetry = true; }
+        if (isError) { errors++; if (x.file || x.fileSystemHandle) canRetry = true; }
         if (isConverted || isError) done++;
         if (!isConverted && !isError) canConvert = true;
     }
@@ -265,7 +265,7 @@ function setButtonsEnabled(els, state, stats, convertItem, downloadAllZip, handl
                 const pct = Number(els.concurrencyPct?.value ?? 100);
                 const limit = computeConcurrencyFromPct(pct);
 
-                let failed = state.items.filter(x => x.error && x.file);
+                let failed = state.items.filter(x => x.error && (x.file || x.fileSystemHandle));
                 let prevRemaining = failed.length;
 
                 while (failed.length > 0) {
@@ -275,7 +275,7 @@ function setButtonsEnabled(els, state, stats, convertItem, downloadAllZip, handl
                     });
                     render({ els, state, convertItem, downloadAllZip, handleSaveToFolder, scanAndSkipExisting });
                     await runWithLimit(failed, limit, convertItem);
-                    failed = state.items.filter(x => x.error && x.file);
+                    failed = state.items.filter(x => x.error && (x.file || x.fileSystemHandle));
                     if (failed.length >= prevRemaining) break; // no progress, stop
                     prevRemaining = failed.length;
                     if (failed.length > 0) {
@@ -327,7 +327,7 @@ function renderCard({ item, convertItem, state }) {
     const btnConvert = document.createElement('button');
     btnConvert.className = 'btn primary';
     btnConvert.textContent = (item.outBlob || item.savedToDisk) ? t('card.reconvert') : t('card.convert');
-    btnConvert.disabled = item.converting || !item.file;
+    btnConvert.disabled = item.converting || !(item.file || item.fileSystemHandle);
     btnConvert.onclick = () => convertItem(item);
 
     const btnDownload = document.createElement('button');

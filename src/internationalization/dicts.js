@@ -66,6 +66,8 @@ export const DICTS = {
         "dropzone.strong": "Drop .heic/.heif/.hif files",
         "dropzone.or": "or",
         "dropzone.choose": "Choose files",
+        "dropzone.pickFolder": "\uD83D\uDCC2 Pick folder",
+        "dropzone.scanning": "Scanning…",
 
         "trust.line": "Free • No uploads • Works on all devices",
         "trust.buttons": "100% free · No sign-up · No uploads",
@@ -190,6 +192,8 @@ export const DICTS = {
         "dropzone.strong": "Suelta archivos .heic/.heif/.hif",
         "dropzone.or": "o",
         "dropzone.choose": "Elegir archivos",
+        "dropzone.pickFolder": "\uD83D\uDCC2 Elegir carpeta",
+        "dropzone.scanning": "Escaneando…",
 
         "trust.line": "Gratis • Sin subidas • Funciona en todos los dispositivos",
         "trust.buttons": "100% gratis · Sin registro · Sin subidas",
@@ -311,6 +315,8 @@ export const DICTS = {
         "dropzone.strong": "Solte arquivos .heic/.heif/.hif",
         "dropzone.or": "ou",
         "dropzone.choose": "Escolher arquivos",
+        "dropzone.pickFolder": "\uD83D\uDCC2 Escolher pasta",
+        "dropzone.scanning": "Verificando…",
 
         "trust.line": "Grátis • Sem uploads • Funciona em todos os dispositivos",
         "trust.buttons": "100% grátis · Sem cadastro · Sem uploads",
@@ -428,6 +434,8 @@ export const DICTS = {
         "dropzone.strong": ".heic / .heif / .hif ファイルをドロップ",
         "dropzone.or": "または",
         "dropzone.choose": "ファイルを選択",
+        "dropzone.pickFolder": "\uD83D\uDCC2 フォルダを選択",
+        "dropzone.scanning": "スキャン中…",
 
         "trust.line": "無料 • アップロード不要 • すべての端末で動作",
         "trust.buttons": "100% 無料 · 登録不要 · アップロード不要",
@@ -547,6 +555,8 @@ export const DICTS = {
         "dropzone.strong": "拖放 .heic / .heif / .hif 文件",
         "dropzone.or": "或",
         "dropzone.choose": "选择文件",
+        "dropzone.pickFolder": "\uD83D\uDCC2 选择文件夹",
+        "dropzone.scanning": "扫描中…",
 
         "trust.line": "免费 • 无需上传 • 适用于所有设备",
         "trust.buttons": "100% 免费 · 无需注册 · 无需上传",
@@ -665,6 +675,8 @@ export const DICTS = {
         "dropzone.strong": "اسحب ملفات ‎.heic / .heif / .hif",
         "dropzone.or": "أو",
         "dropzone.choose": "اختر الملفات",
+        "dropzone.pickFolder": "\uD83D\uDCC2 اختر مجلد",
+        "dropzone.scanning": "جارٍ المسح…",
 
         "trust.line": "مجاني • بدون رفع • يعمل على جميع الأجهزة",
         "trust.buttons": "مجاني 100% · بدون تسجيل · بدون رفع",
@@ -784,6 +796,8 @@ export const DICTS = {
         "dropzone.strong": ".heic / .heif / .hif फ़ाइलें छोड़ें",
         "dropzone.or": "या",
         "dropzone.choose": "फ़ाइलें चुनें",
+        "dropzone.pickFolder": "\uD83D\uDCC2 फ़ोल्डर चुनें",
+        "dropzone.scanning": "स्कैन हो रहा है…",
 
         "trust.line": "फ्री • कोई अपलोड नहीं • सभी डिवाइस पर काम करता है",
         "trust.buttons": "100% फ्री · साइन-अप नहीं · कोई अपलोड नहीं",
@@ -903,6 +917,8 @@ export const DICTS = {
         "dropzone.strong": ".heic / .heif / .hif Dateien ablegen",
         "dropzone.or": "oder",
         "dropzone.choose": "Dateien auswählen",
+        "dropzone.pickFolder": "\uD83D\uDCC2 Ordner wählen",
+        "dropzone.scanning": "Wird gescannt…",
 
         "trust.line": "Kostenlos • Keine Uploads • Funktioniert auf allen Geräten",
         "trust.buttons": "100% kostenlos · Keine Anmeldung · Keine Uploads",
@@ -1023,6 +1039,8 @@ export const DICTS = {
         "dropzone.strong": "Déposez des fichiers .heic / .heif / .hif",
         "dropzone.or": "ou",
         "dropzone.choose": "Choisir des fichiers",
+        "dropzone.pickFolder": "\uD83D\uDCC2 Choisir un dossier",
+        "dropzone.scanning": "Analyse…",
 
         "trust.line": "Gratuit • Aucun envoi • Fonctionne sur tous les appareils",
         "trust.buttons": "100% gratuit · Sans inscription · Aucun envoi",
@@ -1143,6 +1161,8 @@ export const DICTS = {
         "dropzone.strong": "Перетащите файлы .heic / .heif / .hif",
         "dropzone.or": "или",
         "dropzone.choose": "Выбрать файлы",
+        "dropzone.pickFolder": "\uD83D\uDCC2 Выбрать папку",
+        "dropzone.scanning": "Сканирование…",
 
         "trust.line": "Бесплатно • Без загрузок • Работает на всех устройствах",
         "trust.buttons": "100% бесплатно · Без регистрации · Без загрузок",
@@ -1263,6 +1283,8 @@ export const DICTS = {
         "dropzone.strong": "Trascina file .heic / .heif / .hif",
         "dropzone.or": "o",
         "dropzone.choose": "Scegli file",
+        "dropzone.pickFolder": "\uD83D\uDCC2 Scegli cartella",
+        "dropzone.scanning": "Scansione…",
 
         "trust.line": "Gratis • Nessun upload • Funziona su tutti i dispositivi",
         "trust.buttons": "100% gratis · Nessuna registrazione · Nessun upload",
@@ -1386,6 +1408,8 @@ export const DICTS = {
         "dropzone.strong": "Sleep .heic / .heif / .hif bestanden",
         "dropzone.or": "of",
         "dropzone.choose": "Bestanden kiezen",
+        "dropzone.pickFolder": "\uD83D\uDCC2 Kies map",
+        "dropzone.scanning": "Scannen…",
 
         "trust.line": "Gratis • Geen uploads • Werkt op alle apparaten",
         "trust.buttons": "100% gratis · Geen aanmelding · Geen uploads",
@@ -1510,6 +1534,8 @@ export const DICTS = {
         "dropzone.strong": "Upuść pliki .heic/.heif/.hif",
         "dropzone.or": "lub",
         "dropzone.choose": "Wybierz pliki",
+        "dropzone.pickFolder": "\uD83D\uDCC2 Wybierz folder",
+        "dropzone.scanning": "Skanowanie…",
 
         "trust.line": "Darmowe • Bez uploadów • Działa na wszystkich urządzeniach",
         "trust.buttons": "100% darmowe · Bez rejestracji · Bez uploadów",
@@ -1633,6 +1659,8 @@ export const DICTS = {
         "dropzone.strong": ".heic/.heif/.hif dosyalarını bırakın",
         "dropzone.or": "veya",
         "dropzone.choose": "Dosya seç",
+        "dropzone.pickFolder": "\uD83D\uDCC2 Klasör seç",
+        "dropzone.scanning": "Taranıyor…",
 
         "trust.line": "Ücretsiz • Yükleme yok • Tüm cihazlarda çalışır",
         "trust.buttons": "%100 ücretsiz · Kayıt yok · Yükleme yok",

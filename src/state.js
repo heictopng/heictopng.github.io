@@ -31,6 +31,27 @@ export function addFiles(state, fileList) {
     }
 }
 
+// Add items from FileSystemFileHandle objects (source folder picker).
+// The File is NOT read yet — only resolved lazily before conversion.
+export function addFileHandles(state, handles) {
+    for (const { name, handle } of handles) {
+        if (!HEIF_EXTS.test(name)) continue;
+        const id = state.nextId++;
+        state.items.push({
+            id,
+            file: null,
+            fileSystemHandle: handle,
+            originalName: name,
+            status: t('status.queued'),
+            thumbUrl: null,
+            outBlob: null,
+            outName: null,
+            error: null,
+            thumbError: false,
+        });
+    }
+}
+
 export function removeItem(state, id) {
     const idx = state.items.findIndex(x => x.id === id);
     if (idx >= 0) {

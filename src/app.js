@@ -1,13 +1,13 @@
 // src/app.js
 import { t } from './internationalization/i18n.js';
 import { translateDocument } from './internationalization/i18n.js';
-import { createState, getGeneration } from './state.js';
+import { createState, getGeneration, addFileHandles } from './state.js';
 import { initUI, render } from './ui.js';
 import { createConverter } from './converter.js';
 import { createDnD } from './dnd.js';
 import { downloadAllAsZip } from './zip.js';
 import { showZipOverlay, hideZipOverlay } from './ui.js';
-import { canSaveToDisk, pickOutputDirectory, saveItemToDisk, scanExistingFiles } from './disk-stream.js';
+import { canSaveToDisk, pickOutputDirectory, saveItemToDisk, scanExistingFiles, pickSourceDirectory, scanSourceFolder } from './disk-stream.js';
 
 const els = initUI();
 const state = createState();
@@ -126,6 +126,33 @@ createDnD({
 // Show save-to-folder button when File System Access API is available
 if (canSaveToDisk() && els.saveToFolder) {
     els.saveToFolder.hidden = false;
+}
+
+// Show pick-source-folder button when File System Access API is available
+const pickSourceBtn = document.getElementById('pickSourceFolder');
+if (canSaveToDisk() && pickSourceBtn) {
+    pickSourceBtn.hidden = false;
+    pickSourceBtn.addEventListener('click', async (e) => {
+        e.stopPropagation(); // don't trigger dropzone click
+        try {
+            const dirHandle = await pickSourceDirectory();
+            pickSourceBtn.disabled = true;
+            pickSourceBtn.textContent = t('dropzone.scanning');
+
+            const handles = await scanSourceFolder(dirHandle);
+            addFileHandles(state, handles);
+
+            pickSourceBtn.disabled = false;
+            pickSourceBtn.textContent = t('dropzone.pickFolder');
+            rerender();
+        } catch (err) {
+            pickSourceBtn.disabled = false;
+            pickSourceBtn.textContent = t('dropzone.pickFolder');
+            if (err.name !== 'AbortError') {
+                console.error('Source folder picker failed:', err);
+            }
+        }
+    });
 }
 
 // When the page resumes after Win+L / OS sleep, re-render so the user
