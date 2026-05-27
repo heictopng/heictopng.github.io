@@ -73,10 +73,11 @@ async function handleSaveToFolder() {
                 || ((item.file?.name || item.originalName || '').replace(/\.[^.]+$/, '') + '.' + ext);
             if (!item.outBlob && !item.savedToDisk && existing.has(predictedName)) {
                 item.savedToDisk = true;
+                item.skippedExisting = true;
                 item.outName = predictedName;
                 // Try to grab the file handle so ZIP / thumbnail can read it later
                 try { item.fileHandle = await dirHandle.getFileHandle(predictedName); } catch {}
-                item.status = t('status.savedToDisk');
+                item.status = t('status.skippedExisting');
                 skipped++;
             }
         }

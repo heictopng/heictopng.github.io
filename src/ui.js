@@ -142,19 +142,20 @@ function computeStats(items) {
     let converted = 0;
     let errors = 0;
     let done = 0;
+    let skipped = 0;
 
     for (let i = 0; i < items.length; i++) {
         const x = items[i];
         const isConverted = !!(x.outBlob || x.savedToDisk);
         const isError = !!x.error;
 
-        if (isConverted) { converted++; hasConverted = true; }
+        if (isConverted) { converted++; hasConverted = true; if (x.skippedExisting) skipped++; }
         if (isError) { errors++; if (x.file) canRetry = true; }
         if (isConverted || isError) done++;
         if (!isConverted && !isError) canConvert = true;
     }
 
-    return { total: items.length, canConvert, hasConverted, canRetry, converted, errors, done };
+    return { total: items.length, canConvert, hasConverted, canRetry, converted, errors, done, skipped };
 }
 
 export function render({ els, state, convertItem, downloadAllZip, handleSaveToFolder }) {
@@ -196,6 +197,7 @@ function setButtonsEnabled(els, state, stats, convertItem, downloadAllZip, handl
                 x.outName = null;
                 x.error = null;
                 x.savedToDisk = false;
+                x.skippedExisting = false;
                 x.fileHandle = null;
                 x.outSize = 0;
                 if (x.thumbUrl) { URL.revokeObjectURL(x.thumbUrl); x.thumbUrl = null; }
@@ -325,7 +327,7 @@ function renderCard({ item, convertItem, state }) {
     const btnDownload = document.createElement('button');
     btnDownload.className = 'btn';
     if (item.savedToDisk) {
-        btnDownload.textContent = t('card.saved');
+        btnDownload.textContent = item.skippedExisting ? t('card.skipped') : t('card.saved');
         btnDownload.disabled = true;
     } else {
         btnDownload.textContent = t('card.download');
@@ -361,7 +363,7 @@ function downloadBlob(blob, filename) {
 }
 
 function updateProgressUI(els, stats) {
-    const { total, converted, errors, done } = stats;
+    const { total, converted, errors, done, skipped } = stats;
     const ratio = total > 0 ? done / total : 0;
 
     if (els.progressBar) {
@@ -371,9 +373,17 @@ function updateProgressUI(els, stats) {
     }
 
     if (els.progressLabel) {
-        els.progressLabel.textContent = total === 0
-            ? ''
-            : t('progress.label', { done, total, converted, errors });
+        if (total === 0) {
+            els.progressLabel.textContent = '';
+        } else if (skipped > 0) {
+            els.progressLabel.textContent = t('progress.labelWithSkipped', {
+                done, total, converted, errors, skipped
+            });
+        } else {
+            els.progressLabel.textContent = t('progress.label', {
+                done, total, converted, errors
+            });
+        }
     }
 }
 

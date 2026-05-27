@@ -96,6 +96,7 @@ export const DICTS = {
         "card.download": "Download",
         "card.remove": "Remove",
         "card.saved": "Saved \u2713",
+        "card.skipped": "Skipped \u2713",
         "status.queued": "Queued",
         "status.preparing": "Preparing…",
         "status.checkingSupport": "Checking browser support (one-time)…",
@@ -107,6 +108,7 @@ export const DICTS = {
         "status.zipping": "Creating ZIP…",
         "status.error": "Error: {msg}",
         "status.savedToDisk": "Saved to folder ✓",
+        "status.skippedExisting": "Already in folder — skipped ✓",
         "alert.decodeModeSelected": "Decode mode selected: {mode}\n\n{reason}",
         "alert.wasmWorkerFailed": "WASM worker failed to load/run. Check console.",
         "alert.noConverted": "No converted images to zip yet.",
@@ -116,6 +118,7 @@ export const DICTS = {
 
         "progress.aria": "Conversion progress",
         "progress.label": "{done}/{total} processed • {converted} converted • {errors} errors",
+        "progress.labelWithSkipped": "{done}/{total} processed • {converted} converted • {skipped} skipped • {errors} errors",
 
         "zip.overlay.title": "Creating ZIP…",
         "zip.overlay.progress": "{pct}% ({current}/{total})",
@@ -214,6 +217,7 @@ export const DICTS = {
         "card.reconvert": "Reconvertir",
         "card.download": "Descargar",
         "card.remove": "Quitar",
+        "card.skipped": "Omitida ✓",
         "status.queued": "En cola",
         "status.preparing": "Preparando…",
         "status.checkingSupport": "Comprobando compatibilidad del navegador (una vez)…",
@@ -224,6 +228,7 @@ export const DICTS = {
         "status.ready": "Listo ({fmt})",
         "status.zipping": "Creando ZIP…",
         "status.error": "Error: {msg}",
+        "status.skippedExisting": "Ya en la carpeta — omitida ✓",
         "alert.decodeModeSelected": "Modo de decodificación seleccionado: {mode}\n\n{reason}",
         "alert.wasmWorkerFailed":
             "El worker WASM no pudo cargarse/ejecutarse. Revisa la consola.",
@@ -234,6 +239,7 @@ export const DICTS = {
 
         "progress.aria": "Progreso de conversión",
         "progress.label": "{done}/{total} procesadas • {converted} convertidas • {errors} errores",
+        "progress.labelWithSkipped": "{done}/{total} procesadas • {converted} convertidas • {skipped} omitidas • {errors} errores",
 
         "zip.overlay.title": "Creando ZIP…",
         "zip.overlay.progress": "{pct}% ({current}/{total})",
@@ -331,6 +337,7 @@ export const DICTS = {
         "card.reconvert": "Converter novamente",
         "card.download": "Baixar",
         "card.remove": "Remover",
+        "card.skipped": "Ignorada ✓",
 
         "status.queued": "Na fila",
         "status.preparing": "Preparando…",
@@ -342,6 +349,7 @@ export const DICTS = {
         "status.ready": "Pronto ({fmt})",
         "status.zipping": "Criando ZIP…",
         "status.error": "Erro: {msg}",
+        "status.skippedExisting": "Já na pasta — ignorada ✓",
 
         "alert.decodeModeSelected": "Modo de decodificação selecionado: {mode}\n\n{reason}",
         "alert.wasmWorkerFailed": "Falha ao carregar/executar o worker WASM.",
@@ -352,6 +360,7 @@ export const DICTS = {
 
         "progress.aria": "Progresso de conversão",
         "progress.label": "{done}/{total} processadas • {converted} convertidas • {errors} erros",
+        "progress.labelWithSkipped": "{done}/{total} processadas • {converted} convertidas • {skipped} ignoradas • {errors} erros",
 
         "zip.overlay.title": "Criando ZIP…",
         "zip.overlay.progress": "{pct}% ({current}/{total})",
@@ -444,6 +453,7 @@ export const DICTS = {
         "card.reconvert": "再変換",
         "card.download": "ダウンロード",
         "card.remove": "削除",
+        "card.skipped": "スキップ済み ✓",
 
         "status.queued": "待機中",
         "status.preparing": "準備中…",
@@ -455,6 +465,7 @@ export const DICTS = {
         "status.ready": "完了 ({fmt})",
         "status.zipping": "ZIP を作成中…",
         "status.error": "エラー: {msg}",
+        "status.skippedExisting": "フォルダに既存 — スキップ済み ✓",
 
         "alert.decodeModeSelected": "選択されたデコード方式: {mode}\n\n{reason}",
         "alert.wasmWorkerFailed": "WASM ワーカーの読み込み/実行に失敗しました。",
@@ -465,6 +476,7 @@ export const DICTS = {
 
         "progress.aria": "変換の進捗",
         "progress.label": "{done}/{total} 処理済み • {converted} 変換済み • {errors} エラー",
+        "progress.labelWithSkipped": "{done}/{total} 処理済み • {converted} 変換済み • {skipped} スキップ • {errors} エラー",
 
         "zip.overlay.title": "ZIP を作成中…",
         "zip.overlay.progress": "{pct}%（{current}/{total}）",
@@ -560,6 +572,7 @@ export const DICTS = {
         "card.reconvert": "重新转换",
         "card.download": "下载",
         "card.remove": "移除",
+        "card.skipped": "已跳过 ✓",
 
         "status.queued": "排队中",
         "status.preparing": "准备中…",
@@ -571,6 +584,7 @@ export const DICTS = {
         "status.ready": "完成 ({fmt})",
         "status.zipping": "正在创建 ZIP…",
         "status.error": "错误：{msg}",
+        "status.skippedExisting": "文件夹中已存在 — 已跳过 ✓",
 
         "alert.decodeModeSelected": "已选择解码模式：{mode}\n\n{reason}",
         "alert.wasmWorkerFailed": "WASM Worker 加载或运行失败。",
@@ -581,6 +595,7 @@ export const DICTS = {
 
         "progress.aria": "转换进度",
         "progress.label": "已处理 {done}/{total} • 已转换 {converted} • 错误 {errors}",
+        "progress.labelWithSkipped": "已处理 {done}/{total} • 已转换 {converted} • 已跳过 {skipped} • 错误 {errors}",
 
         "zip.overlay.title": "正在创建 ZIP…",
         "zip.overlay.progress": "{pct}%（{current}/{total}）",
@@ -676,6 +691,7 @@ export const DICTS = {
         "card.reconvert": "إعادة التحويل",
         "card.download": "تحميل",
         "card.remove": "إزالة",
+        "card.skipped": "تم التخطي ✓",
 
         "status.queued": "في الانتظار",
         "status.preparing": "جارٍ التحضير…",
@@ -687,6 +703,7 @@ export const DICTS = {
         "status.ready": "جاهز ({fmt})",
         "status.zipping": "جارٍ إنشاء ZIP…",
         "status.error": "خطأ: {msg}",
+        "status.skippedExisting": "موجود بالفعل في المجلد — تم التخطي ✓",
 
         "alert.decodeModeSelected": "تم اختيار وضع فك الترميز: {mode}\n\n{reason}",
         "alert.wasmWorkerFailed": "فشل تحميل أو تشغيل عامل WASM.",
@@ -697,6 +714,7 @@ export const DICTS = {
 
         "progress.aria": "تقدم التحويل",
         "progress.label": "تمت المعالجة {done}/{total} • تم التحويل {converted} • أخطاء {errors}",
+        "progress.labelWithSkipped": "تمت المعالجة {done}/{total} • تم التحويل {converted} • تم التخطي {skipped} • أخطاء {errors}",
 
         "zip.overlay.title": "جارٍ إنشاء ZIP…",
         "zip.overlay.progress": "{pct}% ({current}/{total})",
@@ -791,6 +809,7 @@ export const DICTS = {
         "card.reconvert": "फिर से कनवर्ट करें",
         "card.download": "डाउनलोड",
         "card.remove": "हटाएँ",
+        "card.skipped": "छोड़ दिया ✓",
 
         "status.queued": "कतार में",
         "status.preparing": "तैयारी हो रही है…",
@@ -802,6 +821,7 @@ export const DICTS = {
         "status.ready": "तैयार ({fmt})",
         "status.zipping": "ZIP बनाया जा रहा है…",
         "status.error": "त्रुटि: {msg}",
+        "status.skippedExisting": "फ़ोल्डर में पहले से मौजूद — छोड़ दिया ✓",
 
         "alert.decodeModeSelected": "चयनित डिकोड मोड: {mode}\n\n{reason}",
         "alert.wasmWorkerFailed": "WASM वर्कर लोड/चलाने में विफल।",
@@ -812,6 +832,7 @@ export const DICTS = {
 
         "progress.aria": "कन्वर्ज़न प्रगति",
         "progress.label": "{done}/{total} प्रोसेस्ड • {converted} कन्वर्टेड • {errors} त्रुटियाँ",
+        "progress.labelWithSkipped": "{done}/{total} प्रोसेस्ड • {converted} कन्वर्टेड • {skipped} छोड़े गए • {errors} त्रुटियाँ",
 
         "zip.overlay.title": "ZIP बनाया जा रहा है…",
         "zip.overlay.progress": "{pct}% ({current}/{total})",
@@ -907,6 +928,7 @@ export const DICTS = {
         "card.reconvert": "Erneut konvertieren",
         "card.download": "Herunterladen",
         "card.remove": "Entfernen",
+        "card.skipped": "Übersprungen ✓",
 
         "status.queued": "In Warteschlange",
         "status.preparing": "Vorbereitung…",
@@ -918,6 +940,7 @@ export const DICTS = {
         "status.ready": "Fertig ({fmt})",
         "status.zipping": "ZIP wird erstellt…",
         "status.error": "Fehler: {msg}",
+        "status.skippedExisting": "Bereits im Ordner — übersprungen ✓",
 
         "alert.decodeModeSelected": "Ausgewählter Dekodiermodus: {mode}\n\n{reason}",
         "alert.wasmWorkerFailed": "WASM-Worker konnte nicht geladen/ausgeführt werden.",
@@ -928,6 +951,7 @@ export const DICTS = {
 
         "progress.aria": "Konvertierungsfortschritt",
         "progress.label": "{done}/{total} verarbeitet • {converted} konvertiert • {errors} Fehler",
+        "progress.labelWithSkipped": "{done}/{total} verarbeitet • {converted} konvertiert • {skipped} übersprungen • {errors} Fehler",
 
         "zip.overlay.title": "ZIP wird erstellt…",
         "zip.overlay.progress": "{pct}% ({current}/{total})",
@@ -1025,6 +1049,7 @@ export const DICTS = {
         "card.reconvert": "Reconvertir",
         "card.download": "Télécharger",
         "card.remove": "Supprimer",
+        "card.skipped": "Ignorée ✓",
 
         "status.queued": "En attente",
         "status.preparing": "Préparation…",
@@ -1036,6 +1061,7 @@ export const DICTS = {
         "status.ready": "Prêt ({fmt})",
         "status.zipping": "Création du ZIP…",
         "status.error": "Erreur : {msg}",
+        "status.skippedExisting": "Déjà dans le dossier — ignorée ✓",
 
         "alert.decodeModeSelected": "Mode de décodage sélectionné : {mode}\n\n{reason}",
         "alert.wasmWorkerFailed": "Impossible de charger/exécuter le worker WASM.",
@@ -1046,6 +1072,7 @@ export const DICTS = {
 
         "progress.aria": "Progression de conversion",
         "progress.label": "{done}/{total} traitées • {converted} converties • {errors} erreurs",
+        "progress.labelWithSkipped": "{done}/{total} traitées • {converted} converties • {skipped} ignorées • {errors} erreurs",
 
         "zip.overlay.title": "Création du ZIP…",
         "zip.overlay.progress": "{pct}% ({current}/{total})",
@@ -1142,6 +1169,7 @@ export const DICTS = {
         "card.reconvert": "Повторно конвертировать",
         "card.download": "Скачать",
         "card.remove": "Удалить",
+        "card.skipped": "Пропущено ✓",
 
         "status.queued": "В очереди",
         "status.preparing": "Подготовка…",
@@ -1153,6 +1181,7 @@ export const DICTS = {
         "status.ready": "Готово ({fmt})",
         "status.zipping": "Создание ZIP…",
         "status.error": "Ошибка: {msg}",
+        "status.skippedExisting": "Уже в папке — пропущено ✓",
 
         "alert.decodeModeSelected": "Выбран режим декодирования: {mode}\n\n{reason}",
         "alert.wasmWorkerFailed": "Не удалось загрузить или запустить WASM worker.",
@@ -1163,6 +1192,7 @@ export const DICTS = {
 
         "progress.aria": "Прогресс конвертации",
         "progress.label": "Обработано {done}/{total} • Конвертировано {converted} • Ошибок {errors}",
+        "progress.labelWithSkipped": "Обработано {done}/{total} • Конвертировано {converted} • Пропущено {skipped} • Ошибок {errors}",
 
         "zip.overlay.title": "Создание ZIP…",
         "zip.overlay.progress": "{pct}% ({current}/{total})",
@@ -1258,6 +1288,7 @@ export const DICTS = {
         "card.reconvert": "Riconverti",
         "card.download": "Scarica",
         "card.remove": "Rimuovi",
+        "card.skipped": "Saltata ✓",
 
         "status.queued": "In coda",
         "status.preparing": "Preparazione…",
@@ -1269,6 +1300,7 @@ export const DICTS = {
         "status.ready": "Pronto ({fmt})",
         "status.zipping": "Creazione ZIP…",
         "status.error": "Errore: {msg}",
+        "status.skippedExisting": "Già nella cartella — saltata ✓",
 
         "alert.decodeModeSelected": "Modalità di decodifica selezionata: {mode}\n\n{reason}",
         "alert.wasmWorkerFailed": "Impossibile caricare/eseguire il worker WASM.",
@@ -1279,6 +1311,7 @@ export const DICTS = {
 
         "progress.aria": "Avanzamento conversione",
         "progress.label": "{done}/{total} elaborati • {converted} convertiti • {errors} errori",
+        "progress.labelWithSkipped": "{done}/{total} elaborati • {converted} convertiti • {skipped} saltati • {errors} errori",
 
         "zip.overlay.title": "Creazione ZIP…",
         "zip.overlay.progress": "{pct}% ({current}/{total})",
@@ -1378,6 +1411,7 @@ export const DICTS = {
         "card.reconvert": "Opnieuw converteren",
         "card.download": "Downloaden",
         "card.remove": "Verwijderen",
+        "card.skipped": "Overgeslagen ✓",
 
         "status.queued": "In wachtrij",
         "status.preparing": "Voorbereiden…",
@@ -1389,6 +1423,7 @@ export const DICTS = {
         "status.ready": "Gereed ({fmt})",
         "status.zipping": "ZIP maken…",
         "status.error": "Fout: {msg}",
+        "status.skippedExisting": "Reeds in map — overgeslagen ✓",
 
         "alert.decodeModeSelected": "Geselecteerde decodeermodus: {mode}\n\n{reason}",
         "alert.wasmWorkerFailed": "WASM-worker kon niet worden geladen/uitgevoerd.",
@@ -1399,6 +1434,7 @@ export const DICTS = {
 
         "progress.aria": "Conversievoortgang",
         "progress.label": "{done}/{total} verwerkt • {converted} geconverteerd • {errors} fouten",
+        "progress.labelWithSkipped": "{done}/{total} verwerkt • {converted} geconverteerd • {skipped} overgeslagen • {errors} fouten",
 
         "zip.overlay.title": "ZIP maken…",
         "zip.overlay.progress": "{pct}% ({current}/{total})",
@@ -1500,6 +1536,7 @@ export const DICTS = {
         "card.reconvert": "Konwertuj ponownie",
         "card.download": "Pobierz",
         "card.remove": "Usuń",
+        "card.skipped": "Pominięte ✓",
         "status.queued": "W kolejce",
         "status.preparing": "Przygotowywanie…",
         "status.checkingSupport": "Sprawdzanie obsługi przeglądarki (jednorazowo)…",
@@ -1510,6 +1547,7 @@ export const DICTS = {
         "status.ready": "Gotowe ({fmt})",
         "status.zipping": "Tworzenie ZIP…",
         "status.error": "Błąd: {msg}",
+        "status.skippedExisting": "Już w folderze — pominięte ✓",
         "alert.decodeModeSelected": "Wybrany tryb dekodowania: {mode}\n\n{reason}",
         "alert.wasmWorkerFailed": "Nie udało się załadować/uruchomić workera WASM. Sprawdź konsolę.",
         "alert.noConverted": "Brak przekonwertowanych obrazów do spakowania.",
@@ -1519,6 +1557,7 @@ export const DICTS = {
 
         "progress.aria": "Postęp konwersji",
         "progress.label": "{done}/{total} przetworzone • {converted} przekonwertowane • {errors} błędy",
+        "progress.labelWithSkipped": "{done}/{total} przetworzone • {converted} przekonwertowane • {skipped} pominięte • {errors} błędy",
 
         "zip.overlay.title": "Tworzenie ZIP…",
         "zip.overlay.progress": "{pct}% ({current}/{total})",
@@ -1620,6 +1659,7 @@ export const DICTS = {
         "card.reconvert": "Yeniden dönüştür",
         "card.download": "İndir",
         "card.remove": "Kaldır",
+        "card.skipped": "Atlandı ✓",
         "status.queued": "Kuyrukta",
         "status.preparing": "Hazırlanıyor…",
         "status.checkingSupport": "Tarayıcı desteği kontrol ediliyor (tek seferlik)…",
@@ -1630,6 +1670,7 @@ export const DICTS = {
         "status.ready": "Hazır ({fmt})",
         "status.zipping": "ZIP oluşturuluyor…",
         "status.error": "Hata: {msg}",
+        "status.skippedExisting": "Zaten klasörde — atlandı ✓",
         "alert.decodeModeSelected": "Seçilen çözme modu: {mode}\n\n{reason}",
         "alert.wasmWorkerFailed": "WASM worker yüklenemedi/çalıştırılamadı. Konsolu kontrol edin.",
         "alert.noConverted": "ZIP yapmak için dönüştürülmüş görsel yok.",
@@ -1639,6 +1680,7 @@ export const DICTS = {
 
         "progress.aria": "Dönüştürme ilerlemesi",
         "progress.label": "{done}/{total} işlendi • {converted} dönüştürüldü • {errors} hata",
+        "progress.labelWithSkipped": "{done}/{total} işlendi • {converted} dönüştürüldü • {skipped} atlandı • {errors} hata",
 
         "zip.overlay.title": "ZIP oluşturuluyor…",
         "zip.overlay.progress": "{pct}% ({current}/{total})",
