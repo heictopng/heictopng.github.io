@@ -25,6 +25,7 @@ function rerender() {
             convertItem,
             downloadAllZip,
             handleSaveToFolder,
+            scanAndSkipExisting,
         });
     });
 }
@@ -55,35 +56,41 @@ async function convertItem(item) {
     }
 }
 
+async function scanAndSkipExisting() {
+    if (!state.outputDirHandle) return 0;
+
+    const existing = await scanExistingFiles(state.outputDirHandle);
+
+    const mime = document.getElementById('format').value;
+    const ext = mime === 'image/png' ? 'png' : (mime === 'image/webp' ? 'webp' : 'jpg');
+
+    let skipped = 0;
+    for (const item of state.items) {
+        if (item.outBlob || item.savedToDisk || item.error) continue;
+        const predictedName = (item.outName)
+            || ((item.file?.name || item.originalName || '').replace(/\.[^.]+$/, '') + '.' + ext);
+        if (existing.has(predictedName.toLowerCase())) {
+            item.savedToDisk = true;
+            item.skippedExisting = true;
+            item.outName = predictedName;
+            try { item.fileHandle = await state.outputDirHandle.getFileHandle(predictedName); } catch {}
+            item.status = t('status.skippedExisting');
+            skipped++;
+        }
+    }
+    if (skipped > 0) {
+        console.log(`[scan] Skipped ${skipped} items already in destination`);
+        rerender();
+    }
+    return skipped;
+}
+
 async function handleSaveToFolder() {
     try {
         const dirHandle = await pickOutputDirectory();
         state.outputDirHandle = dirHandle;
 
-        // Scan destination folder for files already present
-        const existing = await scanExistingFiles(dirHandle);
-
-        const mime = document.getElementById('format').value;
-        const ext = mime === 'image/png' ? 'png' : (mime === 'image/webp' ? 'webp' : 'jpg');
-
-        // Mark items whose output file already exists in the folder
-        let skipped = 0;
-        for (const item of state.items) {
-            const predictedName = (item.outName)
-                || ((item.file?.name || item.originalName || '').replace(/\.[^.]+$/, '') + '.' + ext);
-            if (!item.outBlob && !item.savedToDisk && existing.has(predictedName.toLowerCase())) {
-                item.savedToDisk = true;
-                item.skippedExisting = true;
-                item.outName = predictedName;
-                // Try to grab the file handle so ZIP / thumbnail can read it later
-                try { item.fileHandle = await dirHandle.getFileHandle(predictedName); } catch {}
-                item.status = t('status.skippedExisting');
-                skipped++;
-            }
-        }
-        if (skipped > 0) {
-            console.log(`[save-to-folder] Skipped ${skipped} items already in destination`);
-        }
+        await scanAndSkipExisting();
 
         // Save any already-converted items still in memory
         for (const item of state.items) {

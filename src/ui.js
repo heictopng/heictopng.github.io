@@ -161,13 +161,13 @@ function computeStats(items) {
     return { total: items.length, canConvert, hasConverted, canRetry, converted, errors, done, skipped };
 }
 
-export function render({ els, state, convertItem, downloadAllZip, handleSaveToFolder }) {
+export function render({ els, state, convertItem, downloadAllZip, handleSaveToFolder, scanAndSkipExisting }) {
     els.scroller.setItems(
         state.items,
         (item) => renderCard({ item, convertItem, state }),
     );
     const stats = computeStats(state.items);
-    setButtonsEnabled(els, state, stats, convertItem, downloadAllZip, handleSaveToFolder);
+    setButtonsEnabled(els, state, stats, convertItem, downloadAllZip, handleSaveToFolder, scanAndSkipExisting);
     updateProgressUI(els, stats);
 
     // Update save-to-folder button text when a directory is active
@@ -180,7 +180,7 @@ export function render({ els, state, convertItem, downloadAllZip, handleSaveToFo
     }
 }
 
-function setButtonsEnabled(els, state, stats, convertItem, downloadAllZip, handleSaveToFolder) {
+function setButtonsEnabled(els, state, stats, convertItem, downloadAllZip, handleSaveToFolder, scanAndSkipExisting) {
     els.convertAll.disabled = !(stats.total > 0 && stats.canConvert);
     els.clearAll.disabled = stats.total === 0;
     els.downloadZip.disabled = !stats.hasConverted;
@@ -207,7 +207,7 @@ function setButtonsEnabled(els, state, stats, convertItem, downloadAllZip, handl
                 if (x.originalFile) x.file = x.originalFile; // restore for reconversion
             });
             clearThumbCache();
-            render({ els, state, convertItem, downloadAllZip, handleSaveToFolder });
+            render({ els, state, convertItem, downloadAllZip, handleSaveToFolder, scanAndSkipExisting });
         });
 
         els.quality.addEventListener('input', () => els.updateQualityUI());
@@ -222,6 +222,9 @@ function setButtonsEnabled(els, state, stats, convertItem, downloadAllZip, handl
             if (els.cancelBatch) { els.cancelBatch.hidden = false; els.convertAll.hidden = true; }
 
             try {
+                // Scan destination folder and skip already-converted files
+                if (scanAndSkipExisting) await scanAndSkipExisting();
+
                 let todo = state.items.filter(x => !x.outBlob && !x.error && !x.savedToDisk);
                 let prevRemaining = todo.length;
 
@@ -237,7 +240,7 @@ function setButtonsEnabled(els, state, stats, convertItem, downloadAllZip, handl
             } finally {
                 _batchAbort = null;
                 if (els.cancelBatch) { els.cancelBatch.hidden = true; els.convertAll.hidden = false; }
-                render({ els, state, convertItem, downloadAllZip, handleSaveToFolder });
+                render({ els, state, convertItem, downloadAllZip, handleSaveToFolder, scanAndSkipExisting });
             }
         });
 
@@ -250,7 +253,7 @@ function setButtonsEnabled(els, state, stats, convertItem, downloadAllZip, handl
         els.clearAll.addEventListener('click', () => {
             clearAll(state);
             clearThumbCache();
-            render({ els, state, convertItem, downloadAllZip, handleSaveToFolder });
+            render({ els, state, convertItem, downloadAllZip, handleSaveToFolder, scanAndSkipExisting });
         });
 
         if (els.saveToFolder) {
@@ -270,7 +273,7 @@ function setButtonsEnabled(els, state, stats, convertItem, downloadAllZip, handl
                         x.error = null;
                         x.status = t('status.queued');
                     });
-                    render({ els, state, convertItem, downloadAllZip, handleSaveToFolder });
+                    render({ els, state, convertItem, downloadAllZip, handleSaveToFolder, scanAndSkipExisting });
                     await runWithLimit(failed, limit, convertItem);
                     failed = state.items.filter(x => x.error && x.file);
                     if (failed.length >= prevRemaining) break; // no progress, stop
